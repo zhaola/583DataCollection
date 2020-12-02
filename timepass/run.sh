@@ -12,5 +12,5 @@ CFILE="toy"
 clang -emit-llvm $CFILE.c -c -o $CFILE.bc
 opt -o $CFILE.time.bc -load $LIBPATH "-$PASSNAME" < $CFILE.bc > /dev/null
 clang++ $CFILE.time.bc $HARNESSPATH -o ${CFILE}_time.out
-./${CFILE}_time.out
+taskset --cpu-list 0 ./${CFILE}_time.out
 rm $CFILE.bc $CFILE.time.bc ${CFILE}_time.out
