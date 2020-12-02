@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-I.
+CFLAGS=-O3 -I.
 
 time_wrapper.o: time_wrapper.c
 	$(CC) -c -o $@ $< $(CFLAGS)

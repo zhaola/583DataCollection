@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 #include "llvm/Pass.h"
 #include "llvm/Support/raw_ostream.h"
@@ -18,13 +19,18 @@ namespace {
 
 struct TimePass : public FunctionPass {
   static char ID;
-  FunctionCallee timeFunc;
 
   TimePass() : FunctionPass(ID) {}
 
   bool runOnFunction(Function &F) override {
-    timeFunc = makeTimestampFunc(F);
-    insertTimestampCall(getFirstInstr(F), F.getName().str() + START);
+    FunctionCallee timeFunc = makeTimestampFunc(F);
+
+    insertTimestampCall(getFirstInstr(F), timeFunc, F.getName().str() + START);
+
+    std::vector<Instruction*> returnInstrs = getReturns(F);
+    for (auto *i : returnInstrs) {
+      insertTimestampCall(*i, timeFunc, F.getName().str() + END);
+    }
     return true;
   }
 
@@ -33,10 +39,17 @@ struct TimePass : public FunctionPass {
     std::vector<Type*> paramTypes = {Type::getInt8PtrTy(ctx)};
     Type *retType = Type::getVoidTy(ctx);
     FunctionType *funcType = FunctionType::get(retType, paramTypes, false);
+
     FunctionCallee func = F.getParent()->getOrInsertFunction(
         TIMESTAMP_FUNC, funcType
     );
     return func;
+  }
+
+  void insertTimestampCall(Instruction &instr, FunctionCallee &timeFunc, std::string timestampMsg) {
+    IRBuilder<> instrBuilder(&instr);
+    Value *args[] = {instrBuilder.CreateGlobalStringPtr(timestampMsg.c_str())};
+    instrBuilder.CreateCall(timeFunc, args);
   }
 
   Instruction& getFirstInstr(Function &F) {
@@ -45,10 +58,15 @@ struct TimePass : public FunctionPass {
     return firstInstr;
   }
 
-  void insertTimestampCall(Instruction &instr, std::string timestampMsg) {
-    IRBuilder<> instrBuilder(&instr);
-    Value *args[] = {instrBuilder.CreateGlobalStringPtr(timestampMsg.c_str())};
-    instrBuilder.CreateCall(timeFunc, args);
+  std::vector<Instruction*> getReturns(Function &F) {
+    std::vector<Instruction*> returns;
+    for (auto &bb : F) {
+      Instruction *termInstr = bb.getTerminator();
+      if (dyn_cast<ReturnInst>(termInstr) != nullptr) {
+        returns.push_back(termInstr);
+      }
+    }
+    return returns;
   }
 }; // end of struct TimePass
 }  // end of anonymous namespace
