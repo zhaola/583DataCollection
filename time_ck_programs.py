@@ -1,50 +1,100 @@
 from pathlib import Path
+from collections import defaultdict
+import sys
 import subprocess
+import json
 import random
 
 outDir = Path('ck_results')
 dirsToMake = [outDir]
 
-def getBenchNames():
+def main():
+    for d in dirsToMake:
+        d.mkdir(parents=True, exist_ok=True)
+
+    # cBenches = getCBenches()
+    # random.shuffle(cBenches)
+    # successBenches = compileAll(cBenches)
+    # runAll(successBenches)
+
+def parseCli():
+    for opt in sys.argv[1:]:
+
+
+def getCBenches():
     print('===============\nGetting list of benchmarks\n===============')
 
     listBenchCmd = 'python3 -m ck list program'.split()
     print(f'Running {listBenchCmd}')
     listBenchProc = subprocess.run(listBenchCmd, stdout=subprocess.PIPE, universal_newlines=True)
 
-    benchNames = listBenchProc.stdout
-    benchNamesList = benchNames.split()
-    with open(outDir.joinpath('bench_names.txt'), 'w') as fout:
-        fout.write(f'Number of benchmarks: {len(benchNamesList)}\n')
-        fout.write(benchNames)
-    return benchNamesList
+    benchNamesList = listBenchProc.stdout.strip().split()
+    with open(outDir.joinpath('bench_lang.csv'), 'w') as fout:
+        cBenches = []
+        fout.write('benchmark name, is benchmark C code\n')
+        for benchName in benchNamesList:
+            isLangC = isBenchLangC(benchName)
+            fout.write(f'{benchName}, {isLangC}\n')
+            if isLangC:
+                cBenches.append(benchName)
+    return cBenches
 
-def runCompile(benchName):
-    print(f'===============\nCompiling {benchName}\n===============')
+def isBenchLangC(benchName):
+    getMetaCmd = f'python3 -m ck load program:{benchName} --min'.split()
+    print(f'Running {getMetaCmd}')
+    getMetaProc = subprocess.run(getMetaCmd, stdout=subprocess.PIPE, universal_newlines=True)
+    benchMeta = json.loads(getMetaProc.stdout)
 
-    PATHTOLLVMSO = '/home/lazhao/583DataCollection/timepass/build/timepass/LLVMPJT.so'
-    PASSNAME = 'time'
-    PATHTOHARNESS = '/home/lazhao/583DataCollection/timepass/time_wrapper/time_wrapper.o'
-
-    compileCmd = f'python3 -m ck compile program:{benchName}'
-    clangFlags = f' --use_clang_opt -flags="-load={PATHTOLLVMSO} -{PASSNAME}"'
-    linkFlags = f' -lflags="{PATHTOHARNESS}"'
-    compileCmd += clangFlags + linkFlags
-    print(f'Running {compileCmd}')
-    compileProc = subprocess.run(compileCmd, shell=True, universal_newlines=True)
+    try:
+        for srcFile in benchMeta['dict']['source_files']:
+            if Path(srcFile).suffix != '.c':
+                return False
+        return True
+    except KeyError:
+        return False
 
 def compileAll(benchNames):
     with open(outDir.joinpath('compile_result.csv'), 'w') as fout:
         fout.write('benchmark name, did compile succeed\n')
         successBenches = []
         for i, benchName in enumerate(benchNames):
-            runCompile(benchName)
+            compileBench(benchName)
             print(f'===============\n{i+1} / {len(benchNames)} compiled')
             didSucceed = input(f'Did compilation succeed? (empty means yes): ') == ''
             fout.write(f'{benchName}, {didSucceed}\n')
             if didSucceed:
                 successBenches.append(benchName)
     return successBenches
+
+def compileBench(benchName):
+    print(f'===============\nCompiling {benchName}\n===============')
+
+    PATHTOLLVMSO = '/home/lazhao/583DataCollection/timepass/build/timepass/LLVMPJT.so'
+    PASSNAME = 'time'
+    PATHTOHARNESS = '/home/lazhao/583DataCollection/timepass/time_wrapper/time_wrapper.o'
+
+    compileCmd = f'python3 -m ck compile program:{benchName} --compiler_tags="llvm"'
+    clangFlags = f' --use_clang_opt -flags="-load={PATHTOLLVMSO} -{PASSNAME}"'
+    linkFlags = f' -lflags="{PATHTOHARNESS}"'
+    compileCmd += clangFlags + linkFlags
+    print(f'Running {compileCmd}')
+    compileProc = subprocess.run(compileCmd, shell=True, universal_newlines=True)
+
+def runAll(benchNames):
+    with open(outDir.joinpath('run_result.csv'), 'w') as fout:
+        fout.write('benchmark name, got time output\n')
+        for i, benchName in enumerate(benchNames):
+            gotTiming = runBench(benchName)
+            fout.write(f'{benchName}, {gotTiming}\n')
+            print(f'===============\n{i+1} / {len(benchNames)} done running')
+
+def runBench(benchName):
+    print(f'===============\nRunning {benchName}\n===============')
+
+    runCmd = f'python3 -m ck run program:{benchName} --quiet'.split()
+    print(f'Running {runCmd}')
+    runProc = subprocess.run(runCmd, universal_newlines=True)
+    return moveBenchOutput(benchName)
 
 def moveBenchOutput(benchName):
     findCkDirCmd = f'python3 -m ck find program:{benchName}'.split()
@@ -60,30 +110,10 @@ def moveBenchOutput(benchName):
         newTimePath = benchOutDir.joinpath(timeFile)
         timePath.rename(newTimePath)
         print(f'Renamed {timePath} to {newTimePath} for {benchName}')
+        return True
     else:
         print(f'Failed to get output for {benchName}')
-
-def runBench(benchName):
-    print(f'===============\nRunning {benchName}\n===============')
-
-    runCmd = f'python3 -m ck run program:{benchName} --quiet'.split()
-    print(f'Running {runCmd}')
-    runProc = subprocess.run(runCmd, universal_newlines=True)
-    moveBenchOutput(benchName)
-
-def runAll(benchNames):
-    for i, benchName in enumerate(benchNames):
-        runBench(benchName)
-        print(f'===============\n{i+1} / {len(benchNames)} done running')
-
-def main():
-    for d in dirsToMake:
-        d.mkdir(parents=True, exist_ok=True)
-
-    benchNames = getBenchNames()
-    random.shuffle(benchNames)
-    successBenches = compileAll(benchNames[:5])
-    runAll(successBenches)
+        return False
 
 if __name__ == '__main__':
     main()
