@@ -2,3 +2,5 @@
 *.bc
 *.out
 *.tmp
+
+ck_results/*

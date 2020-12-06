@@ -1,7 +1,7 @@
 Suppose we want to run the `cbench-automotive-susan` benchmark with the timing harness
 using the `CK` tool.
 
-First, edit `ck\repo\module\program\module.py` line 1468 to be:
+First, edit `ck/repo/module/program/module.py` line 1468 to be:
 
     # Check if clang opt
     if uco:
@@ -23,4 +23,6 @@ Then, we can run the benchmark using
 
 `ck run program:cbench-automotive-susan`
 
-And the output of the program will be stored in `~/CK/ctuning-programs/program/cbench-automotive-susan/tmp`
+and the output of the program will be stored in `~/CK/ctuning-programs/program/cbench-automotive-susan/tmp`.
+The timing outputs are printed to `stderr`,
+so they'll be in `tmp-output2.tmp`.

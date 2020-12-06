@@ -23,7 +23,7 @@ testTimeToy() {
     opt -o $OUTDIR/$CFILE.time.bc -load $LIBPATH -$PASSNAME < $OUTDIR/$CFILE.bc > /dev/null
 
     clang -o $OUTDIR/${CFILE}_time.out $OUTDIR/$CFILE.time.bc $HARNESSPATH -lm -I$SRCDIR
-    taskset --cpu-list 0 ./$OUTDIR/${CFILE}_time.out $INPUT
+    taskset --cpu-list 0 ./$OUTDIR/${CFILE}_time.out $INPUT > $OUTDIR/stdout.tmp 2> $OUTDIR/stderr.tmp
 }
 
 testTimeCK() {
