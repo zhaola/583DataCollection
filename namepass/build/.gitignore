@@ -1,0 +1,3 @@
+# want to make git track this directory as an empty directory
+*
+!.gitignore

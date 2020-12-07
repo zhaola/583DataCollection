@@ -1,5 +1,7 @@
 *.o
 *.bc
+*.ll
+*.s
 *.out
 *.tmp
 *.bak
