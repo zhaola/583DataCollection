@@ -4,7 +4,7 @@ import statistics
 
 ckResultDir = Path('ck_results')
 timeFname = 'tmp-output2.tmp'
-slowBenches = ['shared-matmul-c2']
+slowBenches = ['cbench-security-pgp', 'shared-matmul-c2']
 
 def main():
     benchNames = getBenchNames()

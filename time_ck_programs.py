@@ -9,7 +9,7 @@ import random
 outDir = Path('ck_results')
 dirsToMake = [outDir]
 runResultsFile = outDir.joinpath('run_result.csv')
-slowBenches = ['cbench-security-pgp']
+slowBenches = ['cbench-security-pgp', 'shared-matmul-c2']
 sampleSize = 10
 
 def main():
@@ -27,7 +27,7 @@ def main():
             pass
     if cBenches is None:
         cBenches = getCBenches()
-        removeSlowBenches(cBenches, slowBenches)
+    removeSlowBenches(cBenches, slowBenches)
 
     if cliOpts['-s']:
         cBenches = sampleBenches(cBenches, sampleSize)
@@ -139,7 +139,7 @@ def runAll(benchNames):
 def runBench(benchName):
     print(f'===============\nRunning {benchName}\n===============')
 
-    runCmd = f'python3 -m ck run program:{benchName} --quiet'.split()
+    runCmd = f'python3 -m ck run program:{benchName} --quiet --affinity=0'.split()
     print(f'Running {runCmd}')
     defaultInputs = '0\n' * 5
     runProc = subprocess.run(runCmd, input=defaultInputs, universal_newlines=True)
