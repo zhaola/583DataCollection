@@ -14,8 +14,8 @@ using namespace llvm;
 
 namespace {
     const std::string TIMESTAMP_FUNC = "printTimestamp";
-    const std::string START = " START";
-    const std::string END = " END";
+    const std::string START = "S ";
+    const std::string END = "E ";
 
 struct TimePass : public FunctionPass {
   static char ID;
@@ -25,11 +25,11 @@ struct TimePass : public FunctionPass {
   bool runOnFunction(Function &F) override {
     FunctionCallee timeFunc = makeTimestampFunc(F);
 
-    insertTimestampCall(getFirstInstr(F), timeFunc, F.getName().str() + START);
+    insertTimestampCall(getFirstInstr(F), timeFunc, START + F.getName().str());
 
     std::vector<Instruction*> returnInstrs = getReturns(F);
     for (auto *i : returnInstrs) {
-      insertTimestampCall(*i, timeFunc, F.getName().str() + END);
+      insertTimestampCall(*i, timeFunc, END + F.getName().str());
     }
     return true;
   }

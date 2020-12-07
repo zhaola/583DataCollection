@@ -3,23 +3,58 @@ from collections import defaultdict
 import sys
 import subprocess
 import json
+import csv
 import random
 
 outDir = Path('ck_results')
 dirsToMake = [outDir]
+runResultsFile = outDir.joinpath('run_result.csv')
+# shared-matmul-c2 is also kinda slow
+slowBenches = ['cbench-security-pgp']
+sampleSize = 10
 
 def main():
     for d in dirsToMake:
         d.mkdir(parents=True, exist_ok=True)
+    
+    cliOpts = parseCli()
 
-    # cBenches = getCBenches()
-    # random.shuffle(cBenches)
-    # successBenches = compileAll(cBenches)
-    # runAll(successBenches)
+    if cliOpts['-p']:
+        try:
+            cBenches = getPrevRunBenches()
+            print('Using benchmarks that ran successfully previously')
+        except FileNotFoundError:
+            cBenches = getCBenches()
+    else:
+        cBenches = getCBenches()
+    removeSlowBenches(cBenches, slowBenches)
+
+    if cliOpts['-s']:
+        cBenches = sampleBenches(cBenches, sampleSize)
+        print(f'Using a sample of {sampleSize} benchmarks')
+
+    if cliOpts['-c']:
+        successBenches = compileAll(cBenches)
+    else:
+        successBenches = cBenches
+
+    if cliOpts['-r']:
+        runAll(successBenches)
 
 def parseCli():
+    cliOpts = defaultdict(bool)
     for opt in sys.argv[1:]:
+        cliOpts[opt] = True
+    return cliOpts
 
+def getPrevRunBenches():
+    with open(runResultsFile, 'r') as prevRunFile:
+        prevRunCsv = csv.reader(prevRunFile)
+        prevRunBenches = []
+        for benchName, didPrevSucceed in prevRunCsv:
+            if didPrevSucceed.strip() == 'True':
+                prevRunBenches.append(benchName.strip())
+        return prevRunBenches
 
 def getCBenches():
     print('===============\nGetting list of benchmarks\n===============')
@@ -41,7 +76,6 @@ def getCBenches():
 
 def isBenchLangC(benchName):
     getMetaCmd = f'python3 -m ck load program:{benchName} --min'.split()
-    print(f'Running {getMetaCmd}')
     getMetaProc = subprocess.run(getMetaCmd, stdout=subprocess.PIPE, universal_newlines=True)
     benchMeta = json.loads(getMetaProc.stdout)
 
@@ -53,14 +87,24 @@ def isBenchLangC(benchName):
     except KeyError:
         return False
 
+def removeSlowBenches(benchNames, slowBenches):
+    for bench in slowBenches:
+        benchNames.remove(bench)
+
+def sampleBenches(benchNames, numSamples):
+    random.shuffle(benchNames)
+    return benchNames[:numSamples]
+
 def compileAll(benchNames):
-    with open(outDir.joinpath('compile_result.csv'), 'w') as fout:
+    succeedFpath = outDir.joinpath('compile_result.csv')
+    with open(succeedFpath, 'w') as fout:
         fout.write('benchmark name, did compile succeed\n')
         successBenches = []
         for i, benchName in enumerate(benchNames):
-            compileBench(benchName)
+            compileOut = compileBench(benchName)
             print(f'===============\n{i+1} / {len(benchNames)} compiled')
-            didSucceed = input(f'Did compilation succeed? (empty means yes): ') == ''
+            failCompileWarn = 'Warning: compilation failed!'
+            didSucceed = failCompileWarn not in compileOut
             fout.write(f'{benchName}, {didSucceed}\n')
             if didSucceed:
                 successBenches.append(benchName)
@@ -78,10 +122,11 @@ def compileBench(benchName):
     linkFlags = f' -lflags="{PATHTOHARNESS}"'
     compileCmd += clangFlags + linkFlags
     print(f'Running {compileCmd}')
-    compileProc = subprocess.run(compileCmd, shell=True, universal_newlines=True)
+    compileProc = subprocess.run(compileCmd, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    return compileProc.stdout
 
 def runAll(benchNames):
-    with open(outDir.joinpath('run_result.csv'), 'w') as fout:
+    with open(runResultsFile, 'w') as fout:
         fout.write('benchmark name, got time output\n')
         for i, benchName in enumerate(benchNames):
             gotTiming = runBench(benchName)
@@ -93,7 +138,8 @@ def runBench(benchName):
 
     runCmd = f'python3 -m ck run program:{benchName} --quiet'.split()
     print(f'Running {runCmd}')
-    runProc = subprocess.run(runCmd, universal_newlines=True)
+    defaultInputs = '0\n' * 5
+    runProc = subprocess.run(runCmd, input=defaultInputs, universal_newlines=True)
     return moveBenchOutput(benchName)
 
 def moveBenchOutput(benchName):
@@ -114,6 +160,11 @@ def moveBenchOutput(benchName):
     else:
         print(f'Failed to get output for {benchName}')
         return False
+
+def backupFile(filePath):
+    if filePath.exists():
+        backupPath = filePath.parent.joinpath(f'{filePath.name}.bak')
+        filePath.rename(backupPath)
 
 if __name__ == '__main__':
     main()
