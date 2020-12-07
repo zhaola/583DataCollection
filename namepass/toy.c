@@ -5,7 +5,7 @@ int iAdd(int a, int b){
     for (int i = 0; i < 1000; ++i) {
         out = a + b + i;
         if (out > 1100) {
-            return -out;
+            return -1;
         }
     }
     return out;

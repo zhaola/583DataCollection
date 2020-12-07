@@ -25,7 +25,9 @@ testNameToy() {
     llvm-dis -o $OUTDIR/$CFILE.ll $OUTDIR/$CFILE.bc
     llvm-extract -o $OUTDIR/${CFILE}_${FUNC}.ll -S -func $FUNC $OUTDIR/$CFILE.ll
     llvm-extract -o $OUTDIR/${CFILE}_${FUNC}_bb.ll -S -bb $FUNC:for.cond $OUTDIR/$CFILE.ll
-    llc $OUTDIR/${CFILE}_${FUNC}.ll
+    llc -o $OUTDIR/${CFILE}_${FUNC}.s $OUTDIR/${CFILE}_${FUNC}.ll
+
+    llvm-mca $OUTDIR/${CFILE}_${FUNC}.s
 }
 
 ./build.sh
