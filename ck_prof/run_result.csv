@@ -1,0 +1,6 @@
+benchmark name,got prof output
+polybench-cpu-bicg,True
+milepost-codelet-mibench-consumer-lame-src-takehiro-codelet-5-1,True
+cbench-consumer-tiff2bw,True
+polybench-cpu-jacobi-1d-imper,True
+milepost-codelet-mibench-automotive-qsort1-src-qsort-codelet-1-1,True

@@ -1,7 +1,11 @@
 *.o
+*.s
+
 *.bc
 *.ll
-*.s
+*.profraw
+
 *.out
+
 *.tmp
 *.bak
