@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set +euxo pipefail
+set -euxo pipefail
 
 LIBPATH="build/extractionpass/LLVMPJT.so"
 PASSNAME="--extraction"
