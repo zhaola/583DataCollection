@@ -1,7 +1,6 @@
 benchmark name, got time output
 milepost-codelet-mibench-automotive-bitcount-src-bitcnts-codelet-1-1, True
 milepost-codelet-mibench-automotive-basicmath-isqrt-codelet-1-1, True
-polybench-opencl-syrk, False
 shared-bzip2-1.0.5, True
 milepost-codelet-mibench-telecomm-fft-fourierf-codelet-3-1, True
 milepost-codelet-mibench-consumer-tiffmedian-src-tiffmedian-codelet-4-1, True
@@ -17,7 +16,6 @@ milepost-codelet-mibench-consumer-tiffmedian-src-tiffmedian-codelet-3-1, True
 milepost-codelet-mibench-consumer-lame-src-newmdct-codelet-10-1, True
 milepost-codelet-mibench-consumer-tiffdither-src-tiffdither-codelet-1-1, True
 milepost-codelet-mibench-network-dijkstra-src-dijkstra-large-codelet-5-1, True
-polybench-opencl-fdtd-2d, False
 milepost-codelet-mibench-office-ghostscript-src-gdevpbm-codelet-1-1, True
 milepost-codelet-mibench-consumer-lame-src-psymodel-codelet-17-1, True
 milepost-codelet-mibench-office-rsynth-src-nsynth-codelet-9-1, True
@@ -26,10 +24,8 @@ milepost-codelet-mibench-consumer-lame-src-takehiro-codelet-5-1, True
 polybench-cpu-symm, True
 milepost-codelet-mibench-consumer-tiffmedian-src-tiffmedian-codelet-6-1, True
 milepost-codelet-mibench-automotive-bitcount-src-bitcnt-1-codelet-2-1, True
-polybench-opencl-atax, False
 milepost-codelet-mibench-telecomm-gsm-src-rpe-codelet-4-1, True
 cbench-telecom-adpcm-d, True
-polybench-opencl-corr, False
 shared-matmul-c2, True
 shared-bzip2-1.0.6, True
 milepost-codelet-mibench-consumer-mad-src-layer3-codelet-5-1, True
@@ -38,7 +34,6 @@ cbench-telecom-gsm, True
 polybench-cpu-bicg, True
 milepost-codelet-mibench-consumer-tiff2rgba-src-tif-predict-codelet-4-1, True
 polybench-cpu-fdtd-apml, True
-polybench-opencl-2dconv, False
 polybench-cpu-gemver, True
 milepost-codelet-mibench-security-pgp-d-src-mpilib-codelet-1-1, True
 cbench-consumer-lame, True
@@ -47,18 +42,14 @@ cbench-consumer-tiff2median, True
 cbench-security-sha, True
 polybench-cpu-jacobi-1d-imper, True
 polybench-cpu-fdtd-2d, True
-polybench-opencl-syr2k, False
-polybench-opencl-gemm, False
 milepost-codelet-mibench-consumer-lame-src-fft-codelet-2-1, True
 polybench-cpu-durbin, True
-polybench-opencl-gesummv, False
 cbench-security-rijndael, True
 polybench-cpu-mvt, True
 milepost-codelet-mibench-consumer-lame-src-newmdct-codelet-3-1, True
 polybench-cpu-gemm, True
 milepost-codelet-mibench-office-rsynth-src-nsynth-codelet-5-1, True
 cbench-automotive-qsort1, True
-polybench-opencl-2mm, False
 polybench-cpu-2mm, True
 milepost-codelet-mibench-automotive-qsort1-src-qsort-codelet-1-1, True
 cbench-consumer-tiff2bw, True
@@ -72,7 +63,6 @@ milepost-codelet-mibench-automotive-basicmath-cubic-codelet-3-1, True
 milepost-codelet-mibench-telecomm-fft-fftmisc-codelet-5-1, True
 cbench-network-patricia, True
 milepost-codelet-mibench-consumer-lame-src-quantize-codelet-7-1, True
-polybench-opencl-covar, False
 cbench-telecom-crc32, True
 cbench-automotive-susan, True
 polybench-cpu-gesummv, True
@@ -81,13 +71,11 @@ shared-matmul-c, True
 milepost-codelet-mibench-consumer-jpeg-c-src-jchuff-codelet-9-1, True
 polybench-cpu-syr2k, True
 milepost-codelet-mibench-telecomm-adpcm-c-src-adpcm-codelet-1-1, True
-polybench-opencl-bicg, False
 polybench-cpu-atax, True
 milepost-codelet-mibench-consumer-tiffdither-src-tif-fax3-codelet-8-1, True
 milepost-codelet-mibench-consumer-jpeg-c-src-jfdctint-codelet-2-1, True
 milepost-codelet-mibench-telecomm-adpcm-d-src-adpcm-codelet-1-1, True
 milepost-codelet-mibench-security-pgp-e-src-mpilib-codelet-4-1, True
-polybench-opencl-mvt, False
 cbench-consumer-jpeg-c, True
 milepost-codelet-mibench-consumer-lame-src-quantize-pvt-codelet-6-1, True
 polybench-cpu-trmm, True
@@ -105,14 +93,7 @@ cbench-office-stringsearch2, True
 polybench-cpu-seidel-2d, True
 polybench-cpu-lu, True
 polybench-cpu-jacobi-2d-imper, True
-polybench-opencl-3mm, False
 polybench-cpu-syrk, True
-polybench-opencl-3dconv, False
 cbench-bzip2, True
 cbench-consumer-tiff2dither, True
-template-hello-world-c-jpeg-dataset, False
-tool-print-opencl-devices, False
-template-hello-world-c-output-validation, False
 demo-codelet-openme-auto-tuning-plugins, True
-template-hello-world-c-openme, False
-template-hello-world-c, False

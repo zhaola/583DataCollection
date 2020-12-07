@@ -9,7 +9,6 @@ import random
 outDir = Path('ck_results')
 dirsToMake = [outDir]
 runResultsFile = outDir.joinpath('run_result.csv')
-# shared-matmul-c2 is also kinda slow
 slowBenches = ['cbench-security-pgp']
 sampleSize = 10
 
@@ -19,15 +18,16 @@ def main():
     
     cliOpts = parseCli()
 
+    cBenches = None
     if cliOpts['-p']:
         try:
             cBenches = getPrevRunBenches()
             print('Using benchmarks that ran successfully previously')
         except FileNotFoundError:
-            cBenches = getCBenches()
-    else:
+            pass
+    if cBenches is None:
         cBenches = getCBenches()
-    removeSlowBenches(cBenches, slowBenches)
+        removeSlowBenches(cBenches, slowBenches)
 
     if cliOpts['-s']:
         cBenches = sampleBenches(cBenches, sampleSize)
@@ -89,7 +89,10 @@ def isBenchLangC(benchName):
 
 def removeSlowBenches(benchNames, slowBenches):
     for bench in slowBenches:
-        benchNames.remove(bench)
+        try:
+            benchNames.remove(bench)
+        except ValueError:
+            pass
 
 def sampleBenches(benchNames, numSamples):
     random.shuffle(benchNames)
@@ -160,11 +163,6 @@ def moveBenchOutput(benchName):
     else:
         print(f'Failed to get output for {benchName}')
         return False
-
-def backupFile(filePath):
-    if filePath.exists():
-        backupPath = filePath.parent.joinpath(f'{filePath.name}.bak')
-        filePath.rename(backupPath)
 
 if __name__ == '__main__':
     main()
