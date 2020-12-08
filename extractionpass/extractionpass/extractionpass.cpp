@@ -1,4 +1,5 @@
 #include <string>
+#include <cmath>
 #include <iostream>
 #include "llvm/Pass.h"
 #include "llvm/Support/raw_ostream.h"
@@ -21,36 +22,45 @@ namespace {
 
 struct ExtractionPass : public FunctionPass {
   static char ID;
-  u_int block_uid;
-  u_int function_uid;
-  std::map<int, std::string> intToBlock;
-  std::map<int, std::string> intToFunctionName;
 
   ExtractionPass() : FunctionPass(ID) {}
 
-  // Specify the list of analysis passes that will be used inside your pass.
   void getAnalysisUsage(AnalysisUsage &AU) const {
-      AU.addRequired<BranchProbabilityInfoWrapperPass>(); // Analysis pass to load branch probability
-      // AU.addRequired<BlockFrequencyInfoWrapperPass>(); // Analysis pass to load block execution count
+    AU.addRequired<BranchProbabilityInfoWrapperPass>(); // Analysis pass to load branch probability
   }
 
   bool runOnFunction(Function &F) override {
-
-
-    // Make sure to mark the basic blocks before the function
-
-
-    BranchProbabilityInfo &bpi = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI(); 
-    // BlockFrequencyInfo &bfi = getAnalysis<BlockFrequencyInfoWrapperPass>().getBFI();
-
+    // First pass of basic blocks sets names (so profile information is consistent)
+    errs() << "{\"functionToBlock\": {";
+    u_int bbID = 0;
+    bool first = true;
     for (BasicBlock &BB : F) {
-
-      // errs() << "found function" << F.getName() << "\n";
-
+      const Twine name(std::to_string(bbID));
+      BB.setName(name);
+      if (!first) {errs() << ", ";} else {first = false;}
+      errs() << "\"" << F.getName() << "\": " << bbID;
+      ++bbID;
     }
+    errs() << "}, \"edgeToProb\": {";
+    first = true;
+    // Second pass of basic blocks generates profile information
+    BranchProbabilityInfo &bpi = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI();
+    for (auto BB = F.begin(), E = F.end(); BB != E; ++BB) {
+      BasicBlock* currentBB = dyn_cast<BasicBlock>(BB);
+      auto bbSuccessors = successors(currentBB);
+      if (bbSuccessors.begin() != bbSuccessors.end()) {
+        for (BasicBlock *succ : successors(currentBB)) {
+          BranchProbability bp = bpi.getEdgeProbability(currentBB, succ);
+          float probEdge = float(bp.getNumerator()) / float(bp.getDenominator());
+          if (!first) {errs() << ", ";} else {first = false;}
+          errs() << "\"" << F.getName() << "," << currentBB->getName() << "," << succ->getName() << "\": " << format("%.3f", probEdge); 
+        }
+      }
+    }
+    errs() << "}}\n";
   }
 }; // end of struct ExtractionPass
 }  // end of anonymous namespace
 
 char ExtractionPass::ID = 0;
-static RegisterPass<ExtractionPass> X("extraction", "Inserts demarcations to extract segments of binary that correlate to functions and basic blocks");
+static RegisterPass<ExtractionPass> X("extraction", "Inserts demarcations to extract segments of binary that correlate to functions and basic blocks", false, false);
