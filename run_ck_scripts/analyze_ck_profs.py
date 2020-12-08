@@ -35,9 +35,10 @@ def analyzeProfData(benchDir):
 def analyzeBc(benchDir, fileName):
     profDataPath = benchDir.joinpath(profDataName)
     bcPath = benchDir.joinpath(f'{fileName}.bc')
+    llPath = benchDir.joinpath(f'{fileName}.ll')
     analysisPath = benchDir.joinpath(f'{fileName}_analyze.tmp')
 
-    analyzeCmd = f'opt -pgo-instr-use -pgo-test-profile-file={profDataPath} -load {pathToPassSO} {passName}'.split()
+    analyzeCmd = f'opt -o {llPath} -S -pgo-instr-use -pgo-test-profile-file={profDataPath} -load {pathToPassSO} {passName}'.split()
     with open(bcPath, 'rb') as fin:
         bcData = fin.read()
     with open(analysisPath, 'w') as fout:
