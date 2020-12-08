@@ -1,0 +1,33 @@
+	.text
+	.file	"tif_dirread.c"
+	.globl	EstimateStripByteCounts.20 # -- Begin function EstimateStripByteCounts.20
+	.p2align	4, 0x90
+	.type	EstimateStripByteCounts.20,@function
+EstimateStripByteCounts.20:             # @EstimateStripByteCounts.20
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	jmp	.LBB0_2
+.LBB0_1:                                # %"21.exitStub"
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_2:                                # %"20"
+	.cfi_def_cfa %rbp, 16
+	movl	(%rdi), %eax
+	imull	(%rsi), %eax
+	movq	(%rdx), %rdx
+	movq	256(%rdx), %rdx
+	movzwl	(%rcx), %ecx
+	movl	%eax, (%rdx,%rcx,4)
+	jmp	.LBB0_1
+.Lfunc_end0:
+	.size	EstimateStripByteCounts.20, .Lfunc_end0-EstimateStripByteCounts.20
+	.cfi_endproc
+                                        # -- End function
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

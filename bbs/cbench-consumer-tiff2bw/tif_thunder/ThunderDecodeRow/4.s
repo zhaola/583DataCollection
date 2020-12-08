@@ -1,0 +1,42 @@
+	.text
+	.file	"tif_thunder.c"
+	.globl	ThunderDecodeRow.4      # -- Begin function ThunderDecodeRow.4
+	.p2align	4, 0x90
+	.type	ThunderDecodeRow.4,@function
+ThunderDecodeRow.4:                     # @ThunderDecodeRow.4
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	jmp	.LBB0_2
+.LBB0_1:                                # %"1.exitStub"
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_2:                                # %"4"
+	.cfi_def_cfa %rbp, 16
+	movq	__profc_.._tif_thunder.c_ThunderDecodeRow, %rax
+	addq	$1, %rax
+	movq	%rax, __profc_.._tif_thunder.c_ThunderDecodeRow
+	movq	(%rdi), %rax
+	movl	712(%rax), %eax
+	movl	(%rsi), %ecx
+	subl	%eax, %ecx
+	movl	%ecx, (%rsi)
+	movq	(%rdi), %rax
+	movl	712(%rax), %eax
+	movq	(%rdx), %rcx
+	cltq
+	addq	%rax, %rcx
+	movq	%rcx, (%rdx)
+	jmp	.LBB0_1
+.Lfunc_end0:
+	.size	ThunderDecodeRow.4, .Lfunc_end0-ThunderDecodeRow.4
+	.cfi_endproc
+                                        # -- End function
+	.hidden	__profc_.._tif_thunder.c_ThunderDecodeRow
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

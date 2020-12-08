@@ -1,0 +1,89 @@
+	.text
+	.file	"jcapistd.c"
+	.globl	jpeg_start_compress.4   # -- Begin function jpeg_start_compress.4
+	.p2align	4, 0x90
+	.type	jpeg_start_compress.4,@function
+jpeg_start_compress.4:                  # @jpeg_start_compress.4
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	pushq	%r15
+	pushq	%r14
+	pushq	%rbx
+	pushq	%rax
+	.cfi_offset %rbx, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	movq	%rdi, %rbx
+	jmp	.LBB0_2
+.LBB0_1:                                # %"4.ret.exitStub"
+	addq	$8, %rsp
+	popq	%rbx
+	popq	%r14
+	popq	%r15
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_2:                                # %"4"
+	.cfi_def_cfa %rbp, 16
+	movabsq	$__profd_jpeg_start_compress, %rsi
+	movq	(%rbx), %rax
+	movq	(%rax), %rax
+	movq	32(%rax), %r14
+	movq	(%rbx), %r15
+	movq	%r14, %rdi
+	movl	$1, %edx
+	callq	__llvm_profile_instrument_target
+	movq	%r15, %rdi
+	callq	*%r14
+	movabsq	$__profd_jpeg_start_compress, %rsi
+	movq	(%rbx), %rax
+	movq	32(%rax), %rax
+	movq	16(%rax), %r14
+	movq	(%rbx), %r15
+	movq	%r14, %rdi
+	movl	$2, %edx
+	callq	__llvm_profile_instrument_target
+	movq	%r15, %rdi
+	callq	*%r14
+	movq	(%rbx), %rdi
+	callq	jinit_compress_master
+	movabsq	$__profd_jpeg_start_compress, %rsi
+	movq	(%rbx), %rax
+	movq	424(%rax), %rax
+	movq	(%rax), %r14
+	movq	(%rbx), %r15
+	movq	%r14, %rdi
+	movl	$3, %edx
+	callq	__llvm_profile_instrument_target
+	movq	%r15, %rdi
+	callq	*%r14
+	movq	(%rbx), %rax
+	movl	$0, 296(%rax)
+	movq	(%rbx), %rax
+	movl	248(%rax), %eax
+	cmpl	$0, %eax
+	setne	%cl
+	andb	$1, %cl
+	movzbl	%cl, %ecx
+	addq	__profc_jpeg_start_compress+24, %rcx
+	movq	%rcx, __profc_jpeg_start_compress+24
+	cmpl	$0, %eax
+	movl	$102, %eax
+	movl	$101, %ecx
+	cmovnel	%eax, %ecx
+	movq	(%rbx), %rax
+	movl	%ecx, 28(%rax)
+	jmp	.LBB0_1
+.Lfunc_end0:
+	.size	jpeg_start_compress.4, .Lfunc_end0-jpeg_start_compress.4
+	.cfi_endproc
+                                        # -- End function
+	.hidden	__profc_jpeg_start_compress
+	.hidden	__profd_jpeg_start_compress
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

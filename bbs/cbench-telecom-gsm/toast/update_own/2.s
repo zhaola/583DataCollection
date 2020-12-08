@@ -1,0 +1,37 @@
+	.text
+	.file	"toast.c"
+	.globl	update_own.2            # -- Begin function update_own.2
+	.p2align	4, 0x90
+	.type	update_own.2,@function
+update_own.2:                           # @update_own.2
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	jmp	.LBB0_2
+.LBB0_1:                                # %"3.exitStub"
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_2:                                # %"2"
+	.cfi_def_cfa %rbp, 16
+	movq	__profc_.._toast.c_update_own, %rax
+	addq	$1, %rax
+	movq	%rax, __profc_.._toast.c_update_own
+	movq	out, %rdi
+	callq	fileno
+	movl	instat+28, %esi
+	movl	instat+32, %edx
+	movl	%eax, %edi
+	callq	fchown
+	jmp	.LBB0_1
+.Lfunc_end0:
+	.size	update_own.2, .Lfunc_end0-update_own.2
+	.cfi_endproc
+                                        # -- End function
+	.hidden	__profc_.._toast.c_update_own
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

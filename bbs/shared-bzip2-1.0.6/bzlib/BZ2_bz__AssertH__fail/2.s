@@ -1,0 +1,23 @@
+	.text
+	.file	"bzlib.c"
+	.globl	BZ2_bz__AssertH__fail.2 # -- Begin function BZ2_bz__AssertH__fail.2
+	.p2align	4, 0x90
+	.type	BZ2_bz__AssertH__fail.2,@function
+BZ2_bz__AssertH__fail.2:                # @BZ2_bz__AssertH__fail.2
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	jmp	.LBB0_1
+.LBB0_1:                                # %"2"
+	movl	$3, %edi
+	callq	exit
+.Lfunc_end0:
+	.size	BZ2_bz__AssertH__fail.2, .Lfunc_end0-BZ2_bz__AssertH__fail.2
+	.cfi_endproc
+                                        # -- End function
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

@@ -1,0 +1,95 @@
+	.text
+	.file	"tif_getimage.c"
+	.globl	put1bitcmaptile.7       # -- Begin function put1bitcmaptile.7
+	.p2align	4, 0x90
+	.type	put1bitcmaptile.7,@function
+put1bitcmaptile.7:                      # @put1bitcmaptile.7
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	jmp	.LBB0_9
+.LBB0_1:                                # %"15.exitStub"
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_2:                                # %"8.exitStub"
+	.cfi_def_cfa %rbp, 16
+	movw	$1, %ax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_3:                                # %"9.exitStub"
+	.cfi_def_cfa %rbp, 16
+	movw	$2, %ax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_4:                                # %"10.exitStub"
+	.cfi_def_cfa %rbp, 16
+	movw	$3, %ax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_5:                                # %"11.exitStub"
+	.cfi_def_cfa %rbp, 16
+	movw	$4, %ax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_6:                                # %"12.exitStub"
+	.cfi_def_cfa %rbp, 16
+	movw	$5, %ax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_7:                                # %"13.exitStub"
+	.cfi_def_cfa %rbp, 16
+	movw	$6, %ax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_8:                                # %"14.exitStub"
+	.cfi_def_cfa %rbp, 16
+	movw	$7, %ax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_9:                                # %"7"
+	.cfi_def_cfa %rbp, 16
+	movq	(%rdi), %r8
+	movq	(%rsi), %rax
+	movq	%rax, %rdi
+	addq	$1, %rdi
+	movq	%rdi, (%rsi)
+	movzbl	(%rax), %eax
+	movq	(%r8,%rax,8), %rax
+	movq	%rax, (%rdx)
+	movl	(%rcx), %eax
+	addl	$-1, %eax
+	movl	%eax, %ecx
+	subl	$6, %ecx
+	ja	.LBB0_1
+# %bb.10:                               # %"7"
+	movq	.LJTI0_0(,%rax,8), %rax
+	jmpq	*%rax
+.Lfunc_end0:
+	.size	put1bitcmaptile.7, .Lfunc_end0-put1bitcmaptile.7
+	.cfi_endproc
+	.section	.rodata,"a",@progbits
+	.p2align	3
+.LJTI0_0:
+	.quad	.LBB0_8
+	.quad	.LBB0_7
+	.quad	.LBB0_6
+	.quad	.LBB0_5
+	.quad	.LBB0_4
+	.quad	.LBB0_3
+	.quad	.LBB0_2
+                                        # -- End function
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

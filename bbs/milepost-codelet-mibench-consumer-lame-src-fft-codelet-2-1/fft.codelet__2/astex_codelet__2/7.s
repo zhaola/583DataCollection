@@ -1,0 +1,68 @@
+	.text
+	.file	"fft.codelet__2.c"
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2               # -- Begin function astex_codelet__2.7
+.LCPI0_0:
+	.long	1073741824              # float 2
+.LCPI0_1:
+	.long	1065353216              # float 1
+	.text
+	.globl	astex_codelet__2.7
+	.p2align	4, 0x90
+	.type	astex_codelet__2.7,@function
+astex_codelet__2.7:                     # @astex_codelet__2.7
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	pushq	%rbx
+	.cfi_offset %rbx, -24
+	movq	32(%rbp), %r10
+	movq	24(%rbp), %r11
+	movq	16(%rbp), %rbx
+	jmp	.LBB0_2
+.LBB0_1:                                # %"8.exitStub"
+	popq	%rbx
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_2:                                # %"7"
+	.cfi_def_cfa %rbp, 16
+	xorl	%eax, %eax
+	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero,zero,zero
+	movaps	%xmm0, %xmm2
+	mulss	(%rdi), %xmm2
+	mulss	(%rdi), %xmm2
+	subss	%xmm2, %xmm1
+	movss	%xmm1, (%rsi)
+	mulss	(%rdi), %xmm0
+	mulss	(%rdx), %xmm0
+	movss	%xmm0, (%rcx)
+	movq	(%r8), %rcx
+	movswl	(%r9), %edx
+	movslq	%edx, %rdx
+	shlq	$2, %rdx
+	addq	%rdx, %rcx
+	movq	%rcx, (%rbx)
+	movq	(%r8), %rcx
+	movswl	(%r11), %edx
+	movslq	%edx, %rdx
+	shlq	$2, %rdx
+	addq	%rdx, %rcx
+	movswl	(%r9), %edx
+	movslq	%edx, %rdx
+	subq	%rdx, %rax
+	shlq	$2, %rax
+	addq	%rax, %rcx
+	movq	%rcx, (%r10)
+	jmp	.LBB0_1
+.Lfunc_end0:
+	.size	astex_codelet__2.7, .Lfunc_end0-astex_codelet__2.7
+	.cfi_endproc
+                                        # -- End function
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

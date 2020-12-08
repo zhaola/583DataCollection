@@ -1,0 +1,31 @@
+	.text
+	.file	"rdgif.c"
+	.globl	get_interlaced_row.10   # -- Begin function get_interlaced_row.10
+	.p2align	4, 0x90
+	.type	get_interlaced_row.10,@function
+get_interlaced_row.10:                  # @get_interlaced_row.10
+	.cfi_startproc
+# %bb.0:                                # %newFuncRoot
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	jmp	.LBB0_2
+.LBB0_1:                                # %"10.ret.exitStub"
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.LBB0_2:                                # %"10"
+	.cfi_def_cfa %rbp, 16
+	movq	(%rdi), %rax
+	movl	424(%rax), %ecx
+	addl	$1, %ecx
+	movl	%ecx, 424(%rax)
+	jmp	.LBB0_1
+.Lfunc_end0:
+	.size	get_interlaced_row.10, .Lfunc_end0-get_interlaced_row.10
+	.cfi_endproc
+                                        # -- End function
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits

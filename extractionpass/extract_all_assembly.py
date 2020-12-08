@@ -5,12 +5,12 @@ import json
 ckProfDir = Path('../ck_prof')
 funcOutDir = Path('../funcs')
 bbOutDir = Path('../bbs')
+minBBLen = 3
 maxBBLen = 30
 
 
 def main():
     benchNames = [entry.name for entry in ckProfDir.iterdir() if entry.is_dir()]
-    benchNames = benchNames[:1]
     for i, benchName in enumerate(benchNames):
         print(f'{i}/{len(benchNames)} extracting {benchName}')
         extractBenchAsm(benchName)
@@ -23,12 +23,12 @@ def extractBenchAsm(benchName):
         extractFileAsm(benchDir, fname)
 
 def extractFileAsm(benchDir, fname):
-    analysisFpath = benchDir.joinpath(f'{fname}_analyze.tmp')
+    analysisFpath = benchDir.joinpath(f'{fname}.tmp')
     numBBinFuncs = getNumBBInFunc(analysisFpath)
 
     filellPath = benchDir.joinpath(f'{fname}.ll')
     for i, (func, numBBs) in enumerate(numBBinFuncs.items()):
-        if numBBs > maxBBLen:
+        if numBBs < minBBLen or numBBs > maxBBLen:
             print(f'\t\t{i}/{len(numBBinFuncs)} skipping {func} ({numBBs} blocks) from {fname} in {benchDir.name}')
             continue
         print(f'\t\t{i}/{len(numBBinFuncs)} extracting {numBBs} blocks from {func} from {fname} in {benchDir.name}')

@@ -1,0 +1,4 @@
+	.text
+	.file	"tif_close.c"
+	.ident	"clang version 10.0.0 "
+	.section	".note.GNU-stack","",@progbits
