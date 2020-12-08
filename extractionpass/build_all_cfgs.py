@@ -3,7 +3,6 @@ from pathlib import Path
 from build_cfgs import build_cfgs
 
 ckProfDir = Path('../ck_prof')
-funcDir = Path('../funcs')
 bbDir = Path('../bbs')
 
 def main():
