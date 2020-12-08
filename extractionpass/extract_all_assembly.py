@@ -5,7 +5,7 @@ import json
 ckProfDir = Path('../ck_prof')
 funcOutDir = Path('../funcs')
 bbOutDir = Path('../bbs')
-maxBBLen = 20
+maxBBLen = 30
 
 
 def main():
