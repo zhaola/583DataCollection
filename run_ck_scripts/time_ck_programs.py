@@ -142,7 +142,7 @@ def runBench(benchName):
     runCmd = f'python3 -m ck run program:{benchName} --quiet --affinity=0'.split()
     print(f'Running {runCmd}')
     defaultInputs = '0\n' * 5
-    runProc = subprocess.run(runCmd, input=defaultInputs, universal_newlines=True)
+    runProc = subprocess.run(runCmd, input=defaultInputs, stdout=subprocess.DEVNULL, universal_newlines=True)
     return moveBenchOutput(benchName)
 
 def moveBenchOutput(benchName):

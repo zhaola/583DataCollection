@@ -3,14 +3,14 @@ import subprocess
 import json
 
 ckProfDir = Path('../ck_prof')
-funcDir = Path('../funcs')
-bbDir = Path('../bbs')
+funcOutDir = Path('../funcs')
+bbOutDir = Path('../bbs')
 maxBBLen = 20
 
 
 def main():
     benchNames = [entry.name for entry in ckProfDir.iterdir() if entry.is_dir()]
-    benchNames = benchNames[:5]
+    benchNames = benchNames[:1]
     for i, benchName in enumerate(benchNames):
         print(f'{i}/{len(benchNames)} extracting {benchName}')
         extractBenchAsm(benchName)
@@ -57,7 +57,7 @@ def getNumBBInFunc(analysisFpath):
 def extractFuncAsm(benchName, fileDir, func, filellPath):
     funcllPath = extractFuncLl(fileDir, func, filellPath)
 
-    funcAsmDir = funcDir.joinpath(benchName).joinpath(fileDir.name)
+    funcAsmDir = funcOutDir.joinpath(benchName).joinpath(fileDir.name)
     funcAsmDir.mkdir(parents=True, exist_ok=True)
 
     funcSPath = funcAsmDir.joinpath(f'{func}.s')
@@ -78,7 +78,7 @@ def extractBBAsm(benchName, fileDir, func, bb, filellPath):
     bbDir.mkdir(parents=True, exist_ok=True)
     bbllPath = extractBBLl(bbDir, func, bb, filellPath)
 
-    bbAsmDir = bbDir.joinpath(benchName).joinpath(fileDir.name).joinpath(func)
+    bbAsmDir = bbOutDir.joinpath(benchName).joinpath(fileDir.name).joinpath(func)
     bbAsmDir.mkdir(parents=True, exist_ok=True)
 
     bbSPath = bbAsmDir.joinpath(f'{bb}.s')
