@@ -6,7 +6,7 @@ import json
 import csv
 import random
 
-outDir = Path('../ck_results.bak')
+outDir = Path('../ck_results')
 dirsToMake = [outDir]
 runResultsFile = outDir.joinpath('run_result.csv')
 slowBenches = ['cbench-security-pgp', 'shared-matmul-c2']

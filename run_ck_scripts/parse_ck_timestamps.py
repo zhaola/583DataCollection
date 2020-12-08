@@ -2,7 +2,7 @@ from collections import defaultdict
 from pathlib import Path
 import statistics
 
-ckResultDir = Path('../ck_results.bak')
+ckResultDir = Path('../ck_results')
 timeFname = 'tmp-output2.tmp'
 slowBenches = ['cbench-security-pgp', 'shared-matmul-c2']
 

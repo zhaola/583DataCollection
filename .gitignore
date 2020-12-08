@@ -3,9 +3,13 @@
 
 *.bc
 *.ll
+
 *.profraw
+*.profdata
 
 *.out
 
 *.tmp
 *.bak
+
+*__pycache__*

@@ -13,7 +13,10 @@ def try_mkdir(dirname):
 def build_cfgs(data_file, bb_dir):
     with open(data_file, 'r') as infile:
         for line in infile:
-            dicti = json.loads(line)
+            try:
+                dicti = json.loads(line)
+            except json.decoder.JSONDecodeError:
+                continue
 
             adjacency_list = {}
             for edge, prob in dicti['edgeToProb'].items():
@@ -29,10 +32,11 @@ def build_cfgs(data_file, bb_dir):
                 adj_list.append((dest, prob))
 
                 
-            local_bb_dir = bb_dir + '/' + function
-            try_mkdir(local_bb_dir)
-            with open(local_bb_dir + '/CFG.json', 'w') as outfile:
-                json.dump(adjacency_list, outfile)
+            if len(adjacency_list) > 0:
+                local_bb_dir = bb_dir + '/' + function
+                try_mkdir(local_bb_dir)
+                with open(local_bb_dir + '/CFG.json', 'w') as outfile:
+                    json.dump(adjacency_list, outfile)
 
 def main():
     data_file, bb_dir = parse_args()
