@@ -10,6 +10,6 @@
 *.out
 
 *.tmp
-*.bak
+*bak
 
 *__pycache__*
