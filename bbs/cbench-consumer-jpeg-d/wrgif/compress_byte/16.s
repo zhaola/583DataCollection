@@ -17,6 +17,8 @@ compress_byte.16:                       # @compress_byte.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_compress_byte+56, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ compress_byte.16:                       # @compress_byte.16
 	movw	(%rax,%rcx,2), %ax
 	movq	(%rdi), %rcx
 	movw	%ax, 84(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compress_byte.16, .Lfunc_end0-compress_byte.16
 	.cfi_endproc

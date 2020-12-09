@@ -32,6 +32,8 @@ pad.3:                                  # @pad.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %r14d
 	movl	longestFileName, %ebx
@@ -39,8 +41,8 @@ pad.3:                                  # @pad.3
 	callq	strlen
 	subl	%eax, %ebx
 	cmpl	%ebx, %r14d
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pad.3, .Lfunc_end0-pad.3
 	.cfi_endproc

@@ -24,6 +24,8 @@ TIFFFetchExtraSamples.6:                # @TIFFFetchExtraSamples.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchExtraSamples, %rax
 	addq	$1, %rax
@@ -39,7 +41,8 @@ TIFFFetchExtraSamples.6:                # @TIFFFetchExtraSamples.6
 	movb	$0, %al
 	callq	TIFFSetField
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchExtraSamples.6, .Lfunc_end0-TIFFFetchExtraSamples.6
 	.cfi_endproc

@@ -24,6 +24,8 @@ astex_codelet__1.3:                     # @astex_codelet__1.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r8
 	shlq	$2, %r8
@@ -44,8 +46,8 @@ astex_codelet__1.3:                     # @astex_codelet__1.3
 	movq	%rax, (%rcx)
 	movq	(%rdi), %rax
 	cmpq	(%rcx), %rax
-	jae	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	astex_codelet__1.3, .Lfunc_end0-astex_codelet__1.3
 	.cfi_endproc

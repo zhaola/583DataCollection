@@ -23,6 +23,8 @@ TIFFWriteLongArray.2:                   # @TIFFWriteLongArray.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirwrite.c_TIFFWriteLongArray+8, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ TIFFWriteLongArray.2:                   # @TIFFWriteLongArray.2
 	movq	(%rdx), %rdx
 	callq	TIFFWriteData
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteLongArray.2, .Lfunc_end0-TIFFWriteLongArray.2
 	.cfi_endproc

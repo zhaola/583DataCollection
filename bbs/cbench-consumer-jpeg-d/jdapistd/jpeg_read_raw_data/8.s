@@ -39,8 +39,9 @@ jpeg_read_raw_data.8:                   # @jpeg_read_raw_data.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_read_raw_data, %rax
 	movq	(%rdi), %rcx
 	movq	544(%rcx), %rcx
 	movq	24(%rcx), %rbx
@@ -54,8 +55,8 @@ jpeg_read_raw_data.8:                   # @jpeg_read_raw_data.8
 	movq	%r15, %rsi
 	callq	*%rbx
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_raw_data.8, .Lfunc_end0-jpeg_read_raw_data.8
 	.cfi_endproc

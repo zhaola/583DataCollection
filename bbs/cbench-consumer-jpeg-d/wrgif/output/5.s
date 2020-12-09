@@ -24,6 +24,8 @@ output.5:                               # @output.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_output+16, %rax
 	addq	$1, %rax
@@ -33,8 +35,8 @@ output.5:                               # @output.5
 	movq	(%rdi), %rcx
 	movswl	60(%rcx), %ecx
 	cmpl	%ecx, %eax
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	output.5, .Lfunc_end0-output.5
 	.cfi_endproc

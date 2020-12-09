@@ -17,10 +17,10 @@ dijkstra.13:                            # @dijkstra.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_dijkstra+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_dijkstra+16
 	movl	iDist, %eax
 	addl	iCost, %eax
 	movq	rgnNodes, %rcx
@@ -35,7 +35,8 @@ dijkstra.13:                            # @dijkstra.13
 	addl	iCost, %esi
 	movl	iNode, %edx
 	callq	enqueue
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	dijkstra.13, .Lfunc_end0-dijkstra.13
 	.cfi_endproc

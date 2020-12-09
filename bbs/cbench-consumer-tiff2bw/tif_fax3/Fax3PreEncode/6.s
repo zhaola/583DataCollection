@@ -24,6 +24,8 @@ Fax3PreEncode.6:                        # @Fax3PreEncode.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movss	132(%rax), %xmm0        # xmm0 = mem[0],zero,zero,zero
@@ -31,8 +33,8 @@ Fax3PreEncode.6:                        # @Fax3PreEncode.6
 	movq	(%rdi), %rax
 	movzwl	136(%rax), %eax
 	cmpl	$3, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3PreEncode.6, .Lfunc_end0-Fax3PreEncode.6
 	.cfi_endproc

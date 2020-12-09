@@ -17,6 +17,8 @@ swabHorAcc16.13:                        # @swabHorAcc16.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_predict.c_swabHorAcc16+8, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ swabHorAcc16.13:                        # @swabHorAcc16.13
 	movl	(%rsi), %ecx
 	subl	%eax, %ecx
 	movl	%ecx, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	swabHorAcc16.13, .Lfunc_end0-swabHorAcc16.13
 	.cfi_endproc

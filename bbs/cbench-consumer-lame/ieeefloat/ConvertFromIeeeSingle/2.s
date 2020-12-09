@@ -24,14 +24,16 @@ ConvertFromIeeeSingle.2:                # @ConvertFromIeeeSingle.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	andq	$2139095040, %rax       # imm = 0x7F800000
 	sarq	$23, %rax
 	movq	%rax, (%rsi)
 	cmpq	$255, (%rsi)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertFromIeeeSingle.2, .Lfunc_end0-ConvertFromIeeeSingle.2
 	.cfi_endproc

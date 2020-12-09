@@ -24,6 +24,8 @@ bit_count.3:                            # @bit_count.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
 	movq	(%rdi), %rcx
@@ -32,8 +34,8 @@ bit_count.3:                            # @bit_count.3
 	andq	%rdx, %rcx
 	movq	%rcx, (%rdi)
 	cmpq	%rcx, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	bit_count.3, .Lfunc_end0-bit_count.3
 	.cfi_endproc

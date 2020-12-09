@@ -13,6 +13,8 @@ gsm_norm.2:                             # @gsm_norm.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_gsm_norm+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_gsm_norm+48
@@ -21,6 +23,8 @@ gsm_norm.2:                             # @gsm_norm.2
 	movl	$137, %edx
 	movabsq	$__PRETTY_FUNCTION__.gsm_norm, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_norm.2, .Lfunc_end0-gsm_norm.2
 	.cfi_endproc

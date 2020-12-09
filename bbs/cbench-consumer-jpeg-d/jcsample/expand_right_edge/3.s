@@ -18,6 +18,8 @@ expand_right_edge.3:                    # @expand_right_edge.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movslq	(%rsi), %rsi
@@ -30,7 +32,8 @@ expand_right_edge.3:                    # @expand_right_edge.3
 	movb	%cl, (%r8)
 	movl	(%r9), %ecx
 	movl	%ecx, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	expand_right_edge.3, .Lfunc_end0-expand_right_edge.3
 	.cfi_endproc

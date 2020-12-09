@@ -24,6 +24,8 @@ TIFFWriteRationalArray.4:               # @TIFFWriteRationalArray.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirwrite.c_TIFFWriteRationalArray+32, %rax
 	addq	$1, %rax
@@ -42,7 +44,8 @@ TIFFWriteRationalArray.4:               # @TIFFWriteRationalArray.4
 	callq	TIFFWarning
 	xorps	%xmm0, %xmm0
 	movss	%xmm0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteRationalArray.4, .Lfunc_end0-TIFFWriteRationalArray.4
 	.cfi_endproc

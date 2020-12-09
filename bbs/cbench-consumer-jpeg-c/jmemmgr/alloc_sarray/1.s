@@ -23,11 +23,10 @@ alloc_sarray.1:                         # @alloc_sarray.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jmemmgr.c_alloc_sarray, %rsi
-	movq	__profc_.._jmemmgr.c_alloc_sarray+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jmemmgr.c_alloc_sarray+24
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$69, 40(%rax)
@@ -40,7 +39,8 @@ alloc_sarray.1:                         # @alloc_sarray.1
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alloc_sarray.1, .Lfunc_end0-alloc_sarray.1
 	.cfi_endproc

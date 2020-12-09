@@ -17,6 +17,8 @@ read_pbm_integer.7:                     # @read_pbm_integer.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdppm.c_read_pbm_integer+48, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ read_pbm_integer.7:                     # @read_pbm_integer.7
 	sete	%al
 	andb	$1, %al
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_pbm_integer.7, .Lfunc_end0-read_pbm_integer.7
 	.cfi_endproc

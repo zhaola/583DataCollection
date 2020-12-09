@@ -29,11 +29,10 @@ jpeg_consume_input.7:                   # @jpeg_consume_input.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_consume_input, %rsi
-	movq	__profc_jpeg_consume_input+80, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_consume_input+80
 	movq	(%rbx), %rax
 	movq	560(%rax), %rax
 	movq	8(%rax), %r14
@@ -43,7 +42,6 @@ jpeg_consume_input.7:                   # @jpeg_consume_input.7
 	callq	__llvm_profile_instrument_target
 	movq	%r15, %rdi
 	callq	*%r14
-	movabsq	$__profd_jpeg_consume_input, %rsi
 	movq	(%rbx), %rax
 	movq	32(%rax), %rax
 	movq	16(%rax), %r14
@@ -55,7 +53,8 @@ jpeg_consume_input.7:                   # @jpeg_consume_input.7
 	callq	*%r14
 	movq	(%rbx), %rax
 	movl	$201, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_consume_input.7, .Lfunc_end0-jpeg_consume_input.7
 	.cfi_endproc

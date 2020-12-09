@@ -17,13 +17,16 @@ ConvertFromIeeeDouble.12:               # @ConvertFromIeeeDouble.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ConvertFromIeeeDouble, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_ConvertFromIeeeDouble
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movsd	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertFromIeeeDouble.12, .Lfunc_end0-ConvertFromIeeeDouble.12
 	.cfi_endproc

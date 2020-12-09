@@ -40,11 +40,10 @@ get_dri.22:                             # @get_dri.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmarker.c_get_dri, %rsi
-	movq	__profc_.._jdmarker.c_get_dri, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmarker.c_get_dri
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movl	$81, 40(%rax)
@@ -75,7 +74,8 @@ get_dri.22:                             # @get_dri.22
 	movq	%rax, 8(%rcx)
 	movq	-64(%rbp), %rax         # 8-byte Reload
 	movl	$1, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_dri.22, .Lfunc_end0-get_dri.22
 	.cfi_endproc

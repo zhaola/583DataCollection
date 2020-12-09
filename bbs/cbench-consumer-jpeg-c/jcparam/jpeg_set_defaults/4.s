@@ -25,17 +25,19 @@ jpeg_set_defaults.4:                    # @jpeg_set_defaults.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movl	$8, 64(%rax)
 	movq	(%rbx), %rdi
 	movl	$75, %esi
 	movl	$1, %edx
-	callq	jpeg_set_quality
 	movq	(%rbx), %rdi
 	callq	std_huff_tables
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_set_defaults.4, .Lfunc_end0-jpeg_set_defaults.4
 	.cfi_endproc

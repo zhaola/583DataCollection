@@ -24,12 +24,14 @@ WriteMainDataBits.16:                   # @WriteMainDataBits.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	BitCount, %eax
 	addl	BitsRemaining, %eax
 	cmpl	ThisFrameSize, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	WriteMainDataBits.16, .Lfunc_end0-WriteMainDataBits.16
 	.cfi_endproc

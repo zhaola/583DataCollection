@@ -17,6 +17,8 @@ edge_draw.1:                            # @edge_draw.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_edge_draw+40, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ edge_draw.1:                            # @edge_draw.1
 	movq	(%rdi), %rax
 	movq	%rax, (%rsi)
 	movl	$0, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	edge_draw.1, .Lfunc_end0-edge_draw.1
 	.cfi_endproc

@@ -23,6 +23,8 @@ TIFFReadRawStrip.9:                     # @TIFFReadRawStrip.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFReadRawStrip+24, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ TIFFReadRawStrip.9:                     # @TIFFReadRawStrip.9
 	movabsq	$TIFFReadRawStrip.module, %r8
 	callq	TIFFReadRawStrip1
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRawStrip.9, .Lfunc_end0-TIFFReadRawStrip.9
 	.cfi_endproc

@@ -30,11 +30,10 @@ jinit_merged_upsampler.1:               # @jinit_merged_upsampler.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_merged_upsampler, %rax
-	movq	__profc_jinit_merged_upsampler, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_jinit_merged_upsampler
 	movq	(%r12), %rcx
 	movabsq	$merged_2v_upsample, %rdx
 	movq	%rdx, 8(%rcx)
@@ -58,7 +57,8 @@ jinit_merged_upsampler.1:               # @jinit_merged_upsampler.1
 	callq	*%r14
 	movq	(%r12), %rcx
 	movq	%rax, 64(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_merged_upsampler.1, .Lfunc_end0-jinit_merged_upsampler.1
 	.cfi_endproc

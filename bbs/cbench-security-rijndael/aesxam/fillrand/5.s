@@ -17,6 +17,8 @@ fillrand.5:                             # @fillrand.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_fillrand+8, %rax
 	addq	$1, %rax
@@ -39,7 +41,8 @@ fillrand.5:                             # @fillrand.5
 	addq	%rcx, %rax
 	movq	%rax, fillrand.r
 	movq	$0, fillrand.count
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fillrand.5, .Lfunc_end0-fillrand.5
 	.cfi_endproc

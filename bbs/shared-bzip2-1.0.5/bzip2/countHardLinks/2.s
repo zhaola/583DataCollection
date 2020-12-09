@@ -17,6 +17,8 @@ countHardLinks.2:                       # @countHardLinks.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_countHardLinks+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ countHardLinks.2:                       # @countHardLinks.2
 	movq	16(%rdi), %rax
 	subq	$1, %rax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	countHardLinks.2, .Lfunc_end0-countHardLinks.2
 	.cfi_endproc

@@ -23,6 +23,8 @@ main.9:                                 # @main.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$.str.9, %rdi
 	xorl	%esi, %esi
@@ -35,7 +37,8 @@ main.9:                                 # @main.9
 	movabsq	$.str.11, %rdi
 	xorl	%esi, %esi
 	callq	openme_callback
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.9, .Lfunc_end0-main.9
 	.cfi_endproc

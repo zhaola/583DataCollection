@@ -40,6 +40,8 @@ ConvertToIeeeExtended.10:               # @ConvertToIeeeExtended.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ConvertToIeeeExtended+32, %rax
 	addq	$1, %rax
@@ -78,7 +80,8 @@ ConvertToIeeeExtended.10:               # @ConvertToIeeeExtended.10
 	addq	$2147483647, %rax       # imm = 0x7FFFFFFF
 	addq	$1, %rax
 	movq	%rax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeExtended.10, .Lfunc_end0-ConvertToIeeeExtended.10
 	.cfi_endproc

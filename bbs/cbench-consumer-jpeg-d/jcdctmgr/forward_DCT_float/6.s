@@ -39,8 +39,9 @@ forward_DCT_float.6:                    # @forward_DCT_float.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jcdctmgr.c_forward_DCT_float, %rsi
 	movq	(%rdi), %r14
 	movq	%r14, %rdi
 	xorl	%edx, %edx
@@ -54,7 +55,8 @@ forward_DCT_float.6:                    # @forward_DCT_float.6
 	movq	%rax, (%r15)
 	movq	-48(%rbp), %rax         # 8-byte Reload
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	forward_DCT_float.6, .Lfunc_end0-forward_DCT_float.6
 	.cfi_endproc

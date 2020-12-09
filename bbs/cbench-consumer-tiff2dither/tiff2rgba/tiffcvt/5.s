@@ -17,6 +17,8 @@ tiffcvt.5:                              # @tiffcvt.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2rgba.c_tiffcvt+16, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ tiffcvt.5:                              # @tiffcvt.5
 	movl	$282, %esi              # imm = 0x11A
 	movb	$1, %al
 	callq	TIFFSetField
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	tiffcvt.5, .Lfunc_end0-tiffcvt.5
 	.cfi_endproc

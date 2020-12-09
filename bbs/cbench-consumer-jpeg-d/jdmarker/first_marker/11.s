@@ -17,10 +17,10 @@ first_marker.11:                        # @first_marker.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmarker.c_first_marker, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmarker.c_first_marker
 	movq	(%rdi), %rax
 	addq	$-1, %rax
 	movq	%rax, (%rdi)
@@ -30,7 +30,8 @@ first_marker.11:                        # @first_marker.11
 	movq	%rcx, (%rsi)
 	movzbl	(%rax), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	first_marker.11, .Lfunc_end0-first_marker.11
 	.cfi_endproc

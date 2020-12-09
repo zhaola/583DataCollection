@@ -25,20 +25,20 @@ finish_pass_gather.5:                   # @finish_pass_gather.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_finish_pass_gather+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_finish_pass_gather+8
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rax
 	movq	(%rax), %rsi
 	movq	(%rdx), %rax
 	movslq	(%rbx), %rcx
 	movq	128(%rax,%rcx,8), %rdx
-	callq	jpeg_gen_optimal_table
 	movslq	(%rbx), %rax
 	movl	$1, (%r14,%rax,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_pass_gather.5, .Lfunc_end0-finish_pass_gather.5
 	.cfi_endproc

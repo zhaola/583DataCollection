@@ -25,6 +25,8 @@ TIFFWriteEncodedTile.8:                 # @TIFFWriteEncodedTile.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rdx
@@ -69,8 +71,8 @@ TIFFWriteEncodedTile.8:                 # @TIFFWriteEncodedTile.8
 	movl	16(%rax), %eax
 	andl	$32, %eax
 	cmpl	$0, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteEncodedTile.8, .Lfunc_end0-TIFFWriteEncodedTile.8
 	.cfi_endproc

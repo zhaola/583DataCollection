@@ -24,13 +24,15 @@ add_map_entry.8:                        # @add_map_entry.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdcolmap.c_add_map_entry+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._rdcolmap.c_add_map_entry+24
 	cmpl	$256, (%rdi)            # imm = 0x100
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	add_map_entry.8, .Lfunc_end0-add_map_entry.8
 	.cfi_endproc

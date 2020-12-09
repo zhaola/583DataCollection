@@ -17,16 +17,17 @@ alloc_small.7:                          # @alloc_small.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jmemmgr.c_alloc_small+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jmemmgr.c_alloc_small+24
 	movq	$0, (%rdi)
 	movq	(%rsi), %rax
 	movslq	(%rdx), %rdx
 	movq	96(%rax,%rdx,8), %rax
 	movq	%rax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alloc_small.7, .Lfunc_end0-alloc_small.7
 	.cfi_endproc

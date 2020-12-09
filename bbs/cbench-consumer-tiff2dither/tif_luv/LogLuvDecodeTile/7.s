@@ -17,6 +17,8 @@ LogLuvDecodeTile.7:                     # @LogLuvDecodeTile.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_LogLuvDecodeTile, %rax
 	addq	$1, %rax
@@ -30,7 +32,8 @@ LogLuvDecodeTile.7:                     # @LogLuvDecodeTile.7
 	movl	(%rdx), %ecx
 	subl	%eax, %ecx
 	movl	%ecx, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvDecodeTile.7, .Lfunc_end0-LogLuvDecodeTile.7
 	.cfi_endproc

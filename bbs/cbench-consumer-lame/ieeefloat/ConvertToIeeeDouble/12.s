@@ -28,6 +28,8 @@ ConvertToIeeeDouble.12:                 # @ConvertToIeeeDouble.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ConvertToIeeeDouble+48, %rax
 	addq	$1, %rax
@@ -43,7 +45,8 @@ ConvertToIeeeDouble.12:                 # @ConvertToIeeeDouble.12
 	addq	$2147483647, %rax       # imm = 0x7FFFFFFF
 	addq	$1, %rax
 	movq	%rax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeDouble.12, .Lfunc_end0-ConvertToIeeeDouble.12
 	.cfi_endproc

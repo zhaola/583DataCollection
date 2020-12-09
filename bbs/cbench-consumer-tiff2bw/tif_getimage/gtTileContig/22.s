@@ -17,13 +17,16 @@ gtTileContig.22:                        # @gtTileContig.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_gtTileContig+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_getimage.c_gtTileContig+40
 	movl	(%rdi), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gtTileContig.22, .Lfunc_end0-gtTileContig.22
 	.cfi_endproc

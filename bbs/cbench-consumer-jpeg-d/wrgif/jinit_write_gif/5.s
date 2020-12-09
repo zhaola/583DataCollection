@@ -24,13 +24,15 @@ jinit_write_gif.5:                      # @jinit_write_gif.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$1, 100(%rax)
 	movq	(%rdi), %rax
 	cmpl	$256, 112(%rax)         # imm = 0x100
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_gif.5, .Lfunc_end0-jinit_write_gif.5
 	.cfi_endproc

@@ -17,16 +17,17 @@ forward_DCT.14:                         # @forward_DCT.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcdctmgr.c_forward_DCT+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcdctmgr.c_forward_DCT+8
 	movl	(%rdi), %ecx
 	movl	(%rsi), %eax
 	cltd
 	idivl	%ecx
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	forward_DCT.14, .Lfunc_end0-forward_DCT.14
 	.cfi_endproc

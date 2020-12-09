@@ -17,6 +17,8 @@ count_bit_short_ESC.11:                 # @count_bit_short_ESC.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	ht+400, %rax
 	movslq	(%rdi), %rcx
@@ -28,7 +30,8 @@ count_bit_short_ESC.11:                 # @count_bit_short_ESC.11
 	movzbl	(%rax,%rcx), %eax
 	addl	(%rdx), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	count_bit_short_ESC.11, .Lfunc_end0-count_bit_short_ESC.11
 	.cfi_endproc

@@ -33,6 +33,8 @@ TIFFFetchRationalArray.4:               # @TIFFFetchRationalArray.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rsi
@@ -57,8 +59,8 @@ TIFFFetchRationalArray.4:               # @TIFFFetchRationalArray.4
 	callq	cvtRational
 	movl	%eax, (%r14)
 	cmpl	$0, (%r14)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchRationalArray.4, .Lfunc_end0-TIFFFetchRationalArray.4
 	.cfi_endproc

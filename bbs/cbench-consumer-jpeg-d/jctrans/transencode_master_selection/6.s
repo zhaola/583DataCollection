@@ -29,13 +29,13 @@ transencode_master_selection.6:         # @transencode_master_selection.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movq	(%rsi), %rsi
 	callq	transencode_coef_controller
 	movq	(%rbx), %rdi
-	callq	jinit_marker_writer
-	movabsq	$__profd_.._jctrans.c_transencode_master_selection, %rsi
 	movq	(%rbx), %rax
 	movq	8(%rax), %rax
 	movq	48(%rax), %r14
@@ -45,7 +45,6 @@ transencode_master_selection.6:         # @transencode_master_selection.6
 	callq	__llvm_profile_instrument_target
 	movq	%r15, %rdi
 	callq	*%r14
-	movabsq	$__profd_.._jctrans.c_transencode_master_selection, %rsi
 	movq	(%rbx), %rax
 	movq	456(%rax), %rax
 	movq	8(%rax), %r14
@@ -55,7 +54,8 @@ transencode_master_selection.6:         # @transencode_master_selection.6
 	callq	__llvm_profile_instrument_target
 	movq	%rbx, %rdi
 	callq	*%r14
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	transencode_master_selection.6, .Lfunc_end0-transencode_master_selection.6
 	.cfi_endproc

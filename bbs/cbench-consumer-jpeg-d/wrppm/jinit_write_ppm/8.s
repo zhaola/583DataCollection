@@ -17,10 +17,10 @@ jinit_write_ppm.8:                      # @jinit_write_ppm.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_write_ppm, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_write_ppm
 	movq	(%rdi), %rax
 	movq	48(%rax), %rax
 	movq	(%rdi), %rcx
@@ -34,7 +34,8 @@ jinit_write_ppm.8:                      # @jinit_write_ppm.8
 	movq	(%rdi), %rax
 	movabsq	$put_pixel_rows, %rcx
 	movq	%rcx, 8(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_ppm.8, .Lfunc_end0-jinit_write_ppm.8
 	.cfi_endproc

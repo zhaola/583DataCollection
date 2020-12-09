@@ -24,13 +24,15 @@ start_output_tga.7:                     # @start_output_tga.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	148(%rax), %eax
 	movl	%eax, (%rsi)
 	cmpl	$256, (%rsi)            # imm = 0x100
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_output_tga.7, .Lfunc_end0-start_output_tga.7
 	.cfi_endproc

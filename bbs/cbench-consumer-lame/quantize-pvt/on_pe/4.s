@@ -17,13 +17,16 @@ on_pe.4:                                # @on_pe.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_on_pe+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_on_pe+40
 	movslq	(%rdi), %rax
 	movl	$500, (%rsi,%rax,4)     # imm = 0x1F4
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	on_pe.4, .Lfunc_end0-on_pe.4
 	.cfi_endproc

@@ -48,14 +48,16 @@ swabHorAcc16.2:                         # @swabHorAcc16.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_7:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	%rax, %rcx
 	subq	$4, %rcx
-	ja	.LBB0_1
 # %bb.8:                                # %"2"
 	movq	.LJTI0_0(,%rax,8), %rax
-	jmpq	*%rax
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	swabHorAcc16.2, .Lfunc_end0-swabHorAcc16.2
 	.cfi_endproc

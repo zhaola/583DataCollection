@@ -31,6 +31,8 @@ TIFFRegisterCODEC.1:                    # @TIFFRegisterCODEC.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFRegisterCODEC, %rax
 	addq	$1, %rax
@@ -63,7 +65,8 @@ TIFFRegisterCODEC.1:                    # @TIFFRegisterCODEC.1
 	movq	%rax, (%rcx)
 	movq	(%rbx), %rax
 	movq	%rax, registeredCODECS
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFRegisterCODEC.1, .Lfunc_end0-TIFFRegisterCODEC.1
 	.cfi_endproc

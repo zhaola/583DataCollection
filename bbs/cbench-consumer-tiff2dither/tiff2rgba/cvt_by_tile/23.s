@@ -17,8 +17,11 @@ cvt_by_tile.23:                         # @cvt_by_tile.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	cvt_by_tile.23, .Lfunc_end0-cvt_by_tile.23
 	.cfi_endproc

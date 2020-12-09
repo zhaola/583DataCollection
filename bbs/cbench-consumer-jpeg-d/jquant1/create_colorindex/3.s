@@ -37,8 +37,9 @@ create_colorindex.3:                    # @create_colorindex.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jquant1.c_create_colorindex, %rax
 	movq	(%rdi), %rcx
 	movq	8(%rcx), %rcx
 	movq	16(%rcx), %rbx
@@ -64,7 +65,8 @@ create_colorindex.3:                    # @create_colorindex.3
 	movl	%eax, (%rcx)
 	movq	-56(%rbp), %rax         # 8-byte Reload
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	create_colorindex.3, .Lfunc_end0-create_colorindex.3
 	.cfi_endproc

@@ -24,13 +24,15 @@ latch_quant_tables.4:                   # @latch_quant_tables.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	16(%rax), %eax
 	movl	%eax, (%rsi)
 	cmpl	$0, (%rsi)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	latch_quant_tables.4, .Lfunc_end0-latch_quant_tables.4
 	.cfi_endproc

@@ -17,6 +17,8 @@ checkInkNamesString.11:                 # @checkInkNamesString.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dir.c_checkInkNamesString+32, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ checkInkNamesString.11:                 # @checkInkNamesString.11
 	movq	(%rsi), %rcx
 	subq	%rcx, %rax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	checkInkNamesString.11, .Lfunc_end0-checkInkNamesString.11
 	.cfi_endproc

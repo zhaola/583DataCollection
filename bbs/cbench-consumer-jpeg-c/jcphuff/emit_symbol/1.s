@@ -17,10 +17,10 @@ emit_symbol.1:                          # @emit_symbol.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_emit_symbol, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_emit_symbol
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	movq	152(%rax,%rcx,8), %rax
@@ -28,7 +28,8 @@ emit_symbol.1:                          # @emit_symbol.1
 	movq	(%rax,%rcx,8), %rdx
 	addq	$1, %rdx
 	movq	%rdx, (%rax,%rcx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_symbol.1, .Lfunc_end0-emit_symbol.1
 	.cfi_endproc

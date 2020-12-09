@@ -22,6 +22,8 @@ compute_ath.13:                         # @compute_ath.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movslq	(%rdi), %rax
@@ -37,7 +39,8 @@ compute_ath.13:                         # @compute_ath.13
 	movsd	%xmm0, (%rax,%rcx,8)
 	movl	(%rsi), %eax
 	movl	%eax, (%r8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_ath.13, .Lfunc_end0-compute_ath.13
 	.cfi_endproc

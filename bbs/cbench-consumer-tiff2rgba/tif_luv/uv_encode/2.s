@@ -31,6 +31,8 @@ uv_encode.2:                            # @uv_encode.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero
@@ -40,8 +42,8 @@ uv_encode.2:                            # @uv_encode.2
 	cvttsd2si	%xmm2, %eax
 	movl	%eax, (%rsi)
 	cmpl	$163, (%rsi)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	uv_encode.2, .Lfunc_end0-uv_encode.2
 	.cfi_endproc

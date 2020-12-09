@@ -49,6 +49,8 @@ TIFFReadScanline.3:                     # @TIFFReadScanline.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFReadScanline, %rax
 	movq	(%rbx), %rcx
@@ -75,8 +77,8 @@ TIFFReadScanline.3:                     # @TIFFReadScanline.3
 	addl	$1, %ecx
 	movl	%ecx, 536(%rax)
 	cmpl	$0, (%rdx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadScanline.3, .Lfunc_end0-TIFFReadScanline.3
 	.cfi_endproc

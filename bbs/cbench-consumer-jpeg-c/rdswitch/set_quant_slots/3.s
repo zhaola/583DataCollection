@@ -25,6 +25,8 @@ set_quant_slots.3:                      # @set_quant_slots.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movb	$44, (%rcx)
 	movq	(%rsi), %rdi
@@ -32,8 +34,8 @@ set_quant_slots.3:                      # @set_quant_slots.3
 	movb	$0, %al
 	callq	__isoc99_sscanf
 	cmpl	$1, %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_quant_slots.3, .Lfunc_end0-set_quant_slots.3
 	.cfi_endproc

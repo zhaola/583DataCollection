@@ -24,6 +24,8 @@ setup_brightness_lut.2:                 # @setup_brightness_lut.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cvtsi2ssl	(%rdi), %xmm0
 	cvtsi2ssl	(%rsi), %xmm1
@@ -34,8 +36,8 @@ setup_brightness_lut.2:                 # @setup_brightness_lut.2
 	mulsd	(%rdx), %xmm0
 	movsd	%xmm0, (%rdx)
 	cmpl	$6, (%rcx)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	setup_brightness_lut.2, .Lfunc_end0-setup_brightness_lut.2
 	.cfi_endproc

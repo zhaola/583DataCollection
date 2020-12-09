@@ -13,6 +13,8 @@ emalloc.1:                              # @emalloc.1
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._toast.c_emalloc+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._toast.c_emalloc+8
@@ -26,6 +28,8 @@ emalloc.1:                              # @emalloc.1
 	callq	onintr
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emalloc.1, .Lfunc_end0-emalloc.1
 	.cfi_endproc

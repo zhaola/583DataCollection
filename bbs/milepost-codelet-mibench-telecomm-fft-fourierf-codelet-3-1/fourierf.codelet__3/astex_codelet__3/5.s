@@ -20,6 +20,8 @@ astex_codelet__3.5:                     # @astex_codelet__3.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movsd	%xmm0, 16(%rsi)
@@ -32,7 +34,8 @@ astex_codelet__3.5:                     # @astex_codelet__3.5
 	movl	(%rax), %eax
 	movl	%eax, (%r11)
 	movl	$0, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	astex_codelet__3.5, .Lfunc_end0-astex_codelet__3.5
 	.cfi_endproc

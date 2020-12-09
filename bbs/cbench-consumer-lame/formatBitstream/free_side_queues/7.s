@@ -17,13 +17,16 @@ free_side_queues.7:                     # @free_side_queues.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._formatBitstream.c_free_side_queues+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._formatBitstream.c_free_side_queues+8
 	movq	(%rdi), %rax
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	free_side_queues.7, .Lfunc_end0-free_side_queues.7
 	.cfi_endproc

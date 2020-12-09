@@ -23,6 +23,8 @@ setExtraSamples.17:                     # @setExtraSamples.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dir.c_setExtraSamples+40, %rax
 	addq	$1, %rax
@@ -39,7 +41,8 @@ setExtraSamples.17:                     # @setExtraSamples.17
 	movq	%rax, %rsi
 	callq	_TIFFsetShortArray
 	movl	$1, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	setExtraSamples.17, .Lfunc_end0-setExtraSamples.17
 	.cfi_endproc

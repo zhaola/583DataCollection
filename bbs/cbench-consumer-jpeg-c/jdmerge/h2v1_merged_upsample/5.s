@@ -39,10 +39,10 @@ h2v1_merged_upsample.5:                 # @h2v1_merged_upsample.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmerge.c_h2v1_merged_upsample+16, %r12
 	addq	$1, %r12
-	movq	%r12, __profc_.._jdmerge.c_h2v1_merged_upsample+16
 	movq	(%rdi), %rdi
 	movzbl	(%rdi), %edi
 	movl	%edi, (%rsi)
@@ -91,7 +91,8 @@ h2v1_merged_upsample.5:                 # @h2v1_merged_upsample.5
 	movb	(%rcx,%rax), %al
 	movq	(%r11), %rcx
 	movb	%al, 2(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	h2v1_merged_upsample.5, .Lfunc_end0-h2v1_merged_upsample.5
 	.cfi_endproc

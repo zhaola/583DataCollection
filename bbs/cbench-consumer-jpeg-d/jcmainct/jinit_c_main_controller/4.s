@@ -17,15 +17,16 @@ jinit_c_main_controller.4:              # @jinit_c_main_controller.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_c_main_controller+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_c_main_controller+24
 	movl	$0, (%rdi)
 	movq	(%rsi), %rax
 	movq	80(%rax), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_c_main_controller.4, .Lfunc_end0-jinit_c_main_controller.4
 	.cfi_endproc

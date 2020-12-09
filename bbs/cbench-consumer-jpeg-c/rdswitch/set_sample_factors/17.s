@@ -17,6 +17,8 @@ set_sample_factors.17:                  # @set_sample_factors.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_set_sample_factors+8, %rax
 	addq	$1, %rax
@@ -30,7 +32,8 @@ set_sample_factors.17:                  # @set_sample_factors.17
 	setne	%al
 	andb	$1, %al
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_sample_factors.17, .Lfunc_end0-set_sample_factors.17
 	.cfi_endproc

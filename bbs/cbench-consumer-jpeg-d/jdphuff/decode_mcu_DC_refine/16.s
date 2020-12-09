@@ -17,10 +17,10 @@ decode_mcu_DC_refine.16:                # @decode_mcu_DC_refine.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdphuff.c_decode_mcu_DC_refine+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdphuff.c_decode_mcu_DC_refine+24
 	movq	(%rdi), %r10
 	movq	(%rsi), %rax
 	movq	32(%rax), %rax
@@ -43,7 +43,8 @@ decode_mcu_DC_refine.16:                # @decode_mcu_DC_refine.16
 	addl	$-1, %ecx
 	movl	%ecx, 52(%rax)
 	movl	$1, (%r9)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decode_mcu_DC_refine.16, .Lfunc_end0-decode_mcu_DC_refine.16
 	.cfi_endproc

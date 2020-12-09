@@ -17,6 +17,8 @@ map_colortable.21:                      # @map_colortable.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiffmedian.c_map_colortable+48, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ map_colortable.21:                      # @map_colortable.21
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	map_colortable.21, .Lfunc_end0-map_colortable.21
 	.cfi_endproc

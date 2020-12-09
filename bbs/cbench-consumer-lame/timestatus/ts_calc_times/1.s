@@ -24,6 +24,8 @@ ts_calc_times.1:                        # @ts_calc_times.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movss	(%rax), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -38,8 +40,8 @@ ts_calc_times.1:                        # @ts_calc_times.1
 	mulss	4(%rax), %xmm0
 	xorps	%xmm1, %xmm1
 	ucomiss	%xmm1, %xmm0
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ts_calc_times.1, .Lfunc_end0-ts_calc_times.1
 	.cfi_endproc

@@ -24,6 +24,8 @@ TIFFWriteTransferFunction.2:            # @TIFFWriteTransferFunction.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
@@ -34,8 +36,8 @@ TIFFWriteTransferFunction.2:            # @TIFFWriteTransferFunction.2
 	movq	%rcx, %rsi
 	callq	_TIFFmemcmp
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteTransferFunction.2, .Lfunc_end0-TIFFWriteTransferFunction.2
 	.cfi_endproc

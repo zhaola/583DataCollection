@@ -17,6 +17,8 @@ makeMaps_e.3:                           # @makeMaps_e.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._compress.c_makeMaps_e+8, %rax
 	addq	$1, %rax
@@ -30,7 +32,8 @@ makeMaps_e.3:                           # @makeMaps_e.3
 	movl	124(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, 124(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	makeMaps_e.3, .Lfunc_end0-makeMaps_e.3
 	.cfi_endproc

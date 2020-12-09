@@ -24,6 +24,8 @@ BZ2_indexIntoF.1:                       # @BZ2_indexIntoF.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	addl	(%rsi), %eax
@@ -33,8 +35,8 @@ BZ2_indexIntoF.1:                       # @BZ2_indexIntoF.1
 	movq	(%r8), %rcx
 	movslq	(%rdx), %rdx
 	cmpl	(%rcx,%rdx,4), %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_indexIntoF.1, .Lfunc_end0-BZ2_indexIntoF.1
 	.cfi_endproc

@@ -23,11 +23,10 @@ output_pass_setup.7:                    # @output_pass_setup.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdapistd.c_output_pass_setup, %rsi
-	movq	__profc_.._jdapistd.c_output_pass_setup+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdapistd.c_output_pass_setup+8
 	movq	(%rdi), %rax
 	movl	160(%rax), %eax
 	movq	(%rdi), %rcx
@@ -47,7 +46,8 @@ output_pass_setup.7:                    # @output_pass_setup.7
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	output_pass_setup.7, .Lfunc_end0-output_pass_setup.7
 	.cfi_endproc

@@ -24,13 +24,13 @@ latch_quant_tables.5:                   # @latch_quant_tables.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdinput.c_latch_quant_tables+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdinput.c_latch_quant_tables+24
 	cmpl	$4, (%rdi)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	latch_quant_tables.5, .Lfunc_end0-latch_quant_tables.5
 	.cfi_endproc

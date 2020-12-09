@@ -24,6 +24,8 @@ TIFFReadRawStrip.4:                     # @TIFFReadRawStrip.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	256(%rax), %rax
@@ -31,8 +33,8 @@ TIFFReadRawStrip.4:                     # @TIFFReadRawStrip.4
 	movl	(%rax,%rcx,4), %eax
 	movl	%eax, (%rdx)
 	cmpl	$0, (%rdx)
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRawStrip.4, .Lfunc_end0-TIFFReadRawStrip.4
 	.cfi_endproc

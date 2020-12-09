@@ -17,6 +17,8 @@ horAcc16.6:                             # @horAcc16.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_predict.c_horAcc16, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ horAcc16.6:                             # @horAcc16.6
 	movl	(%rdi), %eax
 	addl	$-1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	horAcc16.6, .Lfunc_end0-horAcc16.6
 	.cfi_endproc

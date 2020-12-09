@@ -24,13 +24,15 @@ finish_pass_master.1:                   # @finish_pass_master.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$2, 32(%rax)
 	movq	(%rsi), %rax
 	cmpl	$0, 256(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_pass_master.1, .Lfunc_end0-finish_pass_master.1
 	.cfi_endproc

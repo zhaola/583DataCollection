@@ -17,6 +17,8 @@ copy_output_until_stop.6:               # @copy_output_until_stop.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzlib.c_copy_output_until_stop+8, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ copy_output_until_stop.6:               # @copy_output_until_stop.6
 	movl	40(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, 40(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	copy_output_until_stop.6, .Lfunc_end0-copy_output_until_stop.6
 	.cfi_endproc

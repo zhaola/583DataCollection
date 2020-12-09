@@ -23,6 +23,8 @@ read_pbm_integer.11:                    # @read_pbm_integer.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._rdcolmap.c_read_pbm_integer, %rsi
 	movq	__profc_.._rdcolmap.c_read_pbm_integer+64, %rax
@@ -40,7 +42,8 @@ read_pbm_integer.11:                    # @read_pbm_integer.11
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_pbm_integer.11, .Lfunc_end0-read_pbm_integer.11
 	.cfi_endproc

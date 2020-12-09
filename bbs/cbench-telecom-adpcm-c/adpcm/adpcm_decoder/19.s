@@ -17,12 +17,15 @@ adpcm_decoder.19:                       # @adpcm_decoder.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_adpcm_decoder+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_adpcm_decoder+32
 	movl	$32767, (%rdi)          # imm = 0x7FFF
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_decoder.19, .Lfunc_end0-adpcm_decoder.19
 	.cfi_endproc

@@ -17,17 +17,18 @@ process_data_simple_main.8:             # @process_data_simple_main.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmainct.c_process_data_simple_main+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmainct.c_process_data_simple_main+48
 	movq	(%rdi), %rax
 	movl	(%rax), %ecx
 	addl	$-1, %ecx
 	movl	%ecx, (%rax)
 	movq	(%rsi), %rax
 	movl	$1, 24(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_data_simple_main.8, .Lfunc_end0-process_data_simple_main.8
 	.cfi_endproc

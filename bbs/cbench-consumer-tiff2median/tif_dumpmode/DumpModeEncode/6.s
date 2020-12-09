@@ -24,6 +24,8 @@ DumpModeEncode.6:                       # @DumpModeEncode.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %r8d
 	movq	(%rsi), %r9
@@ -48,8 +50,8 @@ DumpModeEncode.6:                       # @DumpModeEncode.6
 	movl	744(%rax), %eax
 	movq	(%rsi), %rcx
 	cmpl	728(%rcx), %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	DumpModeEncode.6, .Lfunc_end0-DumpModeEncode.6
 	.cfi_endproc

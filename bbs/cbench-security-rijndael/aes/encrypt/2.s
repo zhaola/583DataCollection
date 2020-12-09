@@ -36,6 +36,8 @@ encrypt.2:                              # @encrypt.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_5:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rax), %r8
@@ -68,17 +70,13 @@ encrypt.2:                              # @encrypt.2
 	movq	8(%rax), %rax
 	movq	%rax, %rcx
 	subq	$10, %rcx
-	je	.LBB0_4
-	jmp	.LBB0_6
 .LBB0_6:                                # %"2"
 	movq	%rax, %rcx
 	subq	$12, %rcx
-	je	.LBB0_3
-	jmp	.LBB0_7
 .LBB0_7:                                # %"2"
 	subq	$14, %rax
-	je	.LBB0_2
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encrypt.2, .Lfunc_end0-encrypt.2
 	.cfi_endproc

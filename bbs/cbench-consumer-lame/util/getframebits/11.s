@@ -44,6 +44,8 @@ getframebits.11:                        # @getframebits.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm1   # xmm1 = mem[0],zero
 	movq	(%rbx), %rax
@@ -73,7 +75,8 @@ getframebits.11:                        # @getframebits.11
 	idivl	200(%rcx)
 	movq	(%r12), %rcx
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	getframebits.11, .Lfunc_end0-getframebits.11
 	.cfi_endproc

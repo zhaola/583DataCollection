@@ -17,15 +17,16 @@ merged_2v_upsample.11:                  # @merged_2v_upsample.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmerge.c_merged_2v_upsample+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmerge.c_merged_2v_upsample+8
 	movq	(%rdi), %rax
 	movl	(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	merged_2v_upsample.11, .Lfunc_end0-merged_2v_upsample.11
 	.cfi_endproc

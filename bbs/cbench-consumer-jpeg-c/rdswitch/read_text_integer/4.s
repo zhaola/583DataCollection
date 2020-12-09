@@ -32,6 +32,8 @@ read_text_integer.4:                    # @read_text_integer.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	callq	__ctype_b_loc
 	movq	(%rax), %rax
@@ -39,8 +41,8 @@ read_text_integer.4:                    # @read_text_integer.4
 	movzwl	(%rax,%rcx,2), %eax
 	andl	$8192, %eax             # imm = 0x2000
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_text_integer.4, .Lfunc_end0-read_text_integer.4
 	.cfi_endproc

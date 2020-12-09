@@ -24,6 +24,8 @@ prescan_quantize.4:                     # @prescan_quantize.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rsi), %rcx
@@ -50,8 +52,8 @@ prescan_quantize.4:                     # @prescan_quantize.4
 	movw	%cx, (%rax)
 	movzwl	%cx, %eax
 	cmpl	$0, %eax
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prescan_quantize.4, .Lfunc_end0-prescan_quantize.4
 	.cfi_endproc

@@ -42,25 +42,21 @@ select_file_type.6:                     # @select_file_type.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_6:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	testl	%eax, %eax
-	je	.LBB0_5
-	jmp	.LBB0_7
 .LBB0_7:                                # %"6"
 	movl	%eax, %ecx
 	subl	$66, %ecx
-	je	.LBB0_2
-	jmp	.LBB0_8
 .LBB0_8:                                # %"6"
 	movl	%eax, %ecx
 	subl	$71, %ecx
-	je	.LBB0_3
-	jmp	.LBB0_9
 .LBB0_9:                                # %"6"
 	subl	$80, %eax
-	je	.LBB0_4
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_file_type.6, .Lfunc_end0-select_file_type.6
 	.cfi_endproc

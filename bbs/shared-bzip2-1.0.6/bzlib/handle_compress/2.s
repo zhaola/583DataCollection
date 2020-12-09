@@ -34,6 +34,8 @@ handle_compress.2:                      # @handle_compress.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	callq	copy_output_until_stop
@@ -45,8 +47,8 @@ handle_compress.2:                      # @handle_compress.2
 	movl	120(%rax), %eax
 	movq	(%rbx), %rcx
 	cmpl	116(%rcx), %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	handle_compress.2, .Lfunc_end0-handle_compress.2
 	.cfi_endproc

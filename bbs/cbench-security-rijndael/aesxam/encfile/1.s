@@ -24,6 +24,8 @@ encfile.1:                              # @encfile.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	callq	feof
@@ -31,8 +33,8 @@ encfile.1:                              # @encfile.1
 	setne	%al
 	xorb	$-1, %al
 	testb	$1, %al
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encfile.1, .Lfunc_end0-encfile.1
 	.cfi_endproc

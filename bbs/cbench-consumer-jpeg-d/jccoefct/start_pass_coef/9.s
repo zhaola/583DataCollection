@@ -17,14 +17,15 @@ start_pass_coef.9:                      # @start_pass_coef.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jccoefct.c_start_pass_coef+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jccoefct.c_start_pass_coef+16
 	movq	(%rdi), %rax
 	movabsq	$compress_output, %rcx
 	movq	%rcx, 8(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_coef.9, .Lfunc_end0-start_pass_coef.9
 	.cfi_endproc

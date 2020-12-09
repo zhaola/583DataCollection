@@ -29,11 +29,13 @@ pix16fromY.6:                           # @pix16fromY.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	ucomisd	(%rdi), %xmm0
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix16fromY.6, .Lfunc_end0-pix16fromY.6
 	.cfi_endproc

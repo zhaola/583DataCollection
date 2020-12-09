@@ -31,9 +31,10 @@ jinit_write_bmp.9:                      # @jinit_write_bmp.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
-	callq	jpeg_calc_output_dimensions
 	movq	(%rbx), %rax
 	movl	128(%rax), %eax
 	movq	(%rbx), %rcx
@@ -42,7 +43,8 @@ jinit_write_bmp.9:                      # @jinit_write_bmp.9
 	movl	(%r15), %eax
 	movq	(%r14), %rcx
 	movl	%eax, 64(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_bmp.9, .Lfunc_end0-jinit_write_bmp.9
 	.cfi_endproc

@@ -17,10 +17,10 @@ process_data_context_main.17:           # @process_data_context_main.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmainct.c_process_data_context_main+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmainct.c_process_data_context_main+24
 	movq	(%rdi), %rax
 	movl	120(%rax), %ecx
 	xorl	$1, %ecx
@@ -39,7 +39,8 @@ process_data_context_main.17:           # @process_data_context_main.17
 	movl	%eax, 128(%rcx)
 	movq	(%rdi), %rax
 	movl	$2, 124(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_data_context_main.17, .Lfunc_end0-process_data_context_main.17
 	.cfi_endproc

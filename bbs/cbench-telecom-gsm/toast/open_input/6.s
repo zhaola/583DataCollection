@@ -23,6 +23,8 @@ open_input.6:                           # @open_input.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_open_input+64, %rax
 	addq	$1, %rax
@@ -36,7 +38,8 @@ open_input.6:                           # @open_input.6
 	movb	$0, %al
 	callq	fprintf
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	open_input.6, .Lfunc_end0-open_input.6
 	.cfi_endproc

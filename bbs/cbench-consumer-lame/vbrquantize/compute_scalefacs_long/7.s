@@ -17,11 +17,14 @@ compute_scalefacs_long.7:               # @compute_scalefacs_long.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$1, 64(%rax)
 	movl	$11, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_scalefacs_long.7, .Lfunc_end0-compute_scalefacs_long.7
 	.cfi_endproc

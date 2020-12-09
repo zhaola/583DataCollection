@@ -17,6 +17,8 @@ ts_calc_times.5:                        # @ts_calc_times.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ts_calc_times, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ ts_calc_times.5:                        # @ts_calc_times.5
 	movss	%xmm0, 8(%rax)
 	movq	(%rdi), %rax
 	movss	%xmm0, 12(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ts_calc_times.5, .Lfunc_end0-ts_calc_times.5
 	.cfi_endproc

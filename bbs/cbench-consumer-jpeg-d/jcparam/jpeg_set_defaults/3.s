@@ -29,11 +29,10 @@ jpeg_set_defaults.3:                    # @jpeg_set_defaults.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_set_defaults, %rsi
-	movq	__profc_jpeg_set_defaults+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_set_defaults+32
 	movq	(%r14), %rax
 	movq	8(%rax), %rax
 	movq	(%rax), %rbx
@@ -47,7 +46,8 @@ jpeg_set_defaults.3:                    # @jpeg_set_defaults.3
 	callq	*%rbx
 	movq	(%r14), %rcx
 	movq	%rax, 80(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_set_defaults.3, .Lfunc_end0-jpeg_set_defaults.3
 	.cfi_endproc

@@ -30,18 +30,18 @@ LogLuvSetupEncode.19:                   # @LogLuvSetupEncode.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_4:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	$LogL16Encode, 624(%rax)
 	movq	(%rsi), %rax
 	movl	(%rax), %eax
 	testl	%eax, %eax
-	je	.LBB0_2
-	jmp	.LBB0_5
 .LBB0_5:                                # %"19"
 	subl	$1, %eax
-	je	.LBB0_3
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvSetupEncode.19, .Lfunc_end0-LogLuvSetupEncode.19
 	.cfi_endproc

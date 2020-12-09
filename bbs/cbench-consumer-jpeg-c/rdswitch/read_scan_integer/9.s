@@ -17,12 +17,15 @@ read_scan_integer.9:                    # @read_scan_integer.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdswitch.c_read_scan_integer+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._rdswitch.c_read_scan_integer+48
 	movl	$0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_scan_integer.9, .Lfunc_end0-read_scan_integer.9
 	.cfi_endproc

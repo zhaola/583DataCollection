@@ -24,6 +24,8 @@ VBR_compare.2:                          # @VBR_compare.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_VBR_compare+16, %rax
 	addq	$1, %rax
@@ -31,8 +33,8 @@ VBR_compare.2:                          # @VBR_compare.2
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movsd	(%rsi), %xmm1           # xmm1 = mem[0],zero
 	ucomisd	%xmm0, %xmm1
-	jae	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	VBR_compare.2, .Lfunc_end0-VBR_compare.2
 	.cfi_endproc

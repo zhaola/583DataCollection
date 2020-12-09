@@ -13,6 +13,8 @@ ResvFrameBegin.7:                       # @ResvFrameBegin.7
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_ResvFrameBegin+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_ResvFrameBegin+48
@@ -21,6 +23,8 @@ ResvFrameBegin.7:                       # @ResvFrameBegin.7
 	movl	$68, %edx
 	movabsq	$__PRETTY_FUNCTION__.ResvFrameBegin, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ResvFrameBegin.7, .Lfunc_end0-ResvFrameBegin.7
 	.cfi_endproc

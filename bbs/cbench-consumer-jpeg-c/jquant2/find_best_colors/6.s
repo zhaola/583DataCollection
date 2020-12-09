@@ -40,6 +40,8 @@ find_best_colors.6:                     # @find_best_colors.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movslq	(%rsi), %rsi
@@ -106,7 +108,8 @@ find_best_colors.6:                     # @find_best_colors.6
 	movq	%rax, (%rcx)
 	movq	96(%rbp), %rax
 	movl	$3, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_best_colors.6, .Lfunc_end0-find_best_colors.6
 	.cfi_endproc

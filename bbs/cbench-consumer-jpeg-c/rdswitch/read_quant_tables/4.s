@@ -24,10 +24,12 @@ read_quant_tables.4:                    # @read_quant_tables.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$4, (%rdi)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_quant_tables.4, .Lfunc_end0-read_quant_tables.4
 	.cfi_endproc

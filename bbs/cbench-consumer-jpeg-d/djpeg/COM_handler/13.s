@@ -32,6 +32,8 @@ COM_handler.13:                         # @COM_handler.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	callq	__ctype_b_loc
 	movq	(%rax), %rax
@@ -39,8 +41,8 @@ COM_handler.13:                         # @COM_handler.13
 	movzwl	(%rax,%rcx,2), %eax
 	andl	$16384, %eax            # imm = 0x4000
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	COM_handler.13, .Lfunc_end0-COM_handler.13
 	.cfi_endproc

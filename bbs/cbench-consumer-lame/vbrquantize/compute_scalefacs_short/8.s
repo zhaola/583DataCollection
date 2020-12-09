@@ -17,6 +17,8 @@ compute_scalefacs_short.8:              # @compute_scalefacs_short.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_compute_scalefacs_short+16, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ compute_scalefacs_short.8:              # @compute_scalefacs_short.8
 	movslq	(%rcx), %rax
 	addsd	(%rdx,%rax,8), %xmm0
 	movsd	%xmm0, (%r8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_scalefacs_short.8, .Lfunc_end0-compute_scalefacs_short.8
 	.cfi_endproc

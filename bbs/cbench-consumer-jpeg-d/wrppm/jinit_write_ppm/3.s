@@ -24,11 +24,13 @@ jinit_write_ppm.3:                      # @jinit_write_ppm.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	cmpl	$1, 56(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_ppm.3, .Lfunc_end0-jinit_write_ppm.3
 	.cfi_endproc

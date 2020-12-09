@@ -24,6 +24,8 @@ LZWReadByte.23:                         # @LZWReadByte.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
@@ -32,8 +34,8 @@ LZWReadByte.23:                         # @LZWReadByte.23
 	movl	360(%rax), %eax
 	movl	%eax, (%rdi)
 	cmpl	$4096, %eax             # imm = 0x1000
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWReadByte.23, .Lfunc_end0-LZWReadByte.23
 	.cfi_endproc

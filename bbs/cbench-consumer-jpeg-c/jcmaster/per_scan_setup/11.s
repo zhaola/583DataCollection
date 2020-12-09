@@ -24,6 +24,8 @@ per_scan_setup.11:                      # @per_scan_setup.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
@@ -35,8 +37,8 @@ per_scan_setup.11:                      # @per_scan_setup.11
 	divl	56(%rcx)
 	movl	%edx, (%rdi)
 	cmpl	$0, (%rdi)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	per_scan_setup.11, .Lfunc_end0-per_scan_setup.11
 	.cfi_endproc

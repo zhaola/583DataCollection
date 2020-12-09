@@ -37,6 +37,8 @@ h2v1_merged_upsample.2:                 # @h2v1_merged_upsample.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r14
 	movq	%r14, %r12
@@ -130,7 +132,8 @@ h2v1_merged_upsample.2:                 # @h2v1_merged_upsample.2
 	movq	(%rax), %rcx
 	addq	$3, %rcx
 	movq	%rcx, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	h2v1_merged_upsample.2, .Lfunc_end0-h2v1_merged_upsample.2
 	.cfi_endproc

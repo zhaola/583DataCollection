@@ -23,6 +23,8 @@ TIFFWriteFloatArray.2:                  # @TIFFWriteFloatArray.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirwrite.c_TIFFWriteFloatArray+8, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ TIFFWriteFloatArray.2:                  # @TIFFWriteFloatArray.2
 	movq	(%rdx), %rdx
 	callq	TIFFWriteData
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteFloatArray.2, .Lfunc_end0-TIFFWriteFloatArray.2
 	.cfi_endproc

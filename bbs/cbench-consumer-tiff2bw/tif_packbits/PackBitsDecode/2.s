@@ -17,6 +17,8 @@ PackBitsDecode.2:                       # @PackBitsDecode.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_packbits.c_PackBitsDecode+8, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ PackBitsDecode.2:                       # @PackBitsDecode.2
 	setg	%al
 	andb	$1, %al
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PackBitsDecode.2, .Lfunc_end0-PackBitsDecode.2
 	.cfi_endproc

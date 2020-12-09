@@ -24,6 +24,8 @@ smoothing_ok.16:                        # @smoothing_ok.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	184(%rax), %rax
@@ -33,8 +35,8 @@ smoothing_ok.16:                        # @smoothing_ok.16
 	movq	%rax, (%rdx)
 	movq	(%rdx), %rax
 	cmpl	$0, (%rax)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	smoothing_ok.16, .Lfunc_end0-smoothing_ok.16
 	.cfi_endproc

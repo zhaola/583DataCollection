@@ -24,6 +24,8 @@ TIFFFetchRationalArray.1:               # @TIFFFetchRationalArray.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchRationalArray+16, %rax
 	addq	$1, %rax
@@ -33,8 +35,8 @@ TIFFFetchRationalArray.1:               # @TIFFFetchRationalArray.1
 	movq	(%rdx), %rdx
 	callq	TIFFFetchData
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchRationalArray.1, .Lfunc_end0-TIFFFetchRationalArray.1
 	.cfi_endproc

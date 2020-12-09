@@ -23,17 +23,16 @@ jpeg_CreateDecompress.12:               # @jpeg_CreateDecompress.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_CreateDecompress+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_CreateDecompress+16
 	movq	(%rbx), %rdi
-	callq	jinit_marker_reader
 	movq	(%rbx), %rdi
-	callq	jinit_input_controller
 	movq	(%rbx), %rax
 	movl	$200, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_CreateDecompress.12, .Lfunc_end0-jpeg_CreateDecompress.12
 	.cfi_endproc

@@ -34,10 +34,10 @@ jpeg_idct_4x4.12:                       # @jpeg_idct_4x4.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_idct_4x4, %rbx
 	addq	$1, %rbx
-	movq	%rbx, __profc_jpeg_idct_4x4
 	movq	(%rdi), %rbx
 	movslq	(%rbx), %rbx
 	shlq	$14, %rbx
@@ -127,7 +127,8 @@ jpeg_idct_4x4.12:                       # @jpeg_idct_4x4.12
 	movq	(%rdi), %rax
 	addq	$32, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_idct_4x4.12, .Lfunc_end0-jpeg_idct_4x4.12
 	.cfi_endproc

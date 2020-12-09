@@ -17,13 +17,14 @@ start_iMCU_row.1:                       # @start_iMCU_row.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jccoefct.c_start_iMCU_row, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jccoefct.c_start_iMCU_row
 	movq	(%rdi), %rax
 	movl	$1, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_iMCU_row.1, .Lfunc_end0-start_iMCU_row.1
 	.cfi_endproc

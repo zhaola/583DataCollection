@@ -17,6 +17,8 @@ bit_shifter.2:                          # @bit_shifter.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bitcnts.c_bit_shifter+8, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ bit_shifter.2:                          # @bit_shifter.2
 	setb	%al
 	andb	$1, %al
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	bit_shifter.2, .Lfunc_end0-bit_shifter.2
 	.cfi_endproc

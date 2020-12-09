@@ -17,6 +17,8 @@ main.19:                                # @main.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main+24, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ main.19:                                # @main.19
 	movl	(%rsi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.19, .Lfunc_end0-main.19
 	.cfi_endproc

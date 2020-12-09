@@ -23,6 +23,8 @@ process_decode.10:                      # @process_decode.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_process_decode+16, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ process_decode.10:                      # @process_decode.10
 	callq	__errno_location
 	movl	$0, (%rax)
 	movl	$-1, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_decode.10, .Lfunc_end0-process_decode.10
 	.cfi_endproc

@@ -17,10 +17,10 @@ post_process_prepass.5:                 # @post_process_prepass.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdpostct.c_post_process_prepass+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdpostct.c_post_process_prepass+16
 	movq	(%rdi), %rax
 	movl	32(%rax), %eax
 	movq	(%rdi), %rcx
@@ -28,7 +28,8 @@ post_process_prepass.5:                 # @post_process_prepass.5
 	movl	%eax, 36(%rcx)
 	movq	(%rdi), %rax
 	movl	$0, 40(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	post_process_prepass.5, .Lfunc_end0-post_process_prepass.5
 	.cfi_endproc

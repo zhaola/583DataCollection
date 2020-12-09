@@ -17,6 +17,8 @@ LZWReadByte.11:                         # @LZWReadByte.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
@@ -25,7 +27,8 @@ LZWReadByte.11:                         # @LZWReadByte.11
 	movl	%eax, 372(%rcx)
 	movl	(%rdi), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWReadByte.11, .Lfunc_end0-LZWReadByte.11
 	.cfi_endproc

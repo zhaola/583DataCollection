@@ -24,13 +24,15 @@ okay_as_input.6:                        # @okay_as_input.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_okay_as_input+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._toast.c_okay_as_input+32
 	cmpl	$0, f_precious
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	okay_as_input.6, .Lfunc_end0-okay_as_input.6
 	.cfi_endproc

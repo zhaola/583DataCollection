@@ -17,6 +17,8 @@ TIFFWriteEncodedTile.22:                # @TIFFWriteEncodedTile.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFWriteEncodedTile+120, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ TIFFWriteEncodedTile.22:                # @TIFFWriteEncodedTile.22
 	movslq	744(%rcx), %rsi
 	movq	%rax, %rdi
 	callq	TIFFReverseBits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteEncodedTile.22, .Lfunc_end0-TIFFWriteEncodedTile.22
 	.cfi_endproc

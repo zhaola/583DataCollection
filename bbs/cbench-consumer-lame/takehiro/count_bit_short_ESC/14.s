@@ -24,11 +24,13 @@ count_bit_short_ESC.14:                 # @count_bit_short_ESC.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	cmpq	(%rsi), %rax
-	jb	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	count_bit_short_ESC.14, .Lfunc_end0-count_bit_short_ESC.14
 	.cfi_endproc

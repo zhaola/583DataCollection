@@ -17,13 +17,16 @@ astex_codelet__4.8:                     # @astex_codelet__4.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_astex_codelet__4+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_astex_codelet__4+24
 	movw	$0, (%rdi)
 	movl	$1, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	astex_codelet__4.8, .Lfunc_end0-astex_codelet__4.8
 	.cfi_endproc

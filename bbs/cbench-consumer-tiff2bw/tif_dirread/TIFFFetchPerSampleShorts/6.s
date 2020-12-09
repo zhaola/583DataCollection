@@ -24,6 +24,8 @@ TIFFFetchPerSampleShorts.6:             # @TIFFFetchPerSampleShorts.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
@@ -31,8 +33,8 @@ TIFFFetchPerSampleShorts.6:             # @TIFFFetchPerSampleShorts.6
 	movq	(%rdi), %rcx
 	movzwl	(%rcx), %ecx
 	cmpl	%ecx, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchPerSampleShorts.6, .Lfunc_end0-TIFFFetchPerSampleShorts.6
 	.cfi_endproc

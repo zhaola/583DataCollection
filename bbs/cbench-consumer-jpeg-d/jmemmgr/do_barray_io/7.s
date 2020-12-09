@@ -17,15 +17,16 @@ do_barray_io.7:                         # @do_barray_io.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jmemmgr.c_do_barray_io+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jmemmgr.c_do_barray_io+8
 	movq	(%rdi), %rax
 	movl	32(%rax), %eax
 	subq	(%rsi), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	do_barray_io.7, .Lfunc_end0-do_barray_io.7
 	.cfi_endproc

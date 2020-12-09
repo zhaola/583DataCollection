@@ -24,13 +24,15 @@ Fax3PrintDir.19:                        # @Fax3PrintDir.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	40(%rax), %rax
 	andq	$1073741824, %rax       # imm = 0x40000000
 	cmpq	$0, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3PrintDir.19, .Lfunc_end0-Fax3PrintDir.19
 	.cfi_endproc

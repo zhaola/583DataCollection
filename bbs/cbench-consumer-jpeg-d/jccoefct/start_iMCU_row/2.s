@@ -24,6 +24,8 @@ start_iMCU_row.2:                       # @start_iMCU_row.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	16(%rax), %eax
@@ -31,8 +33,8 @@ start_iMCU_row.2:                       # @start_iMCU_row.2
 	movl	312(%rcx), %ecx
 	subl	$1, %ecx
 	cmpl	%ecx, %eax
-	jb	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_iMCU_row.2, .Lfunc_end0-start_iMCU_row.2
 	.cfi_endproc

@@ -34,6 +34,8 @@ BF_newPartHolder.6:                     # @BF_newPartHolder.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rbx), %rdi
 	movl	$8, %esi
@@ -42,8 +44,8 @@ BF_newPartHolder.6:                     # @BF_newPartHolder.6
 	movq	8(%rcx), %rcx
 	movq	%rax, 8(%rcx)
 	cmpl	$0, (%rbx)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BF_newPartHolder.6, .Lfunc_end0-BF_newPartHolder.6
 	.cfi_endproc

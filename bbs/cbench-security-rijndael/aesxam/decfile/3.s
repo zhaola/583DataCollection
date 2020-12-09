@@ -24,13 +24,15 @@ decfile.3:                              # @decfile.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_decfile+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_decfile+32
 	cmpl	$16, (%rdi)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decfile.3, .Lfunc_end0-decfile.3
 	.cfi_endproc

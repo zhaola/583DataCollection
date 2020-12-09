@@ -34,8 +34,9 @@ sep_upsample.3:                         # @sep_upsample.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdsample.c_sep_upsample, %r10
 	movq	(%rdi), %rbx
 	movslq	(%rsi), %rax
 	movq	104(%rbx,%rax,8), %r12
@@ -66,7 +67,8 @@ sep_upsample.3:                         # @sep_upsample.3
 	movq	%r13, %rdx
 	movq	%rbx, %rcx
 	callq	*%r12
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	sep_upsample.3, .Lfunc_end0-sep_upsample.3
 	.cfi_endproc

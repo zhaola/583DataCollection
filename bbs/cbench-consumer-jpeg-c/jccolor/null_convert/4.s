@@ -18,6 +18,8 @@ null_convert.4:                         # @null_convert.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movq	(%rdi), %rdi
@@ -29,7 +31,8 @@ null_convert.4:                         # @null_convert.4
 	movq	(%rcx,%rdx,8), %rcx
 	movq	%rcx, (%r9)
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	null_convert.4, .Lfunc_end0-null_convert.4
 	.cfi_endproc

@@ -34,14 +34,16 @@ ConvertToIeeeExtended.5:                # @ConvertToIeeeExtended.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movq	%rbx, %rdi
 	callq	frexp
 	movsd	%xmm0, (%r14)
 	cmpl	$16384, (%rbx)          # imm = 0x4000
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeExtended.5, .Lfunc_end0-ConvertToIeeeExtended.5
 	.cfi_endproc

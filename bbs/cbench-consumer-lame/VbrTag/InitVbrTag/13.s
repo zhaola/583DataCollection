@@ -17,12 +17,15 @@ InitVbrTag.13:                          # @InitVbrTag.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	xorl	%esi, %esi
 	movl	$8, %edx
 	callq	putbits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	InitVbrTag.13, .Lfunc_end0-InitVbrTag.13
 	.cfi_endproc

@@ -23,6 +23,8 @@ handle_compress.18:                     # @handle_compress.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzlib.c_handle_compress+40, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ handle_compress.18:                     # @handle_compress.18
 	callq	BZ2_compressBlock
 	movq	(%rbx), %rax
 	movl	$1, 12(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	handle_compress.18, .Lfunc_end0-handle_compress.18
 	.cfi_endproc

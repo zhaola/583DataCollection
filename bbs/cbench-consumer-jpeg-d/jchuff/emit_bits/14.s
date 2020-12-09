@@ -17,17 +17,18 @@ emit_bits.14:                           # @emit_bits.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_emit_bits, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_emit_bits
 	movq	(%rdi), %rax
 	shlq	$8, %rax
 	movq	%rax, (%rdi)
 	movl	(%rsi), %eax
 	subl	$8, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_bits.14, .Lfunc_end0-emit_bits.14
 	.cfi_endproc

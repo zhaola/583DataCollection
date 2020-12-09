@@ -44,6 +44,8 @@ BZ2_blockSort.8:                        # @BZ2_blockSort.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %ebx
 	movl	(%rsi), %eax
@@ -65,8 +67,8 @@ BZ2_blockSort.8:                        # @BZ2_blockSort.8
 	movq	%r10, (%rsp)
 	callq	mainSort
 	cmpl	$3, (%r15)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_blockSort.8, .Lfunc_end0-BZ2_blockSort.8
 	.cfi_endproc

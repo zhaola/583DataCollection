@@ -51,6 +51,8 @@ jpeg_idct_float.8:                      # @jpeg_idct_float.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movss	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero,zero,zero
@@ -248,7 +250,8 @@ jpeg_idct_float.8:                      # @jpeg_idct_float.8
 	movq	(%r8), %rax
 	addq	$32, %rax
 	movq	%rax, (%r8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_idct_float.8, .Lfunc_end0-jpeg_idct_float.8
 	.cfi_endproc

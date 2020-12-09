@@ -17,6 +17,8 @@ LogLuvSetupDecode.12:                   # @LogLuvSetupDecode.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_LogLuvSetupDecode+104, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ LogLuvSetupDecode.12:                   # @LogLuvSetupDecode.12
 	movq	(%rdi), %rax
 	movabsq	$Luv32toRGB, %rcx
 	movq	%rcx, 24(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvSetupDecode.12, .Lfunc_end0-LogLuvSetupDecode.12
 	.cfi_endproc

@@ -31,11 +31,10 @@ jinit_d_coef_controller.8:              # @jinit_d_coef_controller.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_d_coef_controller, %rsi
-	movq	__profc_jinit_d_coef_controller+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_d_coef_controller+32
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
 	movq	8(%rax), %rbx
@@ -49,7 +48,8 @@ jinit_d_coef_controller.8:              # @jinit_d_coef_controller.8
 	callq	*%rbx
 	movq	%rax, (%r15)
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_d_coef_controller.8, .Lfunc_end0-jinit_d_coef_controller.8
 	.cfi_endproc

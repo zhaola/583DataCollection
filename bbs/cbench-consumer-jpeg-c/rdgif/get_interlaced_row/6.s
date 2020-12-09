@@ -39,6 +39,8 @@ get_interlaced_row.6:                   # @get_interlaced_row.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._rdgif.c_get_interlaced_row, %rsi
 	movq	(%rbx), %rax
@@ -74,7 +76,8 @@ get_interlaced_row.6:                   # @get_interlaced_row.6
 	movl	40(%rax), %eax
 	movq	16(%rbp), %rcx
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_interlaced_row.6, .Lfunc_end0-get_interlaced_row.6
 	.cfi_endproc

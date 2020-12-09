@@ -17,6 +17,8 @@ buildMap.12:                            # @buildMap.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_buildMap+72, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ buildMap.12:                            # @buildMap.12
 	movabsq	$.str.28, %rsi
 	movb	$0, %al
 	callq	TIFFWarning
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	buildMap.12, .Lfunc_end0-buildMap.12
 	.cfi_endproc

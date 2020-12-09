@@ -17,6 +17,8 @@ put2bitcmaptile.12:                     # @put2bitcmaptile.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_put2bitcmaptile+8, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ put2bitcmaptile.12:                     # @put2bitcmaptile.12
 	cltq
 	addq	%rax, %rdx
 	movq	%rdx, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	put2bitcmaptile.12, .Lfunc_end0-put2bitcmaptile.12
 	.cfi_endproc

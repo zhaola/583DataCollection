@@ -17,9 +17,12 @@ kernel_gemver.8:                        # @kernel_gemver.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	$0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_gemver.8, .Lfunc_end0-kernel_gemver.8
 	.cfi_endproc

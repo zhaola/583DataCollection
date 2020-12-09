@@ -17,6 +17,8 @@ update_own.2:                           # @update_own.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_update_own, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ update_own.2:                           # @update_own.2
 	movl	instat+32, %edx
 	movl	%eax, %edi
 	callq	fchown
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	update_own.2, .Lfunc_end0-update_own.2
 	.cfi_endproc

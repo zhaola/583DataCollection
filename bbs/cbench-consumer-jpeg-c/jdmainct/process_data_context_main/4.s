@@ -36,21 +36,19 @@ process_data_context_main.4:            # @process_data_context_main.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_5:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	124(%rax), %eax
 	testl	%eax, %eax
-	je	.LBB0_3
-	jmp	.LBB0_6
 .LBB0_6:                                # %"4"
 	movl	%eax, %ecx
 	subl	$1, %ecx
-	je	.LBB0_4
-	jmp	.LBB0_7
 .LBB0_7:                                # %"4"
 	subl	$2, %eax
-	je	.LBB0_2
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_data_context_main.4, .Lfunc_end0-process_data_context_main.4
 	.cfi_endproc

@@ -17,11 +17,14 @@ best_huffman_divide.21:                 # @best_huffman_divide.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_best_huffman_divide+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_best_huffman_divide+8
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	best_huffman_divide.21, .Lfunc_end0-best_huffman_divide.21
 	.cfi_endproc

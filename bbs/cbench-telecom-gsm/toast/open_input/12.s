@@ -24,13 +24,15 @@ open_input.12:                          # @open_input.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_open_input+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._toast.c_open_input+24
 	cmpq	$0, (%rdi)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	open_input.12, .Lfunc_end0-open_input.12
 	.cfi_endproc

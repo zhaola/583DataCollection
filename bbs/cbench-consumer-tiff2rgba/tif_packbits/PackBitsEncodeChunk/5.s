@@ -24,6 +24,8 @@ PackBitsEncodeChunk.5:                  # @PackBitsEncodeChunk.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rsi
@@ -31,8 +33,8 @@ PackBitsEncodeChunk.5:                  # @PackBitsEncodeChunk.5
 	movzwl	(%rcx), %ecx
 	callq	PackBitsEncode
 	cmpl	$0, %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PackBitsEncodeChunk.5, .Lfunc_end0-PackBitsEncodeChunk.5
 	.cfi_endproc

@@ -36,8 +36,9 @@ consume_data.2:                         # @consume_data.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdcoefct.c_consume_data, %rsi
 	movq	(%rdi), %rax
 	movslq	(%r12), %rbx
 	movq	424(%rax,%rbx,8), %rax
@@ -69,7 +70,8 @@ consume_data.2:                         # @consume_data.2
 	movslq	(%r12), %rcx
 	movq	-56(%rbp), %rdx         # 8-byte Reload
 	movq	%rax, (%rdx,%rcx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_data.2, .Lfunc_end0-consume_data.2
 	.cfi_endproc

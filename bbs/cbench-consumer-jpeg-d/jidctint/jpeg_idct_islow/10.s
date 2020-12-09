@@ -37,10 +37,10 @@ jpeg_idct_islow.10:                     # @jpeg_idct_islow.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_idct_islow+8, %r12
 	addq	$1, %r12
-	movq	%r12, __profc_jpeg_idct_islow+8
 	movq	(%rdi), %rbx
 	movslq	8(%rbx), %rbx
 	movq	%rbx, (%rsi)
@@ -242,7 +242,8 @@ jpeg_idct_islow.10:                     # @jpeg_idct_islow.10
 	movq	(%rdi), %rax
 	addq	$32, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_idct_islow.10, .Lfunc_end0-jpeg_idct_islow.10
 	.cfi_endproc

@@ -17,6 +17,8 @@ quantize_xrpow.2:                       # @quantize_xrpow.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r9
 	movq	%r9, %rax
@@ -29,7 +31,6 @@ quantize_xrpow.2:                       # @quantize_xrpow.2
 	movl	%eax, (%rcx)
 	movsd	(%rdx), %xmm0           # xmm0 = mem[0],zero
 	movslq	(%rcx), %rax
-	addsd	adj43(,%rax,8), %xmm0
 	cvttsd2si	%xmm0, %r9d
 	movq	(%r8), %r10
 	movq	%r10, %rax
@@ -47,7 +48,6 @@ quantize_xrpow.2:                       # @quantize_xrpow.2
 	movl	%eax, (%rcx)
 	movsd	(%rdx), %xmm0           # xmm0 = mem[0],zero
 	movslq	(%rcx), %rax
-	addsd	adj43(,%rax,8), %xmm0
 	cvttsd2si	%xmm0, %r9d
 	movq	(%r8), %r10
 	movq	%r10, %rax
@@ -65,7 +65,6 @@ quantize_xrpow.2:                       # @quantize_xrpow.2
 	movl	%eax, (%rcx)
 	movsd	(%rdx), %xmm0           # xmm0 = mem[0],zero
 	movslq	(%rcx), %rax
-	addsd	adj43(,%rax,8), %xmm0
 	cvttsd2si	%xmm0, %r9d
 	movq	(%r8), %r10
 	movq	%r10, %rax
@@ -83,14 +82,14 @@ quantize_xrpow.2:                       # @quantize_xrpow.2
 	movl	%eax, (%rcx)
 	movsd	(%rdx), %xmm0           # xmm0 = mem[0],zero
 	movslq	(%rcx), %rax
-	addsd	adj43(,%rax,8), %xmm0
 	cvttsd2si	%xmm0, %eax
 	movq	(%r8), %rcx
 	movq	%rcx, %rdx
 	addq	$4, %rdx
 	movq	%rdx, (%r8)
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	quantize_xrpow.2, .Lfunc_end0-quantize_xrpow.2
 	.cfi_endproc

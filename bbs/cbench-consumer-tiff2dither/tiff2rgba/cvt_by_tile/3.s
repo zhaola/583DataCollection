@@ -44,6 +44,8 @@ cvt_by_tile.3:                          # @cvt_by_tile.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movl	(%r12), %edx
@@ -63,8 +65,8 @@ cvt_by_tile.3:                          # @cvt_by_tile.3
 	callq	_TIFFmalloc
 	movq	%rax, (%r14)
 	cmpq	$0, (%r14)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	cvt_by_tile.3, .Lfunc_end0-cvt_by_tile.3
 	.cfi_endproc

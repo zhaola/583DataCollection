@@ -17,12 +17,15 @@ ulaw_input.8:                           # @ulaw_input.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ulaw_input+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_ulaw_input+32
 	movl	$-1, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ulaw_input.8, .Lfunc_end0-ulaw_input.8
 	.cfi_endproc

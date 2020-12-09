@@ -24,6 +24,8 @@ buildMap.14:                            # @buildMap.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_buildMap+80, %rax
 	addq	$1, %rax
@@ -31,8 +33,8 @@ buildMap.14:                            # @buildMap.14
 	movq	(%rdi), %rdi
 	callq	makecmap
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	buildMap.14, .Lfunc_end0-buildMap.14
 	.cfi_endproc

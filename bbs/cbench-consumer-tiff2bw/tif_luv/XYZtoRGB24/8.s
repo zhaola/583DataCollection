@@ -29,12 +29,14 @@ XYZtoRGB24.8:                           # @XYZtoRGB24.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	(%rdi), %xmm1           # xmm1 = mem[0],zero
 	ucomisd	%xmm0, %xmm1
-	jae	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	XYZtoRGB24.8, .Lfunc_end0-XYZtoRGB24.8
 	.cfi_endproc

@@ -35,6 +35,8 @@ TIFFVGetField.3:                        # @TIFFVGetField.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFVGetField, %rax
 	movq	__profc_TIFFVGetField+8, %rcx
@@ -54,7 +56,8 @@ TIFFVGetField.3:                        # @TIFFVGetField.3
 	movq	%r13, %rdx
 	callq	*%rbx
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFVGetField.3, .Lfunc_end0-TIFFVGetField.3
 	.cfi_endproc

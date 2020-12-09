@@ -22,6 +22,8 @@ compute_scalefacs_short.6:              # @compute_scalefacs_short.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movq	__profc_compute_scalefacs_short+8, %rax
@@ -30,7 +32,8 @@ compute_scalefacs_short.6:              # @compute_scalefacs_short.6
 	cvtsi2sdl	(%rdi), %xmm1
 	divsd	%xmm1, %xmm0
 	movsd	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_scalefacs_short.6, .Lfunc_end0-compute_scalefacs_short.6
 	.cfi_endproc

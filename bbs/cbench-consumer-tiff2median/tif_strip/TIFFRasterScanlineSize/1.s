@@ -17,6 +17,8 @@ TIFFRasterScanlineSize.1:               # @TIFFRasterScanlineSize.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFRasterScanlineSize, %rax
 	addq	$1, %rax
@@ -29,7 +31,8 @@ TIFFRasterScanlineSize.1:               # @TIFFRasterScanlineSize.1
 	addl	$7, %eax
 	shrl	$3, %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFRasterScanlineSize.1, .Lfunc_end0-TIFFRasterScanlineSize.1
 	.cfi_endproc

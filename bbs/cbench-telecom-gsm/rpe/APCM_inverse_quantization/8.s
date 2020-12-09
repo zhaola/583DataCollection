@@ -24,12 +24,14 @@ APCM_inverse_quantization.8:            # @APCM_inverse_quantization.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movswl	(%rax), %eax
 	cmpl	$0, %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	APCM_inverse_quantization.8, .Lfunc_end0-APCM_inverse_quantization.8
 	.cfi_endproc

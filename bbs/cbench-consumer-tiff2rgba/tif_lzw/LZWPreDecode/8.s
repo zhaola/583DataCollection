@@ -17,13 +17,16 @@ LZWPreDecode.8:                         # @LZWPreDecode.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movw	$510, 90(%rax)          # imm = 0x1FE
 	movq	(%rdi), %rax
 	movabsq	$LZWDecode, %rcx
 	movq	%rcx, 136(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWPreDecode.8, .Lfunc_end0-LZWPreDecode.8
 	.cfi_endproc

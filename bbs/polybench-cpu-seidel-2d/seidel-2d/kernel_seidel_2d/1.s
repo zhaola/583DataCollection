@@ -24,13 +24,15 @@ kernel_seidel_2d.1:                     # @kernel_seidel_2d.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movl	(%rsi), %ecx
 	subl	$1, %ecx
 	cmpl	%ecx, %eax
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_seidel_2d.1, .Lfunc_end0-kernel_seidel_2d.1
 	.cfi_endproc

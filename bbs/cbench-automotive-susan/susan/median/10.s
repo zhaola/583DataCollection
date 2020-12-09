@@ -17,6 +17,8 @@ median.10:                              # @median.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	12(%rdi), %eax
 	addl	16(%rdi), %eax
@@ -24,7 +26,8 @@ median.10:                              # @median.10
 	movl	$2, %ecx
 	idivl	%ecx
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	median.10, .Lfunc_end0-median.10
 	.cfi_endproc

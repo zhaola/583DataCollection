@@ -34,14 +34,16 @@ TIFFReadEncodedStrip.7:                 # @TIFFReadEncodedStrip.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	(%rsi), %esi
 	callq	TIFFVStripSize
 	movl	%eax, (%rbx)
 	cmpl	$-1, (%r14)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadEncodedStrip.7, .Lfunc_end0-TIFFReadEncodedStrip.7
 	.cfi_endproc

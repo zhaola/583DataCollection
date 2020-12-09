@@ -32,6 +32,8 @@ TIFFFetchStripThing.3:                  # @TIFFFetchStripThing.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchStripThing+24, %rax
 	addq	$1, %rax
@@ -45,8 +47,8 @@ TIFFFetchStripThing.3:                  # @TIFFFetchStripThing.3
 	movq	(%rbx), %rcx
 	movq	%rax, (%rcx)
 	cmpq	$0, %rax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchStripThing.3, .Lfunc_end0-TIFFFetchStripThing.3
 	.cfi_endproc

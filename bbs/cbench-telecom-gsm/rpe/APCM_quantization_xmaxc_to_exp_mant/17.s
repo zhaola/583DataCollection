@@ -13,6 +13,8 @@ APCM_quantization_xmaxc_to_exp_mant.17: # @APCM_quantization_xmaxc_to_exp_mant.1
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._rpe.c_APCM_quantization_xmaxc_to_exp_mant+56, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._rpe.c_APCM_quantization_xmaxc_to_exp_mant+56
@@ -21,6 +23,8 @@ APCM_quantization_xmaxc_to_exp_mant.17: # @APCM_quantization_xmaxc_to_exp_mant.1
 	movl	$250, %edx
 	movabsq	$__PRETTY_FUNCTION__.APCM_quantization_xmaxc_to_exp_mant, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	APCM_quantization_xmaxc_to_exp_mant.17, .Lfunc_end0-APCM_quantization_xmaxc_to_exp_mant.17
 	.cfi_endproc

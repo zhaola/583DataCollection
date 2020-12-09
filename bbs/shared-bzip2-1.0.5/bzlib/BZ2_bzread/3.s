@@ -24,13 +24,15 @@ BZ2_bzread.3:                           # @BZ2_bzread.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_bzread+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_BZ2_bzread+16
 	cmpl	$4, (%rdi)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzread.3, .Lfunc_end0-BZ2_bzread.3
 	.cfi_endproc

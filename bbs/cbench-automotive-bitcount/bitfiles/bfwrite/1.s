@@ -23,6 +23,8 @@ bfwrite.1:                              # @bfwrite.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_bfwrite+8, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ bfwrite.1:                              # @bfwrite.1
 	callq	fputc
 	movq	(%rbx), %rax
 	movb	$0, 11(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	bfwrite.1, .Lfunc_end0-bfwrite.1
 	.cfi_endproc

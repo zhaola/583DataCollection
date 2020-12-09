@@ -24,12 +24,14 @@ read_samples_pcm.3:                     # @read_samples_pcm.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	callq	DetermineByteOrder
 	movl	%eax, NativeByteOrder
 	cmpl	$0, NativeByteOrder
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_samples_pcm.3, .Lfunc_end0-read_samples_pcm.3
 	.cfi_endproc

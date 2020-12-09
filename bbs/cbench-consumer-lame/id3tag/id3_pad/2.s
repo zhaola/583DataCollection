@@ -17,6 +17,8 @@ id3_pad.2:                              # @id3_pad.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._id3tag.c_id3_pad, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ id3_pad.2:                              # @id3_pad.2
 	movl	(%rsi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	id3_pad.2, .Lfunc_end0-id3_pad.2
 	.cfi_endproc

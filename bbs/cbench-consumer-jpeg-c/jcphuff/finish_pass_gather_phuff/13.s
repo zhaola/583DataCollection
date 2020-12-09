@@ -25,6 +25,8 @@ finish_pass_gather_phuff.13:            # @finish_pass_gather_phuff.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rax
@@ -32,10 +34,10 @@ finish_pass_gather_phuff.13:            # @finish_pass_gather_phuff.13
 	movq	(%rdx), %rax
 	movslq	(%rbx), %rcx
 	movq	152(%rax,%rcx,8), %rdx
-	callq	jpeg_gen_optimal_table
 	movslq	(%rbx), %rax
 	movl	$1, (%r14,%rax,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_pass_gather_phuff.13, .Lfunc_end0-finish_pass_gather_phuff.13
 	.cfi_endproc

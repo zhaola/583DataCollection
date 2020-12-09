@@ -17,6 +17,8 @@ count_bit_short_noESC.6:                # @count_bit_short_noESC.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._takehiro.c_count_bit_short_noESC+16, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ count_bit_short_noESC.6:                # @count_bit_short_noESC.6
 	movl	(%rsi), %eax
 	addl	(%rdx), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	count_bit_short_noESC.6, .Lfunc_end0-count_bit_short_noESC.6
 	.cfi_endproc

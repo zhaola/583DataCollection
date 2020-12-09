@@ -23,13 +23,16 @@ BZ2_bzBuffToBuffDecompress.18:          # @BZ2_bzBuffToBuffDecompress.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_bzBuffToBuffDecompress+88, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_BZ2_bzBuffToBuffDecompress+88
 	callq	BZ2_bzDecompressEnd
 	movl	$-8, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzBuffToBuffDecompress.18, .Lfunc_end0-BZ2_bzBuffToBuffDecompress.18
 	.cfi_endproc

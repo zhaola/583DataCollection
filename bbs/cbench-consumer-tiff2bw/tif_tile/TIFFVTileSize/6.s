@@ -24,6 +24,8 @@ TIFFVTileSize.6:                        # @TIFFVTileSize.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFVTileSize+40, %rax
 	addq	$1, %rax
@@ -32,8 +34,8 @@ TIFFVTileSize.6:                        # @TIFFVTileSize.6
 	movl	16(%rax), %eax
 	andl	$16384, %eax            # imm = 0x4000
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFVTileSize.6, .Lfunc_end0-TIFFVTileSize.6
 	.cfi_endproc

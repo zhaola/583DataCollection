@@ -23,6 +23,8 @@ encfile.9:                              # @encfile.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_encfile+48, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ encfile.9:                              # @encfile.9
 	movb	$0, %al
 	callq	printf
 	movl	$-7, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encfile.9, .Lfunc_end0-encfile.9
 	.cfi_endproc

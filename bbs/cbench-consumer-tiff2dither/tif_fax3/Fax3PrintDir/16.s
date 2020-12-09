@@ -17,6 +17,8 @@ Fax3PrintDir.16:                        # @Fax3PrintDir.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_fax3.c_Fax3PrintDir+104, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ Fax3PrintDir.16:                        # @Fax3PrintDir.16
 	movabsq	$.str.22, %rsi
 	movb	$0, %al
 	callq	fprintf
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3PrintDir.16, .Lfunc_end0-Fax3PrintDir.16
 	.cfi_endproc

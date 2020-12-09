@@ -17,17 +17,18 @@ create_colorindex.6:                    # @create_colorindex.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant1.c_create_colorindex+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant1.c_create_colorindex+32
 	movq	(%rdi), %rax
 	movq	48(%rax), %rax
 	movslq	(%rsi), %rcx
 	movq	(%rax,%rcx,8), %rdx
 	addq	$255, %rdx
 	movq	%rdx, (%rax,%rcx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	create_colorindex.6, .Lfunc_end0-create_colorindex.6
 	.cfi_endproc

@@ -13,11 +13,15 @@ mySIGSEGVorSIGBUScatcher.4:             # @mySIGSEGVorSIGBUScatcher.4
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._bzip2.c_mySIGSEGVorSIGBUScatcher+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzip2.c_mySIGSEGVorSIGBUScatcher+8
 	movl	$3, %edi
 	callq	cleanUpAndFail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	mySIGSEGVorSIGBUScatcher.4, .Lfunc_end0-mySIGSEGVorSIGBUScatcher.4
 	.cfi_endproc

@@ -37,8 +37,9 @@ jinit_d_main_controller.9:              # @jinit_d_main_controller.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_d_main_controller, %r8
 	movq	(%rdi), %rax
 	movl	12(%rax), %eax
 	movq	(%rdi), %rdx
@@ -70,7 +71,8 @@ jinit_d_main_controller.9:              # @jinit_d_main_controller.9
 	movq	-48(%rbp), %rdx         # 8-byte Reload
 	movslq	(%rdx), %rdx
 	movq	%rax, 16(%rcx,%rdx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_d_main_controller.9, .Lfunc_end0-jinit_d_main_controller.9
 	.cfi_endproc

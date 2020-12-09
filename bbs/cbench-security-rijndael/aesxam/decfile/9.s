@@ -18,6 +18,8 @@ decfile.9:                              # @decfile.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsbl	(%rdi), %edi
 	andl	$15, %edi
@@ -25,7 +27,8 @@ decfile.9:                              # @decfile.9
 	movl	$15, (%rdx)
 	movq	%rcx, (%r8)
 	movq	%r9, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decfile.9, .Lfunc_end0-decfile.9
 	.cfi_endproc

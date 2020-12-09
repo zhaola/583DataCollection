@@ -29,11 +29,10 @@ jpeg_new_colormap.5:                    # @jpeg_new_colormap.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_new_colormap, %rax
-	movq	__profc_jpeg_new_colormap+32, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_jpeg_new_colormap+32
 	movq	(%r14), %rcx
 	movq	40(%rcx), %rcx
 	movq	(%rsi), %rdx
@@ -50,7 +49,8 @@ jpeg_new_colormap.5:                    # @jpeg_new_colormap.5
 	callq	*%rbx
 	movq	(%r14), %rax
 	movl	$0, 16(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_new_colormap.5, .Lfunc_end0-jpeg_new_colormap.5
 	.cfi_endproc

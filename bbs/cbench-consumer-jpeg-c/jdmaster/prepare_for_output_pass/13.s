@@ -24,14 +24,14 @@ prepare_for_output_pass.13:             # @prepare_for_output_pass.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmaster.c_prepare_for_output_pass+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmaster.c_prepare_for_output_pass+48
 	movq	(%rdi), %rax
 	cmpl	$0, 28(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_output_pass.13, .Lfunc_end0-prepare_for_output_pass.13
 	.cfi_endproc

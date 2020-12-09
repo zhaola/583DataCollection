@@ -23,14 +23,14 @@ select_file_type.7:                     # @select_file_type.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._cjpeg.c_select_file_type+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._cjpeg.c_select_file_type+24
 	movq	(%rdi), %rdi
-	callq	jinit_read_bmp
 	movq	%rax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_file_type.7, .Lfunc_end0-select_file_type.7
 	.cfi_endproc

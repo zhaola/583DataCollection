@@ -29,11 +29,10 @@ read_restart_marker.5:                  # @read_restart_marker.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmarker.c_read_restart_marker, %rsi
-	movq	__profc_.._jdmarker.c_read_restart_marker, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmarker.c_read_restart_marker
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movl	$97, 40(%rax)
@@ -55,7 +54,8 @@ read_restart_marker.5:                  # @read_restart_marker.5
 	callq	*%r14
 	movq	(%rbx), %rax
 	movl	$0, 524(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_restart_marker.5, .Lfunc_end0-read_restart_marker.5
 	.cfi_endproc

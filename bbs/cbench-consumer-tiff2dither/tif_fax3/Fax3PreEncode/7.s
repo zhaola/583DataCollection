@@ -22,6 +22,8 @@ Fax3PreEncode.7:                        # @Fax3PreEncode.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movq	__profc_.._tif_fax3.c_Fax3PreEncode+24, %rax
@@ -29,7 +31,8 @@ Fax3PreEncode.7:                        # @Fax3PreEncode.7
 	movq	%rax, __profc_.._tif_fax3.c_Fax3PreEncode+24
 	mulss	(%rdi), %xmm0
 	movss	%xmm0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3PreEncode.7, .Lfunc_end0-Fax3PreEncode.7
 	.cfi_endproc

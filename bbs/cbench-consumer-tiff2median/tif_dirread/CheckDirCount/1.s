@@ -32,6 +32,8 @@ CheckDirCount.1:                        # @CheckDirCount.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_CheckDirCount, %rax
 	addq	$1, %rax
@@ -51,7 +53,8 @@ CheckDirCount.1:                        # @CheckDirCount.1
 	movb	$0, %al
 	callq	TIFFWarning
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	CheckDirCount.1, .Lfunc_end0-CheckDirCount.1
 	.cfi_endproc

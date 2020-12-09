@@ -48,6 +48,8 @@ TIFFAppendToStrip.8:                    # @TIFFAppendToStrip.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_write.c_TIFFAppendToStrip, %rax
 	movq	(%rdi), %rcx
@@ -65,8 +67,8 @@ TIFFAppendToStrip.8:                    # @TIFFAppendToStrip.8
 	movl	%r13d, %edx
 	callq	*%rbx
 	cmpl	(%r14), %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFAppendToStrip.8, .Lfunc_end0-TIFFAppendToStrip.8
 	.cfi_endproc

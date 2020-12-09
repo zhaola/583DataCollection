@@ -23,6 +23,8 @@ addFlagsFromEnvVar.19:                  # @addFlagsFromEnvVar.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_addFlagsFromEnvVar+40, %rax
 	addq	$1, %rax
@@ -35,7 +37,8 @@ addFlagsFromEnvVar.19:                  # @addFlagsFromEnvVar.19
 	callq	snocString
 	movq	(%rbx), %rcx
 	movq	%rax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	addFlagsFromEnvVar.19, .Lfunc_end0-addFlagsFromEnvVar.19
 	.cfi_endproc

@@ -17,6 +17,8 @@ ResvFrameEnd.2:                         # @ResvFrameEnd.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ResvFrameEnd+32, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ ResvFrameEnd.2:                         # @ResvFrameEnd.2
 	movl	ResvSize, %eax
 	addl	$1, %eax
 	movl	%eax, ResvSize
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ResvFrameEnd.2, .Lfunc_end0-ResvFrameEnd.2
 	.cfi_endproc

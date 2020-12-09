@@ -17,6 +17,8 @@ consume_data.10:                        # @consume_data.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -27,7 +29,8 @@ consume_data.10:                        # @consume_data.10
 	imull	52(%rcx), %eax
 	movl	%eax, (%r8)
 	movl	$0, (%r9)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_data.10, .Lfunc_end0-consume_data.10
 	.cfi_endproc

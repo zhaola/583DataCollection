@@ -13,6 +13,8 @@ PredictorDecodeTile.5:                  # @PredictorDecodeTile.5
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._tif_predict.c_PredictorDecodeTile+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_predict.c_PredictorDecodeTile+32
@@ -21,6 +23,8 @@ PredictorDecodeTile.5:                  # @PredictorDecodeTile.5
 	movl	$267, %edx              # imm = 0x10B
 	movabsq	$__PRETTY_FUNCTION__.PredictorDecodeTile, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PredictorDecodeTile.5, .Lfunc_end0-PredictorDecodeTile.5
 	.cfi_endproc

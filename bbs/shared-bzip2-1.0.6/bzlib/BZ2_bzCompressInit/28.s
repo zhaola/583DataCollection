@@ -25,6 +25,8 @@ BZ2_bzCompressInit.28:                  # @BZ2_bzCompressInit.28
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"28"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_bzCompressInit+136, %rax
 	addq	$1, %rax
@@ -80,7 +82,8 @@ BZ2_bzCompressInit.28:                  # @BZ2_bzCompressInit.28
 	movq	(%rbx), %rdi
 	callq	prepare_new_block
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzCompressInit.28, .Lfunc_end0-BZ2_bzCompressInit.28
 	.cfi_endproc

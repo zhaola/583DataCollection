@@ -24,6 +24,8 @@ adpcm_coder.18:                         # @adpcm_coder.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	orl	(%rsi), %eax
@@ -33,8 +35,8 @@ adpcm_coder.18:                         # @adpcm_coder.18
 	addl	(%rdx), %eax
 	movl	%eax, (%rdx)
 	cmpl	$0, (%rdx)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_coder.18, .Lfunc_end0-adpcm_coder.18
 	.cfi_endproc

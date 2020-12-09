@@ -17,11 +17,14 @@ putcontig8bitYCbCr22tile.2:             # @putcontig8bitYCbCr22tile.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	shrl	$1, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	putcontig8bitYCbCr22tile.2, .Lfunc_end0-putcontig8bitYCbCr22tile.2
 	.cfi_endproc

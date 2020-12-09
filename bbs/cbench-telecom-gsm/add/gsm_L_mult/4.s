@@ -17,13 +17,16 @@ gsm_L_mult.4:                           # @gsm_L_mult.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movswq	(%rdi), %rax
 	movswq	(%rsi), %rcx
 	imulq	%rcx, %rax
 	shlq	$1, %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_L_mult.4, .Lfunc_end0-gsm_L_mult.4
 	.cfi_endproc

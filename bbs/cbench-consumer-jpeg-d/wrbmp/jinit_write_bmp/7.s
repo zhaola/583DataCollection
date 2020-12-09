@@ -23,11 +23,10 @@ jinit_write_bmp.7:                      # @jinit_write_bmp.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_write_bmp, %rsi
-	movq	__profc_jinit_write_bmp+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_write_bmp+24
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$1005, 40(%rax)         # imm = 0x3ED
@@ -40,7 +39,8 @@ jinit_write_bmp.7:                      # @jinit_write_bmp.7
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_bmp.7, .Lfunc_end0-jinit_write_bmp.7
 	.cfi_endproc

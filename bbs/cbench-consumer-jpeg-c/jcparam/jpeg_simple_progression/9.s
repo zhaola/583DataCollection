@@ -51,8 +51,9 @@ jpeg_simple_progression.9:              # @jpeg_simple_progression.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_simple_progression, %rsi
 	movq	(%rbx), %rax
 	movq	8(%rax), %rax
 	movq	(%rax), %r13
@@ -77,8 +78,8 @@ jpeg_simple_progression.9:              # @jpeg_simple_progression.9
 	movl	%eax, 232(%rcx)
 	movq	-56(%rbp), %rax         # 8-byte Reload
 	cmpl	$3, (%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_simple_progression.9, .Lfunc_end0-jpeg_simple_progression.9
 	.cfi_endproc

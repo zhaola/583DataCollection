@@ -24,10 +24,10 @@ jpeg_open_backing_store.1:              # @jpeg_open_backing_store.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_open_backing_store+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_open_backing_store+8
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movl	$62, 40(%rax)
@@ -37,7 +37,6 @@ jpeg_open_backing_store.1:              # @jpeg_open_backing_store.1
 	movabsq	$.str, %rsi
 	movl	$80, %edx
 	callq	strncpy
-	movabsq	$__profd_jpeg_open_backing_store, %rsi
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movq	(%rax), %r14
@@ -47,7 +46,8 @@ jpeg_open_backing_store.1:              # @jpeg_open_backing_store.1
 	callq	__llvm_profile_instrument_target
 	movq	%rbx, %rdi
 	callq	*%r14
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_open_backing_store.1, .Lfunc_end0-jpeg_open_backing_store.1
 	.cfi_endproc

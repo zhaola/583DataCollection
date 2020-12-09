@@ -23,6 +23,8 @@ jpeg_start_output.8:                    # @jpeg_start_output.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
@@ -30,7 +32,8 @@ jpeg_start_output.8:                    # @jpeg_start_output.8
 	movq	(%rsi), %rdi
 	callq	output_pass_setup
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_start_output.8, .Lfunc_end0-jpeg_start_output.8
 	.cfi_endproc

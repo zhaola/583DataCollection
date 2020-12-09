@@ -31,6 +31,8 @@ ReadColorMap.2:                         # @ReadColorMap.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	callq	ReadByte
@@ -50,7 +52,8 @@ ReadColorMap.2:                         # @ReadColorMap.2
 	movq	16(%rcx), %rcx
 	movslq	(%r14), %rdx
 	movb	%al, (%rcx,%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ReadColorMap.2, .Lfunc_end0-ReadColorMap.2
 	.cfi_endproc

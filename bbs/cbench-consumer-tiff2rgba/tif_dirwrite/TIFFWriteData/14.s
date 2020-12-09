@@ -24,6 +24,8 @@ TIFFWriteData.14:                       # @TIFFWriteData.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirwrite.c_TIFFWriteData+32, %rax
 	addq	$1, %rax
@@ -40,7 +42,8 @@ TIFFWriteData.14:                       # @TIFFWriteData.14
 	movb	$0, %al
 	callq	TIFFError
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteData.14, .Lfunc_end0-TIFFWriteData.14
 	.cfi_endproc

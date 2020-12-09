@@ -17,13 +17,16 @@ process_decode.24:                      # @process_decode.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_process_decode+64, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._toast.c_process_decode+64
 	movq	inname, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_decode.24, .Lfunc_end0-process_decode.24
 	.cfi_endproc

@@ -17,6 +17,8 @@ TIFFWriteBufferSetup.14:                # @TIFFWriteBufferSetup.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFWriteBufferSetup+24, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ TIFFWriteBufferSetup.14:                # @TIFFWriteBufferSetup.14
 	movl	16(%rax), %ecx
 	orl	$512, %ecx              # imm = 0x200
 	movl	%ecx, 16(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteBufferSetup.14, .Lfunc_end0-TIFFWriteBufferSetup.14
 	.cfi_endproc

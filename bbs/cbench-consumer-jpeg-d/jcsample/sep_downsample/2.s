@@ -38,8 +38,9 @@ sep_downsample.2:                       # @sep_downsample.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jcsample.c_sep_downsample, %r10
 	movq	(%rdi), %rdi
 	movslq	(%rsi), %rbx
 	movq	(%rdi,%rbx,8), %rdi
@@ -73,7 +74,8 @@ sep_downsample.2:                       # @sep_downsample.2
 	movq	%r12, %rdx
 	movq	%r13, %rcx
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	sep_downsample.2, .Lfunc_end0-sep_downsample.2
 	.cfi_endproc

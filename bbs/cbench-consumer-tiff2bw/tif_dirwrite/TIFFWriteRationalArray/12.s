@@ -22,6 +22,8 @@ TIFFWriteRationalArray.12:              # @TIFFWriteRationalArray.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movq	__profc_.._tif_dirwrite.c_TIFFWriteRationalArray, %rax
@@ -32,7 +34,8 @@ TIFFWriteRationalArray.12:              # @TIFFWriteRationalArray.12
 	movl	(%rsi), %eax
 	shlq	$3, %rax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteRationalArray.12, .Lfunc_end0-TIFFWriteRationalArray.12
 	.cfi_endproc

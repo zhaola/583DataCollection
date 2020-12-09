@@ -24,6 +24,8 @@ ResvFrameEnd.5:                         # @ResvFrameEnd.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movl	ResvSize, %ecx
@@ -37,8 +39,8 @@ ResvFrameEnd.5:                         # @ResvFrameEnd.5
 	idivl	%ecx
 	movl	%edx, (%rdi)
 	cmpl	$0, %edx
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ResvFrameEnd.5, .Lfunc_end0-ResvFrameEnd.5
 	.cfi_endproc

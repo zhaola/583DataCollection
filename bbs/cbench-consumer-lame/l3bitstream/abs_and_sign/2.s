@@ -17,6 +17,8 @@ abs_and_sign.2:                         # @abs_and_sign.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_abs_and_sign+8, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ abs_and_sign.2:                         # @abs_and_sign.2
 	imull	$-1, (%rax), %ecx
 	movl	%ecx, (%rax)
 	movl	$1, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	abs_and_sign.2, .Lfunc_end0-abs_and_sign.2
 	.cfi_endproc

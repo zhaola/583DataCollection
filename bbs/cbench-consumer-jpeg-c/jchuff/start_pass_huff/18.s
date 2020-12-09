@@ -34,6 +34,8 @@ start_pass_huff.18:                     # @start_pass_huff.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movslq	(%rsi), %rcx
@@ -44,8 +46,8 @@ start_pass_huff.18:                     # @start_pass_huff.18
 	movq	(%rbx), %rax
 	movslq	(%r14), %rcx
 	cmpq	$0, 160(%rax,%rcx,8)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_huff.18, .Lfunc_end0-start_pass_huff.18
 	.cfi_endproc

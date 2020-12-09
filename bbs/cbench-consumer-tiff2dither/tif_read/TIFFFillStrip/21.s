@@ -17,6 +17,8 @@ TIFFFillStrip.21:                       # @TIFFFillStrip.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_read.c_TIFFFillStrip+104, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ TIFFFillStrip.21:                       # @TIFFFillStrip.21
 	movq	720(%rax), %rdi
 	movslq	(%rsi), %rsi
 	callq	TIFFReverseBits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFillStrip.21, .Lfunc_end0-TIFFFillStrip.21
 	.cfi_endproc

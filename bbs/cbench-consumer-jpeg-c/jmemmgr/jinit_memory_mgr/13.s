@@ -17,11 +17,14 @@ jinit_memory_mgr.13:                    # @jinit_memory_mgr.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	imulq	$1000, (%rdi), %rax     # imm = 0x3E8
 	movq	(%rsi), %rcx
 	movq	%rax, 88(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_memory_mgr.13, .Lfunc_end0-jinit_memory_mgr.13
 	.cfi_endproc

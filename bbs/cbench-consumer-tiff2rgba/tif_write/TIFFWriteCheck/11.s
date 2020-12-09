@@ -25,6 +25,8 @@ TIFFWriteCheck.11:                      # @TIFFWriteCheck.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_write.c_TIFFWriteCheck+32, %rax
 	addq	$1, %rax
@@ -42,7 +44,8 @@ TIFFWriteCheck.11:                      # @TIFFWriteCheck.11
 	orl	$64, %ecx
 	movl	%ecx, 16(%rax)
 	movl	$1, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteCheck.11, .Lfunc_end0-TIFFWriteCheck.11
 	.cfi_endproc

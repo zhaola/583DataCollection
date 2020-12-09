@@ -28,6 +28,8 @@ L16toGry.6:                             # @L16toGry.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	%xmm0, -16(%rbp)        # 8-byte Spill
@@ -41,7 +43,8 @@ L16toGry.6:                             # @L16toGry.6
 	mulsd	%xmm0, %xmm1
 	cvttsd2si	%xmm1, %eax
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	L16toGry.6, .Lfunc_end0-L16toGry.6
 	.cfi_endproc

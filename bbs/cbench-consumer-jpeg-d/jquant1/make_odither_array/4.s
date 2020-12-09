@@ -24,6 +24,8 @@ make_odither_array.4:                   # @make_odither_array.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	shlq	$4, %rax
@@ -38,8 +40,8 @@ make_odither_array.4:                   # @make_odither_array.4
 	imulq	$255, %rax, %rax
 	movq	%rax, (%rdx)
 	cmpq	$0, (%rdx)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	make_odither_array.4, .Lfunc_end0-make_odither_array.4
 	.cfi_endproc

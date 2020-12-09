@@ -17,6 +17,8 @@ RPE_grid_selection.5:                   # @RPE_grid_selection.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rpe.c_RPE_grid_selection+32, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ RPE_grid_selection.5:                   # @RPE_grid_selection.5
 	movw	$3, (%rdi)
 	movq	(%rsi), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	RPE_grid_selection.5, .Lfunc_end0-RPE_grid_selection.5
 	.cfi_endproc

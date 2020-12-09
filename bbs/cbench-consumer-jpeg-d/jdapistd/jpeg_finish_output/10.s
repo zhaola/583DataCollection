@@ -17,10 +17,10 @@ jpeg_finish_output.10:                  # @jpeg_finish_output.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_finish_output+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_finish_output+16
 	movq	(%rdi), %rax
 	movq	560(%rax), %rax
 	cmpl	$0, 36(%rax)
@@ -28,7 +28,8 @@ jpeg_finish_output.10:                  # @jpeg_finish_output.10
 	xorb	$-1, %al
 	andb	$1, %al
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_finish_output.10, .Lfunc_end0-jpeg_finish_output.10
 	.cfi_endproc

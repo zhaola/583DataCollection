@@ -24,11 +24,13 @@ TIFFDefaultTransferFunction.1:          # @TIFFDefaultTransferFunction.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	cmpq	(%rsi), %rax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFDefaultTransferFunction.1, .Lfunc_end0-TIFFDefaultTransferFunction.1
 	.cfi_endproc

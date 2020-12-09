@@ -29,11 +29,10 @@ jpeg_huff_decode.12:                    # @jpeg_huff_decode.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_huff_decode, %rsi
-	movq	__profc_jpeg_huff_decode+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_huff_decode+24
 	movq	(%rdi), %rax
 	movq	40(%rax), %rax
 	movq	(%rax), %rax
@@ -51,7 +50,8 @@ jpeg_huff_decode.12:                    # @jpeg_huff_decode.12
 	movl	$4294967295, %esi       # imm = 0xFFFFFFFF
 	callq	*%rbx
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_huff_decode.12, .Lfunc_end0-jpeg_huff_decode.12
 	.cfi_endproc

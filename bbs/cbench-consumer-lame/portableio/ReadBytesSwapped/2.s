@@ -23,6 +23,8 @@ ReadBytesSwapped.2:                     # @ReadBytesSwapped.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ReadBytesSwapped, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ ReadBytesSwapped.2:                     # @ReadBytesSwapped.2
 	addq	$1, %rdx
 	movq	%rdx, (%rbx)
 	movb	%al, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ReadBytesSwapped.2, .Lfunc_end0-ReadBytesSwapped.2
 	.cfi_endproc

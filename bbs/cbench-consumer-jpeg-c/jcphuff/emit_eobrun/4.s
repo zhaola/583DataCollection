@@ -32,6 +32,8 @@ emit_eobrun.4:                          # @emit_eobrun.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rdi), %rcx
@@ -41,8 +43,8 @@ emit_eobrun.4:                          # @emit_eobrun.4
 	movq	%rax, %rdi
 	callq	emit_symbol
 	cmpl	$0, (%rbx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_eobrun.4, .Lfunc_end0-emit_eobrun.4
 	.cfi_endproc

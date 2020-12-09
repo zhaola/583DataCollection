@@ -17,15 +17,16 @@ pre_process_data.18:                    # @pre_process_data.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcprepct.c_pre_process_data+80, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcprepct.c_pre_process_data+80
 	movl	$0, (%rdi)
 	movq	(%rsi), %rax
 	movq	80(%rax), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pre_process_data.18, .Lfunc_end0-pre_process_data.18
 	.cfi_endproc

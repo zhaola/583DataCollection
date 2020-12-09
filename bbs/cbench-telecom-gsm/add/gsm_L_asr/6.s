@@ -17,6 +17,8 @@ gsm_L_asr.6:                            # @gsm_L_asr.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_gsm_L_asr+16, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ gsm_L_asr.6:                            # @gsm_L_asr.6
                                         # kill: def $cl killed $rcx
 	sarq	%cl, %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_L_asr.6, .Lfunc_end0-gsm_L_asr.6
 	.cfi_endproc

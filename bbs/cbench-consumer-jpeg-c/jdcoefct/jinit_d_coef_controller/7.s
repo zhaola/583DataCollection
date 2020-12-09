@@ -17,10 +17,10 @@ jinit_d_coef_controller.7:              # @jinit_d_coef_controller.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_d_coef_controller+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_d_coef_controller+24
 	movq	(%rdi), %rax
 	movabsq	$consume_data, %rcx
 	movq	%rcx, 8(%rax)
@@ -31,7 +31,8 @@ jinit_d_coef_controller.7:              # @jinit_d_coef_controller.7
 	addq	$136, %rax
 	movq	(%rdi), %rcx
 	movq	%rax, 32(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_d_coef_controller.7, .Lfunc_end0-jinit_d_coef_controller.7
 	.cfi_endproc

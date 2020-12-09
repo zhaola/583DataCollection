@@ -17,6 +17,8 @@ first_marker.15:                        # @first_marker.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rsi
@@ -28,7 +30,8 @@ first_marker.15:                        # @first_marker.15
 	movq	(%rcx), %rcx
 	movq	%rax, 8(%rcx)
 	movl	$1, (%r9)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	first_marker.15, .Lfunc_end0-first_marker.15
 	.cfi_endproc

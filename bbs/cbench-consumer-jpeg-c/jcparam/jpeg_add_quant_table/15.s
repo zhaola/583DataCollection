@@ -17,14 +17,15 @@ jpeg_add_quant_table.15:                # @jpeg_add_quant_table.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_add_quant_table+40, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_add_quant_table+40
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$0, 128(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_add_quant_table.15, .Lfunc_end0-jpeg_add_quant_table.15
 	.cfi_endproc

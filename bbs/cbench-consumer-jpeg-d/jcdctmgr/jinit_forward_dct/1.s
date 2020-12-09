@@ -17,17 +17,17 @@ jinit_forward_dct.1:                    # @jinit_forward_dct.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_forward_dct+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_forward_dct+24
 	movq	(%rdi), %rax
 	movabsq	$forward_DCT, %rcx
 	movq	%rcx, 8(%rax)
 	movq	(%rdi), %rax
-	movabsq	$jpeg_fdct_islow, %rcx
 	movq	%rcx, 16(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_forward_dct.1, .Lfunc_end0-jinit_forward_dct.1
 	.cfi_endproc

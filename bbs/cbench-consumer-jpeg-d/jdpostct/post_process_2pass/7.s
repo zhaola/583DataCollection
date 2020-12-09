@@ -17,10 +17,10 @@ post_process_2pass.7:                   # @post_process_2pass.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdpostct.c_post_process_2pass+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdpostct.c_post_process_2pass+24
 	movq	(%rdi), %rax
 	movl	32(%rax), %eax
 	movq	(%rdi), %rcx
@@ -28,7 +28,8 @@ post_process_2pass.7:                   # @post_process_2pass.7
 	movl	%eax, 36(%rcx)
 	movq	(%rdi), %rax
 	movl	$0, 40(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	post_process_2pass.7, .Lfunc_end0-post_process_2pass.7
 	.cfi_endproc

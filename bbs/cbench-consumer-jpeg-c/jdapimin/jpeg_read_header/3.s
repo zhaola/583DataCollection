@@ -48,23 +48,20 @@ jpeg_read_header.3:                     # @jpeg_read_header.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_5:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
-	callq	jpeg_consume_input
 	movl	%eax, (%rbx)
 	movl	(%rbx), %eax
 	testl	%eax, %eax
-	je	.LBB0_4
-	jmp	.LBB0_6
 .LBB0_6:                                # %"3"
 	movl	%eax, %ecx
 	subl	$1, %ecx
-	je	.LBB0_2
-	jmp	.LBB0_7
 .LBB0_7:                                # %"3"
 	subl	$2, %eax
-	je	.LBB0_3
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_header.3, .Lfunc_end0-jpeg_read_header.3
 	.cfi_endproc

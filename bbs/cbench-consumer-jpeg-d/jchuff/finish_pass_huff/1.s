@@ -23,11 +23,10 @@ finish_pass_huff.1:                     # @finish_pass_huff.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jchuff.c_finish_pass_huff, %rsi
-	movq	__profc_.._jchuff.c_finish_pass_huff+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_finish_pass_huff+8
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$22, 40(%rax)
@@ -40,7 +39,8 @@ finish_pass_huff.1:                     # @finish_pass_huff.1
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_pass_huff.1, .Lfunc_end0-finish_pass_huff.1
 	.cfi_endproc

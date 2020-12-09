@@ -37,6 +37,8 @@ kernel_fdtd_apml.8:                     # @kernel_fdtd_apml.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r12
 	movslq	(%rsi), %r13
@@ -191,7 +193,8 @@ kernel_fdtd_apml.8:                     # @kernel_fdtd_apml.8
 	movsd	%xmm0, (%rax,%rcx,8)
 	movq	112(%rbp), %rax
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_fdtd_apml.8, .Lfunc_end0-kernel_fdtd_apml.8
 	.cfi_endproc

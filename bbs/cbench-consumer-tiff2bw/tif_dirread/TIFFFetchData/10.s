@@ -66,16 +66,18 @@ TIFFFetchData.10:                       # @TIFFFetchData.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_10:                               # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movzwl	2(%rax), %eax
 	addl	$-3, %eax
 	movl	%eax, %ecx
 	subl	$9, %ecx
-	ja	.LBB0_1
 # %bb.11:                               # %"10"
 	movq	.LJTI0_0(,%rax,8), %rax
-	jmpq	*%rax
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchData.10, .Lfunc_end0-TIFFFetchData.10
 	.cfi_endproc

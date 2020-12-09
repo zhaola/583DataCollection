@@ -17,6 +17,8 @@ processG3Options.5:                     # @processG3Options.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiffdither.c_processG3Options+16, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ processG3Options.5:                     # @processG3Options.5
 	movl	group3options, %eax
 	orl	$1, %eax
 	movl	%eax, group3options
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	processG3Options.5, .Lfunc_end0-processG3Options.5
 	.cfi_endproc

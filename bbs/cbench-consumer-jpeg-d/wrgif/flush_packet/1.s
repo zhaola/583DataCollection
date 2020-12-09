@@ -32,6 +32,8 @@ flush_packet.1:                         # @flush_packet.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_flush_packet+8, %rax
 	addq	$1, %rax
@@ -54,8 +56,8 @@ flush_packet.1:                         # @flush_packet.1
 	movq	(%rbx), %rcx
 	movslq	120(%rcx), %rcx
 	cmpq	%rcx, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	flush_packet.1, .Lfunc_end0-flush_packet.1
 	.cfi_endproc

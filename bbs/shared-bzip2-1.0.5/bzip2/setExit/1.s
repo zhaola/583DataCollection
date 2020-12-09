@@ -17,13 +17,16 @@ setExit.1:                              # @setExit.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_setExit+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzip2.c_setExit+8
 	movl	(%rdi), %eax
 	movl	%eax, exitValue
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	setExit.1, .Lfunc_end0-setExit.1
 	.cfi_endproc

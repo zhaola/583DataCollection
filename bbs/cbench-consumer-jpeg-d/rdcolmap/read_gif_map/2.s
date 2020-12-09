@@ -34,14 +34,16 @@ read_gif_map.2:                         # @read_gif_map.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	callq	_IO_getc
 	movslq	(%rbx), %rcx
 	movl	%eax, (%r14,%rcx,4)
 	cmpl	$-1, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_gif_map.2, .Lfunc_end0-read_gif_map.2
 	.cfi_endproc

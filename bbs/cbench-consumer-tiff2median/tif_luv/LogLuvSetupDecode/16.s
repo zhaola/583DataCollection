@@ -17,11 +17,14 @@ LogLuvSetupDecode.16:                   # @LogLuvSetupDecode.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_LogLuvSetupDecode+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_luv.c_LogLuvSetupDecode+24
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvSetupDecode.16, .Lfunc_end0-LogLuvSetupDecode.16
 	.cfi_endproc

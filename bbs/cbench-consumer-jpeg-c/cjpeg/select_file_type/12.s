@@ -17,12 +17,13 @@ select_file_type.12:                    # @select_file_type.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._cjpeg.c_select_file_type+56, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._cjpeg.c_select_file_type+56
 	movq	$0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_file_type.12, .Lfunc_end0-select_file_type.12
 	.cfi_endproc

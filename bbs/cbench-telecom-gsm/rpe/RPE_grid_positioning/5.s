@@ -42,14 +42,16 @@ RPE_grid_positioning.5:                 # @RPE_grid_positioning.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_6:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movswl	(%rdi), %eax
 	movl	%eax, %ecx
 	subl	$3, %ecx
-	ja	.LBB0_1
 # %bb.7:                                # %"5"
 	movq	.LJTI0_0(,%rax,8), %rax
-	jmpq	*%rax
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	RPE_grid_positioning.5, .Lfunc_end0-RPE_grid_positioning.5
 	.cfi_endproc

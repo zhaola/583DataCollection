@@ -23,11 +23,10 @@ jpeg_write_raw_data.5:                  # @jpeg_write_raw_data.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_write_raw_data, %rsi
-	movq	__profc_jpeg_write_raw_data+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_write_raw_data+16
 	movq	(%rdi), %rax
 	movl	296(%rax), %eax
 	movq	(%rdi), %rcx
@@ -47,7 +46,8 @@ jpeg_write_raw_data.5:                  # @jpeg_write_raw_data.5
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_write_raw_data.5, .Lfunc_end0-jpeg_write_raw_data.5
 	.cfi_endproc

@@ -23,11 +23,10 @@ jinit_write_gif.2:                      # @jinit_write_gif.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_write_gif, %rsi
-	movq	__profc_jinit_write_gif+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_write_gif+48
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$1014, 40(%rax)         # imm = 0x3F6
@@ -40,7 +39,8 @@ jinit_write_gif.2:                      # @jinit_write_gif.2
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_gif.2, .Lfunc_end0-jinit_write_gif.2
 	.cfi_endproc

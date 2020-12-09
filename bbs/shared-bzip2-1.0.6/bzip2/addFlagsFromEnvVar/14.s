@@ -17,12 +17,15 @@ addFlagsFromEnvVar.14:                  # @addFlagsFromEnvVar.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_addFlagsFromEnvVar+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzip2.c_addFlagsFromEnvVar+48
 	movl	$1024, (%rdi)           # imm = 0x400
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	addFlagsFromEnvVar.14, .Lfunc_end0-addFlagsFromEnvVar.14
 	.cfi_endproc

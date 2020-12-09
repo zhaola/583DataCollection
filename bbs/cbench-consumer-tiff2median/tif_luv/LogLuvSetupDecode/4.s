@@ -36,23 +36,21 @@ LogLuvSetupDecode.4:                    # @LogLuvSetupDecode.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_5:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	$LogLuvDecode24, 616(%rax)
 	movq	(%rsi), %rax
 	movl	(%rax), %eax
 	testl	%eax, %eax
-	je	.LBB0_2
-	jmp	.LBB0_6
 .LBB0_6:                                # %"4"
 	movl	%eax, %ecx
 	subl	$1, %ecx
-	je	.LBB0_3
-	jmp	.LBB0_7
 .LBB0_7:                                # %"4"
 	subl	$3, %eax
-	je	.LBB0_4
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvSetupDecode.4, .Lfunc_end0-LogLuvSetupDecode.4
 	.cfi_endproc

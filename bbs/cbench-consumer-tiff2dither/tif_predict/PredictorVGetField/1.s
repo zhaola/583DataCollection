@@ -24,6 +24,8 @@ PredictorVGetField.1:                   # @PredictorVGetField.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	(%rax), %eax
@@ -34,8 +36,8 @@ PredictorVGetField.1:                   # @PredictorVGetField.1
 	movl	(%rax), %eax
 	movl	%eax, (%r9)
 	cmpl	$40, %eax
-	jbe	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PredictorVGetField.1, .Lfunc_end0-PredictorVGetField.1
 	.cfi_endproc

@@ -17,6 +17,8 @@ Short_term_synthesis_filtering.7:       # @Short_term_synthesis_filtering.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movswq	(%rdi), %rax
 	movswq	(%rsi), %rcx
@@ -25,7 +27,8 @@ Short_term_synthesis_filtering.7:       # @Short_term_synthesis_filtering.7
 	sarq	$15, %rax
 	andq	$65535, %rax            # imm = 0xFFFF
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Short_term_synthesis_filtering.7, .Lfunc_end0-Short_term_synthesis_filtering.7
 	.cfi_endproc

@@ -23,12 +23,15 @@ quant.12:                               # @quant.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	callq	_TIFFfree
 	movq	(%rbx), %rdi
 	callq	_TIFFfree
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	quant.12, .Lfunc_end0-quant.12
 	.cfi_endproc

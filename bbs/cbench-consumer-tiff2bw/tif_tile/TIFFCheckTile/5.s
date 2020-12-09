@@ -23,6 +23,8 @@ TIFFCheckTile.5:                        # @TIFFCheckTile.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFCheckTile+16, %rax
 	addq	$1, %rax
@@ -37,7 +39,8 @@ TIFFCheckTile.5:                        # @TIFFCheckTile.5
 	movb	$0, %al
 	callq	TIFFError
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFCheckTile.5, .Lfunc_end0-TIFFCheckTile.5
 	.cfi_endproc

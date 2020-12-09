@@ -13,6 +13,8 @@ read_samples_pcm.1:                     # @read_samples_pcm.1
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_read_samples_pcm+80, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_read_samples_pcm+80
@@ -22,6 +24,8 @@ read_samples_pcm.1:                     # @read_samples_pcm.1
 	callq	fprintf
 	movl	$2, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_samples_pcm.1, .Lfunc_end0-read_samples_pcm.1
 	.cfi_endproc

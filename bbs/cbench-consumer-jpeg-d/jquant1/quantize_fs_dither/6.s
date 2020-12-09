@@ -17,10 +17,10 @@ quantize_fs_dither.6:                   # @quantize_fs_dither.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant1.c_quantize_fs_dither+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant1.c_quantize_fs_dither+16
 	movl	$1, (%rdi)
 	movl	(%rsi), %eax
 	movl	%eax, (%rdx)
@@ -28,7 +28,8 @@ quantize_fs_dither.6:                   # @quantize_fs_dither.6
 	movslq	(%r8), %rcx
 	movq	112(%rax,%rcx,8), %rax
 	movq	%rax, (%r9)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	quantize_fs_dither.6, .Lfunc_end0-quantize_fs_dither.6
 	.cfi_endproc

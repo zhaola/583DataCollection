@@ -17,13 +17,16 @@ pix16toY.1:                             # @pix16toY.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_pix16toY, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_luv.c_pix16toY
 	xorps	%xmm0, %xmm0
 	movsd	%xmm0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix16toY.1, .Lfunc_end0-pix16toY.1
 	.cfi_endproc

@@ -17,6 +17,8 @@ jpeg_make_c_derived_tbl.15:             # @jpeg_make_c_derived_tbl.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	shll	$1, %eax
@@ -24,7 +26,8 @@ jpeg_make_c_derived_tbl.15:             # @jpeg_make_c_derived_tbl.15
 	movl	(%rsi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_make_c_derived_tbl.15, .Lfunc_end0-jpeg_make_c_derived_tbl.15
 	.cfi_endproc

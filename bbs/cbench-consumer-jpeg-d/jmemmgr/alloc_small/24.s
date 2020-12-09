@@ -24,6 +24,8 @@ alloc_small.24:                         # @alloc_small.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	addq	(%rsi), %rax
@@ -39,8 +41,8 @@ alloc_small.24:                         # @alloc_small.24
 	movq	(%rcx), %rcx
 	movq	%rax, 16(%rcx)
 	cmpq	$0, (%r9)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alloc_small.24, .Lfunc_end0-alloc_small.24
 	.cfi_endproc

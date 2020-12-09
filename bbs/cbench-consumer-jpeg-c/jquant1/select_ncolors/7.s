@@ -24,16 +24,16 @@ select_ncolors.7:                       # @select_ncolors.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant1.c_select_ncolors+56, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant1.c_select_ncolors+56
 	movl	(%rdi), %eax
 	addl	$-1, %eax
 	movl	%eax, (%rdi)
 	cmpl	$2, (%rdi)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_ncolors.7, .Lfunc_end0-select_ncolors.7
 	.cfi_endproc

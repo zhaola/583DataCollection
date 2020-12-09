@@ -24,6 +24,8 @@ ConvertToIeeeDouble.10:                 # @ConvertToIeeeDouble.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	%rax, (%rsi)
@@ -31,8 +33,8 @@ ConvertToIeeeDouble.10:                 # @ConvertToIeeeDouble.10
 	addl	$32, %eax
 	movl	%eax, (%rdx)
 	cmpl	$0, (%rdx)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeDouble.10, .Lfunc_end0-ConvertToIeeeDouble.10
 	.cfi_endproc

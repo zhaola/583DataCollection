@@ -24,14 +24,16 @@ set_sample_factors.6:                   # @set_sample_factors.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_set_sample_factors+64, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_set_sample_factors+64
 	movsbl	(%rdi), %eax
 	cmpl	$88, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_sample_factors.6, .Lfunc_end0-set_sample_factors.6
 	.cfi_endproc

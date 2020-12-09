@@ -24,13 +24,15 @@ read_pbm_integer.10:                    # @read_pbm_integer.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdppm.c_read_pbm_integer+72, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._rdppm.c_read_pbm_integer+72
 	cmpl	$57, (%rdi)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_pbm_integer.10, .Lfunc_end0-read_pbm_integer.10
 	.cfi_endproc

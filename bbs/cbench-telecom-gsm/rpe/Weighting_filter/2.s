@@ -24,6 +24,8 @@ Weighting_filter.2:                     # @Weighting_filter.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	$4096, (%rdi)           # imm = 0x1000
 	movq	(%rsi), %rax
@@ -102,8 +104,8 @@ Weighting_filter.2:                     # @Weighting_filter.2
 	sarq	$13, %rax
 	movq	%rax, (%rdi)
 	cmpq	$-32768, (%rdi)         # imm = 0x8000
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Weighting_filter.2, .Lfunc_end0-Weighting_filter.2
 	.cfi_endproc

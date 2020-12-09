@@ -24,14 +24,14 @@ emit_message.2:                         # @emit_message.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jerror.c_emit_message+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jerror.c_emit_message+32
 	movq	(%rdi), %rax
 	cmpl	$3, 124(%rax)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_message.2, .Lfunc_end0-emit_message.2
 	.cfi_endproc

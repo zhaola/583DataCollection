@@ -17,16 +17,17 @@ start_pass_dpost.5:                     # @start_pass_dpost.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdpostct.c_start_pass_dpost+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdpostct.c_start_pass_dpost+32
 	movq	(%rdi), %rax
 	movq	592(%rax), %rax
 	movq	8(%rax), %rax
 	movq	(%rsi), %rcx
 	movq	%rax, 8(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_dpost.5, .Lfunc_end0-start_pass_dpost.5
 	.cfi_endproc

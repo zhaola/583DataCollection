@@ -17,6 +17,8 @@ APCM_quantization_xmaxc_to_exp_mant.6:  # @APCM_quantization_xmaxc_to_exp_mant.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rpe.c_APCM_quantization_xmaxc_to_exp_mant, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ APCM_quantization_xmaxc_to_exp_mant.6:  # @APCM_quantization_xmaxc_to_exp_mant.6
 	movw	(%rsi), %ax
 	addw	$-1, %ax
 	movw	%ax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	APCM_quantization_xmaxc_to_exp_mant.6, .Lfunc_end0-APCM_quantization_xmaxc_to_exp_mant.6
 	.cfi_endproc

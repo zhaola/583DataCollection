@@ -37,6 +37,8 @@ fht.7:                                  # @fht.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._fft.c_fht, %r12
 	addq	$1, %r12
@@ -209,7 +211,8 @@ fht.7:                                  # @fht.7
 	shlq	$2, %rax
 	addq	%rax, %rcx
 	movq	%rcx, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fht.7, .Lfunc_end0-fht.7
 	.cfi_endproc

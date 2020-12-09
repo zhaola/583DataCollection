@@ -21,10 +21,10 @@ pass2_fs_dither.3:                      # @pass2_fs_dither.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant2.c_pass2_fs_dither+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant2.c_pass2_fs_dither+16
 	movl	(%rdi), %eax
 	subl	$1, %eax
 	imull	$3, %eax, %r11d
@@ -51,7 +51,8 @@ pass2_fs_dither.3:                      # @pass2_fs_dither.3
 	movq	%rax, (%r10)
 	movq	(%r9), %rax
 	movl	$0, 72(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pass2_fs_dither.3, .Lfunc_end0-pass2_fs_dither.3
 	.cfi_endproc

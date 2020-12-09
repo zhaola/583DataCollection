@@ -17,6 +17,8 @@ TIFFInitOrder.5:                        # @TIFFInitOrder.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_open.c_TIFFInitOrder+16, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ TIFFInitOrder.5:                        # @TIFFInitOrder.5
 	movl	16(%rax), %ecx
 	orl	$128, %ecx
 	movl	%ecx, 16(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFInitOrder.5, .Lfunc_end0-TIFFInitOrder.5
 	.cfi_endproc

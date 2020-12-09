@@ -17,6 +17,8 @@ cleanUpAndFail.11:                      # @cleanUpAndFail.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_cleanUpAndFail+56, %rax
 	addq	$1, %rax
@@ -42,7 +44,8 @@ cleanUpAndFail.11:                      # @cleanUpAndFail.11
 	movabsq	$.str.44, %rsi
 	movb	$0, %al
 	callq	fprintf
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	cleanUpAndFail.11, .Lfunc_end0-cleanUpAndFail.11
 	.cfi_endproc

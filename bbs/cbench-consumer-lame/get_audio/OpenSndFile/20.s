@@ -22,6 +22,8 @@ OpenSndFile.20:                         # @OpenSndFile.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_OpenSndFile+72, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ OpenSndFile.20:                         # @OpenSndFile.20
 	cqto
 	idivq	%rcx
 	movq	%rax, num_samples
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	OpenSndFile.20, .Lfunc_end0-OpenSndFile.20
 	.cfi_endproc

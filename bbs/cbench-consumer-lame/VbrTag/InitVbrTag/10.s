@@ -13,6 +13,8 @@ InitVbrTag.10:                          # @InitVbrTag.10
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_InitVbrTag+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_InitVbrTag+40
@@ -22,6 +24,8 @@ InitVbrTag.10:                          # @InitVbrTag.10
 	callq	fprintf
 	movl	$4294967295, %edi       # imm = 0xFFFFFFFF
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	InitVbrTag.10, .Lfunc_end0-InitVbrTag.10
 	.cfi_endproc

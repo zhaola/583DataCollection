@@ -23,11 +23,10 @@ jinit_forward_dct.4:                    # @jinit_forward_dct.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_forward_dct, %rsi
-	movq	__profc_jinit_forward_dct+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_forward_dct+32
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$47, 40(%rax)
@@ -40,7 +39,8 @@ jinit_forward_dct.4:                    # @jinit_forward_dct.4
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_forward_dct.4, .Lfunc_end0-jinit_forward_dct.4
 	.cfi_endproc

@@ -17,6 +17,8 @@ Fax3Encode.14:                          # @Fax3Encode.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	80(%rax), %rax
@@ -25,7 +27,8 @@ Fax3Encode.14:                          # @Fax3Encode.14
 	movl	4(%rcx), %edx
 	movq	%rax, %rdi
 	callq	_TIFFmemcpy
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3Encode.14, .Lfunc_end0-Fax3Encode.14
 	.cfi_endproc

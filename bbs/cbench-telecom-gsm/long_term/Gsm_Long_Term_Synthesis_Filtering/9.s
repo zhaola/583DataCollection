@@ -24,14 +24,16 @@ Gsm_Long_Term_Synthesis_Filtering.9:    # @Gsm_Long_Term_Synthesis_Filtering.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movswq	(%rdi), %rax
 	movw	gsm_QLB(,%rax,2), %ax
 	movw	%ax, (%rsi)
 	movswl	(%rsi), %eax
 	cmpl	$-32768, %eax           # imm = 0x8000
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Long_Term_Synthesis_Filtering.9, .Lfunc_end0-Gsm_Long_Term_Synthesis_Filtering.9
 	.cfi_endproc

@@ -42,17 +42,17 @@ jinit_memory_mgr.2:                     # @jinit_memory_mgr.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
-	callq	jpeg_mem_init
 	movq	%rax, (%r15)
 	movq	(%rbx), %rdi
 	movl	$160, %esi
-	callq	jpeg_get_small
 	movq	%rax, (%r14)
 	cmpq	$0, (%r14)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_memory_mgr.2, .Lfunc_end0-jinit_memory_mgr.2
 	.cfi_endproc

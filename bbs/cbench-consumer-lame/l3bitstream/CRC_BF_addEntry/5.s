@@ -23,6 +23,8 @@ CRC_BF_addEntry.5:                      # @CRC_BF_addEntry.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	crc, %eax
 	andl	$65535, %eax            # imm = 0xFFFF
@@ -32,7 +34,8 @@ CRC_BF_addEntry.5:                      # @CRC_BF_addEntry.5
 	movl	(%rdx), %edx
 	callq	BF_addEntry
 	movq	%rax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	CRC_BF_addEntry.5, .Lfunc_end0-CRC_BF_addEntry.5
 	.cfi_endproc

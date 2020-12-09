@@ -17,6 +17,8 @@ free_side_info_link.3:                  # @free_side_info_link.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._formatBitstream.c_free_side_info_link+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ free_side_info_link.3:                  # @free_side_info_link.3
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	free_side_info_link.3, .Lfunc_end0-free_side_info_link.3
 	.cfi_endproc

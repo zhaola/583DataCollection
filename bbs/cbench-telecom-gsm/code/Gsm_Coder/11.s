@@ -17,6 +17,8 @@ Gsm_Coder.11:                           # @Gsm_Coder.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rdi), %rsi
@@ -24,7 +26,8 @@ Gsm_Coder.11:                           # @Gsm_Coder.11
 	movq	%rax, %rdi
 	movl	$240, %edx
 	callq	memcpy
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Coder.11, .Lfunc_end0-Gsm_Coder.11
 	.cfi_endproc

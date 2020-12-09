@@ -17,14 +17,15 @@ jpeg_suppress_tables.9:                 # @jpeg_suppress_tables.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_suppress_tables+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_suppress_tables+24
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
 	movl	%eax, 276(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_suppress_tables.9, .Lfunc_end0-jpeg_suppress_tables.9
 	.cfi_endproc

@@ -13,6 +13,8 @@ find_scalefac.16:                       # @find_scalefac.16
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_find_scalefac+88, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_find_scalefac+88
@@ -21,6 +23,8 @@ find_scalefac.16:                       # @find_scalefac.16
 	movl	$108, %edx
 	movabsq	$__PRETTY_FUNCTION__.find_scalefac, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_scalefac.16, .Lfunc_end0-find_scalefac.16
 	.cfi_endproc

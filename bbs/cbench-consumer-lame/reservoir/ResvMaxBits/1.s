@@ -17,6 +17,8 @@ ResvMaxBits.1:                          # @ResvMaxBits.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	ResvSize, %r8d
 	imull	$9, ResvMax, %eax
@@ -29,7 +31,8 @@ ResvMaxBits.1:                          # @ResvMaxBits.1
 	movq	(%rsi), %rcx
 	addl	(%rcx), %eax
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ResvMaxBits.1, .Lfunc_end0-ResvMaxBits.1
 	.cfi_endproc

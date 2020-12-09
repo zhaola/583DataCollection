@@ -23,6 +23,8 @@ L16toY.2:                               # @L16toY.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_L16toY, %rax
 	addq	$1, %rax
@@ -39,7 +41,8 @@ L16toY.2:                               # @L16toY.2
 	addq	$4, %rcx
 	movq	%rcx, (%rbx)
 	movss	%xmm0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	L16toY.2, .Lfunc_end0-L16toY.2
 	.cfi_endproc

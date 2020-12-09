@@ -13,6 +13,8 @@ LZWSetupDecode.2:                       # @LZWSetupDecode.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._tif_lzw.c_LZWSetupDecode+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_lzw.c_LZWSetupDecode+32
@@ -21,6 +23,8 @@ LZWSetupDecode.2:                       # @LZWSetupDecode.2
 	movl	$196, %edx
 	movabsq	$__PRETTY_FUNCTION__.LZWSetupDecode, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWSetupDecode.2, .Lfunc_end0-LZWSetupDecode.2
 	.cfi_endproc

@@ -17,6 +17,8 @@ TIFFSetupStrips.12:                     # @TIFFSetupStrips.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_write.c_TIFFSetupStrips+8, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ TIFFSetupStrips.12:                     # @TIFFSetupStrips.12
 	xorl	%edx, %edx
 	divl	%ecx
 	movl	%eax, 240(%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFSetupStrips.12, .Lfunc_end0-TIFFSetupStrips.12
 	.cfi_endproc

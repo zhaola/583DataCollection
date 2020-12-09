@@ -17,10 +17,10 @@ htest_one_block.17:                     # @htest_one_block.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_htest_one_block+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_htest_one_block+24
 	movq	(%rdi), %rax
 	movl	(%rsi), %ecx
 	shll	$4, %ecx
@@ -30,7 +30,8 @@ htest_one_block.17:                     # @htest_one_block.17
 	addq	$1, %rdx
 	movq	%rdx, (%rax,%rcx,8)
 	movl	$0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	htest_one_block.17, .Lfunc_end0-htest_one_block.17
 	.cfi_endproc

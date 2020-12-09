@@ -32,6 +32,8 @@ main1.24:                               # @main1.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main1, %rax
 	addq	$1, %rax
@@ -41,7 +43,6 @@ main1.24:                               # @main1.24
 	movq	(%rbx), %rax
 	movl	40(%rax), %edx
 	movq	%r14, %rdi
-	callq	jpeg_read_scanlines
 	movabsq	$__profd_main1, %rsi
 	movl	%eax, (%r15)
 	movq	(%rbx), %rax
@@ -55,7 +56,8 @@ main1.24:                               # @main1.24
 	movq	%rbx, %rsi
 	movl	%r15d, %edx
 	callq	*%r12
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.24, .Lfunc_end0-main1.24
 	.cfi_endproc

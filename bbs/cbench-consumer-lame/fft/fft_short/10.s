@@ -24,14 +24,16 @@ fft_short.10:                           # @fft_short.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movw	(%rdi), %ax
 	addw	$-1, %ax
 	movw	%ax, (%rdi)
 	cwtl
 	cmpl	$0, %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fft_short.10, .Lfunc_end0-fft_short.10
 	.cfi_endproc

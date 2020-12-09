@@ -24,13 +24,13 @@ jpeg_read_coefficients.13:              # @jpeg_read_coefficients.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_read_coefficients+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_read_coefficients+16
 	cmpl	$3, (%rdi)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_coefficients.13, .Lfunc_end0-jpeg_read_coefficients.13
 	.cfi_endproc

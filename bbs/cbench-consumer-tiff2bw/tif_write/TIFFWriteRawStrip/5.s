@@ -23,6 +23,8 @@ TIFFWriteRawStrip.5:                    # @TIFFWriteRawStrip.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFWriteRawStrip+16, %rax
 	addq	$1, %rax
@@ -33,7 +35,8 @@ TIFFWriteRawStrip.5:                    # @TIFFWriteRawStrip.5
 	movb	$0, %al
 	callq	TIFFError
 	movl	$-1, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteRawStrip.5, .Lfunc_end0-TIFFWriteRawStrip.5
 	.cfi_endproc

@@ -13,6 +13,8 @@ putbits.10:                             # @putbits.10
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_putbits+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_putbits+40
@@ -21,6 +23,8 @@ putbits.10:                             # @putbits.10
 	movl	$328, %edx              # imm = 0x148
 	movabsq	$__PRETTY_FUNCTION__.putbits, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	putbits.10, .Lfunc_end0-putbits.10
 	.cfi_endproc

@@ -48,6 +48,8 @@ TIFFWriteData.12:                       # @TIFFWriteData.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_dirwrite.c_TIFFWriteData, %rax
 	movq	__profc_.._tif_dirwrite.c_TIFFWriteData+48, %rcx
@@ -68,8 +70,8 @@ TIFFWriteData.12:                       # @TIFFWriteData.12
 	movl	%r13d, %edx
 	callq	*%rbx
 	cmpl	(%r14), %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteData.12, .Lfunc_end0-TIFFWriteData.12
 	.cfi_endproc

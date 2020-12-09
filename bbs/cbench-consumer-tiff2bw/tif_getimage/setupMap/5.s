@@ -18,6 +18,8 @@ setupMap.5:                             # @setupMap.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_setupMap+8, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ setupMap.5:                             # @setupMap.5
 	movq	80(%rcx), %rcx
 	movslq	(%rsi), %rdx
 	movb	%al, (%rcx,%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	setupMap.5, .Lfunc_end0-setupMap.5
 	.cfi_endproc

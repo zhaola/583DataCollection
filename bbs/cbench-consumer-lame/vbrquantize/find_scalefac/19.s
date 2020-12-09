@@ -36,6 +36,8 @@ find_scalefac.19:                       # @find_scalefac.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_2(%rip), %xmm1   # xmm1 = mem[0],zero
@@ -47,8 +49,8 @@ find_scalefac.19:                       # @find_scalefac.19
 	movaps	.LCPI0_1(%rip), %xmm1   # xmm1 = [NaN,NaN]
 	pand	%xmm1, %xmm2
 	ucomisd	%xmm2, %xmm0
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_scalefac.19, .Lfunc_end0-find_scalefac.19
 	.cfi_endproc

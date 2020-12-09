@@ -17,6 +17,8 @@ Read16BitsHighLow.1:                    # @Read16BitsHighLow.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_Read16BitsHighLow+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ Read16BitsHighLow.1:                    # @Read16BitsHighLow.1
 	movl	(%rdi), %eax
 	subl	$65536, %eax            # imm = 0x10000
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Read16BitsHighLow.1, .Lfunc_end0-Read16BitsHighLow.1
 	.cfi_endproc

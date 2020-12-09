@@ -17,11 +17,14 @@ Weighting_filter.3:                     # @Weighting_filter.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rpe.c_Weighting_filter, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._rpe.c_Weighting_filter
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Weighting_filter.3, .Lfunc_end0-Weighting_filter.3
 	.cfi_endproc

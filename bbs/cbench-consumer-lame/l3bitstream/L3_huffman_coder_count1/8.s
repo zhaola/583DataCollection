@@ -33,6 +33,8 @@ L3_huffman_coder_count1.8:              # @L3_huffman_coder_count1.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movq	(%rax), %rdi
@@ -44,7 +46,8 @@ L3_huffman_coder_count1.8:              # @L3_huffman_coder_count1.8
 	movl	(%r12), %eax
 	addl	(%r15), %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	L3_huffman_coder_count1.8, .Lfunc_end0-L3_huffman_coder_count1.8
 	.cfi_endproc

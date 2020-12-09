@@ -13,10 +13,14 @@ saveInputFileMetaInfo.1:                # @saveInputFileMetaInfo.1
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._bzip2.c_saveInputFileMetaInfo+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzip2.c_saveInputFileMetaInfo+8
 	callq	ioError
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	saveInputFileMetaInfo.1, .Lfunc_end0-saveInputFileMetaInfo.1
 	.cfi_endproc

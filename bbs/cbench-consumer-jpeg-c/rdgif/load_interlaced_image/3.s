@@ -23,6 +23,8 @@ load_interlaced_image.3:                # @load_interlaced_image.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._rdgif.c_load_interlaced_image, %rax
 	movq	__profc_.._rdgif.c_load_interlaced_image+16, %rcx
@@ -44,7 +46,8 @@ load_interlaced_image.3:                # @load_interlaced_image.3
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	load_interlaced_image.3, .Lfunc_end0-load_interlaced_image.3
 	.cfi_endproc

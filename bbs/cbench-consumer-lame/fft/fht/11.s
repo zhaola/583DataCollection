@@ -17,6 +17,8 @@ fht.11:                                 # @fht.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._fft.c_fht+24, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ fht.11:                                 # @fht.11
 	movq	(%rdi), %rax
 	addq	$8, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fht.11, .Lfunc_end0-fht.11
 	.cfi_endproc

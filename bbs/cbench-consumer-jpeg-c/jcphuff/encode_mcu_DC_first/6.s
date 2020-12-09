@@ -36,10 +36,10 @@ encode_mcu_DC_first.6:                  # @encode_mcu_DC_first.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_encode_mcu_DC_first+8, %rbx
 	addq	$1, %rbx
-	movq	%rbx, __profc_.._jcphuff.c_encode_mcu_DC_first+8
 	movq	(%rdi), %rdi
 	movslq	(%rsi), %rbx
 	movq	(%rdi,%rbx,8), %rdi
@@ -70,8 +70,8 @@ encode_mcu_DC_first.6:                  # @encode_mcu_DC_first.6
 	movl	(%r10), %ecx
 	movl	%ecx, (%rax)
 	cmpl	$0, (%r10)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_DC_first.6, .Lfunc_end0-encode_mcu_DC_first.6
 	.cfi_endproc

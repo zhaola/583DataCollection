@@ -34,6 +34,8 @@ parse_wave_header.14:                   # @parse_wave_header.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	callq	Read32Bits
@@ -44,8 +46,8 @@ parse_wave_header.14:                   # @parse_wave_header.14
 	movl	$1, %edx
 	callq	fskip
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	parse_wave_header.14, .Lfunc_end0-parse_wave_header.14
 	.cfi_endproc

@@ -24,14 +24,14 @@ process_data_simple_main.10:            # @process_data_simple_main.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmainct.c_process_data_simple_main, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmainct.c_process_data_simple_main
 	movq	(%rdi), %rax
 	cmpl	$0, 24(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_data_simple_main.10, .Lfunc_end0-process_data_simple_main.10
 	.cfi_endproc

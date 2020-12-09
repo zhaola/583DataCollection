@@ -38,6 +38,8 @@ jinit_d_coef_controller.5:              # @jinit_d_coef_controller.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
@@ -47,15 +49,12 @@ jinit_d_coef_controller.5:              # @jinit_d_coef_controller.5
 	movl	28(%rax), %edi
 	movq	(%r14), %rax
 	movslq	8(%rax), %rsi
-	callq	jround_up
 	movq	%rax, %r15
 	movq	(%r14), %rax
 	movl	32(%rax), %edi
 	movq	(%r14), %rax
 	movslq	12(%rax), %rsi
-	callq	jround_up
 	movq	%rax, %r14
-	movabsq	$__profd_jinit_d_coef_controller, %rsi
 	movl	(%rbx), %ebx
 	movq	%r12, %rdi
 	movl	$1, %edx
@@ -72,7 +71,8 @@ jinit_d_coef_controller.5:              # @jinit_d_coef_controller.5
 	movq	-56(%rbp), %rdx         # 8-byte Reload
 	movslq	(%rdx), %rdx
 	movq	%rax, 136(%rcx,%rdx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_d_coef_controller.5, .Lfunc_end0-jinit_d_coef_controller.5
 	.cfi_endproc

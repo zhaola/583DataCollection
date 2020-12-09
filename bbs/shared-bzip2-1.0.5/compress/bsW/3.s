@@ -17,6 +17,8 @@ bsW.3:                                  # @bsW.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rdi
@@ -32,7 +34,8 @@ bsW.3:                                  # @bsW.3
 	movq	(%rsi), %rcx
 	addl	644(%rcx), %eax
 	movl	%eax, 644(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	bsW.3, .Lfunc_end0-bsW.3
 	.cfi_endproc

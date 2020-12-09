@@ -17,6 +17,8 @@ TIFFFetchData.17:                       # @TIFFFetchData.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchData+96, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ TIFFFetchData.17:                       # @TIFFFetchData.17
 	shll	$1, %eax
 	movl	%eax, %esi
 	callq	TIFFSwabArrayOfLong
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchData.17, .Lfunc_end0-TIFFFetchData.17
 	.cfi_endproc

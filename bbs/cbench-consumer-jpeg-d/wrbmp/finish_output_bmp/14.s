@@ -17,6 +17,8 @@ finish_output_bmp.14:                   # @finish_output_bmp.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrbmp.c_finish_output_bmp+32, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ finish_output_bmp.14:                   # @finish_output_bmp.14
 	movl	32(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, 32(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_output_bmp.14, .Lfunc_end0-finish_output_bmp.14
 	.cfi_endproc

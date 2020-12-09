@@ -40,6 +40,8 @@ BZ2_bzDecompressInit.14:                # @BZ2_bzDecompressInit.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_BZ2_bzDecompressInit, %rsi
 	movq	(%rdi), %rax
@@ -55,8 +57,8 @@ BZ2_bzDecompressInit.14:                # @BZ2_bzDecompressInit.14
 	callq	*%rbx
 	movq	%rax, (%r14)
 	cmpq	$0, (%r14)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzDecompressInit.14, .Lfunc_end0-BZ2_bzDecompressInit.14
 	.cfi_endproc

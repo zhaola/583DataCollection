@@ -23,6 +23,8 @@ Fax3SetupState.21:                      # @Fax3SetupState.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_fax3.c_Fax3SetupState+48, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ Fax3SetupState.21:                      # @Fax3SetupState.21
 	movb	$0, %al
 	callq	TIFFError
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3SetupState.21, .Lfunc_end0-Fax3SetupState.21
 	.cfi_endproc

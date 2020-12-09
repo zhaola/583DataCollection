@@ -17,6 +17,8 @@ TIFFNumberOfStrips.2:                   # @TIFFNumberOfStrips.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFNumberOfStrips, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ TIFFNumberOfStrips.2:                   # @TIFFNumberOfStrips.2
 	xorl	%edx, %edx
 	divl	68(%rcx)
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFNumberOfStrips.2, .Lfunc_end0-TIFFNumberOfStrips.2
 	.cfi_endproc

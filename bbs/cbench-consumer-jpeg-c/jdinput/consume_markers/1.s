@@ -17,12 +17,13 @@ consume_markers.1:                      # @consume_markers.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdinput.c_consume_markers, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdinput.c_consume_markers
 	movl	$2, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_markers.1, .Lfunc_end0-consume_markers.1
 	.cfi_endproc

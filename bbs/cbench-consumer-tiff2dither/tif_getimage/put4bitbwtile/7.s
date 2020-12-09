@@ -17,6 +17,8 @@ put4bitbwtile.7:                        # @put4bitbwtile.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_put4bitbwtile+16, %rax
 	addq	$1, %rax
@@ -39,7 +41,8 @@ put4bitbwtile.7:                        # @put4bitbwtile.7
 	addq	$4, %rsi
 	movq	%rsi, (%rcx)
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	put4bitbwtile.7, .Lfunc_end0-put4bitbwtile.7
 	.cfi_endproc

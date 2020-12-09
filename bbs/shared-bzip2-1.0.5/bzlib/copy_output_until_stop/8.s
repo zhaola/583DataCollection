@@ -17,10 +17,13 @@ copy_output_until_stop.8:               # @copy_output_until_stop.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movb	(%rdi), %al
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	copy_output_until_stop.8, .Lfunc_end0-copy_output_until_stop.8
 	.cfi_endproc

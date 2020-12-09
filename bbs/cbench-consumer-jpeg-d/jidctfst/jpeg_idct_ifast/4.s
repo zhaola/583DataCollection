@@ -36,10 +36,10 @@ jpeg_idct_ifast.4:                      # @jpeg_idct_ifast.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_idct_ifast, %r12
 	addq	$1, %r12
-	movq	%r12, __profc_jpeg_idct_ifast
 	movq	(%rdi), %rbx
 	movswl	(%rbx), %ebx
 	movq	(%rsi), %rax
@@ -217,7 +217,8 @@ jpeg_idct_ifast.4:                      # @jpeg_idct_ifast.4
 	movq	(%r11), %rax
 	addq	$4, %rax
 	movq	%rax, (%r11)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_idct_ifast.4, .Lfunc_end0-jpeg_idct_ifast.4
 	.cfi_endproc

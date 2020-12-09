@@ -22,6 +22,8 @@ timestatus.3:                           # @timestatus.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movq	__profc_timestatus+8, %rax
@@ -35,7 +37,8 @@ timestatus.3:                           # @timestatus.3
 	divsd	%xmm1, %xmm0
 	cvttsd2si	%xmm0, %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	timestatus.3, .Lfunc_end0-timestatus.3
 	.cfi_endproc

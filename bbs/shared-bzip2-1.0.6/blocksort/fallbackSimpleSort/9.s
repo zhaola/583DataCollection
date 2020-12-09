@@ -17,6 +17,8 @@ fallbackSimpleSort.9:                   # @fallbackSimpleSort.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
@@ -26,7 +28,8 @@ fallbackSimpleSort.9:                   # @fallbackSimpleSort.9
 	subl	$4, %edx
 	movslq	%edx, %rdx
 	movl	%eax, (%rcx,%rdx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fallbackSimpleSort.9, .Lfunc_end0-fallbackSimpleSort.9
 	.cfi_endproc

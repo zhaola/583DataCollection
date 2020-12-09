@@ -24,6 +24,8 @@ TIFFVStripSize.3:                       # @TIFFVStripSize.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFVStripSize+8, %rax
 	addq	$1, %rax
@@ -31,8 +33,8 @@ TIFFVStripSize.3:                       # @TIFFVStripSize.3
 	movq	(%rdi), %rax
 	movzwl	58(%rax), %eax
 	cmpl	$6, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFVStripSize.3, .Lfunc_end0-TIFFVStripSize.3
 	.cfi_endproc

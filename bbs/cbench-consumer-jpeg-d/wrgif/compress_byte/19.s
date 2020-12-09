@@ -32,6 +32,8 @@ compress_byte.19:                       # @compress_byte.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movq	(%rbx), %rax
@@ -40,8 +42,8 @@ compress_byte.19:                       # @compress_byte.19
 	movq	(%rbx), %rax
 	movswl	96(%rax), %eax
 	cmpl	$4096, %eax             # imm = 0x1000
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compress_byte.19, .Lfunc_end0-compress_byte.19
 	.cfi_endproc

@@ -17,6 +17,8 @@ bitstring.8:                            # @bitstring.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_bitstring+24, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ bitstring.8:                            # @bitstring.8
 	addq	$1, %rcx
 	movq	%rcx, (%rdi)
 	movb	$32, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	bitstring.8, .Lfunc_end0-bitstring.8
 	.cfi_endproc

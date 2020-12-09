@@ -23,11 +23,14 @@ gtStripContig.21:                       # @gtStripContig.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	callq	_TIFFfree
 	movl	$1, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gtStripContig.21, .Lfunc_end0-gtStripContig.21
 	.cfi_endproc

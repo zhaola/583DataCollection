@@ -24,10 +24,12 @@ TIFFWriteBufferSetup.11:                # @TIFFWriteBufferSetup.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpq	$0, (%rdi)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteBufferSetup.11, .Lfunc_end0-TIFFWriteBufferSetup.11
 	.cfi_endproc

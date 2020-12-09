@@ -31,6 +31,8 @@ median_cut.15:                          # @median_cut.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movq	(%rsi), %rsi
@@ -41,7 +43,8 @@ median_cut.15:                          # @median_cut.15
 	movl	(%r15), %eax
 	addl	$1, %eax
 	movl	%eax, (%r15)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	median_cut.15, .Lfunc_end0-median_cut.15
 	.cfi_endproc

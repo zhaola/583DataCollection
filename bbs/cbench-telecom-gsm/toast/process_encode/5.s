@@ -24,6 +24,8 @@ process_encode.5:                       # @process_encode.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._toast.c_process_encode, %rax
 	movq	__profc_.._toast.c_process_encode+8, %rcx
@@ -47,7 +49,8 @@ process_encode.5:                       # @process_encode.5
 	xorl	%esi, %esi
 	movq	%rbx, %rdx
 	callq	memset
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_encode.5, .Lfunc_end0-process_encode.5
 	.cfi_endproc

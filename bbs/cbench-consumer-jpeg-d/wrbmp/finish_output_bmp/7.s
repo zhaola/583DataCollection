@@ -38,6 +38,8 @@ finish_output_bmp.7:                    # @finish_output_bmp.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._wrbmp.c_finish_output_bmp, %rsi
 	movq	(%rdi), %rax
@@ -67,7 +69,8 @@ finish_output_bmp.7:                    # @finish_output_bmp.7
 	movl	68(%rax), %eax
 	movq	-64(%rbp), %rcx         # 8-byte Reload
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_output_bmp.7, .Lfunc_end0-finish_output_bmp.7
 	.cfi_endproc

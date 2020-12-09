@@ -40,6 +40,8 @@ Gsm_Long_Term_Predictor.18:             # @Gsm_Long_Term_Predictor.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movq	(%r12), %rsi
@@ -58,7 +60,8 @@ Gsm_Long_Term_Predictor.18:             # @Gsm_Long_Term_Predictor.18
 	movswl	%ax, %edi
 	movswl	%si, %esi
 	callq	Long_term_analysis_filtering
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Long_Term_Predictor.18, .Lfunc_end0-Gsm_Long_Term_Predictor.18
 	.cfi_endproc

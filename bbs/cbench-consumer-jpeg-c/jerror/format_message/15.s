@@ -17,11 +17,12 @@ format_message.15:                      # @format_message.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jerror.c_format_message+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jerror.c_format_message+24
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	format_message.15, .Lfunc_end0-format_message.15
 	.cfi_endproc

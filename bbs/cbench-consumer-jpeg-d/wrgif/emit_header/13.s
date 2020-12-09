@@ -33,6 +33,8 @@ emit_header.13:                         # @emit_header.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_emit_header+24, %rax
 	addq	$1, %rax
@@ -67,7 +69,8 @@ emit_header.13:                         # @emit_header.13
 	movq	(%r14), %rax
 	movq	24(%rax), %rsi
 	callq	_IO_putc
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_header.13, .Lfunc_end0-emit_header.13
 	.cfi_endproc

@@ -31,6 +31,8 @@ Fax3SetupState.3:                       # @Fax3SetupState.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	callq	TIFFTileRowSize
@@ -39,7 +41,8 @@ Fax3SetupState.3:                       # @Fax3SetupState.3
 	movq	(%r15), %rax
 	movl	36(%rax), %eax
 	movq	%rax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3SetupState.3, .Lfunc_end0-Fax3SetupState.3
 	.cfi_endproc

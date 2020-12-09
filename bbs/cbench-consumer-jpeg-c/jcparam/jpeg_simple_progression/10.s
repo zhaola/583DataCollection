@@ -24,14 +24,14 @@ jpeg_simple_progression.10:             # @jpeg_simple_progression.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_simple_progression+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_simple_progression+16
 	movq	(%rdi), %rax
 	cmpl	$3, 72(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_simple_progression.10, .Lfunc_end0-jpeg_simple_progression.10
 	.cfi_endproc

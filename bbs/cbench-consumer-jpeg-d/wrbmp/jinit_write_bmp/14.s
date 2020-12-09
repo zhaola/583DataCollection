@@ -36,8 +36,9 @@ jinit_write_bmp.14:                     # @jinit_write_bmp.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_write_bmp, %rax
 	movq	(%rdi), %rcx
 	movq	8(%rcx), %rcx
 	movq	16(%rcx), %rbx
@@ -58,7 +59,8 @@ jinit_write_bmp.14:                     # @jinit_write_bmp.14
 	movl	$1, 40(%rax)
 	movq	(%r15), %rax
 	movq	%rax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_bmp.14, .Lfunc_end0-jinit_write_bmp.14
 	.cfi_endproc

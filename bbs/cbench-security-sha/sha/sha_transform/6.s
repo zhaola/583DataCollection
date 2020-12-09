@@ -17,6 +17,8 @@ sha_transform.6:                        # @sha_transform.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	subl	$3, %eax
@@ -36,7 +38,8 @@ sha_transform.6:                        # @sha_transform.6
 	xorq	(%rsi,%rcx,8), %rax
 	movslq	(%rdi), %rcx
 	movq	%rax, (%rsi,%rcx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	sha_transform.6, .Lfunc_end0-sha_transform.6
 	.cfi_endproc

@@ -40,6 +40,8 @@ TIFFClose.7:                            # @TIFFClose.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFClose, %rsi
 	movq	(%rbx), %rax
@@ -53,8 +55,8 @@ TIFFClose.7:                            # @TIFFClose.7
 	callq	*%r14
 	movq	(%rbx), %rax
 	cmpq	$0, 840(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFClose.7, .Lfunc_end0-TIFFClose.7
 	.cfi_endproc

@@ -24,14 +24,16 @@ TIFFSetupStrips.2:                      # @TIFFSetupStrips.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_write.c_TIFFSetupStrips+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_write.c_TIFFSetupStrips+40
 	movq	(%rdi), %rax
 	cmpl	$0, 60(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFSetupStrips.2, .Lfunc_end0-TIFFSetupStrips.2
 	.cfi_endproc

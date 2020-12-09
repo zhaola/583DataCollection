@@ -13,6 +13,8 @@ LogLuvDecode24.5:                       # @LogLuvDecode24.5
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._tif_luv.c_LogLuvDecode24+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_luv.c_LogLuvDecode24+48
@@ -21,6 +23,8 @@ LogLuvDecode24.5:                       # @LogLuvDecode24.5
 	movl	$225, %edx
 	movabsq	$__PRETTY_FUNCTION__.LogLuvDecode24, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvDecode24.5, .Lfunc_end0-LogLuvDecode24.5
 	.cfi_endproc

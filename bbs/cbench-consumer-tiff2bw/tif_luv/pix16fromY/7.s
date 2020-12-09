@@ -32,6 +32,8 @@ pix16fromY.7:                           # @pix16fromY.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_pix16fromY+24, %rax
 	addq	$1, %rax
@@ -51,7 +53,8 @@ pix16fromY.7:                           # @pix16fromY.7
 	cvttsd2si	%xmm1, %eax
 	orl	$4294934528, %eax       # imm = 0xFFFF8000
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix16fromY.7, .Lfunc_end0-pix16fromY.7
 	.cfi_endproc

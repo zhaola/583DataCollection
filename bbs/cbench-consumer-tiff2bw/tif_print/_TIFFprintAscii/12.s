@@ -17,6 +17,8 @@ _TIFFprintAscii.12:                     # @_TIFFprintAscii.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc__TIFFprintAscii+32, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ _TIFFprintAscii.12:                     # @_TIFFprintAscii.12
 	movabsq	$.str.109, %rsi
 	movb	$0, %al
 	callq	fprintf
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFprintAscii.12, .Lfunc_end0-_TIFFprintAscii.12
 	.cfi_endproc

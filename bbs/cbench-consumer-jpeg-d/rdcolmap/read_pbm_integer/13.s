@@ -32,13 +32,15 @@ read_pbm_integer.13:                    # @read_pbm_integer.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	callq	pbm_getc
 	movl	%eax, (%rbx)
 	cmpl	$48, %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_pbm_integer.13, .Lfunc_end0-read_pbm_integer.13
 	.cfi_endproc

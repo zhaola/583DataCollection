@@ -40,6 +40,8 @@ main1.15:                               # @main1.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%r14), %rsi
 	movq	%r13, %rdi
@@ -59,7 +61,6 @@ main1.15:                               # @main1.15
 	movq	%rbx, %rsi
 	callq	*%r14
 	movq	%r13, %rdi
-	callq	jpeg_default_colorspace
 	movl	(%r12), %esi
 	movq	(%r15), %rdx
 	movq	%r13, %rdi
@@ -71,13 +72,12 @@ main1.15:                               # @main1.15
 	movq	16(%rbp), %rax
 	movq	(%rax), %rsi
 	movq	%r13, %rdi
-	callq	jpeg_stdio_dest
 	movq	%r13, %rdi
 	movl	$1, %esi
-	callq	jpeg_start_compress
 	movq	24(%rbp), %rax
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.15, .Lfunc_end0-main1.15
 	.cfi_endproc

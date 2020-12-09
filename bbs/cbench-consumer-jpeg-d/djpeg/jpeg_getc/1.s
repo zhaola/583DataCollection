@@ -32,8 +32,9 @@ jpeg_getc.1:                            # @jpeg_getc.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._djpeg.c_jpeg_getc, %rax
 	movq	(%rdi), %rcx
 	movq	24(%rcx), %rbx
 	movq	(%rsi), %r14
@@ -44,8 +45,8 @@ jpeg_getc.1:                            # @jpeg_getc.1
 	movq	%r14, %rdi
 	callq	*%rbx
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_getc.1, .Lfunc_end0-jpeg_getc.1
 	.cfi_endproc

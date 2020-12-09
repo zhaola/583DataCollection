@@ -23,11 +23,10 @@ consume_markers.6:                      # @consume_markers.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdinput.c_consume_markers, %rsi
-	movq	__profc_.._jdinput.c_consume_markers+72, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdinput.c_consume_markers+72
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$34, 40(%rax)
@@ -40,7 +39,8 @@ consume_markers.6:                      # @consume_markers.6
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_markers.6, .Lfunc_end0-consume_markers.6
 	.cfi_endproc

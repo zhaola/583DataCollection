@@ -17,6 +17,8 @@ write_bmp_header.13:                    # @write_bmp_header.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrbmp.c_write_bmp_header, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ write_bmp_header.13:                    # @write_bmp_header.13
 	movl	(%rdx), %edx
 	movl	$4, %ecx
 	callq	write_colormap
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	write_bmp_header.13, .Lfunc_end0-write_bmp_header.13
 	.cfi_endproc

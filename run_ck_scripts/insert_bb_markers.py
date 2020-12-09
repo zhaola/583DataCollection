@@ -2,8 +2,8 @@ from pathlib import Path
 import subprocess
 import os
 
-asmRootDir = Path('/home/lazhao/Ithemal-Extension/learning/pytorch/examples/corner_draw_marked')
-# asmRootDir = Path('../bbs')
+# asmRootDir = Path('/home/lazhao/Ithemal-Extension/learning/pytorch/examples/corner_draw_marked')
+asmRootDir = Path('../bbs')
 startMark = '\t\tmovl $111, %ebx\n\t\t.byte 0x64, 0x67, 0x90\n'
 endMark = '\t\tmovl $222, %ebx\n\t\t.byte 0x64, 0x67, 0x90\n'
 jumpOp = 'j'

@@ -17,10 +17,10 @@ jpeg_make_c_derived_tbl.18:             # @jpeg_make_c_derived_tbl.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_make_c_derived_tbl+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_make_c_derived_tbl+32
 	movslq	(%rdi), %rax
 	movl	(%rsi,%rax,4), %r9d
 	movq	(%rdx), %r10
@@ -35,7 +35,8 @@ jpeg_make_c_derived_tbl.18:             # @jpeg_make_c_derived_tbl.18
 	movslq	(%rdi), %rsi
 	movzbl	17(%rcx,%rsi), %ecx
 	movb	%al, 1024(%rdx,%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_make_c_derived_tbl.18, .Lfunc_end0-jpeg_make_c_derived_tbl.18
 	.cfi_endproc

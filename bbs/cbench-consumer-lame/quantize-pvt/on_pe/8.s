@@ -24,6 +24,8 @@ on_pe.8:                                # @on_pe.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	movl	(%rsi,%rax,4), %eax
@@ -31,8 +33,8 @@ on_pe.8:                                # @on_pe.8
 	movl	%eax, (%rdx)
 	movl	(%rdx), %eax
 	cmpl	(%rcx), %eax
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	on_pe.8, .Lfunc_end0-on_pe.8
 	.cfi_endproc

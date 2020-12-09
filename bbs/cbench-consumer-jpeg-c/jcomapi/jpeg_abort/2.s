@@ -28,8 +28,9 @@ jpeg_abort.2:                           # @jpeg_abort.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_abort, %rax
 	movq	(%rdi), %rcx
 	movq	8(%rcx), %rcx
 	movq	72(%rcx), %rbx
@@ -42,7 +43,8 @@ jpeg_abort.2:                           # @jpeg_abort.2
 	movq	%r14, %rdi
 	movl	%r15d, %esi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_abort.2, .Lfunc_end0-jpeg_abort.2
 	.cfi_endproc

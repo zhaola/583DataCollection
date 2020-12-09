@@ -30,6 +30,8 @@ calc_sfb_ave_noise.5:                   # @calc_sfb_ave_noise.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -50,8 +52,8 @@ calc_sfb_ave_noise.5:                   # @calc_sfb_ave_noise.5
 	movaps	.LCPI0_0(%rip), %xmm2   # xmm2 = [NaN,NaN]
 	pand	%xmm2, %xmm1
 	ucomisd	%xmm0, %xmm1
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	calc_sfb_ave_noise.5, .Lfunc_end0-calc_sfb_ave_noise.5
 	.cfi_endproc

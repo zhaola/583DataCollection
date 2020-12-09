@@ -24,6 +24,8 @@ reduce_side.9:                          # @reduce_side.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	cltd
@@ -32,8 +34,8 @@ reduce_side.9:                          # @reduce_side.9
 	addl	$1200, %eax             # imm = 0x4B0
 	movl	$4095, %ecx             # imm = 0xFFF
 	cmpl	%eax, %ecx
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	reduce_side.9, .Lfunc_end0-reduce_side.9
 	.cfi_endproc

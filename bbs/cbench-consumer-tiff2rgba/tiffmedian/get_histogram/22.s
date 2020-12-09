@@ -17,6 +17,8 @@ get_histogram.22:                       # @get_histogram.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiffmedian.c_get_histogram+48, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ get_histogram.22:                       # @get_histogram.22
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
 	movl	%eax, 36(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_histogram.22, .Lfunc_end0-get_histogram.22
 	.cfi_endproc

@@ -17,10 +17,13 @@ best_huffman_divide.8:                  # @best_huffman_divide.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	movl	$100000, (%rsi,%rax,4)  # imm = 0x186A0
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	best_huffman_divide.8, .Lfunc_end0-best_huffman_divide.8
 	.cfi_endproc

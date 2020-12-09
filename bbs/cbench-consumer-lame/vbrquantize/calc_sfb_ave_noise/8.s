@@ -17,12 +17,15 @@ calc_sfb_ave_noise.8:                   # @calc_sfb_ave_noise.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	mulsd	(%rdi), %xmm0
 	addsd	(%rsi), %xmm0
 	movsd	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	calc_sfb_ave_noise.8, .Lfunc_end0-calc_sfb_ave_noise.8
 	.cfi_endproc

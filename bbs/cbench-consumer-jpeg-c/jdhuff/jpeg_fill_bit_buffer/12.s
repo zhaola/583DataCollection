@@ -17,12 +17,13 @@ jpeg_fill_bit_buffer.12:                # @jpeg_fill_bit_buffer.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_fill_bit_buffer+64, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_fill_bit_buffer+64
 	movl	$0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_fill_bit_buffer.12, .Lfunc_end0-jpeg_fill_bit_buffer.12
 	.cfi_endproc

@@ -29,11 +29,10 @@ output_pass_setup.1:                    # @output_pass_setup.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdapistd.c_output_pass_setup, %rsi
-	movq	__profc_.._jdapistd.c_output_pass_setup+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdapistd.c_output_pass_setup+32
 	movq	(%rbx), %rax
 	movq	528(%rax), %rax
 	movq	(%rax), %r14
@@ -47,7 +46,8 @@ output_pass_setup.1:                    # @output_pass_setup.1
 	movl	$0, 160(%rax)
 	movq	(%rbx), %rax
 	movl	$204, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	output_pass_setup.1, .Lfunc_end0-output_pass_setup.1
 	.cfi_endproc

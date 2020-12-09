@@ -32,6 +32,8 @@ LogL16InitState.13:                     # @LogL16InitState.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	24(%rax), %eax
@@ -48,8 +50,8 @@ LogL16InitState.13:                     # @LogL16InitState.13
 	movq	%rax, 8(%rcx)
 	movq	(%rbx), %rax
 	cmpq	$0, 8(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogL16InitState.13, .Lfunc_end0-LogL16InitState.13
 	.cfi_endproc

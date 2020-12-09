@@ -18,10 +18,10 @@ jpeg_huff_decode.10:                    # @jpeg_huff_decode.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_huff_decode, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_jpeg_huff_decode
 	movq	(%rdi), %rdi
 	movl	(%rsi), %ecx
 	subl	$1, %ecx
@@ -36,7 +36,8 @@ jpeg_huff_decode.10:                    # @jpeg_huff_decode.10
 	movl	(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_huff_decode.10, .Lfunc_end0-jpeg_huff_decode.10
 	.cfi_endproc

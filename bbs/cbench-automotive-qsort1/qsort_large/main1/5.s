@@ -25,6 +25,8 @@ main1.5:                                # @main1.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main1+24, %rax
 	addq	$1, %rax
@@ -34,8 +36,8 @@ main1.5:                                # @main1.5
 	movb	$0, %al
 	callq	__isoc99_fscanf
 	cmpl	$1, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.5, .Lfunc_end0-main1.5
 	.cfi_endproc

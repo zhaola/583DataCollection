@@ -17,6 +17,8 @@ Gsm_Long_Term_Synthesis_Filtering.21:   # @Gsm_Long_Term_Synthesis_Filtering.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	(%rsi), %ecx
@@ -28,7 +30,8 @@ Gsm_Long_Term_Synthesis_Filtering.21:   # @Gsm_Long_Term_Synthesis_Filtering.21
 	addl	$4294967176, %edx       # imm = 0xFFFFFF88
 	movslq	%edx, %rdx
 	movw	%ax, (%rcx,%rdx,2)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Long_Term_Synthesis_Filtering.21, .Lfunc_end0-Gsm_Long_Term_Synthesis_Filtering.21
 	.cfi_endproc

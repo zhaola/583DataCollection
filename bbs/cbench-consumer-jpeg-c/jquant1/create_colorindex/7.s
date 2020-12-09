@@ -25,6 +25,8 @@ create_colorindex.7:                    # @create_colorindex.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	48(%rax), %rax
@@ -40,7 +42,8 @@ create_colorindex.7:                    # @create_colorindex.7
 	callq	largest_input_value
 	movl	%eax, (%rbx)
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	create_colorindex.7, .Lfunc_end0-create_colorindex.7
 	.cfi_endproc

@@ -30,6 +30,8 @@ TIFFWriteTile.2:                        # @TIFFWriteTile.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFWriteTile, %rax
 	addq	$1, %rax
@@ -47,7 +49,8 @@ TIFFWriteTile.2:                        # @TIFFWriteTile.2
 	movl	$4294967295, %ecx       # imm = 0xFFFFFFFF
 	callq	TIFFWriteEncodedTile
 	movl	%eax, (%r15)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteTile.2, .Lfunc_end0-TIFFWriteTile.2
 	.cfi_endproc

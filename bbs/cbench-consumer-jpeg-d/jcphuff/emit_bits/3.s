@@ -17,11 +17,12 @@ emit_bits.3:                            # @emit_bits.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_emit_bits+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_emit_bits+32
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_bits.3, .Lfunc_end0-emit_bits.3
 	.cfi_endproc

@@ -23,6 +23,8 @@ TIFFReadRawStrip1.2:                    # @TIFFReadRawStrip1.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_read.c_TIFFReadRawStrip1, %rax
 	addq	$1, %rax
@@ -38,7 +40,8 @@ TIFFReadRawStrip1.2:                    # @TIFFReadRawStrip1.2
 	movb	$0, %al
 	callq	TIFFError
 	movl	$-1, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRawStrip1.2, .Lfunc_end0-TIFFReadRawStrip1.2
 	.cfi_endproc

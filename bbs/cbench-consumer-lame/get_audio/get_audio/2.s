@@ -24,6 +24,8 @@ get_audio.2:                            # @get_audio.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	imull	$576, 200(%rax), %eax   # imm = 0x240
@@ -31,8 +33,8 @@ get_audio.2:                            # @get_audio.2
 	movl	(%rsi), %eax
 	movl	%eax, (%rdx)
 	cmpl	$0, count_samples_carefully
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_audio.2, .Lfunc_end0-get_audio.2
 	.cfi_endproc

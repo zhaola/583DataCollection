@@ -32,6 +32,8 @@ emit_restart.1:                         # @emit_restart.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	callq	flush_bits
@@ -46,8 +48,8 @@ emit_restart.1:                         # @emit_restart.1
 	addq	$-1, %rcx
 	movq	%rcx, 40(%rax)
 	cmpq	$0, %rcx
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_restart.1, .Lfunc_end0-emit_restart.1
 	.cfi_endproc

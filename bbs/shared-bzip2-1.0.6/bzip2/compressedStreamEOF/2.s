@@ -13,8 +13,12 @@ compressedStreamEOF.2:                  # @compressedStreamEOF.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movl	$2, %edi
 	callq	cleanUpAndFail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compressedStreamEOF.2, .Lfunc_end0-compressedStreamEOF.2
 	.cfi_endproc

@@ -24,11 +24,13 @@ usage.1:                                # @usage.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	cmpq	$0, stuff(,%rax,8)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	usage.1, .Lfunc_end0-usage.1
 	.cfi_endproc

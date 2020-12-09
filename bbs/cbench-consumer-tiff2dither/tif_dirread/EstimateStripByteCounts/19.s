@@ -24,12 +24,14 @@ EstimateStripByteCounts.19:             # @EstimateStripByteCounts.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movzwl	(%rdi), %eax
 	movq	(%rsi), %rcx
 	cmpl	244(%rcx), %eax
-	jb	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	EstimateStripByteCounts.19, .Lfunc_end0-EstimateStripByteCounts.19
 	.cfi_endproc

@@ -36,8 +36,9 @@ alloc_fs_workspace.2:                   # @alloc_fs_workspace.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jquant1.c_alloc_fs_workspace, %rax
 	movq	(%rdi), %rcx
 	movq	8(%rcx), %rcx
 	movq	8(%rcx), %rbx
@@ -54,7 +55,8 @@ alloc_fs_workspace.2:                   # @alloc_fs_workspace.2
 	movq	(%r15), %rcx
 	movslq	(%r14), %rdx
 	movq	%rax, 112(%rcx,%rdx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alloc_fs_workspace.2, .Lfunc_end0-alloc_fs_workspace.2
 	.cfi_endproc

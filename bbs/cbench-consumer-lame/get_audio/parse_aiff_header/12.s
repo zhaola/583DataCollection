@@ -42,6 +42,8 @@ parse_aiff_header.12:                   # @parse_aiff_header.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%r15), %rdi
 	callq	Read32BitsHighLow
@@ -56,8 +58,8 @@ parse_aiff_header.12:                   # @parse_aiff_header.12
 	movl	$1, %edx
 	callq	fskip
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	parse_aiff_header.12, .Lfunc_end0-parse_aiff_header.12
 	.cfi_endproc

@@ -17,6 +17,8 @@ putbits.11:                             # @putbits.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_putbits+16, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ putbits.11:                             # @putbits.11
 	movq	(%rdi), %rcx
 	movslq	48(%rcx), %rcx
 	movb	$0, (%rax,%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	putbits.11, .Lfunc_end0-putbits.11
 	.cfi_endproc

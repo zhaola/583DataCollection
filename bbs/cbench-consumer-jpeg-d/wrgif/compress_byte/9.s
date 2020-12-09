@@ -17,11 +17,14 @@ compress_byte.9:                        # @compress_byte.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	$5003, %eax             # imm = 0x138B
 	subl	(%rdi), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compress_byte.9, .Lfunc_end0-compress_byte.9
 	.cfi_endproc

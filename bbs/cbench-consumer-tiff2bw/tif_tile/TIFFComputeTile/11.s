@@ -26,6 +26,8 @@ TIFFComputeTile.11:                     # @TIFFComputeTile.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	24(%rax), %eax
@@ -54,8 +56,8 @@ TIFFComputeTile.11:                     # @TIFFComputeTile.11
 	movq	(%rdi), %rax
 	movzwl	106(%rax), %eax
 	cmpl	$2, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFComputeTile.11, .Lfunc_end0-TIFFComputeTile.11
 	.cfi_endproc

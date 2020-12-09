@@ -13,12 +13,16 @@ main1.13:                               # @main1.13
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_main1+104, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_main1+104
 	callq	version
 	xorl	%edi, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.13, .Lfunc_end0-main1.13
 	.cfi_endproc

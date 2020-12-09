@@ -24,6 +24,8 @@ alaw_input.7:                           # @alaw_input.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_alaw_input+24, %rax
 	addq	$1, %rax
@@ -31,8 +33,8 @@ alaw_input.7:                           # @alaw_input.7
 	movq	in, %rdi
 	callq	ferror
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alaw_input.7, .Lfunc_end0-alaw_input.7
 	.cfi_endproc

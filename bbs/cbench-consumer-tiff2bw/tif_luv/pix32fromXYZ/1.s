@@ -24,12 +24,15 @@ pix32fromXYZ.1:                         # @pix32fromXYZ.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero
 	movsd	%xmm1, (%rdi)
 	movsd	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix32fromXYZ.1, .Lfunc_end0-pix32fromXYZ.1
 	.cfi_endproc

@@ -32,6 +32,8 @@ processCompressOptions.6:               # @processCompressOptions.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2bw.c_processCompressOptions+32, %rax
 	addq	$1, %rax
@@ -44,8 +46,8 @@ processCompressOptions.6:               # @processCompressOptions.6
 	movzwl	(%rax,%rcx,2), %eax
 	andl	$2048, %eax             # imm = 0x800
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	processCompressOptions.6, .Lfunc_end0-processCompressOptions.6
 	.cfi_endproc

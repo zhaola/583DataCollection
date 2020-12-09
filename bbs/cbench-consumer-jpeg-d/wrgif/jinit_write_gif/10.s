@@ -37,8 +37,9 @@ jinit_write_gif.10:                     # @jinit_write_gif.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_write_gif, %rsi
 	movq	(%rbx), %rax
 	movq	8(%rax), %rax
 	movq	16(%rax), %r12
@@ -53,7 +54,6 @@ jinit_write_gif.10:                     # @jinit_write_gif.10
 	movl	%r14d, %edx
 	movl	$1, %ecx
 	callq	*%r12
-	movabsq	$__profd_jinit_write_gif, %rsi
 	movq	(%r15), %rcx
 	movq	%rax, 32(%rcx)
 	movq	(%r15), %rax
@@ -69,7 +69,6 @@ jinit_write_gif.10:                     # @jinit_write_gif.10
 	movl	$1, %esi
 	movl	$10006, %edx            # imm = 0x2716
 	callq	*%r14
-	movabsq	$__profd_jinit_write_gif, %rsi
 	movq	(%r15), %rcx
 	movq	%rax, 104(%rcx)
 	movq	(%rbx), %rax
@@ -88,7 +87,8 @@ jinit_write_gif.10:                     # @jinit_write_gif.10
 	movq	(%r15), %rax
 	movq	-48(%rbp), %rcx         # 8-byte Reload
 	movq	%rax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_gif.10, .Lfunc_end0-jinit_write_gif.10
 	.cfi_endproc

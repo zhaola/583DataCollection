@@ -24,6 +24,8 @@ Postprocessing.2:                       # @Postprocessing.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movswq	(%rdi), %rax
 	imulq	$28180, %rax, %rax      # imm = 0x6E14
@@ -37,8 +39,8 @@ Postprocessing.2:                       # @Postprocessing.2
 	movq	%rax, (%rcx)
 	subq	$-32768, %rax           # imm = 0x8000
 	cmpq	$65535, %rax            # imm = 0xFFFF
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Postprocessing.2, .Lfunc_end0-Postprocessing.2
 	.cfi_endproc

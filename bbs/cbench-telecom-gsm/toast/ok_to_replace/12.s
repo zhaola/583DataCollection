@@ -23,6 +23,8 @@ ok_to_replace.12:                       # @ok_to_replace.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_ok_to_replace+40, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ ok_to_replace.12:                       # @ok_to_replace.12
 	movb	$0, %al
 	callq	fprintf
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ok_to_replace.12, .Lfunc_end0-ok_to_replace.12
 	.cfi_endproc

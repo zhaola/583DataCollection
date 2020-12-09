@@ -17,14 +17,15 @@ set_bottom_pointers.9:                  # @set_bottom_pointers.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmainct.c_set_bottom_pointers, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmainct.c_set_bottom_pointers
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_bottom_pointers.9, .Lfunc_end0-set_bottom_pointers.9
 	.cfi_endproc

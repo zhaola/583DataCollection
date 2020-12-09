@@ -17,13 +17,14 @@ jinit_1pass_quantizer.5:                # @jinit_1pass_quantizer.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_1pass_quantizer+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_1pass_quantizer+24
 	movq	(%rdi), %rdi
 	callq	alloc_fs_workspace
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_1pass_quantizer.5, .Lfunc_end0-jinit_1pass_quantizer.5
 	.cfi_endproc

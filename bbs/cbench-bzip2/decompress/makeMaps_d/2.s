@@ -24,12 +24,14 @@ makeMaps_d.2:                           # @makeMaps_d.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	cmpb	$0, 3196(%rax,%rcx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	makeMaps_d.2, .Lfunc_end0-makeMaps_d.2
 	.cfi_endproc

@@ -31,6 +31,8 @@ count_bits.10:                          # @count_bits.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_count_bits+16, %rax
 	addq	$1, %rax
@@ -52,7 +54,8 @@ count_bits.10:                          # @count_bits.10
 	movl	%eax, 36(%rcx)
 	movq	(%r15), %rax
 	movl	$288, 4(%rax)           # imm = 0x120
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	count_bits.10, .Lfunc_end0-count_bits.10
 	.cfi_endproc

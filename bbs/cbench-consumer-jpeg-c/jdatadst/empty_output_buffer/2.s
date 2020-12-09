@@ -17,6 +17,8 @@ empty_output_buffer.2:                  # @empty_output_buffer.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	48(%rax), %rax
@@ -24,7 +26,8 @@ empty_output_buffer.2:                  # @empty_output_buffer.2
 	movq	%rax, (%rcx)
 	movq	(%rdi), %rax
 	movq	$4096, 8(%rax)          # imm = 0x1000
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	empty_output_buffer.2, .Lfunc_end0-empty_output_buffer.2
 	.cfi_endproc

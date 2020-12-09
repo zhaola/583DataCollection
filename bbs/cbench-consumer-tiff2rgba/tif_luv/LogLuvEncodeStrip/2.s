@@ -13,6 +13,8 @@ LogLuvEncodeStrip.2:                    # @LogLuvEncodeStrip.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._tif_luv.c_LogLuvEncodeStrip+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_luv.c_LogLuvEncodeStrip+24
@@ -21,6 +23,8 @@ LogLuvEncodeStrip.2:                    # @LogLuvEncodeStrip.2
 	movl	$577, %edx              # imm = 0x241
 	movabsq	$__PRETTY_FUNCTION__.LogLuvEncodeStrip, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvEncodeStrip.2, .Lfunc_end0-LogLuvEncodeStrip.2
 	.cfi_endproc

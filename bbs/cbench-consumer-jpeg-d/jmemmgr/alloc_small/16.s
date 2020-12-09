@@ -24,13 +24,15 @@ alloc_small.16:                         # @alloc_small.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$1000000000, %ecx       # imm = 0x3B9ACA00
 	subq	(%rsi), %rcx
 	cmpq	%rcx, %rax
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alloc_small.16, .Lfunc_end0-alloc_small.16
 	.cfi_endproc

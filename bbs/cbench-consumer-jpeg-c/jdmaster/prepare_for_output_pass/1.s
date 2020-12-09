@@ -29,11 +29,10 @@ prepare_for_output_pass.1:              # @prepare_for_output_pass.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmaster.c_prepare_for_output_pass, %rsi
-	movq	__profc_.._jdmaster.c_prepare_for_output_pass, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmaster.c_prepare_for_output_pass
 	movq	(%rdi), %rax
 	movl	$0, 16(%rax)
 	movq	(%rbx), %rax
@@ -46,7 +45,6 @@ prepare_for_output_pass.1:              # @prepare_for_output_pass.1
 	movq	%r15, %rdi
 	xorl	%esi, %esi
 	callq	*%r14
-	movabsq	$__profd_.._jdmaster.c_prepare_for_output_pass, %rsi
 	movq	(%rbx), %rax
 	movq	552(%rax), %rax
 	movq	(%rax), %r14
@@ -57,7 +55,6 @@ prepare_for_output_pass.1:              # @prepare_for_output_pass.1
 	movq	%r15, %rdi
 	movl	$2, %esi
 	callq	*%r14
-	movabsq	$__profd_.._jdmaster.c_prepare_for_output_pass, %rsi
 	movq	(%rbx), %rax
 	movq	536(%rax), %rax
 	movq	(%rax), %r14
@@ -68,7 +65,8 @@ prepare_for_output_pass.1:              # @prepare_for_output_pass.1
 	movq	%rbx, %rdi
 	movl	$2, %esi
 	callq	*%r14
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_output_pass.1, .Lfunc_end0-prepare_for_output_pass.1
 	.cfi_endproc

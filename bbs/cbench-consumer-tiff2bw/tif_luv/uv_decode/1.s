@@ -24,13 +24,15 @@ uv_decode.1:                            # @uv_decode.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_uv_decode+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_luv.c_uv_decode+24
 	cmpl	$16289, (%rdi)          # imm = 0x3FA1
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	uv_decode.1, .Lfunc_end0-uv_decode.1
 	.cfi_endproc

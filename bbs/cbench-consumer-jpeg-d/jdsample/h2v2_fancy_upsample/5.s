@@ -17,17 +17,18 @@ h2v2_fancy_upsample.5:                  # @h2v2_fancy_upsample.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdsample.c_h2v2_fancy_upsample+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdsample.c_h2v2_fancy_upsample+16
 	movq	(%rdi), %rax
 	movl	(%rsi), %ecx
 	subl	$1, %ecx
 	movslq	%ecx, %rcx
 	movq	(%rax,%rcx,8), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	h2v2_fancy_upsample.5, .Lfunc_end0-h2v2_fancy_upsample.5
 	.cfi_endproc

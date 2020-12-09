@@ -37,11 +37,10 @@ jpeg_read_scanlines.6:                  # @jpeg_read_scanlines.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_read_scanlines, %rsi
-	movq	__profc_jpeg_read_scanlines+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_read_scanlines+16
 	movl	$0, (%rbx)
 	movq	(%r15), %rax
 	movq	536(%rax), %rax
@@ -65,7 +64,8 @@ jpeg_read_scanlines.6:                  # @jpeg_read_scanlines.6
 	movl	(%rbx), %eax
 	movq	-56(%rbp), %rcx         # 8-byte Reload
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_scanlines.6, .Lfunc_end0-jpeg_read_scanlines.6
 	.cfi_endproc

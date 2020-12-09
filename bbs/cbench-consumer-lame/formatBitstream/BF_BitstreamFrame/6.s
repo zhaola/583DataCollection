@@ -34,6 +34,8 @@ BF_BitstreamFrame.6:                    # @BF_BitstreamFrame.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%r14), %rdi
 	callq	store_side_info
@@ -49,8 +51,8 @@ BF_BitstreamFrame.6:                    # @BF_BitstreamFrame.6
 	movl	$8, %ecx
 	idivl	%ecx
 	cmpl	$0, %edx
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BF_BitstreamFrame.6, .Lfunc_end0-BF_BitstreamFrame.6
 	.cfi_endproc

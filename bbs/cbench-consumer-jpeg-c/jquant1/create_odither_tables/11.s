@@ -17,14 +17,15 @@ create_odither_tables.11:               # @create_odither_tables.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant1.c_create_odither_tables+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant1.c_create_odither_tables+8
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	create_odither_tables.11, .Lfunc_end0-create_odither_tables.11
 	.cfi_endproc

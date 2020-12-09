@@ -17,6 +17,8 @@ Short_term_synthesis_filtering.22:      # @Short_term_synthesis_filtering.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._short_term.c_Short_term_synthesis_filtering+64, %rax
 	addq	$1, %rax
@@ -29,7 +31,8 @@ Short_term_synthesis_filtering.22:      # @Short_term_synthesis_filtering.22
 	addq	$2, %rsi
 	movq	%rsi, (%rdx)
 	movw	%ax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Short_term_synthesis_filtering.22, .Lfunc_end0-Short_term_synthesis_filtering.22
 	.cfi_endproc

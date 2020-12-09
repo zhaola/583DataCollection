@@ -17,6 +17,8 @@ AddVbrFrame.4:                          # @AddVbrFrame.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_AddVbrFrame+24, %rax
 	addq	$1, %rax
@@ -29,7 +31,8 @@ AddVbrFrame.4:                          # @AddVbrFrame.4
 	shlq	$2, %rsi
 	callq	realloc
 	movq	%rax, pVbrFrames
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	AddVbrFrame.4, .Lfunc_end0-AddVbrFrame.4
 	.cfi_endproc

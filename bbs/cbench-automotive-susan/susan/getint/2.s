@@ -17,6 +17,8 @@ getint.2:                               # @getint.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_getint+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ getint.2:                               # @getint.2
 	movq	(%rsi), %rdx
 	movl	$9000, %esi             # imm = 0x2328
 	callq	fgets
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	getint.2, .Lfunc_end0-getint.2
 	.cfi_endproc

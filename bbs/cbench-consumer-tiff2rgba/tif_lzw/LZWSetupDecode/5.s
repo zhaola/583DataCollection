@@ -23,6 +23,8 @@ LZWSetupDecode.5:                       # @LZWSetupDecode.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_lzw.c_LZWSetupDecode+24, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ LZWSetupDecode.5:                       # @LZWSetupDecode.5
 	movb	$0, %al
 	callq	TIFFError
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWSetupDecode.5, .Lfunc_end0-LZWSetupDecode.5
 	.cfi_endproc

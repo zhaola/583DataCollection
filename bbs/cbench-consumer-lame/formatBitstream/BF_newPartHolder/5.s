@@ -13,6 +13,8 @@ BF_newPartHolder.5:                     # @BF_newPartHolder.5
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_BF_newPartHolder+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_BF_newPartHolder+24
@@ -21,6 +23,8 @@ BF_newPartHolder.5:                     # @BF_newPartHolder.5
 	movl	$446, %edx              # imm = 0x1BE
 	movabsq	$__PRETTY_FUNCTION__.BF_newPartHolder, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BF_newPartHolder.5, .Lfunc_end0-BF_newPartHolder.5
 	.cfi_endproc

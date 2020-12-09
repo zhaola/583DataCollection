@@ -17,6 +17,8 @@ TIFFReadRawTile1.8:                     # @TIFFReadRawTile1.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_read.c_TIFFReadRawTile1+16, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ TIFFReadRawTile1.8:                     # @TIFFReadRawTile1.8
 	addq	%rax, %rsi
 	movl	(%r8), %edx
 	callq	_TIFFmemcpy
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRawTile1.8, .Lfunc_end0-TIFFReadRawTile1.8
 	.cfi_endproc

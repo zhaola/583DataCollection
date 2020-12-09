@@ -17,6 +17,8 @@ AddVbrFrame.5:                          # @AddVbrFrame.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	pVbrFrames, %rcx
@@ -26,7 +28,8 @@ AddVbrFrame.5:                          # @AddVbrFrame.5
 	movl	%esi, nVbrNumFrames
 	movslq	%edx, %rdx
 	movl	%eax, (%rcx,%rdx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	AddVbrFrame.5, .Lfunc_end0-AddVbrFrame.5
 	.cfi_endproc

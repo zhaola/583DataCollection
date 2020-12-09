@@ -25,6 +25,8 @@ unixWarningHandler.2:                   # @unixWarningHandler.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	stderr, %rdi
 	movabsq	$.str.2, %rsi
@@ -38,7 +40,8 @@ unixWarningHandler.2:                   # @unixWarningHandler.2
 	movabsq	$.str.3, %rsi
 	movb	$0, %al
 	callq	fprintf
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	unixWarningHandler.2, .Lfunc_end0-unixWarningHandler.2
 	.cfi_endproc

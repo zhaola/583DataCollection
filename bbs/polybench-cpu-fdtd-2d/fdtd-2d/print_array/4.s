@@ -52,6 +52,8 @@ print_array.4:                          # @print_array.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	stderr, %rax
 	movq	(%rdi), %rcx
@@ -91,8 +93,8 @@ print_array.4:                          # @print_array.4
 	movl	$20, %ecx
 	idivl	%ecx
 	cmpl	$0, %edx
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	print_array.4, .Lfunc_end0-print_array.4
 	.cfi_endproc

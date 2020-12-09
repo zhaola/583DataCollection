@@ -25,6 +25,8 @@ mdct_short.2:                           # @mdct_short.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	imulq	$48, %rax, %r14
@@ -63,7 +65,8 @@ mdct_short.2:                           # @mdct_short.2
 	movsd	40(%rax), %xmm0         # xmm0 = mem[0],zero
 	movsd	%xmm0, (%r11)
 	movl	$2, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	mdct_short.2, .Lfunc_end0-mdct_short.2
 	.cfi_endproc

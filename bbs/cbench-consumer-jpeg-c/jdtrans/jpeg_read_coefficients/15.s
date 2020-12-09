@@ -24,6 +24,8 @@ jpeg_read_coefficients.15:              # @jpeg_read_coefficients.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	16(%rax), %rax
@@ -33,8 +35,8 @@ jpeg_read_coefficients.15:              # @jpeg_read_coefficients.15
 	movq	(%rdi), %rax
 	movq	16(%rax), %rax
 	cmpq	16(%rax), %rcx
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_coefficients.15, .Lfunc_end0-jpeg_read_coefficients.15
 	.cfi_endproc

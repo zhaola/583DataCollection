@@ -17,6 +17,8 @@ ConvertToIeeeExtended.12:               # @ConvertToIeeeExtended.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %r8d
 	sarl	$8, %r8d
@@ -55,7 +57,8 @@ ConvertToIeeeExtended.12:               # @ConvertToIeeeExtended.12
 	movq	(%rcx), %rax
 	movq	(%rsi), %rcx
 	movb	%al, 9(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeExtended.12, .Lfunc_end0-ConvertToIeeeExtended.12
 	.cfi_endproc

@@ -30,6 +30,8 @@ h2v2_fancy_upsample.7:                  # @h2v2_fancy_upsample.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	(%rsi), %eax
@@ -91,7 +93,8 @@ h2v2_fancy_upsample.7:                  # @h2v2_fancy_upsample.7
 	movl	40(%rax), %eax
 	subl	$2, %eax
 	movl	%eax, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	h2v2_fancy_upsample.7, .Lfunc_end0-h2v2_fancy_upsample.7
 	.cfi_endproc

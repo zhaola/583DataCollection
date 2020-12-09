@@ -17,13 +17,16 @@ ix_max.3:                               # @ix_max.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._takehiro.c_ix_max+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._takehiro.c_ix_max+8
 	movl	(%rdi), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ix_max.3, .Lfunc_end0-ix_max.3
 	.cfi_endproc

@@ -17,6 +17,8 @@ copy_buffer.5:                          # @copy_buffer.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	24(%rax), %rax
@@ -29,7 +31,8 @@ copy_buffer.5:                          # @copy_buffer.5
 	movl	%edi, (%rcx)
 	movslq	%esi, %rcx
 	movb	%al, (%rdx,%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	copy_buffer.5, .Lfunc_end0-copy_buffer.5
 	.cfi_endproc

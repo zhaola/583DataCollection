@@ -17,6 +17,8 @@ put_pixel_rows.6:                       # @put_pixel_rows.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrbmp.c_put_pixel_rows+8, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ put_pixel_rows.6:                       # @put_pixel_rows.6
 	addq	$1, %rcx
 	movq	%rcx, (%rdi)
 	movb	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	put_pixel_rows.6, .Lfunc_end0-put_pixel_rows.6
 	.cfi_endproc

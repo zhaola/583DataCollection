@@ -23,6 +23,8 @@ load_interlaced_image.12:               # @load_interlaced_image.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movabsq	$get_interlaced_row, %rcx
@@ -57,7 +59,8 @@ load_interlaced_image.12:               # @load_interlaced_image.12
 	movq	(%rdx), %rsi
 	callq	get_interlaced_row
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	load_interlaced_image.12, .Lfunc_end0-load_interlaced_image.12
 	.cfi_endproc

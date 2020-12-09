@@ -30,6 +30,8 @@ Luv24fromLuv48.9:                       # @Luv24fromLuv48.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero
@@ -38,7 +40,8 @@ Luv24fromLuv48.9:                       # @Luv24fromLuv48.9
 	movq	%rax, __profc_.._tif_luv.c_Luv24fromLuv48+8
 	callq	uv_encode
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Luv24fromLuv48.9, .Lfunc_end0-Luv24fromLuv48.9
 	.cfi_endproc

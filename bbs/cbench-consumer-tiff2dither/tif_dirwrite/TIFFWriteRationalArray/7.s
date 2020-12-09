@@ -24,13 +24,15 @@ TIFFWriteRationalArray.7:               # @TIFFWriteRationalArray.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	$1, (%rdi)
 	movss	(%rsi), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	xorps	%xmm1, %xmm1
 	ucomiss	%xmm1, %xmm0
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteRationalArray.7, .Lfunc_end0-TIFFWriteRationalArray.7
 	.cfi_endproc

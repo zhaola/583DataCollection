@@ -33,10 +33,10 @@ free_pool.22:                           # @free_pool.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jmemmgr.c_free_pool+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jmemmgr.c_free_pool+8
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movq	%rax, (%r14)
@@ -49,7 +49,6 @@ free_pool.22:                           # @free_pool.22
 	movq	(%rcx), %rdi
 	movq	(%rbx), %rsi
 	movq	(%r12), %rdx
-	callq	jpeg_free_small
 	movq	(%r12), %rax
 	movq	(%r15), %rcx
 	movq	144(%rcx), %rdx
@@ -57,7 +56,8 @@ free_pool.22:                           # @free_pool.22
 	movq	%rdx, 144(%rcx)
 	movq	(%r14), %rax
 	movq	%rax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	free_pool.22, .Lfunc_end0-free_pool.22
 	.cfi_endproc

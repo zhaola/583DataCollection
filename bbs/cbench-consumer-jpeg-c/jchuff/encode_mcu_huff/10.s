@@ -17,6 +17,8 @@ encode_mcu_huff.10:                     # @encode_mcu_huff.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -24,7 +26,8 @@ encode_mcu_huff.10:                     # @encode_mcu_huff.10
 	movswl	(%rax), %eax
 	movslq	(%rcx), %rcx
 	movl	%eax, 28(%rdx,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_huff.10, .Lfunc_end0-encode_mcu_huff.10
 	.cfi_endproc

@@ -13,6 +13,8 @@ Gsm_Long_Term_Synthesis_Filtering.8:    # @Gsm_Long_Term_Synthesis_Filtering.8
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_Gsm_Long_Term_Synthesis_Filtering+56, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_Gsm_Long_Term_Synthesis_Filtering+56
@@ -21,6 +23,8 @@ Gsm_Long_Term_Synthesis_Filtering.8:    # @Gsm_Long_Term_Synthesis_Filtering.8
 	movl	$581, %edx              # imm = 0x245
 	movabsq	$__PRETTY_FUNCTION__.Gsm_Long_Term_Synthesis_Filtering, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Long_Term_Synthesis_Filtering.8, .Lfunc_end0-Gsm_Long_Term_Synthesis_Filtering.8
 	.cfi_endproc

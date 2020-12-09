@@ -17,6 +17,8 @@ Fax3Encode.20:                          # @Fax3Encode.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_fax3.c_Fax3Encode, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ Fax3Encode.20:                          # @Fax3Encode.20
 	movl	536(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, 536(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3Encode.20, .Lfunc_end0-Fax3Encode.20
 	.cfi_endproc

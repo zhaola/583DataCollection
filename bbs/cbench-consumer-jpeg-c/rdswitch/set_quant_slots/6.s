@@ -17,12 +17,15 @@ set_quant_slots.6:                      # @set_quant_slots.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_set_quant_slots+64, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_set_quant_slots+64
 	movl	$0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_quant_slots.6, .Lfunc_end0-set_quant_slots.6
 	.cfi_endproc

@@ -23,11 +23,10 @@ first_marker.14:                        # @first_marker.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmarker.c_first_marker, %rax
-	movq	__profc_.._jdmarker.c_first_marker+8, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_.._jdmarker.c_first_marker+8
 	movq	(%rdi), %rcx
 	movq	(%rcx), %rcx
 	movl	$52, 40(%rcx)
@@ -49,7 +48,8 @@ first_marker.14:                        # @first_marker.14
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	first_marker.14, .Lfunc_end0-first_marker.14
 	.cfi_endproc

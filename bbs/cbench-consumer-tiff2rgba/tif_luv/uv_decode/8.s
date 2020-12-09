@@ -17,11 +17,14 @@ uv_decode.8:                            # @uv_decode.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_uv_decode+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_luv.c_uv_decode+40
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	uv_decode.8, .Lfunc_end0-uv_decode.8
 	.cfi_endproc

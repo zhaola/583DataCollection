@@ -24,6 +24,8 @@ TIFFReadRawTile.4:                      # @TIFFReadRawTile.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	256(%rax), %rax
@@ -31,8 +33,8 @@ TIFFReadRawTile.4:                      # @TIFFReadRawTile.4
 	movl	(%rax,%rsi,4), %eax
 	movl	%eax, (%rdx)
 	cmpl	$-1, (%rcx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRawTile.4, .Lfunc_end0-TIFFReadRawTile.4
 	.cfi_endproc

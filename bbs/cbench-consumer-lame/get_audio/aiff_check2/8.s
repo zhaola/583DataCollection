@@ -13,6 +13,8 @@ aiff_check2.8:                          # @aiff_check2.8
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._get_audio.c_aiff_check2+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._get_audio.c_aiff_check2+32
@@ -25,6 +27,8 @@ aiff_check2.8:                          # @aiff_check2.8
 	callq	fprintf
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	aiff_check2.8, .Lfunc_end0-aiff_check2.8
 	.cfi_endproc

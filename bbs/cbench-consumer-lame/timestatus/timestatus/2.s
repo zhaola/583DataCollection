@@ -53,6 +53,8 @@ timestatus.2:                           # @timestatus.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%r13), %esi
 	movq	(%r12), %rdx
@@ -67,8 +69,8 @@ timestatus.2:                           # @timestatus.2
 	movq	%r14, %rdi
 	callq	ts_calc_times
 	cmpq	$1, (%rbx)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	timestatus.2, .Lfunc_end0-timestatus.2
 	.cfi_endproc

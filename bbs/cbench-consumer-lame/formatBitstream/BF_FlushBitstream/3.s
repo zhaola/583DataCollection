@@ -17,6 +17,8 @@ BF_FlushBitstream.3:                    # @BF_FlushBitstream.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BF_FlushBitstream, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ BF_FlushBitstream.3:                    # @BF_FlushBitstream.3
 	xorl	%edi, %edi
 	movl	$32, %esi
 	callq	WriteMainDataBits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BF_FlushBitstream.3, .Lfunc_end0-BF_FlushBitstream.3
 	.cfi_endproc

@@ -32,13 +32,15 @@ select_file_type.2:                     # @select_file_type.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	callq	_IO_getc
 	movl	%eax, (%rbx)
 	cmpl	$-1, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_file_type.2, .Lfunc_end0-select_file_type.2
 	.cfi_endproc

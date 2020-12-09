@@ -47,6 +47,8 @@ TIFFReadEncodedStrip.13:                # @TIFFReadEncodedStrip.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFReadEncodedStrip, %r9
 	movq	__profc_TIFFReadEncodedStrip+24, %rax
@@ -72,8 +74,8 @@ TIFFReadEncodedStrip.13:                # @TIFFReadEncodedStrip.13
 	movzwl	%r13w, %ecx
 	callq	*%rbx
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadEncodedStrip.13, .Lfunc_end0-TIFFReadEncodedStrip.13
 	.cfi_endproc

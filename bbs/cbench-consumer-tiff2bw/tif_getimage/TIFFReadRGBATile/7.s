@@ -24,12 +24,14 @@ TIFFReadRGBATile.7:                     # @TIFFReadRGBATile.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	addl	(%rsi), %eax
 	cmpl	24(%rdx), %eax
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRGBATile.7, .Lfunc_end0-TIFFReadRGBATile.7
 	.cfi_endproc

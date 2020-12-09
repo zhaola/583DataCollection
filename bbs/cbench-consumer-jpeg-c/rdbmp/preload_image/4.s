@@ -38,6 +38,8 @@ preload_image.4:                        # @preload_image.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._rdbmp.c_preload_image, %rsi
 	movq	(%rdi), %rax
@@ -66,7 +68,8 @@ preload_image.4:                        # @preload_image.4
 	movl	76(%rax), %eax
 	movq	-64(%rbp), %rcx         # 8-byte Reload
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	preload_image.4, .Lfunc_end0-preload_image.4
 	.cfi_endproc

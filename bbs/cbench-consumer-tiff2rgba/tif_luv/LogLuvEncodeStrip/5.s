@@ -35,6 +35,8 @@ LogLuvEncodeStrip.5:                    # @LogLuvEncodeStrip.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_luv.c_LogLuvEncodeStrip, %rax
 	movq	__profc_.._tif_luv.c_LogLuvEncodeStrip+8, %rbx
@@ -60,7 +62,8 @@ LogLuvEncodeStrip.5:                    # @LogLuvEncodeStrip.5
 	andb	$1, %al
 	movq	-48(%rbp), %rcx         # 8-byte Reload
 	movb	%al, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvEncodeStrip.5, .Lfunc_end0-LogLuvEncodeStrip.5
 	.cfi_endproc

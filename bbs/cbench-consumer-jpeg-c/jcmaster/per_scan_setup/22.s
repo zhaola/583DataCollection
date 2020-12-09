@@ -24,6 +24,8 @@ per_scan_setup.22:                      # @per_scan_setup.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	276(%rax), %rax
@@ -32,8 +34,8 @@ per_scan_setup.22:                      # @per_scan_setup.22
 	imulq	%rcx, %rax
 	movq	%rax, (%rsi)
 	cmpq	$65535, (%rsi)          # imm = 0xFFFF
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	per_scan_setup.22, .Lfunc_end0-per_scan_setup.22
 	.cfi_endproc

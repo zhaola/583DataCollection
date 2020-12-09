@@ -40,8 +40,9 @@ skip_variable.10:                       # @skip_variable.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmarker.c_skip_variable, %rsi
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movl	$90, 40(%rax)
@@ -64,7 +65,6 @@ skip_variable.10:                       # @skip_variable.10
 	movq	%r14, %rdi
 	movl	$1, %esi
 	callq	*%r13
-	movabsq	$__profd_.._jdmarker.c_skip_variable, %rsi
 	movq	-48(%rbp), %rax         # 8-byte Reload
 	movq	(%rax), %rax
 	movq	(%r12), %rcx
@@ -87,7 +87,8 @@ skip_variable.10:                       # @skip_variable.10
 	callq	*%r14
 	movq	-64(%rbp), %rax         # 8-byte Reload
 	movl	$1, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	skip_variable.10, .Lfunc_end0-skip_variable.10
 	.cfi_endproc

@@ -17,13 +17,16 @@ main1.18:                               # @main1.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main1+88, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_main1+88
 	xorl	%edi, %edi
 	callq	process
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.18, .Lfunc_end0-main1.18
 	.cfi_endproc

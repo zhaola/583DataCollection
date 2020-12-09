@@ -17,11 +17,12 @@ jpeg_consume_input.4:                   # @jpeg_consume_input.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_consume_input+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_consume_input+16
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_consume_input.4, .Lfunc_end0-jpeg_consume_input.4
 	.cfi_endproc

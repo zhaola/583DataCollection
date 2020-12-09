@@ -51,6 +51,8 @@ TIFFYCbCrToRGBInit.4:                   # @TIFFYCbCrToRGBInit.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_TIFFYCbCrToRGBInit+16, %rax
 	addq	$1, %rax
@@ -154,7 +156,8 @@ TIFFYCbCrToRGBInit.4:                   # @TIFFYCbCrToRGBInit.4
 	movl	$0, (%rax)
 	movq	72(%rbp), %rax
 	movl	$-128, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFYCbCrToRGBInit.4, .Lfunc_end0-TIFFYCbCrToRGBInit.4
 	.cfi_endproc

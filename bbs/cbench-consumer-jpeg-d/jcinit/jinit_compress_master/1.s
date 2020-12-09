@@ -23,18 +23,16 @@ jinit_compress_master.1:                # @jinit_compress_master.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_compress_master+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_compress_master+16
 	movq	(%rbx), %rdi
-	callq	jinit_color_converter
 	movq	(%rbx), %rdi
-	callq	jinit_downsampler
 	movq	(%rbx), %rdi
 	xorl	%esi, %esi
-	callq	jinit_c_prep_controller
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_compress_master.1, .Lfunc_end0-jinit_compress_master.1
 	.cfi_endproc

@@ -17,17 +17,18 @@ jpeg_huff_decode.9:                     # @jpeg_huff_decode.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_huff_decode+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_huff_decode+8
 	movq	(%rdi), %rax
 	movq	24(%rax), %rax
 	movq	%rax, (%rsi)
 	movq	(%rdi), %rax
 	movl	32(%rax), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_huff_decode.9, .Lfunc_end0-jpeg_huff_decode.9
 	.cfi_endproc

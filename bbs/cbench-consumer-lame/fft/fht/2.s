@@ -35,6 +35,8 @@ fht.2:                                  # @fht.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movq	__profc_.._fft.c_fht+8, %rbx
@@ -143,7 +145,8 @@ fht.2:                                  # @fht.2
 	shlq	$2, %rax
 	addq	%rax, %rcx
 	movq	%rcx, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fht.2, .Lfunc_end0-fht.2
 	.cfi_endproc

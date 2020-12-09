@@ -23,6 +23,8 @@ BZ2_compressBlock.9:                    # @BZ2_compressBlock.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_compressBlock+16, %rax
 	addq	$1, %rax
@@ -62,7 +64,8 @@ BZ2_compressBlock.9:                    # @BZ2_compressBlock.9
 	callq	generateMTFValues
 	movq	(%rbx), %rdi
 	callq	sendMTFValues
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_compressBlock.9, .Lfunc_end0-BZ2_compressBlock.9
 	.cfi_endproc

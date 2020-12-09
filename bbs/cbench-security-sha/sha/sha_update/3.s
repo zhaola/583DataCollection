@@ -24,10 +24,12 @@ sha_update.3:                           # @sha_update.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$64, (%rdi)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	sha_update.3, .Lfunc_end0-sha_update.3
 	.cfi_endproc

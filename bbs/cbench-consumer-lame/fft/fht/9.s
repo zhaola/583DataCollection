@@ -17,6 +17,8 @@ fht.9:                                  # @fht.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	(%rdi), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	movss	%xmm0, (%rsi)
@@ -36,7 +38,8 @@ fht.9:                                  # @fht.9
 	mulss	(%rax), %xmm1
 	addss	%xmm1, %xmm0
 	movss	%xmm0, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fht.9, .Lfunc_end0-fht.9
 	.cfi_endproc

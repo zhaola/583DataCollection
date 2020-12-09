@@ -17,6 +17,8 @@ transencode_coef_controller.2:          # @transencode_coef_controller.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
@@ -25,7 +27,8 @@ transencode_coef_controller.2:          # @transencode_coef_controller.2
 	movq	(%rdx), %rcx
 	movslq	(%rsi), %rdx
 	movq	%rax, 40(%rcx,%rdx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	transencode_coef_controller.2, .Lfunc_end0-transencode_coef_controller.2
 	.cfi_endproc

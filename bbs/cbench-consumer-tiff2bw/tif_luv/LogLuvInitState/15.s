@@ -23,6 +23,8 @@ LogLuvInitState.15:                     # @LogLuvInitState.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_LogLuvInitState+56, %rax
 	addq	$1, %rax
@@ -33,7 +35,8 @@ LogLuvInitState.15:                     # @LogLuvInitState.15
 	movb	$0, %al
 	callq	TIFFError
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvInitState.15, .Lfunc_end0-LogLuvInitState.15
 	.cfi_endproc

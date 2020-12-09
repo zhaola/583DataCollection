@@ -40,8 +40,9 @@ prepare_for_output_pass.12:             # @prepare_for_output_pass.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmaster.c_prepare_for_output_pass, %rsi
 	movq	(%rbx), %rax
 	movq	584(%rax), %rax
 	movq	(%rax), %r14
@@ -51,7 +52,6 @@ prepare_for_output_pass.12:             # @prepare_for_output_pass.12
 	callq	__llvm_profile_instrument_target
 	movq	%r15, %rdi
 	callq	*%r14
-	movabsq	$__profd_.._jdmaster.c_prepare_for_output_pass, %rsi
 	movq	(%rbx), %rax
 	movq	544(%rax), %rax
 	movq	16(%rax), %r14
@@ -63,8 +63,8 @@ prepare_for_output_pass.12:             # @prepare_for_output_pass.12
 	callq	*%r14
 	movq	(%rbx), %rax
 	cmpl	$0, 84(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_output_pass.12, .Lfunc_end0-prepare_for_output_pass.12
 	.cfi_endproc

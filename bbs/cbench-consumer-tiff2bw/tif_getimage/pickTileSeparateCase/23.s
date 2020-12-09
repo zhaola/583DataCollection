@@ -17,6 +17,8 @@ pickTileSeparateCase.23:                # @pickTileSeparateCase.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rsi), %rcx
@@ -26,7 +28,8 @@ pickTileSeparateCase.23:                # @pickTileSeparateCase.23
 	andb	$1, %al
 	movzbl	%al, %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pickTileSeparateCase.23, .Lfunc_end0-pickTileSeparateCase.23
 	.cfi_endproc

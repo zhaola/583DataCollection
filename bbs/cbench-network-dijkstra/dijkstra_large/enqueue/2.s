@@ -24,6 +24,8 @@ enqueue.2:                              # @enqueue.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rdi
@@ -37,8 +39,8 @@ enqueue.2:                              # @enqueue.2
 	movq	(%rsi), %rax
 	movq	$0, 16(%rax)
 	cmpq	$0, (%r8)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	enqueue.2, .Lfunc_end0-enqueue.2
 	.cfi_endproc

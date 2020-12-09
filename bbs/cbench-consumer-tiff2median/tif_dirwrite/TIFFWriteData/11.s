@@ -41,6 +41,8 @@ TIFFWriteData.11:                       # @TIFFWriteData.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_dirwrite.c_TIFFWriteData, %rsi
 	movq	(%rdi), %rax
@@ -68,8 +70,8 @@ TIFFWriteData.11:                       # @TIFFWriteData.11
 	callq	*%r14
 	movq	(%rbx), %rcx
 	cmpl	8(%rcx), %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteData.11, .Lfunc_end0-TIFFWriteData.11
 	.cfi_endproc

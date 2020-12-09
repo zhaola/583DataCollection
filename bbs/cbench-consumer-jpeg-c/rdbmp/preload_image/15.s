@@ -17,6 +17,8 @@ preload_image.15:                       # @preload_image.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdbmp.c_preload_image+48, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ preload_image.15:                       # @preload_image.15
 	movq	(%rdi), %rax
 	movabsq	$get_8bit_row, %rcx
 	movq	%rcx, 8(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	preload_image.15, .Lfunc_end0-preload_image.15
 	.cfi_endproc

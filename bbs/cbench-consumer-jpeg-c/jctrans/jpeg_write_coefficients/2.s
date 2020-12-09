@@ -31,11 +31,11 @@ jpeg_write_coefficients.2:              # @jpeg_write_coefficients.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	xorl	%esi, %esi
-	callq	jpeg_suppress_tables
-	movabsq	$__profd_jpeg_write_coefficients, %rsi
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movq	32(%rax), %r15
@@ -45,7 +45,6 @@ jpeg_write_coefficients.2:              # @jpeg_write_coefficients.2
 	callq	__llvm_profile_instrument_target
 	movq	%r12, %rdi
 	callq	*%r15
-	movabsq	$__profd_jpeg_write_coefficients, %rsi
 	movq	(%rbx), %rax
 	movq	32(%rax), %rax
 	movq	16(%rax), %r15
@@ -62,7 +61,8 @@ jpeg_write_coefficients.2:              # @jpeg_write_coefficients.2
 	movl	$0, 296(%rax)
 	movq	(%rbx), %rax
 	movl	$103, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_write_coefficients.2, .Lfunc_end0-jpeg_write_coefficients.2
 	.cfi_endproc

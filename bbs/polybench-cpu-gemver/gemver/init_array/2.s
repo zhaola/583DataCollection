@@ -48,6 +48,8 @@ init_array.2:                           # @init_array.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero
@@ -111,7 +113,8 @@ init_array.2:                           # @init_array.2
 	movslq	(%rdi), %rcx
 	movsd	%xmm0, (%rax,%rcx,8)
 	movl	$0, (%r11)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	init_array.2, .Lfunc_end0-init_array.2
 	.cfi_endproc

@@ -34,11 +34,10 @@ process_data_simple_main.3:             # @process_data_simple_main.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jcmainct.c_process_data_simple_main, %rax
-	movq	__profc_.._jcmainct.c_process_data_simple_main+16, %rbx
 	addq	$1, %rbx
-	movq	%rbx, __profc_.._jcmainct.c_process_data_simple_main+16
 	movq	(%rdi), %rbx
 	movq	440(%rbx), %rbx
 	movq	8(%rbx), %rbx
@@ -64,7 +63,8 @@ process_data_simple_main.3:             # @process_data_simple_main.3
 	movq	%r15, %r9
 	movl	$8, (%rsp)
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_data_simple_main.3, .Lfunc_end0-process_data_simple_main.3
 	.cfi_endproc

@@ -31,6 +31,8 @@ cvt_by_tile.27:                         # @cvt_by_tile.27
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"27"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2rgba.c_cvt_by_tile+72, %rax
 	addq	$1, %rax
@@ -41,7 +43,8 @@ cvt_by_tile.27:                         # @cvt_by_tile.27
 	callq	_TIFFfree
 	movl	(%r15), %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	cvt_by_tile.27, .Lfunc_end0-cvt_by_tile.27
 	.cfi_endproc

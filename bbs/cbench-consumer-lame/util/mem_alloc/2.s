@@ -13,6 +13,8 @@ mem_alloc.2:                            # @mem_alloc.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_mem_alloc+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_mem_alloc+8
@@ -24,6 +26,8 @@ mem_alloc.2:                            # @mem_alloc.2
 	callq	fprintf
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	mem_alloc.2, .Lfunc_end0-mem_alloc.2
 	.cfi_endproc

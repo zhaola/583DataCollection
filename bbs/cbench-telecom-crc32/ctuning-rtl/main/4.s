@@ -25,6 +25,8 @@ main.4:                                 # @main.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %edi
 	movq	(%rsi), %rsi
@@ -32,7 +34,8 @@ main.4:                                 # @main.4
 	callq	main1
 	movl	%eax, (%r14)
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.4, .Lfunc_end0-main.4
 	.cfi_endproc

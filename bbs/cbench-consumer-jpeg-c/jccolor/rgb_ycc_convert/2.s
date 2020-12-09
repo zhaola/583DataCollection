@@ -22,6 +22,8 @@ rgb_ycc_convert.2:                      # @rgb_ycc_convert.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	%rax, %rbx
@@ -48,7 +50,8 @@ rgb_ycc_convert.2:                      # @rgb_ycc_convert.2
 	addl	$1, %eax
 	movl	%eax, (%rcx)
 	movl	$0, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	rgb_ycc_convert.2, .Lfunc_end0-rgb_ycc_convert.2
 	.cfi_endproc

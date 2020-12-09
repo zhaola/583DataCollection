@@ -24,6 +24,8 @@ TIFFCheckTile.7:                        # @TIFFCheckTile.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFCheckTile+32, %rax
 	addq	$1, %rax
@@ -32,8 +34,8 @@ TIFFCheckTile.7:                        # @TIFFCheckTile.7
 	movq	(%rsi), %rcx
 	movzwl	66(%rcx), %ecx
 	cmpl	%ecx, %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFCheckTile.7, .Lfunc_end0-TIFFCheckTile.7
 	.cfi_endproc

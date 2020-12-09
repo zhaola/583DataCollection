@@ -17,6 +17,8 @@ TIFFFetchFloat.1:                       # @TIFFFetchFloat.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchFloat, %rax
 	addq	$1, %rax
@@ -37,7 +39,8 @@ TIFFFetchFloat.1:                       # @TIFFFetchFloat.1
 	movzwl	2(%rsi), %esi
 	andq	(%rcx,%rsi,8), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchFloat.1, .Lfunc_end0-TIFFFetchFloat.1
 	.cfi_endproc

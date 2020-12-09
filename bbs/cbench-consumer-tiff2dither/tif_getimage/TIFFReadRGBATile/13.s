@@ -44,6 +44,8 @@ TIFFReadRGBATile.13:                    # @TIFFReadRGBATile.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movl	%eax, 112(%rbx)
@@ -59,8 +61,8 @@ TIFFReadRGBATile.13:                    # @TIFFReadRGBATile.13
 	callq	TIFFRGBAImageEnd
 	movl	(%r14), %eax
 	cmpl	(%r15), %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRGBATile.13, .Lfunc_end0-TIFFReadRGBATile.13
 	.cfi_endproc

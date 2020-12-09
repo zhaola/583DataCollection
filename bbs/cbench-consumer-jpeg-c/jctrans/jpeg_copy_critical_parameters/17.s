@@ -24,15 +24,15 @@ jpeg_copy_critical_parameters.17:       # @jpeg_copy_critical_parameters.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_copy_critical_parameters+64, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_copy_critical_parameters+64
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	cmpq	$0, 192(%rax,%rcx,8)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_copy_critical_parameters.17, .Lfunc_end0-jpeg_copy_critical_parameters.17
 	.cfi_endproc

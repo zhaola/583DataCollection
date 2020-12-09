@@ -17,6 +17,8 @@ _TIFFSampleToTagType.1:                 # @_TIFFSampleToTagType.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc__TIFFSampleToTagType+8, %rax
 	addq	$1, %rax
@@ -33,7 +35,8 @@ _TIFFSampleToTagType.1:                 # @_TIFFSampleToTagType.1
 	movl	$12, %ecx
 	cmovel	%eax, %ecx
 	movl	%ecx, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFSampleToTagType.1, .Lfunc_end0-_TIFFSampleToTagType.1
 	.cfi_endproc

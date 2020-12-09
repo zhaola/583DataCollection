@@ -24,13 +24,15 @@ output_pass_setup.5:                    # @output_pass_setup.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	160(%rax), %eax
 	movq	(%rdi), %rcx
 	cmpl	132(%rcx), %eax
-	jb	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	output_pass_setup.5, .Lfunc_end0-output_pass_setup.5
 	.cfi_endproc

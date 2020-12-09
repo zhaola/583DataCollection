@@ -34,6 +34,8 @@ InitCCITTFax3.5:                        # @InitCCITTFax3.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movq	704(%rax), %rax
@@ -67,8 +69,8 @@ InitCCITTFax3.5:                        # @InitCCITTFax3.5
 	movq	$0, 32(%rax)
 	movq	(%rbx), %rax
 	cmpl	$0, 12(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	InitCCITTFax3.5, .Lfunc_end0-InitCCITTFax3.5
 	.cfi_endproc

@@ -23,11 +23,10 @@ prepare_for_pass.15:                    # @prepare_for_pass.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jcmaster.c_prepare_for_pass, %rsi
-	movq	__profc_.._jcmaster.c_prepare_for_pass+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmaster.c_prepare_for_pass+48
 	movq	(%rdi), %rax
 	movq	456(%rax), %rax
 	movq	16(%rax), %rbx
@@ -37,7 +36,8 @@ prepare_for_pass.15:                    # @prepare_for_pass.15
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_pass.15, .Lfunc_end0-prepare_for_pass.15
 	.cfi_endproc

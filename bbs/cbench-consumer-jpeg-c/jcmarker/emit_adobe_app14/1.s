@@ -17,14 +17,15 @@ emit_adobe_app14.1:                     # @emit_adobe_app14.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmarker.c_emit_adobe_app14+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmarker.c_emit_adobe_app14+8
 	movq	(%rdi), %rdi
 	movl	$1, %esi
 	callq	emit_byte
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_adobe_app14.1, .Lfunc_end0-emit_adobe_app14.1
 	.cfi_endproc

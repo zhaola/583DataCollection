@@ -24,13 +24,15 @@ do_sarray_io.1:                         # @do_sarray_io.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rsi), %rcx
 	movl	20(%rcx), %ecx
 	cmpq	%rcx, %rax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	do_sarray_io.1, .Lfunc_end0-do_sarray_io.1
 	.cfi_endproc

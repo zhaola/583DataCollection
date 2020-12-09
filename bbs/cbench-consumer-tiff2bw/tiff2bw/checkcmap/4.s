@@ -24,6 +24,8 @@ checkcmap.4:                            # @checkcmap.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2bw.c_checkcmap+8, %rax
 	addq	$1, %rax
@@ -34,8 +36,8 @@ checkcmap.4:                            # @checkcmap.4
 	movq	%rcx, (%rdi)
 	movzwl	(%rax), %eax
 	cmpl	$256, %eax              # imm = 0x100
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	checkcmap.4, .Lfunc_end0-checkcmap.4
 	.cfi_endproc

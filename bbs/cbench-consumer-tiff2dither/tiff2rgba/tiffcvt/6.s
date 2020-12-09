@@ -25,14 +25,16 @@ tiffcvt.6:                              # @tiffcvt.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	$283, %esi              # imm = 0x11B
 	movb	$0, %al
 	callq	TIFFGetField
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	tiffcvt.6, .Lfunc_end0-tiffcvt.6
 	.cfi_endproc

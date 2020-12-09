@@ -24,14 +24,16 @@ Short_term_synthesis_filtering.5:       # @Short_term_synthesis_filtering.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._short_term.c_Short_term_synthesis_filtering, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._short_term.c_Short_term_synthesis_filtering
 	movswl	(%rdi), %eax
 	cmpl	$-32768, %eax           # imm = 0x8000
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Short_term_synthesis_filtering.5, .Lfunc_end0-Short_term_synthesis_filtering.5
 	.cfi_endproc

@@ -34,13 +34,14 @@ COM_handler.4:                          # @COM_handler.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
-	callq	jpeg_getc
 	movl	%eax, (%rbx)
 	cmpl	$0, (%r14)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	COM_handler.4, .Lfunc_end0-COM_handler.4
 	.cfi_endproc

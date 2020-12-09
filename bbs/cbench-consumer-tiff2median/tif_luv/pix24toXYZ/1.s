@@ -17,6 +17,8 @@ pix24toXYZ.1:                           # @pix24toXYZ.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_pix24toXYZ+8, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ pix24toXYZ.1:                           # @pix24toXYZ.1
 	movss	%xmm0, 4(%rax)
 	movq	(%rdi), %rax
 	movss	%xmm0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix24toXYZ.1, .Lfunc_end0-pix24toXYZ.1
 	.cfi_endproc

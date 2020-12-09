@@ -23,10 +23,10 @@ compress_output.26:                     # @compress_output.26
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"26"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jccoefct.c_compress_output+56, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jccoefct.c_compress_output+56
 	movq	(%rdi), %rax
 	movl	16(%rax), %ecx
 	addl	$1, %ecx
@@ -34,7 +34,8 @@ compress_output.26:                     # @compress_output.26
 	movq	(%rsi), %rdi
 	callq	start_iMCU_row
 	movl	$1, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compress_output.26, .Lfunc_end0-compress_output.26
 	.cfi_endproc

@@ -22,6 +22,8 @@ TIFFFetchPerSampleAnys.7:               # @TIFFFetchPerSampleAnys.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchPerSampleAnys+48, %rax
 	addq	$1, %rax
@@ -37,7 +39,8 @@ TIFFFetchPerSampleAnys.7:               # @TIFFFetchPerSampleAnys.7
 	movabsq	$.str.23, %rsi
 	movb	$0, %al
 	callq	TIFFError
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchPerSampleAnys.7, .Lfunc_end0-TIFFFetchPerSampleAnys.7
 	.cfi_endproc

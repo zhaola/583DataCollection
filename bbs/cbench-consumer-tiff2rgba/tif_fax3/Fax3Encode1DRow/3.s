@@ -44,6 +44,8 @@ Fax3Encode1DRow.3:                      # @Fax3Encode1DRow.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	(%rbx), %esi
@@ -59,8 +61,8 @@ Fax3Encode1DRow.3:                      # @Fax3Encode1DRow.3
 	movl	%eax, (%rbx)
 	movl	(%rbx), %eax
 	cmpl	(%r14), %eax
-	jae	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3Encode1DRow.3, .Lfunc_end0-Fax3Encode1DRow.3
 	.cfi_endproc

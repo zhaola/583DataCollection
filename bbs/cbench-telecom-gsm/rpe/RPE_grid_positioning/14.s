@@ -24,14 +24,16 @@ RPE_grid_positioning.14:                # @RPE_grid_positioning.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movw	(%rdi), %ax
 	addw	$1, %ax
 	movw	%ax, (%rdi)
 	cwtl
 	cmpl	$4, %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	RPE_grid_positioning.14, .Lfunc_end0-RPE_grid_positioning.14
 	.cfi_endproc

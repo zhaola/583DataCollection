@@ -17,6 +17,8 @@ adpcm_decoder.10:                       # @adpcm_decoder.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_adpcm_decoder+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ adpcm_decoder.10:                       # @adpcm_decoder.10
 	movl	(%rdi), %eax
 	addl	(%rsi), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_decoder.10, .Lfunc_end0-adpcm_decoder.10
 	.cfi_endproc

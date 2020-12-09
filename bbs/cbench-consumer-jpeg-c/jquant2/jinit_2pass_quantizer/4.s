@@ -31,8 +31,9 @@ jinit_2pass_quantizer.4:                # @jinit_2pass_quantizer.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_2pass_quantizer, %rsi
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
 	movq	8(%rax), %rbx
@@ -48,7 +49,8 @@ jinit_2pass_quantizer.4:                # @jinit_2pass_quantizer.4
 	movq	48(%rcx), %rcx
 	movslq	(%r14), %rdx
 	movq	%rax, (%rcx,%rdx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_2pass_quantizer.4, .Lfunc_end0-jinit_2pass_quantizer.4
 	.cfi_endproc

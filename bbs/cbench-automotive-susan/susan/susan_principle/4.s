@@ -39,6 +39,8 @@ susan_principle.4:                      # @susan_principle.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%r11d, %r11d
 	movl	$100, (%rdi)
@@ -510,8 +512,8 @@ susan_principle.4:                      # @susan_principle.4
 	movl	%eax, (%rdi)
 	movl	(%rdi), %eax
 	cmpl	(%r10), %eax
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	susan_principle.4, .Lfunc_end0-susan_principle.4
 	.cfi_endproc

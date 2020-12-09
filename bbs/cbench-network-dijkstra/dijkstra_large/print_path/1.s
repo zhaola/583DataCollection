@@ -17,6 +17,8 @@ print_path.1:                           # @print_path.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_print_path+8, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ print_path.1:                           # @print_path.1
 	movl	4(%rcx,%rdx,8), %esi
 	movq	%rax, %rdi
 	callq	print_path
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	print_path.1, .Lfunc_end0-print_path.1
 	.cfi_endproc

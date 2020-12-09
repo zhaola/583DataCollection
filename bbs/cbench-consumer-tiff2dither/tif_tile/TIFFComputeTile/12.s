@@ -34,6 +34,8 @@ TIFFComputeTile.12:                     # @TIFFComputeTile.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFComputeTile+56, %rax
 	addq	$1, %rax
@@ -61,7 +63,8 @@ TIFFComputeTile.12:                     # @TIFFComputeTile.12
 	divl	(%r11)
 	addl	%eax, %ebx
 	movl	%ebx, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFComputeTile.12, .Lfunc_end0-TIFFComputeTile.12
 	.cfi_endproc

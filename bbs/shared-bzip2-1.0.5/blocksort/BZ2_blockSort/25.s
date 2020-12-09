@@ -17,13 +17,16 @@ BZ2_blockSort.25:                       # @BZ2_blockSort.25
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"25"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_blockSort+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_BZ2_blockSort+32
 	movl	$1003, %edi             # imm = 0x3EB
 	callq	BZ2_bz__AssertH__fail
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_blockSort.25, .Lfunc_end0-BZ2_blockSort.25
 	.cfi_endproc

@@ -32,6 +32,8 @@ TIFFSetupStrips.13:                     # @TIFFSetupStrips.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movl	244(%rax), %edi
@@ -49,8 +51,8 @@ TIFFSetupStrips.13:                     # @TIFFSetupStrips.13
 	movq	%rax, 256(%rcx)
 	movq	(%rbx), %rax
 	cmpq	$0, 248(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFSetupStrips.13, .Lfunc_end0-TIFFSetupStrips.13
 	.cfi_endproc

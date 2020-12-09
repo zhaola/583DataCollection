@@ -17,13 +17,16 @@ drain_into_ancillary_data.2:            # @drain_into_ancillary_data.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	userFrameDataPH, %rdi
 	xorl	%esi, %esi
 	movl	$32, %edx
 	callq	BF_addEntry
 	movq	%rax, userFrameDataPH
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	drain_into_ancillary_data.2, .Lfunc_end0-drain_into_ancillary_data.2
 	.cfi_endproc

@@ -17,17 +17,18 @@ encode_mcu_DC_first.7:                  # @encode_mcu_DC_first.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
-	movq	__profc_.._jcphuff.c_encode_mcu_DC_first+24, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_.._jcphuff.c_encode_mcu_DC_first+24
 	subl	(%rdi), %eax
 	movl	%eax, (%rdi)
 	movl	(%rsi), %eax
 	addl	$-1, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_DC_first.7, .Lfunc_end0-encode_mcu_DC_first.7
 	.cfi_endproc

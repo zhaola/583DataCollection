@@ -23,12 +23,15 @@ jpeg_read_coefficients.1:               # @jpeg_read_coefficients.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	callq	transdecode_master_selection
 	movq	(%rbx), %rax
 	movl	$209, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_coefficients.1, .Lfunc_end0-jpeg_read_coefficients.1
 	.cfi_endproc

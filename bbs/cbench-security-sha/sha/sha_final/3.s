@@ -31,6 +31,8 @@ sha_final.3:                            # @sha_final.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	addq	$56, %rdi
@@ -44,7 +46,8 @@ sha_final.3:                            # @sha_final.3
 	movq	%rax, 176(%rcx)
 	movq	(%rbx), %rdi
 	callq	sha_transform
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	sha_final.3, .Lfunc_end0-sha_final.3
 	.cfi_endproc

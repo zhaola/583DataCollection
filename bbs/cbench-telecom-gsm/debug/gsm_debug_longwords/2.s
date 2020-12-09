@@ -34,6 +34,8 @@ gsm_debug_longwords.2:                  # @gsm_debug_longwords.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	stderr, %rax
 	movq	(%rdi), %rcx
@@ -51,8 +53,8 @@ gsm_debug_longwords.2:                  # @gsm_debug_longwords.2
 	addl	$1, %ecx
 	movl	%ecx, (%r14)
 	cmpl	$7, %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_debug_longwords.2, .Lfunc_end0-gsm_debug_longwords.2
 	.cfi_endproc

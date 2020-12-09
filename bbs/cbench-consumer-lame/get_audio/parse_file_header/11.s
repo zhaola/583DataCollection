@@ -17,11 +17,14 @@ parse_file_header.11:                   # @parse_file_header.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_parse_file_header+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_parse_file_header+32
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	parse_file_header.11, .Lfunc_end0-parse_file_header.11
 	.cfi_endproc

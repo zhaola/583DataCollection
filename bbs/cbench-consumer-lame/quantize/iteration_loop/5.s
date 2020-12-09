@@ -17,6 +17,8 @@ iteration_loop.5:                       # @iteration_loop.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_iteration_loop+64, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ iteration_loop.5:                       # @iteration_loop.5
 	movsd	(%rax,%rdx,8), %xmm0    # xmm0 = mem[0],zero
 	movl	(%rcx), %esi
 	callq	reduce_side
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	iteration_loop.5, .Lfunc_end0-iteration_loop.5
 	.cfi_endproc

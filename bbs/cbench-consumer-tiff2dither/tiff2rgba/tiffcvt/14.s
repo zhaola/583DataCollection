@@ -23,6 +23,8 @@ tiffcvt.14:                             # @tiffcvt.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2rgba.c_tiffcvt+56, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ tiffcvt.14:                             # @tiffcvt.14
 	movq	(%rsi), %rsi
 	callq	cvt_by_tile
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	tiffcvt.14, .Lfunc_end0-tiffcvt.14
 	.cfi_endproc

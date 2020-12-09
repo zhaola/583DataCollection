@@ -24,13 +24,15 @@ create_odither_tables.4:                # @create_odither_tables.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
 	movslq	(%rdx), %rdx
 	cmpl	60(%rcx,%rdx,4), %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	create_odither_tables.4, .Lfunc_end0-create_odither_tables.4
 	.cfi_endproc

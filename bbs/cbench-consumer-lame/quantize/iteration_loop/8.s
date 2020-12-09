@@ -24,6 +24,8 @@ iteration_loop.8:                       # @iteration_loop.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	addq	$48, %rax
@@ -46,8 +48,8 @@ iteration_loop.8:                       # @iteration_loop.8
 	movq	%rax, %rsi
 	callq	init_outer_loop
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	iteration_loop.8, .Lfunc_end0-iteration_loop.8
 	.cfi_endproc

@@ -17,6 +17,8 @@ enqueue.7:                              # @enqueue.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_enqueue+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ enqueue.7:                              # @enqueue.7
 	movq	(%rdi), %rax
 	movq	(%rsi), %rcx
 	movq	%rax, 16(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	enqueue.7, .Lfunc_end0-enqueue.7
 	.cfi_endproc

@@ -24,12 +24,14 @@ find_best_colors.12:                    # @find_best_colors.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rsi), %rcx
 	cmpq	(%rcx), %rax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_best_colors.12, .Lfunc_end0-find_best_colors.12
 	.cfi_endproc

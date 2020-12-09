@@ -17,6 +17,8 @@ build_ycc_rgb_table.2:                  # @build_ycc_rgb_table.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	imulq	$91881, (%rdi), %rax    # imm = 0x166E9
 	addq	$32768, %rax            # imm = 0x8000
@@ -43,7 +45,8 @@ build_ycc_rgb_table.2:                  # @build_ycc_rgb_table.2
 	movq	56(%rcx), %rcx
 	movslq	(%rdx), %rdx
 	movq	%rax, (%rcx,%rdx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	build_ycc_rgb_table.2, .Lfunc_end0-build_ycc_rgb_table.2
 	.cfi_endproc

@@ -24,13 +24,15 @@ TIFFWriteCheck.6:                       # @TIFFWriteCheck.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	32(%rax), %rax
 	andq	$1048576, %rax          # imm = 0x100000
 	cmpq	$0, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteCheck.6, .Lfunc_end0-TIFFWriteCheck.6
 	.cfi_endproc

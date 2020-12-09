@@ -22,6 +22,8 @@ TIFFWriteRationalArray.14:              # @TIFFWriteRationalArray.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cvtsi2sdl	(%rdi), %xmm0
 	movss	(%rsi), %xmm1           # xmm1 = mem[0],zero,zero,zero
@@ -43,7 +45,8 @@ TIFFWriteRationalArray.14:              # @TIFFWriteRationalArray.14
 	addl	$1, %ecx
 	movl	%ecx, %ecx
 	movl	%eax, (%rdx,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteRationalArray.14, .Lfunc_end0-TIFFWriteRationalArray.14
 	.cfi_endproc

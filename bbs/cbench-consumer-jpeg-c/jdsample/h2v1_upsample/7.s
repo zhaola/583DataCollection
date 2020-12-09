@@ -17,8 +17,11 @@ h2v1_upsample.7:                        # @h2v1_upsample.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	h2v1_upsample.7, .Lfunc_end0-h2v1_upsample.7
 	.cfi_endproc

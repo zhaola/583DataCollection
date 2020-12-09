@@ -24,6 +24,8 @@ BZ2_compressBlock.6:                    # @BZ2_compressBlock.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	32(%rax), %rax
@@ -34,8 +36,8 @@ BZ2_compressBlock.6:                    # @BZ2_compressBlock.6
 	movq	%rax, 80(%rcx)
 	movq	(%rdi), %rax
 	cmpl	$1, 660(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_compressBlock.6, .Lfunc_end0-BZ2_compressBlock.6
 	.cfi_endproc

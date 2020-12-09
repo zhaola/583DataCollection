@@ -24,13 +24,15 @@ compute_scalefacs_long.17:              # @compute_scalefacs_long.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movslq	(%rsi), %rax
 	addsd	(%rdx,%rax,8), %xmm0
 	ucomisd	(%rcx), %xmm0
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_scalefacs_long.17, .Lfunc_end0-compute_scalefacs_long.17
 	.cfi_endproc

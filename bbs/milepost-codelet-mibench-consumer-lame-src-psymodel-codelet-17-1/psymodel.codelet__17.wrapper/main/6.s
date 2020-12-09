@@ -40,6 +40,8 @@ main.6:                                 # @main.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main, %r13
 	addq	$1, %r13
@@ -190,7 +192,8 @@ main.6:                                 # @main.6
 	movq	-80(%rbp), %rax         # 8-byte Reload
 	movq	%rax, 240(%rsp)
 	callq	astex_codelet__17
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.6, .Lfunc_end0-main.6
 	.cfi_endproc

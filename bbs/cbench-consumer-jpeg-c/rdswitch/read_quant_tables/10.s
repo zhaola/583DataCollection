@@ -17,6 +17,8 @@ read_quant_tables.10:                   # @read_quant_tables.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_read_quant_tables, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ read_quant_tables.10:                   # @read_quant_tables.10
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	movl	%eax, (%rdx,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_quant_tables.10, .Lfunc_end0-read_quant_tables.10
 	.cfi_endproc

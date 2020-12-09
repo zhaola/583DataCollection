@@ -25,6 +25,8 @@ BZ2_bzBuffToBuffCompress.20:            # @BZ2_bzBuffToBuffCompress.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_bzBuffToBuffCompress+104, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ BZ2_bzBuffToBuffCompress.20:            # @BZ2_bzBuffToBuffCompress.20
 	callq	BZ2_bzCompressEnd
 	movl	(%rbx), %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzBuffToBuffCompress.20, .Lfunc_end0-BZ2_bzBuffToBuffCompress.20
 	.cfi_endproc

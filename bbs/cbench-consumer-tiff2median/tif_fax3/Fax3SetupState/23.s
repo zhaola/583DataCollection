@@ -17,6 +17,8 @@ Fax3SetupState.23:                      # @Fax3SetupState.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_fax3.c_Fax3SetupState+32, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ Fax3SetupState.23:                      # @Fax3SetupState.23
 	movq	(%rdi), %rax
 	movq	704(%rax), %rax
 	movq	$0, 80(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3SetupState.23, .Lfunc_end0-Fax3SetupState.23
 	.cfi_endproc

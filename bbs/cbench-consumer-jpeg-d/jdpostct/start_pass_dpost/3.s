@@ -35,11 +35,10 @@ start_pass_dpost.3:                     # @start_pass_dpost.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdpostct.c_start_pass_dpost, %rsi
-	movq	__profc_.._jdpostct.c_start_pass_dpost+56, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdpostct.c_start_pass_dpost+56
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
 	movq	56(%rax), %rbx
@@ -59,7 +58,8 @@ start_pass_dpost.3:                     # @start_pass_dpost.3
 	callq	*%rbx
 	movq	(%r14), %rcx
 	movq	%rax, 24(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_dpost.3, .Lfunc_end0-start_pass_dpost.3
 	.cfi_endproc

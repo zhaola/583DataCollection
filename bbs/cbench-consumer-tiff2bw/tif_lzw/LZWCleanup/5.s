@@ -23,13 +23,16 @@ LZWCleanup.5:                           # @LZWCleanup.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movq	704(%rax), %rdi
 	callq	_TIFFfree
 	movq	(%rbx), %rax
 	movq	$0, 704(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWCleanup.5, .Lfunc_end0-LZWCleanup.5
 	.cfi_endproc

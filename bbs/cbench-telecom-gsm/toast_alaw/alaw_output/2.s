@@ -24,6 +24,8 @@ alaw_output.2:                          # @alaw_output.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movzwl	(%rax), %eax
@@ -33,8 +35,8 @@ alaw_output.2:                          # @alaw_output.2
 	movq	out, %rsi
 	callq	fputc
 	cmpl	$-1, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alaw_output.2, .Lfunc_end0-alaw_output.2
 	.cfi_endproc

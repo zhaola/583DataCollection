@@ -24,10 +24,12 @@ jpeg_add_quant_table.10:                # @jpeg_add_quant_table.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$0, (%rdi)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_add_quant_table.10, .Lfunc_end0-jpeg_add_quant_table.10
 	.cfi_endproc

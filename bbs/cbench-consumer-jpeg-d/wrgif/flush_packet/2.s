@@ -23,6 +23,8 @@ flush_packet.2:                         # @flush_packet.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._wrgif.c_flush_packet, %rsi
 	movq	__profc_.._wrgif.c_flush_packet+16, %rax
@@ -43,7 +45,8 @@ flush_packet.2:                         # @flush_packet.2
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	flush_packet.2, .Lfunc_end0-flush_packet.2
 	.cfi_endproc

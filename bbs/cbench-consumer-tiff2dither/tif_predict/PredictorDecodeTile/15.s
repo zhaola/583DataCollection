@@ -37,6 +37,8 @@ PredictorDecodeTile.15:                 # @PredictorDecodeTile.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_predict.c_PredictorDecodeTile, %rax
 	movq	__profc_.._tif_predict.c_PredictorDecodeTile, %rcx
@@ -66,7 +68,8 @@ PredictorDecodeTile.15:                 # @PredictorDecodeTile.15
 	cltq
 	addq	%rax, %rcx
 	movq	%rcx, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PredictorDecodeTile.15, .Lfunc_end0-PredictorDecodeTile.15
 	.cfi_endproc

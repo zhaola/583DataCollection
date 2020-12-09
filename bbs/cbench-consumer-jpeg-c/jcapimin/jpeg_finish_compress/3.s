@@ -23,11 +23,10 @@ jpeg_finish_compress.3:                 # @jpeg_finish_compress.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_finish_compress, %rsi
-	movq	__profc_jpeg_finish_compress+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_finish_compress+48
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$66, 40(%rax)
@@ -40,7 +39,8 @@ jpeg_finish_compress.3:                 # @jpeg_finish_compress.3
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_finish_compress.3, .Lfunc_end0-jpeg_finish_compress.3
 	.cfi_endproc

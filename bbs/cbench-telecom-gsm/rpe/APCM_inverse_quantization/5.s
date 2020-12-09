@@ -31,6 +31,8 @@ APCM_inverse_quantization.5:            # @APCM_inverse_quantization.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movswq	(%rdi), %rax
 	movw	gsm_FAC(,%rax,2), %ax
@@ -47,7 +49,8 @@ APCM_inverse_quantization.5:            # @APCM_inverse_quantization.5
 	callq	gsm_asl
 	movw	%ax, (%r15)
 	movl	$13, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	APCM_inverse_quantization.5, .Lfunc_end0-APCM_inverse_quantization.5
 	.cfi_endproc

@@ -39,6 +39,8 @@ quantize_ord_dither.4:                  # @quantize_ord_dither.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movslq	(%rsi), %rax
@@ -65,7 +67,8 @@ quantize_ord_dither.4:                  # @quantize_ord_dither.4
 	movl	$0, (%r14)
 	movl	(%r11), %eax
 	movl	%eax, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	quantize_ord_dither.4, .Lfunc_end0-quantize_ord_dither.4
 	.cfi_endproc

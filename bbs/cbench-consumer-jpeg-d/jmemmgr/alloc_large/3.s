@@ -17,15 +17,16 @@ alloc_large.3:                          # @alloc_large.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jmemmgr.c_alloc_large+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jmemmgr.c_alloc_large+32
 	movl	$8, %eax
 	subq	(%rdi), %rax
 	addq	(%rsi), %rax
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alloc_large.3, .Lfunc_end0-alloc_large.3
 	.cfi_endproc

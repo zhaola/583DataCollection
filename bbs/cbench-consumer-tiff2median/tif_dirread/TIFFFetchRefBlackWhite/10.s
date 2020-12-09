@@ -25,6 +25,8 @@ TIFFFetchRefBlackWhite.10:              # @TIFFFetchRefBlackWhite.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rax
@@ -35,7 +37,8 @@ TIFFFetchRefBlackWhite.10:              # @TIFFFetchRefBlackWhite.10
 	movl	%eax, (%r14)
 	movq	(%rbx), %rdi
 	callq	_TIFFfree
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchRefBlackWhite.10, .Lfunc_end0-TIFFFetchRefBlackWhite.10
 	.cfi_endproc

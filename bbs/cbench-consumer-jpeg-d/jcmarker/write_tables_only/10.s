@@ -17,15 +17,16 @@ write_tables_only.10:                   # @write_tables_only.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmarker.c_write_tables_only+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmarker.c_write_tables_only+24
 	movq	(%rdi), %rdi
 	movl	(%rsi), %esi
 	xorl	%edx, %edx
 	callq	emit_dht
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	write_tables_only.10, .Lfunc_end0-write_tables_only.10
 	.cfi_endproc

@@ -25,6 +25,8 @@ gsm_create.2:                           # @gsm_create.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_gsm_create, %rax
 	addq	$1, %rax
@@ -37,7 +39,8 @@ gsm_create.2:                           # @gsm_create.2
 	movw	$40, 630(%rax)
 	movq	(%rbx), %rax
 	movq	%rax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_create.2, .Lfunc_end0-gsm_create.2
 	.cfi_endproc

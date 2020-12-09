@@ -17,6 +17,8 @@ parse_file_header.6:                    # @parse_file_header.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_parse_file_header+48, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ parse_file_header.6:                    # @parse_file_header.6
 	movq	(%rdi), %rax
 	movl	$2, 120(%rax)
 	movl	$1, count_samples_carefully
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	parse_file_header.6, .Lfunc_end0-parse_file_header.6
 	.cfi_endproc

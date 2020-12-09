@@ -38,6 +38,8 @@ mapSuffix.2:                            # @mapSuffix.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_mapSuffix, %rax
 	addq	$1, %rax
@@ -55,7 +57,8 @@ mapSuffix.2:                            # @mapSuffix.2
 	callq	strcat
 	movq	-48(%rbp), %rax         # 8-byte Reload
 	movb	$1, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	mapSuffix.2, .Lfunc_end0-mapSuffix.2
 	.cfi_endproc

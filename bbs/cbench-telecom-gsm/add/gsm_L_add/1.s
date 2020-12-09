@@ -24,10 +24,12 @@ gsm_L_add.1:                            # @gsm_L_add.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpq	$0, (%rdi)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_L_add.1, .Lfunc_end0-gsm_L_add.1
 	.cfi_endproc

@@ -17,6 +17,8 @@ kernel_floyd_warshall.8:                # @kernel_floyd_warshall.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._floyd_warshall.c_kernel_floyd_warshall+8, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ kernel_floyd_warshall.8:                # @kernel_floyd_warshall.8
 	movslq	(%rcx), %rcx
 	addsd	(%rax,%rcx,8), %xmm0
 	movsd	%xmm0, (%r8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_floyd_warshall.8, .Lfunc_end0-kernel_floyd_warshall.8
 	.cfi_endproc

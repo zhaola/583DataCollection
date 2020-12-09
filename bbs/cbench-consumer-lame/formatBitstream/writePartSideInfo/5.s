@@ -25,6 +25,8 @@ writePartSideInfo.5:                    # @writePartSideInfo.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movl	(%rax), %edi
@@ -35,7 +37,8 @@ writePartSideInfo.5:                    # @writePartSideInfo.5
 	movzwl	4(%rax), %eax
 	addl	(%r14), %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	writePartSideInfo.5, .Lfunc_end0-writePartSideInfo.5
 	.cfi_endproc

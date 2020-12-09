@@ -17,14 +17,15 @@ jpeg_set_colorspace.14:                 # @jpeg_set_colorspace.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_set_colorspace, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_set_colorspace
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_set_colorspace.14, .Lfunc_end0-jpeg_set_colorspace.14
 	.cfi_endproc

@@ -17,6 +17,8 @@ adpcm_coder.28:                         # @adpcm_coder.28
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"28"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_adpcm_coder+96, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ adpcm_coder.28:                         # @adpcm_coder.28
 	addq	$1, %rdx
 	movq	%rdx, (%rsi)
 	movb	%al, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_coder.28, .Lfunc_end0-adpcm_coder.28
 	.cfi_endproc

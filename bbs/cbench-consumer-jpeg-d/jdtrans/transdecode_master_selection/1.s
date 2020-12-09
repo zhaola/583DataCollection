@@ -23,11 +23,10 @@ transdecode_master_selection.1:         # @transdecode_master_selection.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdtrans.c_transdecode_master_selection, %rsi
-	movq	__profc_.._jdtrans.c_transdecode_master_selection, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdtrans.c_transdecode_master_selection
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$1, 40(%rax)
@@ -40,7 +39,8 @@ transdecode_master_selection.1:         # @transdecode_master_selection.1
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	transdecode_master_selection.1, .Lfunc_end0-transdecode_master_selection.1
 	.cfi_endproc

@@ -17,6 +17,8 @@ side_queue_elements.3:                  # @side_queue_elements.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._formatBitstream.c_side_queue_elements, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ side_queue_elements.3:                  # @side_queue_elements.3
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	side_queue_elements.3, .Lfunc_end0-side_queue_elements.3
 	.cfi_endproc

@@ -17,6 +17,8 @@ create_colorindex.17:                   # @create_colorindex.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
 	movq	(%rdi), %rcx
@@ -32,7 +34,8 @@ create_colorindex.17:                   # @create_colorindex.17
 	addl	$255, %edx
 	movslq	%edx, %rdx
 	movb	%al, (%rcx,%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	create_colorindex.17, .Lfunc_end0-create_colorindex.17
 	.cfi_endproc

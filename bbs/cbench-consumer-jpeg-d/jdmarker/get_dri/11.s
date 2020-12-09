@@ -23,11 +23,10 @@ get_dri.11:                             # @get_dri.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmarker.c_get_dri, %rsi
-	movq	__profc_.._jdmarker.c_get_dri+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmarker.c_get_dri+8
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$9, 40(%rax)
@@ -40,7 +39,8 @@ get_dri.11:                             # @get_dri.11
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_dri.11, .Lfunc_end0-get_dri.11
 	.cfi_endproc

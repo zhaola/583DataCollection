@@ -17,6 +17,8 @@ jpeg_abort.4:                           # @jpeg_abort.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	24(%rax), %eax
@@ -24,15 +26,14 @@ jpeg_abort.4:                           # @jpeg_abort.4
 	setne	%cl
 	andb	$1, %cl
 	movzbl	%cl, %ecx
-	addq	__profc_jpeg_abort+16, %rcx
-	movq	%rcx, __profc_jpeg_abort+16
 	cmpl	$0, %eax
 	movl	$200, %eax
 	movl	$100, %ecx
 	cmovnel	%eax, %ecx
 	movq	(%rdi), %rax
 	movl	%ecx, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_abort.4, .Lfunc_end0-jpeg_abort.4
 	.cfi_endproc

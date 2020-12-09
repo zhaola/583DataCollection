@@ -24,6 +24,8 @@ lame_readframe.1:                       # @lame_readframe.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	176(%rax), %rax
@@ -31,8 +33,8 @@ lame_readframe.1:                       # @lame_readframe.1
 	movq	168(%rcx), %rcx
 	addq	$2, %rcx
 	cmpq	%rcx, %rax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	lame_readframe.1, .Lfunc_end0-lame_readframe.1
 	.cfi_endproc

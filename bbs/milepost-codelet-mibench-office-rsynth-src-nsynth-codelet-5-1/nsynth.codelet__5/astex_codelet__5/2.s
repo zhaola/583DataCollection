@@ -22,6 +22,8 @@ astex_codelet__5.2:                     # @astex_codelet__5.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movq	__profc_astex_codelet__5+8, %rax
@@ -32,7 +34,8 @@ astex_codelet__5.2:                     # @astex_codelet__5.2
 	mulsd	%xmm0, %xmm1
 	cvtsd2ss	%xmm1, %xmm0
 	movss	%xmm0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	astex_codelet__5.2, .Lfunc_end0-astex_codelet__5.2
 	.cfi_endproc

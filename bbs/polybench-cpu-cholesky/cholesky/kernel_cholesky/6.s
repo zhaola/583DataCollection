@@ -36,6 +36,8 @@ kernel_cholesky.6:                      # @kernel_cholesky.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	%xmm0, -32(%rbp)        # 8-byte Spill
@@ -50,7 +52,8 @@ kernel_cholesky.6:                      # @kernel_cholesky.6
 	movl	(%rbx), %eax
 	addl	$1, %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_cholesky.6, .Lfunc_end0-kernel_cholesky.6
 	.cfi_endproc

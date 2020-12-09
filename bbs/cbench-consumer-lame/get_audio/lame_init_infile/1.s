@@ -23,6 +23,8 @@ lame_init_infile.1:                     # @lame_init_infile.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_lame_init_infile+8, %rax
 	addq	$1, %rax
@@ -30,7 +32,8 @@ lame_init_infile.1:                     # @lame_init_infile.1
 	callq	GetSndSampleRate
 	movq	(%rbx), %rcx
 	movl	%eax, 12(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	lame_init_infile.1, .Lfunc_end0-lame_init_infile.1
 	.cfi_endproc

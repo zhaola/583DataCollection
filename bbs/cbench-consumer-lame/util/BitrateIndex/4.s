@@ -24,6 +24,8 @@ BitrateIndex.4:                         # @BitrateIndex.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	imulq	$60, %rax, %rax
@@ -32,8 +34,8 @@ BitrateIndex.4:                         # @BitrateIndex.4
 	movslq	(%rsi), %rax
 	movl	(%rcx,%rax,4), %eax
 	cmpl	(%rdx), %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BitrateIndex.4, .Lfunc_end0-BitrateIndex.4
 	.cfi_endproc

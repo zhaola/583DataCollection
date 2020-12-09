@@ -13,8 +13,12 @@ BZ2_bz__AssertH__fail.2:                # @BZ2_bz__AssertH__fail.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movl	$3, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bz__AssertH__fail.2, .Lfunc_end0-BZ2_bz__AssertH__fail.2
 	.cfi_endproc

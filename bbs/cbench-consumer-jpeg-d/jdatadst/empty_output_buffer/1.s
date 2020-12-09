@@ -23,11 +23,10 @@ empty_output_buffer.1:                  # @empty_output_buffer.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdatadst.c_empty_output_buffer, %rsi
-	movq	__profc_.._jdatadst.c_empty_output_buffer+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdatadst.c_empty_output_buffer+8
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$36, 40(%rax)
@@ -40,7 +39,8 @@ empty_output_buffer.1:                  # @empty_output_buffer.1
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	empty_output_buffer.1, .Lfunc_end0-empty_output_buffer.1
 	.cfi_endproc

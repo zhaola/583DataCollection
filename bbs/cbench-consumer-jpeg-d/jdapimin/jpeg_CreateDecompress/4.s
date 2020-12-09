@@ -31,6 +31,8 @@ jpeg_CreateDecompress.4:                # @jpeg_CreateDecompress.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
@@ -45,13 +47,13 @@ jpeg_CreateDecompress.4:                # @jpeg_CreateDecompress.4
 	movq	(%rbx), %rax
 	movl	$1, 24(%rax)
 	movq	(%rbx), %rdi
-	callq	jinit_memory_mgr
 	movq	(%rbx), %rax
 	movq	$0, 16(%rax)
 	movq	(%rbx), %rax
 	movq	$0, 32(%rax)
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_CreateDecompress.4, .Lfunc_end0-jpeg_CreateDecompress.4
 	.cfi_endproc

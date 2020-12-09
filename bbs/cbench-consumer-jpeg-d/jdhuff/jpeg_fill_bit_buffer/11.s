@@ -32,8 +32,9 @@ jpeg_fill_bit_buffer.11:                # @jpeg_fill_bit_buffer.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_fill_bit_buffer, %rsi
 	movq	(%rdi), %rax
 	movq	40(%rax), %rax
 	movq	32(%rax), %rax
@@ -46,8 +47,8 @@ jpeg_fill_bit_buffer.11:                # @jpeg_fill_bit_buffer.11
 	movq	%r14, %rdi
 	callq	*%rbx
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_fill_bit_buffer.11, .Lfunc_end0-jpeg_fill_bit_buffer.11
 	.cfi_endproc

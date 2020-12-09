@@ -13,6 +13,8 @@ copy_buffer.9:                          # @copy_buffer.9
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_copy_buffer+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_copy_buffer+32
@@ -21,6 +23,8 @@ copy_buffer.9:                          # @copy_buffer.9
 	movl	$270, %edx              # imm = 0x10E
 	movabsq	$__PRETTY_FUNCTION__.copy_buffer, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	copy_buffer.9, .Lfunc_end0-copy_buffer.9
 	.cfi_endproc

@@ -24,6 +24,8 @@ TIFFFillStrip.12:                       # @TIFFFillStrip.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$-1, 544(%rax)
@@ -31,8 +33,8 @@ TIFFFillStrip.12:                       # @TIFFFillStrip.12
 	movl	16(%rax), %eax
 	andl	$512, %eax              # imm = 0x200
 	cmpl	$0, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFillStrip.12, .Lfunc_end0-TIFFFillStrip.12
 	.cfi_endproc

@@ -17,11 +17,14 @@ TIFFWriteData.2:                        # @TIFFWriteData.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirwrite.c_TIFFWriteData+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_dirwrite.c_TIFFWriteData+24
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteData.2, .Lfunc_end0-TIFFWriteData.2
 	.cfi_endproc

@@ -23,6 +23,8 @@ decfile.21:                             # @decfile.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_decfile+64, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ decfile.21:                             # @decfile.21
 	movb	$0, %al
 	callq	printf
 	movl	$-12, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decfile.21, .Lfunc_end0-decfile.21
 	.cfi_endproc

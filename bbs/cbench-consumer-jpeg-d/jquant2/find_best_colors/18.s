@@ -17,6 +17,8 @@ find_best_colors.18:                    # @find_best_colors.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	addq	(%rsi), %rax
@@ -24,7 +26,8 @@ find_best_colors.18:                    # @find_best_colors.18
 	movq	(%rdi), %rax
 	addq	$512, %rax              # imm = 0x200
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_best_colors.18, .Lfunc_end0-find_best_colors.18
 	.cfi_endproc

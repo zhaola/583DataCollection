@@ -23,6 +23,8 @@ BF_LoadHolderFromBitstreamPart.2:       # @BF_LoadHolderFromBitstreamPart.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
@@ -34,7 +36,8 @@ BF_LoadHolderFromBitstreamPart.2:       # @BF_LoadHolderFromBitstreamPart.2
 	movq	(%rdx), %rsi
 	callq	BF_addElement
 	movq	%rax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BF_LoadHolderFromBitstreamPart.2, .Lfunc_end0-BF_LoadHolderFromBitstreamPart.2
 	.cfi_endproc

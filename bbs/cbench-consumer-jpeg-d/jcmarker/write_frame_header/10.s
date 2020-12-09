@@ -24,11 +24,13 @@ write_frame_header.10:                  # @write_frame_header.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	cmpl	$1, 20(%rax)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	write_frame_header.10, .Lfunc_end0-write_frame_header.10
 	.cfi_endproc

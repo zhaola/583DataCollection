@@ -34,6 +34,8 @@ encfile.2:                              # @encfile.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
 	addq	$16, %rdi
@@ -47,8 +49,8 @@ encfile.2:                              # @encfile.2
 	movq	%rax, (%r14)
 	movq	(%r14), %rax
 	cmpq	(%rbx), %rax
-	jb	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encfile.2, .Lfunc_end0-encfile.2
 	.cfi_endproc

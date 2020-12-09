@@ -17,6 +17,8 @@ RPE_grid_positioning.15:                # @RPE_grid_positioning.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rpe.c_RPE_grid_positioning, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ RPE_grid_positioning.15:                # @RPE_grid_positioning.15
 	addq	$2, %rcx
 	movq	%rcx, (%rdi)
 	movw	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	RPE_grid_positioning.15, .Lfunc_end0-RPE_grid_positioning.15
 	.cfi_endproc

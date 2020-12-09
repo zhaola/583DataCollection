@@ -29,8 +29,9 @@ jpeg_write_tables.2:                    # @jpeg_write_tables.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_write_tables, %rsi
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movq	32(%rax), %r14
@@ -40,7 +41,6 @@ jpeg_write_tables.2:                    # @jpeg_write_tables.2
 	callq	__llvm_profile_instrument_target
 	movq	%r15, %rdi
 	callq	*%r14
-	movabsq	$__profd_jpeg_write_tables, %rsi
 	movq	(%rbx), %rax
 	movq	32(%rax), %rax
 	movq	16(%rax), %r14
@@ -51,8 +51,6 @@ jpeg_write_tables.2:                    # @jpeg_write_tables.2
 	movq	%r15, %rdi
 	callq	*%r14
 	movq	(%rbx), %rdi
-	callq	jinit_marker_writer
-	movabsq	$__profd_jpeg_write_tables, %rsi
 	movq	(%rbx), %rax
 	movq	456(%rax), %rax
 	movq	40(%rax), %r14
@@ -62,7 +60,6 @@ jpeg_write_tables.2:                    # @jpeg_write_tables.2
 	callq	__llvm_profile_instrument_target
 	movq	%r15, %rdi
 	callq	*%r14
-	movabsq	$__profd_jpeg_write_tables, %rsi
 	movq	(%rbx), %rax
 	movq	32(%rax), %rax
 	movq	32(%rax), %r14
@@ -73,8 +70,8 @@ jpeg_write_tables.2:                    # @jpeg_write_tables.2
 	movq	%r15, %rdi
 	callq	*%r14
 	movq	(%rbx), %rdi
-	callq	jpeg_abort
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_write_tables.2, .Lfunc_end0-jpeg_write_tables.2
 	.cfi_endproc

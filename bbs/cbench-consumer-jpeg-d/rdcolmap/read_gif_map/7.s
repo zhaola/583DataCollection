@@ -24,13 +24,15 @@ read_gif_map.7:                         # @read_gif_map.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdcolmap.c_read_gif_map+64, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._rdcolmap.c_read_gif_map+64
 	cmpl	$70, 8(%rdi)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_gif_map.7, .Lfunc_end0-read_gif_map.7
 	.cfi_endproc

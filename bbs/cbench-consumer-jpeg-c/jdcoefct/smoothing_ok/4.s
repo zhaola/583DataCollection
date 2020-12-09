@@ -30,11 +30,10 @@ smoothing_ok.4:                         # @smoothing_ok.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdcoefct.c_smoothing_ok, %rsi
-	movq	__profc_.._jdcoefct.c_smoothing_ok+88, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdcoefct.c_smoothing_ok+88
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
 	movq	(%rax), %rbx
@@ -51,7 +50,8 @@ smoothing_ok.4:                         # @smoothing_ok.4
 	callq	*%rbx
 	movq	(%r14), %rcx
 	movq	%rax, 216(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	smoothing_ok.4, .Lfunc_end0-smoothing_ok.4
 	.cfi_endproc

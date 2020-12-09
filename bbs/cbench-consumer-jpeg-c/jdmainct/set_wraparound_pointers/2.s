@@ -23,6 +23,8 @@ set_wraparound_pointers.2:              # @set_wraparound_pointers.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	12(%rax), %eax
@@ -43,7 +45,8 @@ set_wraparound_pointers.2:              # @set_wraparound_pointers.2
 	movq	(%rax,%rcx,8), %rax
 	movq	%rax, (%rbx)
 	movl	$0, (%r11)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_wraparound_pointers.2, .Lfunc_end0-set_wraparound_pointers.2
 	.cfi_endproc

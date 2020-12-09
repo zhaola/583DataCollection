@@ -13,6 +13,8 @@ set_format.2:                           # @set_format.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._toast.c_set_format+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._toast.c_set_format+16
@@ -24,6 +26,8 @@ set_format.2:                           # @set_format.2
 	callq	fprintf
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_format.2, .Lfunc_end0-set_format.2
 	.cfi_endproc

@@ -17,6 +17,8 @@ gsm_norm.13:                            # @gsm_norm.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_gsm_norm+16, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ gsm_norm.13:                            # @gsm_norm.13
 	movzbl	bitoff(,%rax), %eax
 	addl	$15, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_norm.13, .Lfunc_end0-gsm_norm.13
 	.cfi_endproc

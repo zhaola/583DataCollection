@@ -17,6 +17,8 @@ TIFFSetupShortLong.4:                   # @TIFFSetupShortLong.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirwrite.c_TIFFSetupShortLong+16, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ TIFFSetupShortLong.4:                   # @TIFFSetupShortLong.4
 	movq	528(%rcx), %rcx
 	andq	24(%rcx), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFSetupShortLong.4, .Lfunc_end0-TIFFSetupShortLong.4
 	.cfi_endproc

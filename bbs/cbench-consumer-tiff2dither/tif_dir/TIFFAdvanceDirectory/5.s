@@ -24,6 +24,8 @@ TIFFAdvanceDirectory.5:                 # @TIFFAdvanceDirectory.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movzwl	(%rdi), %eax
 	imulq	$12, %rax, %rax
@@ -32,8 +34,8 @@ TIFFAdvanceDirectory.5:                 # @TIFFAdvanceDirectory.5
 	addq	%rax, %rcx
 	movl	%ecx, (%rsi)
 	cmpq	$0, (%rdx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFAdvanceDirectory.5, .Lfunc_end0-TIFFAdvanceDirectory.5
 	.cfi_endproc

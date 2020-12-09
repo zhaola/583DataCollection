@@ -17,13 +17,16 @@ write_os2_header.5:                     # @write_os2_header.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrbmp.c_write_os2_header+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._wrbmp.c_write_os2_header+8
 	movl	$8, (%rdi)
 	movl	$256, (%rsi)            # imm = 0x100
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	write_os2_header.5, .Lfunc_end0-write_os2_header.5
 	.cfi_endproc

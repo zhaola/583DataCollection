@@ -19,6 +19,8 @@ fill_inverse_cmap.4:                    # @fill_inverse_cmap.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	(%rsi), %esi
@@ -35,7 +37,8 @@ fill_inverse_cmap.4:                    # @fill_inverse_cmap.4
 	addq	%rcx, %rdx
 	movq	%rdx, (%rax)
 	movl	$0, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fill_inverse_cmap.4, .Lfunc_end0-fill_inverse_cmap.4
 	.cfi_endproc

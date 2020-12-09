@@ -17,12 +17,15 @@ TIFFWriteEncodedStrip.19:               # @TIFFWriteEncodedStrip.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFWriteEncodedStrip+72, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_TIFFWriteEncodedStrip+72
 	movl	$0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteEncodedStrip.19, .Lfunc_end0-TIFFWriteEncodedStrip.19
 	.cfi_endproc

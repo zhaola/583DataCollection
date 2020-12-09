@@ -49,8 +49,9 @@ jinit_write_ppm.1:                      # @jinit_write_ppm.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_write_ppm, %rsi
 	movq	(%r13), %rax
 	movq	8(%rax), %rax
 	movq	16(%rax), %r15
@@ -73,8 +74,8 @@ jinit_write_ppm.1:                      # @jinit_write_ppm.1
 	movl	$1, 40(%rax)
 	movq	(%r13), %rax
 	cmpl	$0, 100(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_ppm.1, .Lfunc_end0-jinit_write_ppm.1
 	.cfi_endproc

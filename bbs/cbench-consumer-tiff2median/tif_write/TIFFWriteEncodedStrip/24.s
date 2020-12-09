@@ -17,6 +17,8 @@ TIFFWriteEncodedStrip.24:               # @TIFFWriteEncodedStrip.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFWriteEncodedStrip+128, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ TIFFWriteEncodedStrip.24:               # @TIFFWriteEncodedStrip.24
 	movslq	744(%rcx), %rsi
 	movq	%rax, %rdi
 	callq	TIFFReverseBits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteEncodedStrip.24, .Lfunc_end0-TIFFWriteEncodedStrip.24
 	.cfi_endproc

@@ -24,6 +24,8 @@ Fax3PreEncode.3:                        # @Fax3PreEncode.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$8, 68(%rax)
@@ -33,8 +35,8 @@ Fax3PreEncode.3:                        # @Fax3PreEncode.3
 	movl	$0, 72(%rax)
 	movq	(%rdi), %rax
 	cmpq	$0, 80(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3PreEncode.3, .Lfunc_end0-Fax3PreEncode.3
 	.cfi_endproc

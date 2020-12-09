@@ -42,6 +42,8 @@ makecmap.4:                             # @makecmap.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_6:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_makecmap(%rip), %rax
 	addq	$1, %rax
@@ -55,10 +57,10 @@ makecmap.4:                             # @makecmap.4
 	addl	$-1, %eax
 	movl	%eax, %ecx
 	subl	$7, %ecx
-	ja	.LBB0_1
 # %bb.7:                                # %"4"
 	movq	.LJTI0_0(,%rax,8), %rax
-	jmpq	*%rax
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	makecmap.4, .Lfunc_end0-makecmap.4
 	.cfi_endproc

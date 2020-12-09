@@ -49,6 +49,8 @@ TIFFReadRawStrip1.3:                    # @TIFFReadRawStrip1.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_read.c_TIFFReadRawStrip1, %rax
 	movq	(%rdi), %rcx
@@ -69,8 +71,8 @@ TIFFReadRawStrip1.3:                    # @TIFFReadRawStrip1.3
 	movl	%eax, (%rcx)
 	movl	(%rcx), %eax
 	cmpl	(%r15), %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRawStrip1.3, .Lfunc_end0-TIFFReadRawStrip1.3
 	.cfi_endproc

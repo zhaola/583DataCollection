@@ -24,6 +24,8 @@ start_pass_2_quant.7:                   # @start_pass_2_quant.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movabsq	$finish_pass2, %rcx
@@ -32,8 +34,8 @@ start_pass_2_quant.7:                   # @start_pass_2_quant.7
 	movl	148(%rax), %eax
 	movl	%eax, (%rdx)
 	cmpl	$1, (%rdx)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_2_quant.7, .Lfunc_end0-start_pass_2_quant.7
 	.cfi_endproc

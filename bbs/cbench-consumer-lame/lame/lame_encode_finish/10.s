@@ -42,14 +42,16 @@ lame_encode_finish.10:                  # @lame_encode_finish.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	callq	III_FlushBitstream
 	movl	(%rbx), %eax
 	subl	(%r15), %eax
 	movl	%eax, (%r14)
 	cmpl	$0, (%rbx)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	lame_encode_finish.10, .Lfunc_end0-lame_encode_finish.10
 	.cfi_endproc

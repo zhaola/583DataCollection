@@ -17,6 +17,8 @@ SmpFrqIndex.11:                         # @SmpFrqIndex.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_SmpFrqIndex+40, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ SmpFrqIndex.11:                         # @SmpFrqIndex.11
 	movq	(%rdi), %rax
 	movl	$0, (%rax)
 	movl	$2, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	SmpFrqIndex.11, .Lfunc_end0-SmpFrqIndex.11
 	.cfi_endproc

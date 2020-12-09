@@ -48,14 +48,14 @@ jpeg_idct_float.4:                      # @jpeg_idct_float.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movss	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero,zero,zero
 	movss	.LCPI0_2(%rip), %xmm2   # xmm2 = mem[0],zero,zero,zero
 	movss	.LCPI0_3(%rip), %xmm3   # xmm3 = mem[0],zero,zero,zero
-	movq	__profc_jpeg_idct_float+8(%rip), %r12
 	addq	$1, %r12
-	movq	%r12, __profc_jpeg_idct_float+8(%rip)
 	movq	(%rdi), %rbx
 	movswl	(%rbx), %ebx
 	cvtsi2ss	%ebx, %xmm4
@@ -244,7 +244,8 @@ jpeg_idct_float.4:                      # @jpeg_idct_float.4
 	movq	(%r11), %rcx
 	addq	$4, %rcx
 	movq	%rcx, (%r11)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_idct_float.4, .Lfunc_end0-jpeg_idct_float.4
 	.cfi_endproc

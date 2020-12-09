@@ -17,13 +17,14 @@ start_pass_2_quant.15:                  # @start_pass_2_quant.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant2.c_start_pass_2_quant+80, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant2.c_start_pass_2_quant+80
 	movq	(%rdi), %rdi
 	callq	init_error_limit
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_2_quant.15, .Lfunc_end0-start_pass_2_quant.15
 	.cfi_endproc

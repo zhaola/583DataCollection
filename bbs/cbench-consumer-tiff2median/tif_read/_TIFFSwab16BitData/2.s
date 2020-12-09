@@ -13,6 +13,8 @@ _TIFFSwab16BitData.2:                   # @_TIFFSwab16BitData.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc__TIFFSwab16BitData+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc__TIFFSwab16BitData+8
@@ -21,6 +23,8 @@ _TIFFSwab16BitData.2:                   # @_TIFFSwab16BitData.2
 	movl	$608, %edx              # imm = 0x260
 	movabsq	$__PRETTY_FUNCTION__._TIFFSwab16BitData, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFSwab16BitData.2, .Lfunc_end0-_TIFFSwab16BitData.2
 	.cfi_endproc

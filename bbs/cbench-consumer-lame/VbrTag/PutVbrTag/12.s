@@ -53,6 +53,8 @@ PutVbrTag.12:                           # @PutVbrTag.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movss	%xmm0, -32(%rbp)        # 4-byte Spill
@@ -80,8 +82,8 @@ PutVbrTag.12:                           # @PutVbrTag.12
 	movss	%xmm1, (%r15)
 	movss	(%r15), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	ucomiss	-32(%rbp), %xmm0        # 4-byte Folded Reload
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PutVbrTag.12, .Lfunc_end0-PutVbrTag.12
 	.cfi_endproc

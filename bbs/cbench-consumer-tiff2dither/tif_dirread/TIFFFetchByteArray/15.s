@@ -23,6 +23,8 @@ TIFFFetchByteArray.15:                  # @TIFFFetchByteArray.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchByteArray, %rax
 	addq	$1, %rax
@@ -36,7 +38,8 @@ TIFFFetchByteArray.15:                  # @TIFFFetchByteArray.15
 	andb	$1, %al
 	movzbl	%al, %eax
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchByteArray.15, .Lfunc_end0-TIFFFetchByteArray.15
 	.cfi_endproc

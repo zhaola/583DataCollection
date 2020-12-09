@@ -19,6 +19,8 @@ fullsize_smooth_downsample.6:           # @fullsize_smooth_downsample.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movzbl	(%rdi), %edi
@@ -42,7 +44,8 @@ fullsize_smooth_downsample.6:           # @fullsize_smooth_downsample.6
 	sarq	$16, %rax
 	movq	(%r10), %rcx
 	movb	%al, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fullsize_smooth_downsample.6, .Lfunc_end0-fullsize_smooth_downsample.6
 	.cfi_endproc

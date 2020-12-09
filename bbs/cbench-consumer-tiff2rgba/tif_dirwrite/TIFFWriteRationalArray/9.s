@@ -29,11 +29,13 @@ TIFFWriteRationalArray.9:               # @TIFFWriteRationalArray.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	ucomiss	(%rdi), %xmm0
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteRationalArray.9, .Lfunc_end0-TIFFWriteRationalArray.9
 	.cfi_endproc

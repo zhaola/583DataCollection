@@ -24,10 +24,10 @@ encode_mcu_DC_refine.8:                 # @encode_mcu_DC_refine.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_encode_mcu_DC_refine+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_encode_mcu_DC_refine+8
 	movq	(%rdi), %rax
 	movq	32(%rax), %rax
 	movq	(%rsi), %rcx
@@ -40,8 +40,8 @@ encode_mcu_DC_refine.8:                 # @encode_mcu_DC_refine.8
 	movq	%rax, 8(%rcx)
 	movq	(%rsi), %rax
 	cmpl	$0, 272(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_DC_refine.8, .Lfunc_end0-encode_mcu_DC_refine.8
 	.cfi_endproc

@@ -17,6 +17,8 @@ best_huffman_divide.25:                 # @best_huffman_divide.25
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"25"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_best_huffman_divide+40, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ best_huffman_divide.25:                 # @best_huffman_divide.25
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	best_huffman_divide.25, .Lfunc_end0-best_huffman_divide.25
 	.cfi_endproc

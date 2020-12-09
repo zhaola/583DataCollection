@@ -17,6 +17,8 @@ find_scalefac.10:                       # @find_scalefac.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_find_scalefac+64, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ find_scalefac.10:                       # @find_scalefac.10
 	movl	(%r9), %eax
 	addl	(%rdx), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_scalefac.10, .Lfunc_end0-find_scalefac.10
 	.cfi_endproc

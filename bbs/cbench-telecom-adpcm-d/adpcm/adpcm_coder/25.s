@@ -17,6 +17,8 @@ adpcm_coder.25:                         # @adpcm_coder.25
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"25"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$0, (%rdi)
 	setne	%al
@@ -24,7 +26,8 @@ adpcm_coder.25:                         # @adpcm_coder.25
 	andb	$1, %al
 	movzbl	%al, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_coder.25, .Lfunc_end0-adpcm_coder.25
 	.cfi_endproc

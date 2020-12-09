@@ -23,14 +23,15 @@ consume_data.27:                        # @consume_data.27
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"27"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdcoefct.c_consume_data+56, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdcoefct.c_consume_data+56
 	movq	(%rdi), %rdi
 	callq	start_iMCU_row
 	movl	$3, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_data.27, .Lfunc_end0-consume_data.27
 	.cfi_endproc

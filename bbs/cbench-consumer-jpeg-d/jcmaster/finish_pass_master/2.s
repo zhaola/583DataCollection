@@ -17,15 +17,16 @@ finish_pass_master.2:                   # @finish_pass_master.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmaster.c_finish_pass_master+40, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmaster.c_finish_pass_master+40
 	movq	(%rdi), %rax
 	movl	44(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, 44(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_pass_master.2, .Lfunc_end0-finish_pass_master.2
 	.cfi_endproc

@@ -29,11 +29,10 @@ jpeg_stdio_dest.1:                      # @jpeg_stdio_dest.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_stdio_dest, %rsi
-	movq	__profc_jpeg_stdio_dest+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_stdio_dest+8
 	movq	(%r14), %rax
 	movq	8(%rax), %rax
 	movq	(%rax), %rbx
@@ -47,7 +46,8 @@ jpeg_stdio_dest.1:                      # @jpeg_stdio_dest.1
 	callq	*%rbx
 	movq	(%r14), %rcx
 	movq	%rax, 32(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_stdio_dest.1, .Lfunc_end0-jpeg_stdio_dest.1
 	.cfi_endproc

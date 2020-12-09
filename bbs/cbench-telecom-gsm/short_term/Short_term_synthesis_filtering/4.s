@@ -24,6 +24,8 @@ Short_term_synthesis_filtering.4:       # @Short_term_synthesis_filtering.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rdi
@@ -35,8 +37,8 @@ Short_term_synthesis_filtering.4:       # @Short_term_synthesis_filtering.4
 	movw	%ax, (%r8)
 	movswl	(%rdx), %eax
 	cmpl	$-32768, %eax           # imm = 0x8000
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Short_term_synthesis_filtering.4, .Lfunc_end0-Short_term_synthesis_filtering.4
 	.cfi_endproc

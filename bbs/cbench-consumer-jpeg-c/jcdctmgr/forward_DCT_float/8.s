@@ -22,6 +22,8 @@ forward_DCT_float.8:                    # @forward_DCT_float.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movslq	(%rdi), %rax
@@ -36,7 +38,8 @@ forward_DCT_float.8:                    # @forward_DCT_float.8
 	movq	(%r8), %rcx
 	movslq	(%rdi), %rdx
 	movw	%ax, (%rcx,%rdx,2)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	forward_DCT_float.8, .Lfunc_end0-forward_DCT_float.8
 	.cfi_endproc

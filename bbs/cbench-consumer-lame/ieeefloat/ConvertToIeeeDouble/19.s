@@ -17,6 +17,8 @@ ConvertToIeeeDouble.19:                 # @ConvertToIeeeDouble.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	sarq	$24, %rax
@@ -48,7 +50,8 @@ ConvertToIeeeDouble.19:                 # @ConvertToIeeeDouble.19
 	movq	(%rdx), %rax
 	movq	(%rsi), %rcx
 	movb	%al, 7(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeDouble.19, .Lfunc_end0-ConvertToIeeeDouble.19
 	.cfi_endproc

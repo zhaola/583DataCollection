@@ -17,14 +17,15 @@ start_pass_1_quant.7:                   # @start_pass_1_quant.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant1.c_start_pass_1_quant+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant1.c_start_pass_1_quant+48
 	movq	(%rdi), %rax
 	movabsq	$quantize_ord_dither, %rcx
 	movq	%rcx, 8(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_1_quant.7, .Lfunc_end0-start_pass_1_quant.7
 	.cfi_endproc

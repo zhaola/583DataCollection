@@ -17,6 +17,8 @@ read_gif_map.11:                        # @read_gif_map.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdcolmap.c_read_gif_map+48, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ read_gif_map.11:                        # @read_gif_map.11
 	shll	%cl, %eax
 	movl	%eax, (%rsi)
 	movl	$0, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_gif_map.11, .Lfunc_end0-read_gif_map.11
 	.cfi_endproc

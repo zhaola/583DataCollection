@@ -23,11 +23,10 @@ per_scan_setup.14:                      # @per_scan_setup.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jcmaster.c_per_scan_setup, %rsi
-	movq	__profc_.._jcmaster.c_per_scan_setup+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmaster.c_per_scan_setup+16
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$11, 40(%rax)
@@ -40,7 +39,8 @@ per_scan_setup.14:                      # @per_scan_setup.14
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	per_scan_setup.14, .Lfunc_end0-per_scan_setup.14
 	.cfi_endproc

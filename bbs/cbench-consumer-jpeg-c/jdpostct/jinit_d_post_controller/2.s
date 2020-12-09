@@ -35,10 +35,10 @@ jinit_d_post_controller.2:              # @jinit_d_post_controller.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_d_post_controller+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_d_post_controller+8
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
 	movq	32(%rax), %r14
@@ -52,9 +52,7 @@ jinit_d_post_controller.2:              # @jinit_d_post_controller.2
 	movl	132(%rax), %edi
 	movq	(%r15), %rax
 	movl	32(%rax), %esi
-	callq	jround_up
 	movq	%rax, %r13
-	movabsq	$__profd_jinit_d_post_controller, %rsi
 	movq	(%r15), %rax
 	movl	32(%rax), %r12d
 	movq	%r14, %rdi
@@ -69,7 +67,8 @@ jinit_d_post_controller.2:              # @jinit_d_post_controller.2
 	callq	*%r14
 	movq	(%r15), %rcx
 	movq	%rax, 16(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_d_post_controller.2, .Lfunc_end0-jinit_d_post_controller.2
 	.cfi_endproc

@@ -17,14 +17,15 @@ self_destruct.3:                        # @self_destruct.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jmemmgr.c_self_destruct, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jmemmgr.c_self_destruct
 	movl	(%rdi), %eax
 	addl	$-1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	self_destruct.3, .Lfunc_end0-self_destruct.3
 	.cfi_endproc

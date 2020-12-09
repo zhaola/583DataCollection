@@ -17,17 +17,18 @@ int_upsample.11:                        # @int_upsample.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdsample.c_int_upsample+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdsample.c_int_upsample+16
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
 	movl	(%rsi), %eax
 	addl	(%rdx), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	int_upsample.11, .Lfunc_end0-int_upsample.11
 	.cfi_endproc

@@ -17,11 +17,14 @@ emit_restart.12:                        # @emit_restart.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	movl	$0, 28(%rax,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_restart.12, .Lfunc_end0-emit_restart.12
 	.cfi_endproc

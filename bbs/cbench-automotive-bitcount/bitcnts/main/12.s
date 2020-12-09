@@ -29,6 +29,8 @@ main.12:                                # @main.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_main, %rax
 	movslq	(%rdi), %rcx
@@ -43,7 +45,8 @@ main.12:                                # @main.12
 	cltq
 	addq	(%r14), %rax
 	movq	%rax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.12, .Lfunc_end0-main.12
 	.cfi_endproc

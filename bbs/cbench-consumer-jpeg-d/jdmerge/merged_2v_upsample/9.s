@@ -35,8 +35,9 @@ merged_2v_upsample.9:                   # @merged_2v_upsample.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmerge.c_merged_2v_upsample, %rax
 	movq	(%rdi), %rdi
 	movq	24(%rdi), %rbx
 	movq	(%rsi), %r15
@@ -52,7 +53,8 @@ merged_2v_upsample.9:                   # @merged_2v_upsample.9
 	movl	%r13d, %edx
 	movq	%r14, %rcx
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	merged_2v_upsample.9, .Lfunc_end0-merged_2v_upsample.9
 	.cfi_endproc

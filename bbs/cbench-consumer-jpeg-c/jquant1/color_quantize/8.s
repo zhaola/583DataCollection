@@ -17,6 +17,8 @@ color_quantize.8:                       # @color_quantize.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
@@ -24,7 +26,8 @@ color_quantize.8:                       # @color_quantize.8
 	addq	$1, %rdx
 	movq	%rdx, (%rsi)
 	movb	%al, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	color_quantize.8, .Lfunc_end0-color_quantize.8
 	.cfi_endproc

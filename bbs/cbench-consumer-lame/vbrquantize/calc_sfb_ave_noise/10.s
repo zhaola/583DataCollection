@@ -17,6 +17,8 @@ calc_sfb_ave_noise.10:                  # @calc_sfb_ave_noise.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_calc_sfb_ave_noise+24, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ calc_sfb_ave_noise.10:                  # @calc_sfb_ave_noise.10
 	cvtsi2sdl	(%rsi), %xmm1
 	divsd	%xmm1, %xmm0
 	movsd	%xmm0, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	calc_sfb_ave_noise.10, .Lfunc_end0-calc_sfb_ave_noise.10
 	.cfi_endproc

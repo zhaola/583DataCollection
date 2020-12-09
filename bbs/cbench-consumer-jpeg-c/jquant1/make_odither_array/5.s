@@ -18,18 +18,19 @@ make_odither_array.5:                   # @make_odither_array.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%ecx, %ecx
-	movq	__profc_.._jquant1.c_make_odither_array+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant1.c_make_odither_array+8
 	xorl	%eax, %eax
 	subq	(%rdi), %rax
 	cqto
 	idivq	(%rsi)
 	subq	%rax, %rcx
 	movq	%rcx, (%r8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	make_odither_array.5, .Lfunc_end0-make_odither_array.5
 	.cfi_endproc

@@ -30,17 +30,17 @@ TIFFFetchShortArray.6:                  # @TIFFFetchShortArray.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_4:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	4(%rax), %eax
 	movl	%eax, %ecx
 	subl	$1, %ecx
-	je	.LBB0_3
-	jmp	.LBB0_5
 .LBB0_5:                                # %"6"
 	subl	$2, %eax
-	je	.LBB0_2
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchShortArray.6, .Lfunc_end0-TIFFFetchShortArray.6
 	.cfi_endproc

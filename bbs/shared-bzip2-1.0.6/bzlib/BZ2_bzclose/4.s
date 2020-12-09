@@ -17,6 +17,8 @@ BZ2_bzclose.4:                          # @BZ2_bzclose.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_bzclose+24, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ BZ2_bzclose.4:                          # @BZ2_bzclose.4
 	xorl	%ecx, %ecx
 	xorl	%r8d, %r8d
 	callq	BZ2_bzWriteClose
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzclose.4, .Lfunc_end0-BZ2_bzclose.4
 	.cfi_endproc

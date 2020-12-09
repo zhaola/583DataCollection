@@ -17,6 +17,8 @@ TIFFFlushData1.3:                       # @TIFFFlushData1.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFFlushData1+40, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ TIFFFlushData1.3:                       # @TIFFFlushData1.3
 	movslq	744(%rcx), %rsi
 	movq	%rax, %rdi
 	callq	TIFFReverseBits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFlushData1.3, .Lfunc_end0-TIFFFlushData1.3
 	.cfi_endproc

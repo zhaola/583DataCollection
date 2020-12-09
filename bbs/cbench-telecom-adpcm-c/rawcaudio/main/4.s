@@ -13,6 +13,8 @@ main.4:                                 # @main.4
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_main+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_main+32
@@ -20,6 +22,8 @@ main.4:                                 # @main.4
 	callq	perror
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.4, .Lfunc_end0-main.4
 	.cfi_endproc

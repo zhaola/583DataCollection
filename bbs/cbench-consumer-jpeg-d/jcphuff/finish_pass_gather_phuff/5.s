@@ -17,14 +17,15 @@ finish_pass_gather_phuff.5:             # @finish_pass_gather_phuff.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_finish_pass_gather_phuff+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_finish_pass_gather_phuff+16
 	movq	(%rdi), %rax
 	movl	20(%rax), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_pass_gather_phuff.5, .Lfunc_end0-finish_pass_gather_phuff.5
 	.cfi_endproc

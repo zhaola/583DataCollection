@@ -17,6 +17,8 @@ BZ2_hbAssignCodes.5:                    # @BZ2_hbAssignCodes.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_hbAssignCodes+8, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ BZ2_hbAssignCodes.5:                    # @BZ2_hbAssignCodes.5
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_hbAssignCodes.5, .Lfunc_end0-BZ2_hbAssignCodes.5
 	.cfi_endproc

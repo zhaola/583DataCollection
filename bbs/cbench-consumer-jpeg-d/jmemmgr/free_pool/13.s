@@ -28,11 +28,10 @@ free_pool.13:                           # @free_pool.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jmemmgr.c_free_pool, %rax
-	movq	__profc_.._jmemmgr.c_free_pool+40, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_.._jmemmgr.c_free_pool+40
 	movq	(%rdi), %rcx
 	movl	$0, 44(%rcx)
 	movq	(%rdi), %rcx
@@ -47,7 +46,8 @@ free_pool.13:                           # @free_pool.13
 	movq	%r14, %rdi
 	movq	%rbx, %rsi
 	callq	*%r15
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	free_pool.13, .Lfunc_end0-free_pool.13
 	.cfi_endproc

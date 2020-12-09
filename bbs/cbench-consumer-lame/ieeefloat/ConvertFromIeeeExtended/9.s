@@ -17,6 +17,8 @@ ConvertFromIeeeExtended.9:              # @ConvertFromIeeeExtended.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movq	%xmm0, %rax
@@ -24,7 +26,8 @@ ConvertFromIeeeExtended.9:              # @ConvertFromIeeeExtended.9
 	xorq	%rcx, %rax
 	movq	%rax, %xmm0
 	movsd	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertFromIeeeExtended.9, .Lfunc_end0-ConvertFromIeeeExtended.9
 	.cfi_endproc

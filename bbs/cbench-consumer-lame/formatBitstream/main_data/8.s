@@ -36,6 +36,8 @@ main_data.8:                            # @main_data.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._formatBitstream.c_main_data, %rax
 	movq	(%rdi), %rbx
@@ -53,7 +55,8 @@ main_data.8:                            # @main_data.8
 	movl	%eax, (%r15)
 	movl	(%r15), %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main_data.8, .Lfunc_end0-main_data.8
 	.cfi_endproc

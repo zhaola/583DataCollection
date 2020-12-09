@@ -24,11 +24,13 @@ main1.23:                               # @main1.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	160(%rdi), %eax
 	cmpl	132(%rdi), %eax
-	jb	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.23, .Lfunc_end0-main1.23
 	.cfi_endproc

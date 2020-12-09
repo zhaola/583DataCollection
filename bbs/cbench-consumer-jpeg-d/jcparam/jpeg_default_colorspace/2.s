@@ -17,14 +17,14 @@ jpeg_default_colorspace.2:              # @jpeg_default_colorspace.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_default_colorspace+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_default_colorspace+16
 	movq	(%rdi), %rdi
 	movl	$3, %esi
-	callq	jpeg_set_colorspace
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_default_colorspace.2, .Lfunc_end0-jpeg_default_colorspace.2
 	.cfi_endproc

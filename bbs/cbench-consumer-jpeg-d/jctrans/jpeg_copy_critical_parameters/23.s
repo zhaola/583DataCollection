@@ -23,11 +23,10 @@ jpeg_copy_critical_parameters.23:       # @jpeg_copy_critical_parameters.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_copy_critical_parameters, %rax
-	movq	__profc_jpeg_copy_critical_parameters+8, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_jpeg_copy_critical_parameters+8
 	movq	(%rdi), %rcx
 	movq	(%rcx), %rcx
 	movl	$43, 40(%rcx)
@@ -45,7 +44,8 @@ jpeg_copy_critical_parameters.23:       # @jpeg_copy_critical_parameters.23
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_copy_critical_parameters.23, .Lfunc_end0-jpeg_copy_critical_parameters.23
 	.cfi_endproc

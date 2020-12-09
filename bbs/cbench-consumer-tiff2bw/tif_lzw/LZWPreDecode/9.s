@@ -23,6 +23,8 @@ LZWPreDecode.9:                         # @LZWPreDecode.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movw	$9, 88(%rax)
@@ -64,7 +66,8 @@ LZWPreDecode.9:                         # @LZWPreDecode.9
 	addq	%rcx, %rax
 	movq	(%rbx), %rcx
 	movq	%rax, 168(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWPreDecode.9, .Lfunc_end0-LZWPreDecode.9
 	.cfi_endproc

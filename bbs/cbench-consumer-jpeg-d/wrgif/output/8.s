@@ -17,6 +17,8 @@ output.8:                               # @output.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_output+32, %rax
 	addq	$1, %rax
@@ -29,7 +31,8 @@ output.8:                               # @output.8
 	subl	$1, %eax
 	movq	(%rdi), %rcx
 	movw	%ax, 60(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	output.8, .Lfunc_end0-output.8
 	.cfi_endproc

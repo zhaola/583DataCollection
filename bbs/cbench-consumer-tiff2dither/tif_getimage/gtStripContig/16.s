@@ -49,6 +49,8 @@ gtStripContig.16:                       # @gtStripContig.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_getimage.c_gtStripContig, %rax
 	movq	(%rdi), %r15
@@ -90,8 +92,8 @@ gtStripContig.16:                       # @gtStripContig.16
 	movq	40(%rbp), %rax
 	movzwl	(%rax), %eax
 	cmpl	$1, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gtStripContig.16, .Lfunc_end0-gtStripContig.16
 	.cfi_endproc

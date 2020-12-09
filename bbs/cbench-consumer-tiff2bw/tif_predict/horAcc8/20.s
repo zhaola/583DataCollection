@@ -17,6 +17,8 @@ horAcc8.20:                             # @horAcc8.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_predict.c_horAcc8+40, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ horAcc8.20:                             # @horAcc8.20
 	movq	(%rdi), %rax
 	addq	$1, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	horAcc8.20, .Lfunc_end0-horAcc8.20
 	.cfi_endproc

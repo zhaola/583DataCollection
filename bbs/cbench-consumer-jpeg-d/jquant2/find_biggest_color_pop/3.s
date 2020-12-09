@@ -24,14 +24,14 @@ find_biggest_color_pop.3:               # @find_biggest_color_pop.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant2.c_find_biggest_color_pop+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant2.c_find_biggest_color_pop+8
 	movq	(%rdi), %rax
 	cmpq	$0, 24(%rax)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_biggest_color_pop.3, .Lfunc_end0-find_biggest_color_pop.3
 	.cfi_endproc

@@ -25,10 +25,10 @@ format_message.19:                      # @format_message.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jerror.c_format_message+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jerror.c_format_message+48
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rsi
 	movq	(%rdx), %rax
@@ -54,7 +54,8 @@ format_message.19:                      # @format_message.19
 	movl	%eax, 24(%rsp)
 	movb	$0, %al
 	callq	sprintf
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	format_message.19, .Lfunc_end0-format_message.19
 	.cfi_endproc

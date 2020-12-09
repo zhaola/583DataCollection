@@ -39,6 +39,8 @@ TIFFReadRGBATile.18:                    # @TIFFReadRGBATile.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movl	(%r12), %eax
@@ -78,7 +80,8 @@ TIFFReadRGBATile.18:                    # @TIFFReadRGBATile.18
 	xorl	%esi, %esi
                                         # kill: def $edx killed $edx killed $rdx
 	callq	_TIFFmemset
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRGBATile.18, .Lfunc_end0-TIFFReadRGBATile.18
 	.cfi_endproc

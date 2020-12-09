@@ -17,6 +17,8 @@ adpcm_decoder.23:                       # @adpcm_decoder.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	movl	stepsizeTable(,%rax,4), %eax
@@ -27,7 +29,8 @@ adpcm_decoder.23:                       # @adpcm_decoder.23
 	addq	$2, %rsi
 	movq	%rsi, (%rcx)
 	movw	%ax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_decoder.23, .Lfunc_end0-adpcm_decoder.23
 	.cfi_endproc

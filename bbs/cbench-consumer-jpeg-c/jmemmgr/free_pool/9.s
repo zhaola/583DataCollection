@@ -17,14 +17,15 @@ free_pool.9:                            # @free_pool.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jmemmgr.c_free_pool+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jmemmgr.c_free_pool+16
 	movq	(%rdi), %rax
 	movq	48(%rax), %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	free_pool.9, .Lfunc_end0-free_pool.9
 	.cfi_endproc

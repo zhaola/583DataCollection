@@ -17,6 +17,8 @@ kernel_dynprog.22:                      # @kernel_dynprog.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	(%rsi), %ecx
@@ -25,7 +27,8 @@ kernel_dynprog.22:                      # @kernel_dynprog.22
 	movsd	(%rax,%rcx,8), %xmm0    # xmm0 = mem[0],zero
 	addsd	(%rdx), %xmm0
 	movsd	%xmm0, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_dynprog.22, .Lfunc_end0-kernel_dynprog.22
 	.cfi_endproc

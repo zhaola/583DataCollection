@@ -17,6 +17,8 @@ main.11:                                # @main.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main+8, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ main.11:                                # @main.11
 	movabsq	$sbuf, %rsi
 	movb	$0, %al
 	callq	write
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.11, .Lfunc_end0-main.11
 	.cfi_endproc

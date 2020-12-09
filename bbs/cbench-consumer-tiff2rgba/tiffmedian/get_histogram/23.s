@@ -17,6 +17,8 @@ get_histogram.23:                       # @get_histogram.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	shlq	$12, %rax
@@ -29,7 +31,8 @@ get_histogram.23:                       # @get_histogram.23
 	movl	(%rcx,%rax,4), %edx
 	addl	$1, %edx
 	movl	%edx, (%rcx,%rax,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_histogram.23, .Lfunc_end0-get_histogram.23
 	.cfi_endproc

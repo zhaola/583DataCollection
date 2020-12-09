@@ -24,14 +24,14 @@ select_scan_parameters.6:               # @select_scan_parameters.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmaster.c_select_scan_parameters+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmaster.c_select_scan_parameters+24
 	movq	(%rdi), %rax
 	cmpl	$4, 68(%rax)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_scan_parameters.6, .Lfunc_end0-select_scan_parameters.6
 	.cfi_endproc

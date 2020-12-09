@@ -17,14 +17,15 @@ start_output_pass.3:                    # @start_output_pass.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdcoefct.c_start_output_pass+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdcoefct.c_start_output_pass+24
 	movq	(%rdi), %rax
 	movabsq	$decompress_smooth_data, %rcx
 	movq	%rcx, 24(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_output_pass.3, .Lfunc_end0-start_output_pass.3
 	.cfi_endproc

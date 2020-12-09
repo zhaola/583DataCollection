@@ -13,6 +13,8 @@ Gsm_Long_Term_Predictor.17:             # @Gsm_Long_Term_Predictor.17
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_Gsm_Long_Term_Predictor+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_Gsm_Long_Term_Predictor+48
@@ -21,6 +23,8 @@ Gsm_Long_Term_Predictor.17:             # @Gsm_Long_Term_Predictor.17
 	movl	$546, %edx              # imm = 0x222
 	movabsq	$__PRETTY_FUNCTION__.Gsm_Long_Term_Predictor, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Long_Term_Predictor.17, .Lfunc_end0-Gsm_Long_Term_Predictor.17
 	.cfi_endproc

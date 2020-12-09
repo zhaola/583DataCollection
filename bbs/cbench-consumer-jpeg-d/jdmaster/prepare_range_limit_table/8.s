@@ -25,6 +25,8 @@ prepare_range_limit_table.8:            # @prepare_range_limit_table.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	addq	$512, %rdi              # imm = 0x200
@@ -37,7 +39,8 @@ prepare_range_limit_table.8:            # @prepare_range_limit_table.8
 	movq	408(%rax), %rsi
 	movl	$128, %edx
 	callq	memcpy
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_range_limit_table.8, .Lfunc_end0-prepare_range_limit_table.8
 	.cfi_endproc

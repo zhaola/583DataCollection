@@ -38,6 +38,8 @@ gtTileContig.17:                        # @gtTileContig.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_getimage.c_gtTileContig, %r10
 	movq	__profc_.._tif_getimage.c_gtTileContig+8, %rbx
@@ -81,7 +83,8 @@ gtTileContig.17:                        # @gtTileContig.17
 	movq	-56(%rbp), %rax         # 8-byte Reload
 	movq	%rax, 16(%rsp)
 	callq	*%r14
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gtTileContig.17, .Lfunc_end0-gtTileContig.17
 	.cfi_endproc

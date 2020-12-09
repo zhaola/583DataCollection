@@ -24,10 +24,10 @@ per_scan_setup.9:                       # @per_scan_setup.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmaster.c_per_scan_setup+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmaster.c_per_scan_setup+8
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
 	movq	320(%rax,%rsi,8), %rax
@@ -58,8 +58,8 @@ per_scan_setup.9:                       # @per_scan_setup.9
 	divl	52(%rsi)
 	movl	%edx, (%rcx)
 	cmpl	$0, (%rcx)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	per_scan_setup.9, .Lfunc_end0-per_scan_setup.9
 	.cfi_endproc

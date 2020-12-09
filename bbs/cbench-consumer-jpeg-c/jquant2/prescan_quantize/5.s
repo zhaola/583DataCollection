@@ -17,15 +17,16 @@ prescan_quantize.5:                     # @prescan_quantize.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant2.c_prescan_quantize+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant2.c_prescan_quantize+8
 	movq	(%rdi), %rax
 	movw	(%rax), %cx
 	addw	$-1, %cx
 	movw	%cx, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prescan_quantize.5, .Lfunc_end0-prescan_quantize.5
 	.cfi_endproc

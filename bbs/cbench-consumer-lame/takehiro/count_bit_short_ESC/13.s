@@ -17,6 +17,8 @@ count_bit_short_ESC.13:                 # @count_bit_short_ESC.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._takehiro.c_count_bit_short_ESC+40, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ count_bit_short_ESC.13:                 # @count_bit_short_ESC.13
 	movq	(%rdi), %rax
 	addq	$12, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	count_bit_short_ESC.13, .Lfunc_end0-count_bit_short_ESC.13
 	.cfi_endproc

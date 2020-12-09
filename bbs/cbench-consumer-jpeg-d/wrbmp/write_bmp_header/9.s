@@ -23,6 +23,8 @@ write_bmp_header.9:                     # @write_bmp_header.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._wrbmp.c_write_bmp_header, %rsi
 	movq	__profc_.._wrbmp.c_write_bmp_header+24, %rax
@@ -40,7 +42,8 @@ write_bmp_header.9:                     # @write_bmp_header.9
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	write_bmp_header.9, .Lfunc_end0-write_bmp_header.9
 	.cfi_endproc

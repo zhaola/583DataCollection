@@ -31,6 +31,8 @@ jpeg_copy_critical_parameters.2:        # @jpeg_copy_critical_parameters.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%r15), %rax
 	movl	40(%rax), %eax
@@ -49,11 +51,9 @@ jpeg_copy_critical_parameters.2:        # @jpeg_copy_critical_parameters.2
 	movq	(%rbx), %rcx
 	movl	%eax, 52(%rcx)
 	movq	(%rbx), %rdi
-	callq	jpeg_set_defaults
 	movq	(%rbx), %rdi
 	movq	(%r15), %rax
 	movl	52(%rax), %esi
-	callq	jpeg_set_colorspace
 	movq	(%r15), %rax
 	movl	288(%rax), %eax
 	movq	(%rbx), %rcx
@@ -63,7 +63,8 @@ jpeg_copy_critical_parameters.2:        # @jpeg_copy_critical_parameters.2
 	movq	(%rbx), %rcx
 	movl	%eax, 260(%rcx)
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_copy_critical_parameters.2, .Lfunc_end0-jpeg_copy_critical_parameters.2
 	.cfi_endproc

@@ -24,14 +24,16 @@ handle_compress.5:                      # @handle_compress.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzlib.c_handle_compress+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzlib.c_handle_compress+24
 	movq	(%rdi), %rax
 	cmpl	$0, 16(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	handle_compress.5, .Lfunc_end0-handle_compress.5
 	.cfi_endproc

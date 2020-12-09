@@ -44,6 +44,8 @@ ConvertToIeeeDouble.14:                 # @ConvertToIeeeDouble.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ConvertToIeeeDouble+40, %rax
 	addq	$1, %rax
@@ -72,7 +74,8 @@ ConvertToIeeeDouble.14:                 # @ConvertToIeeeDouble.14
 	addq	$2147483647, %rax       # imm = 0x7FFFFFFF
 	addq	$1, %rax
 	movq	%rax, (%r13)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeDouble.14, .Lfunc_end0-ConvertToIeeeDouble.14
 	.cfi_endproc

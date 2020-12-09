@@ -39,8 +39,9 @@ compress_output.20:                     # @compress_output.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jccoefct.c_compress_output, %rax
 	movq	(%rdi), %rcx
 	movq	488(%rcx), %rcx
 	movq	8(%rcx), %r15
@@ -55,8 +56,8 @@ compress_output.20:                     # @compress_output.20
 	movq	%rbx, %rsi
 	callq	*%r15
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compress_output.20, .Lfunc_end0-compress_output.20
 	.cfi_endproc

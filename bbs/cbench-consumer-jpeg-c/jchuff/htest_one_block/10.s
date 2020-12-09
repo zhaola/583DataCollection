@@ -24,10 +24,12 @@ htest_one_block.10:                     # @htest_one_block.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$15, (%rdi)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	htest_one_block.10, .Lfunc_end0-htest_one_block.10
 	.cfi_endproc

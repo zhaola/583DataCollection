@@ -24,8 +24,9 @@ dijkstra.10:                            # @dijkstra.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	AdjMatrix, %rax
 	movl	iNode, %ecx
 	imull	NUM_NODES, %ecx
 	addl	i, %ecx
@@ -33,8 +34,8 @@ dijkstra.10:                            # @dijkstra.10
 	movl	(%rax,%rcx,4), %eax
 	movl	%eax, iCost
 	cmpl	$9999, %eax             # imm = 0x270F
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	dijkstra.10, .Lfunc_end0-dijkstra.10
 	.cfi_endproc

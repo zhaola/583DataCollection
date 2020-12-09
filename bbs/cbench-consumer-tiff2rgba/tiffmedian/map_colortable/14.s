@@ -27,6 +27,8 @@ map_colortable.14:                      # @map_colortable.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movslq	(%rsi), %rsi
@@ -63,8 +65,8 @@ map_colortable.14:                      # @map_colortable.14
 	movl	%ecx, (%r8)
 	movl	(%r8), %eax
 	cmpl	(%r10), %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	map_colortable.14, .Lfunc_end0-map_colortable.14
 	.cfi_endproc

@@ -17,6 +17,8 @@ ConvertToIeeeSingle.7:                  # @ConvertToIeeeSingle.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ConvertToIeeeSingle+16, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ ConvertToIeeeSingle.7:                  # @ConvertToIeeeSingle.7
 	movq	(%rdi), %rax
 	orq	$2139095040, %rax       # imm = 0x7F800000
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeSingle.7, .Lfunc_end0-ConvertToIeeeSingle.7
 	.cfi_endproc

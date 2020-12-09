@@ -24,6 +24,8 @@ compute_color.6:                        # @compute_color.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	%rax, %rcx
@@ -32,8 +34,8 @@ compute_color.6:                        # @compute_color.6
 	movzwl	(%rax), %eax
 	movq	%rax, (%rsi)
 	cmpq	$0, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_color.6, .Lfunc_end0-compute_color.6
 	.cfi_endproc

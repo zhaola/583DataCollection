@@ -32,6 +32,8 @@ prepare_for_pass.7:                     # @prepare_for_pass.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	callq	select_scan_parameters
@@ -39,8 +41,8 @@ prepare_for_pass.7:                     # @prepare_for_pass.7
 	callq	per_scan_setup
 	movq	(%rbx), %rax
 	cmpl	$0, 404(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_pass.7, .Lfunc_end0-prepare_for_pass.7
 	.cfi_endproc

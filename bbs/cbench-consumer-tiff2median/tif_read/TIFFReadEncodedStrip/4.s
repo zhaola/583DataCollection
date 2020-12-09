@@ -24,14 +24,16 @@ TIFFReadEncodedStrip.4:                 # @TIFFReadEncodedStrip.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
 	movl	244(%rcx), %ecx
 	subl	$1, %ecx
 	cmpl	%ecx, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadEncodedStrip.4, .Lfunc_end0-TIFFReadEncodedStrip.4
 	.cfi_endproc

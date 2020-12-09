@@ -17,14 +17,15 @@ find_best_colors.17:                    # @find_best_colors.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant2.c_find_best_colors+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant2.c_find_best_colors+16
 	movl	(%rdi), %eax
 	addl	$-1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_best_colors.17, .Lfunc_end0-find_best_colors.17
 	.cfi_endproc

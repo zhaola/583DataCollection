@@ -17,6 +17,8 @@ horDiff8.7:                             # @horDiff8.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movsbl	(%rax), %eax
@@ -30,7 +32,8 @@ horDiff8.7:                             # @horDiff8.7
 	movq	(%rdi), %rax
 	movsbl	3(%rax), %eax
 	movl	%eax, (%r8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	horDiff8.7, .Lfunc_end0-horDiff8.7
 	.cfi_endproc

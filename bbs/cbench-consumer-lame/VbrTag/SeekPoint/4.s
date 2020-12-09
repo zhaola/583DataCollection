@@ -24,12 +24,14 @@ SeekPoint.4:                            # @SeekPoint.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cvttss2si	(%rdi), %eax
 	movl	%eax, (%rsi)
 	cmpl	$99, (%rsi)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	SeekPoint.4, .Lfunc_end0-SeekPoint.4
 	.cfi_endproc

@@ -49,8 +49,9 @@ sep_upsample.10:                        # @sep_upsample.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdsample.c_sep_upsample, %rsi
 	movq	(%rdi), %rax
 	movq	600(%rax), %rax
 	movq	8(%rax), %r13
@@ -98,8 +99,8 @@ sep_upsample.10:                        # @sep_upsample.10
 	movq	-72(%rbp), %rcx         # 8-byte Reload
 	movq	(%rcx), %rcx
 	cmpl	392(%rcx), %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	sep_upsample.10, .Lfunc_end0-sep_upsample.10
 	.cfi_endproc

@@ -24,14 +24,14 @@ use_merged_upsample.5:                  # @use_merged_upsample.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmaster.c_use_merged_upsample+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmaster.c_use_merged_upsample+32
 	movq	(%rdi), %rax
 	cmpl	$2, 56(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	use_merged_upsample.5, .Lfunc_end0-use_merged_upsample.5
 	.cfi_endproc

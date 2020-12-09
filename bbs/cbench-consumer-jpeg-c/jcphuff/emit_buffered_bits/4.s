@@ -25,10 +25,10 @@ emit_buffered_bits.4:                   # @emit_buffered_bits.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_emit_buffered_bits, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_emit_buffered_bits
 	movq	(%rdi), %rdi
 	movq	(%rbx), %rax
 	movsbl	(%rax), %esi
@@ -40,7 +40,8 @@ emit_buffered_bits.4:                   # @emit_buffered_bits.4
 	movl	(%r14), %eax
 	addl	$-1, %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_buffered_bits.4, .Lfunc_end0-emit_buffered_bits.4
 	.cfi_endproc

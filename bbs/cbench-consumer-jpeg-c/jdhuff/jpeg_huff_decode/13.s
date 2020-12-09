@@ -17,10 +17,10 @@ jpeg_huff_decode.13:                    # @jpeg_huff_decode.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_huff_decode+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_huff_decode+32
 	movq	(%rdi), %rax
 	movq	352(%rax), %r8
 	movq	(%rdi), %r9
@@ -34,7 +34,8 @@ jpeg_huff_decode.13:                    # @jpeg_huff_decode.13
 	cltq
 	movzbl	17(%r8,%rax), %eax
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_huff_decode.13, .Lfunc_end0-jpeg_huff_decode.13
 	.cfi_endproc

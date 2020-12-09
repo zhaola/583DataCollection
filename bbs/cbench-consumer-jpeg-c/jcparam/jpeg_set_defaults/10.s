@@ -17,6 +17,8 @@ jpeg_set_defaults.10:                   # @jpeg_set_defaults.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$0, 260(%rax)
@@ -35,8 +37,8 @@ jpeg_set_defaults.10:                   # @jpeg_set_defaults.10
 	movq	(%rdi), %rax
 	movw	$1, 288(%rax)
 	movq	(%rdi), %rdi
-	callq	jpeg_default_colorspace
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_set_defaults.10, .Lfunc_end0-jpeg_set_defaults.10
 	.cfi_endproc

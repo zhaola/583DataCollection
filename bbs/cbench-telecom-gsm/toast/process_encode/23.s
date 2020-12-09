@@ -23,6 +23,8 @@ process_encode.23:                      # @process_encode.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_process_encode+24, %rax
 	addq	$1, %rax
@@ -30,7 +32,8 @@ process_encode.23:                      # @process_encode.23
 	movq	(%rdi), %rdi
 	callq	gsm_destroy
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_encode.23, .Lfunc_end0-process_encode.23
 	.cfi_endproc

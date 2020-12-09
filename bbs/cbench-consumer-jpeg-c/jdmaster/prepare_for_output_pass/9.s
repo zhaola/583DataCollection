@@ -23,11 +23,10 @@ prepare_for_output_pass.9:              # @prepare_for_output_pass.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmaster.c_prepare_for_output_pass, %rsi
-	movq	__profc_.._jdmaster.c_prepare_for_output_pass+96, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmaster.c_prepare_for_output_pass+96
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$45, 40(%rax)
@@ -40,7 +39,8 @@ prepare_for_output_pass.9:              # @prepare_for_output_pass.9
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_output_pass.9, .Lfunc_end0-prepare_for_output_pass.9
 	.cfi_endproc

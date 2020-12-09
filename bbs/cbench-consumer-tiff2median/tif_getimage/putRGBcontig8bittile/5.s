@@ -17,6 +17,8 @@ putRGBcontig8bittile.5:                 # @putRGBcontig8bittile.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_putRGBcontig8bittile, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ putRGBcontig8bittile.5:                 # @putRGBcontig8bittile.5
 	movl	(%rdi), %eax
 	subl	$8, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	putRGBcontig8bittile.5, .Lfunc_end0-putRGBcontig8bittile.5
 	.cfi_endproc

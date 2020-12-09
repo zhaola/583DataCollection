@@ -24,11 +24,13 @@ jpeg_start_decompress.22:               # @jpeg_start_decompress.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	cmpl	$204, 28(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_start_decompress.22, .Lfunc_end0-jpeg_start_decompress.22
 	.cfi_endproc

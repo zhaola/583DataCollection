@@ -17,15 +17,16 @@ emit_message.4:                         # @emit_message.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jerror.c_emit_message+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jerror.c_emit_message+8
 	movq	(%rdi), %rax
 	movq	128(%rax), %rcx
 	addq	$1, %rcx
 	movq	%rcx, 128(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_message.4, .Lfunc_end0-emit_message.4
 	.cfi_endproc

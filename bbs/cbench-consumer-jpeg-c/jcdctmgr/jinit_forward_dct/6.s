@@ -24,10 +24,12 @@ jinit_forward_dct.6:                    # @jinit_forward_dct.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$4, (%rdi)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_forward_dct.6, .Lfunc_end0-jinit_forward_dct.6
 	.cfi_endproc

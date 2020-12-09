@@ -17,15 +17,16 @@ encode_mcu_DC_refine.11:                # @encode_mcu_DC_refine.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_encode_mcu_DC_refine+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_encode_mcu_DC_refine+24
 	movq	(%rdi), %rax
 	movl	112(%rax), %ecx
 	addl	$-1, %ecx
 	movl	%ecx, 112(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_DC_refine.11, .Lfunc_end0-encode_mcu_DC_refine.11
 	.cfi_endproc

@@ -23,11 +23,10 @@ jpeg_finish_output.6:                   # @jpeg_finish_output.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_finish_output, %rsi
-	movq	__profc_jpeg_finish_output+56, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_finish_output+56
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$18, 40(%rax)
@@ -45,7 +44,8 @@ jpeg_finish_output.6:                   # @jpeg_finish_output.6
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_finish_output.6, .Lfunc_end0-jpeg_finish_output.6
 	.cfi_endproc

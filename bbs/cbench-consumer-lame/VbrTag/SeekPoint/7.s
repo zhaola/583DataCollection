@@ -17,6 +17,8 @@ SeekPoint.7:                            # @SeekPoint.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_SeekPoint+24(%rip), %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ SeekPoint.7:                            # @SeekPoint.7
 	movzbl	1(%rcx,%rax), %eax
 	cvtsi2ss	%eax, %xmm0
 	movss	%xmm0, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	SeekPoint.7, .Lfunc_end0-SeekPoint.7
 	.cfi_endproc

@@ -17,13 +17,16 @@ PredictorVSetField.6:                   # @PredictorVSetField.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	16(%rax), %ecx
 	orl	$8, %ecx
 	movl	%ecx, 16(%rax)
 	movl	$1, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PredictorVSetField.6, .Lfunc_end0-PredictorVSetField.6
 	.cfi_endproc

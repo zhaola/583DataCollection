@@ -17,15 +17,16 @@ encode_mcu_DC_first.12:                 # @encode_mcu_DC_first.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_encode_mcu_DC_first+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_encode_mcu_DC_first+16
 	movq	(%rdi), %rdi
 	movl	(%rsi), %esi
 	movl	(%rdx), %edx
 	callq	emit_bits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_DC_first.12, .Lfunc_end0-encode_mcu_DC_first.12
 	.cfi_endproc

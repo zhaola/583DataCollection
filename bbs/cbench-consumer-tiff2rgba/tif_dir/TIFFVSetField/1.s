@@ -35,6 +35,8 @@ TIFFVSetField.1:                        # @TIFFVSetField.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFVSetField, %rax
 	movq	__profc_TIFFVSetField, %rcx
@@ -54,7 +56,8 @@ TIFFVSetField.1:                        # @TIFFVSetField.1
 	movq	%r13, %rdx
 	callq	*%rbx
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFVSetField.1, .Lfunc_end0-TIFFVSetField.1
 	.cfi_endproc

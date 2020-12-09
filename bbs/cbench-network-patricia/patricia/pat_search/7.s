@@ -17,6 +17,8 @@ pat_search.7:                           # @pat_search.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_pat_search+16, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ pat_search.7:                           # @pat_search.7
 	movq	(%rdi), %rax
 	movq	24(%rax), %rax
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pat_search.7, .Lfunc_end0-pat_search.7
 	.cfi_endproc

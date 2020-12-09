@@ -17,10 +17,10 @@ jinit_write_bmp.13:                     # @jinit_write_bmp.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_write_bmp+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_write_bmp+8
 	movq	(%rdi), %rax
 	movq	16(%rax), %rax
 	movq	%rax, (%rsi)
@@ -28,7 +28,8 @@ jinit_write_bmp.13:                     # @jinit_write_bmp.13
 	movl	36(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, 36(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_write_bmp.13, .Lfunc_end0-jinit_write_bmp.13
 	.cfi_endproc

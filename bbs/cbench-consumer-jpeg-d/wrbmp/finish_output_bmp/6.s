@@ -23,6 +23,8 @@ finish_output_bmp.6:                    # @finish_output_bmp.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._wrbmp.c_finish_output_bmp, %rax
 	movq	__profc_.._wrbmp.c_finish_output_bmp+16, %rcx
@@ -47,7 +49,8 @@ finish_output_bmp.6:                    # @finish_output_bmp.6
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_output_bmp.6, .Lfunc_end0-finish_output_bmp.6
 	.cfi_endproc

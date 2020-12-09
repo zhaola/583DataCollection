@@ -17,6 +17,8 @@ add_pair_to_block.7:                    # @add_pair_to_block.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzlib.c_add_pair_to_block+16, %rax
 	addq	$1, %rax
@@ -51,7 +53,8 @@ add_pair_to_block.7:                    # @add_pair_to_block.7
 	movl	108(%rax), %ecx
 	addl	$1, %ecx
 	movl	%ecx, 108(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	add_pair_to_block.7, .Lfunc_end0-add_pair_to_block.7
 	.cfi_endproc

@@ -23,6 +23,8 @@ TIFFReadRawTile.3:                      # @TIFFReadRawTile.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFReadRawTile+8, %rax
 	addq	$1, %rax
@@ -37,7 +39,8 @@ TIFFReadRawTile.3:                      # @TIFFReadRawTile.3
 	movb	$0, %al
 	callq	TIFFError
 	movl	$-1, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRawTile.3, .Lfunc_end0-TIFFReadRawTile.3
 	.cfi_endproc

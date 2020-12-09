@@ -42,6 +42,8 @@ main1.25:                               # @main1.25
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"25"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_main1, %rsi
 	movq	(%rdi), %rax
@@ -54,13 +56,11 @@ main1.25:                               # @main1.25
 	movq	%r12, %rsi
 	callq	*%rbx
 	movq	%r15, %rdi
-	callq	jpeg_finish_decompress
 	movq	%r15, %rdi
-	callq	jpeg_destroy_decompress
 	movq	(%r14), %rax
 	cmpq	stdin, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.25, .Lfunc_end0-main1.25
 	.cfi_endproc

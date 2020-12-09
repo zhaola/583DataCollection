@@ -24,10 +24,12 @@ best_huffman_divide.11:                 # @best_huffman_divide.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$16, (%rdi)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	best_huffman_divide.11, .Lfunc_end0-best_huffman_divide.11
 	.cfi_endproc

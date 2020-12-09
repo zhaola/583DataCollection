@@ -18,6 +18,8 @@ emit_header.16:                         # @emit_header.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_emit_header+16, %rax
 	addq	$1, %rax
@@ -37,7 +39,8 @@ emit_header.16:                         # @emit_header.16
 	idivl	%ecx
 	movl	%eax, %esi
 	callq	put_3bytes
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_header.16, .Lfunc_end0-emit_header.16
 	.cfi_endproc

@@ -17,6 +17,8 @@ TIFFLinkDirectory.6:                    # @TIFFLinkDirectory.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirwrite.c_TIFFLinkDirectory+56, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ TIFFLinkDirectory.6:                    # @TIFFLinkDirectory.6
 	movslq	560(%rax), %rcx
 	addq	$4, %rcx
 	movl	%ecx, 560(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFLinkDirectory.6, .Lfunc_end0-TIFFLinkDirectory.6
 	.cfi_endproc

@@ -18,6 +18,8 @@ create_colormap.7:                      # @create_colormap.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rdx
@@ -28,7 +30,8 @@ create_colormap.7:                      # @create_colormap.7
 	idivl	(%r10)
 	movl	%eax, (%r8)
 	movl	$0, (%r9)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	create_colormap.7, .Lfunc_end0-create_colormap.7
 	.cfi_endproc

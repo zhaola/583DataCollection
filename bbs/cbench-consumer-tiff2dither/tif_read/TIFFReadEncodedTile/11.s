@@ -36,6 +36,8 @@ TIFFReadEncodedTile.11:                 # @TIFFReadEncodedTile.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFReadEncodedTile, %rax
 	movq	__profc_TIFFReadEncodedTile+40, %rcx
@@ -57,7 +59,8 @@ TIFFReadEncodedTile.11:                 # @TIFFReadEncodedTile.11
 	movl	(%r15), %eax
 	movq	-48(%rbp), %rcx         # 8-byte Reload
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadEncodedTile.11, .Lfunc_end0-TIFFReadEncodedTile.11
 	.cfi_endproc

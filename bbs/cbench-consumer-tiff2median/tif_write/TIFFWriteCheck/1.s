@@ -23,6 +23,8 @@ TIFFWriteCheck.1:                       # @TIFFWriteCheck.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_write.c_TIFFWriteCheck+8, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ TIFFWriteCheck.1:                       # @TIFFWriteCheck.1
 	movb	$0, %al
 	callq	TIFFError
 	movl	$0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteCheck.1, .Lfunc_end0-TIFFWriteCheck.1
 	.cfi_endproc

@@ -24,6 +24,8 @@ jpeg_idct_2x2.12:                       # @jpeg_idct_2x2.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -40,8 +42,8 @@ jpeg_idct_2x2.12:                       # @jpeg_idct_2x2.12
 	movq	(%r8), %rcx
 	orl	28(%rcx), %eax
 	cmpl	$0, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_idct_2x2.12, .Lfunc_end0-jpeg_idct_2x2.12
 	.cfi_endproc

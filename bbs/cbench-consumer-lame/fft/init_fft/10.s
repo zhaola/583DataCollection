@@ -34,6 +34,8 @@ init_fft.10:                            # @init_fft.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm3   # xmm3 = mem[0],zero
 	movsd	%xmm3, -16(%rbp)        # 8-byte Spill
@@ -55,7 +57,8 @@ init_fft.10:                            # @init_fft.10
 	cvtsd2ss	%xmm0, %xmm0
 	movslq	(%rbx), %rax
 	movss	%xmm0, window_s(,%rax,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	init_fft.10, .Lfunc_end0-init_fft.10
 	.cfi_endproc

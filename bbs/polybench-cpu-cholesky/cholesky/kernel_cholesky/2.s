@@ -17,6 +17,8 @@ kernel_cholesky.2:                      # @kernel_cholesky.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rdi
@@ -26,7 +28,8 @@ kernel_cholesky.2:                      # @kernel_cholesky.2
 	movsd	(%rax,%rsi,8), %xmm0    # xmm0 = mem[0],zero
 	movsd	%xmm0, (%rdx)
 	movl	$0, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_cholesky.2, .Lfunc_end0-kernel_cholesky.2
 	.cfi_endproc

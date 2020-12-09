@@ -13,6 +13,8 @@ WriteMainDataBits.15:                   # @WriteMainDataBits.15
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._formatBitstream.c_WriteMainDataBits+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._formatBitstream.c_WriteMainDataBits+48
@@ -21,6 +23,8 @@ WriteMainDataBits.15:                   # @WriteMainDataBits.15
 	movl	$239, %edx
 	movabsq	$__PRETTY_FUNCTION__.WriteMainDataBits, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	WriteMainDataBits.15, .Lfunc_end0-WriteMainDataBits.15
 	.cfi_endproc

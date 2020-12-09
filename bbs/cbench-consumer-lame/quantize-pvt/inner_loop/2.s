@@ -13,6 +13,8 @@ inner_loop.2:                           # @inner_loop.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_inner_loop+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_inner_loop+16
@@ -21,6 +23,8 @@ inner_loop.2:                           # @inner_loop.2
 	movl	$431, %edx              # imm = 0x1AF
 	movabsq	$__PRETTY_FUNCTION__.inner_loop, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	inner_loop.2, .Lfunc_end0-inner_loop.2
 	.cfi_endproc

@@ -17,6 +17,8 @@ L3_huffman_coder_count1.1:              # @L3_huffman_coder_count1.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_L3_huffman_coder_count1+8, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ L3_huffman_coder_count1.1:              # @L3_huffman_coder_count1.1
 	movl	(%rdx), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	L3_huffman_coder_count1.1, .Lfunc_end0-L3_huffman_coder_count1.1
 	.cfi_endproc

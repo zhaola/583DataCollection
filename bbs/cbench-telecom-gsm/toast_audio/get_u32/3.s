@@ -32,6 +32,8 @@ get_u32.3:                              # @get_u32.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast_audio.c_get_u32+24, %rax
 	addq	$1, %rax
@@ -46,8 +48,8 @@ get_u32.3:                              # @get_u32.3
 	callq	_IO_getc
 	movl	%eax, (%rbx)
 	cmpl	$-1, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_u32.3, .Lfunc_end0-get_u32.3
 	.cfi_endproc

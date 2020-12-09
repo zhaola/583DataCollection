@@ -24,6 +24,8 @@ best_huffman_divide.18:                 # @best_huffman_divide.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movl	(%rsi), %esi
@@ -37,8 +39,8 @@ best_huffman_divide.18:                 # @best_huffman_divide.18
 	movl	(%rax), %eax
 	movq	(%r8), %rcx
 	cmpl	(%rcx), %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	best_huffman_divide.18, .Lfunc_end0-best_huffman_divide.18
 	.cfi_endproc

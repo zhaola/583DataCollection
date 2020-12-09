@@ -34,6 +34,8 @@ handle_compress.14:                     # @handle_compress.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	callq	copy_input_until_stop
@@ -43,8 +45,8 @@ handle_compress.14:                     # @handle_compress.14
 	movb	%cl, (%r14)
 	movq	(%rbx), %rax
 	cmpl	$2, 8(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	handle_compress.14, .Lfunc_end0-handle_compress.14
 	.cfi_endproc

@@ -31,8 +31,9 @@ jpeg_finish_decompress.18:              # @jpeg_finish_decompress.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_finish_decompress, %rsi
 	movq	(%rbx), %rax
 	movq	32(%rax), %rax
 	movq	48(%rax), %r15
@@ -43,9 +44,9 @@ jpeg_finish_decompress.18:              # @jpeg_finish_decompress.18
 	movq	%r12, %rdi
 	callq	*%r15
 	movq	(%rbx), %rdi
-	callq	jpeg_abort
 	movl	$1, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_finish_decompress.18, .Lfunc_end0-jpeg_finish_decompress.18
 	.cfi_endproc

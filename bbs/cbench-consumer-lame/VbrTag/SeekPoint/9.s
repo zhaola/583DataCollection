@@ -24,6 +24,8 @@ SeekPoint.9:                            # @SeekPoint.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movss	(%rdi), %xmm1           # xmm1 = mem[0],zero,zero,zero
@@ -42,7 +44,8 @@ SeekPoint.9:                            # @SeekPoint.9
 	movl	%ecx, (%rax)
 	movl	(%rax), %eax
 	movl	%eax, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	SeekPoint.9, .Lfunc_end0-SeekPoint.9
 	.cfi_endproc

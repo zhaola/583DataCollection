@@ -23,6 +23,8 @@ LZWReadByte.14:                         # @LZWReadByte.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdgif.c_LZWReadByte+80, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ LZWReadByte.14:                         # @LZWReadByte.14
 	callq	SkipDataBlocks
 	movq	(%rbx), %rax
 	movl	$1, 336(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWReadByte.14, .Lfunc_end0-LZWReadByte.14
 	.cfi_endproc

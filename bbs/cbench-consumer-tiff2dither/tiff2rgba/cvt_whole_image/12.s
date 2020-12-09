@@ -24,6 +24,8 @@ cvt_whole_image.12:                     # @cvt_whole_image.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	(%rsi), %edi
@@ -35,8 +37,8 @@ cvt_whole_image.12:                     # @cvt_whole_image.12
 	movl	(%rsi), %eax
 	addl	rowsperstrip, %eax
 	cmpl	(%r8), %eax
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	cvt_whole_image.12, .Lfunc_end0-cvt_whole_image.12
 	.cfi_endproc

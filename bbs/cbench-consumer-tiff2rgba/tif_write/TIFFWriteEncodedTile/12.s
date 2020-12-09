@@ -39,6 +39,8 @@ TIFFWriteEncodedTile.12:                # @TIFFWriteEncodedTile.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFWriteEncodedTile, %r8
 	movq	(%rdi), %rax
@@ -62,8 +64,8 @@ TIFFWriteEncodedTile.12:                # @TIFFWriteEncodedTile.12
 	movzwl	%r15w, %esi
 	callq	*%rbx
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteEncodedTile.12, .Lfunc_end0-TIFFWriteEncodedTile.12
 	.cfi_endproc

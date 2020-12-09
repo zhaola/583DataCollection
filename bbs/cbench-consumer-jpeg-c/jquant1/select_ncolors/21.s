@@ -17,6 +17,8 @@ select_ncolors.21:                      # @select_ncolors.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -26,7 +28,8 @@ select_ncolors.21:                      # @select_ncolors.21
 	movq	(%rdx), %rax
 	movl	%eax, (%rcx)
 	movl	$1, (%r8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_ncolors.21, .Lfunc_end0-select_ncolors.21
 	.cfi_endproc

@@ -24,6 +24,8 @@ copy_output_until_stop.5:               # @copy_output_until_stop.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movb	$1, (%rdi)
 	movq	(%rsi), %rax
@@ -57,8 +59,8 @@ copy_output_until_stop.5:               # @copy_output_until_stop.5
 	movq	(%rsi), %rax
 	movq	(%rax), %rax
 	cmpl	$0, 36(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	copy_output_until_stop.5, .Lfunc_end0-copy_output_until_stop.5
 	.cfi_endproc

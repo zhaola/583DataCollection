@@ -17,11 +17,14 @@ kernel_gramschmidt.2:                   # @kernel_gramschmidt.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorps	%xmm0, %xmm0
 	movsd	%xmm0, (%rdi)
 	movl	$0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_gramschmidt.2, .Lfunc_end0-kernel_gramschmidt.2
 	.cfi_endproc

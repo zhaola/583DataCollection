@@ -23,11 +23,10 @@ jpeg_simple_progression.1:              # @jpeg_simple_progression.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_simple_progression, %rsi
-	movq	__profc_jpeg_simple_progression, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_simple_progression
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$18, 40(%rax)
@@ -45,7 +44,8 @@ jpeg_simple_progression.1:              # @jpeg_simple_progression.1
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_simple_progression.1, .Lfunc_end0-jpeg_simple_progression.1
 	.cfi_endproc

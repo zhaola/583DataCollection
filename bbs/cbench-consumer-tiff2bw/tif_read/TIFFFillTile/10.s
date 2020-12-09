@@ -17,6 +17,8 @@ TIFFFillTile.10:                        # @TIFFFillTile.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_read.c_TIFFFillTile+32, %rax
 	addq	$1, %rax
@@ -33,7 +35,8 @@ TIFFFillTile.10:                        # @TIFFFillTile.10
 	addq	%rcx, %rax
 	movq	(%rsi), %rcx
 	movq	%rax, 720(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFillTile.10, .Lfunc_end0-TIFFFillTile.10
 	.cfi_endproc

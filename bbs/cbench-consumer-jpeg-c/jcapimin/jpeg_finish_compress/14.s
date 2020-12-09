@@ -32,8 +32,9 @@ jpeg_finish_compress.14:                # @jpeg_finish_compress.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_finish_compress, %rsi
 	movq	(%rdi), %rax
 	movq	448(%rax), %rax
 	movq	8(%rax), %rbx
@@ -45,8 +46,8 @@ jpeg_finish_compress.14:                # @jpeg_finish_compress.14
 	xorl	%esi, %esi
 	callq	*%rbx
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_finish_compress.14, .Lfunc_end0-jpeg_finish_compress.14
 	.cfi_endproc

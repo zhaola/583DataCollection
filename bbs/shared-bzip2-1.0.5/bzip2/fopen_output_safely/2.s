@@ -32,6 +32,8 @@ fopen_output_safely.2:                  # @fopen_output_safely.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_fopen_output_safely, %rax
 	addq	$1, %rax
@@ -41,8 +43,8 @@ fopen_output_safely.2:                  # @fopen_output_safely.2
 	callq	fdopen
 	movq	%rax, (%rbx)
 	cmpq	$0, (%rbx)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fopen_output_safely.2, .Lfunc_end0-fopen_output_safely.2
 	.cfi_endproc

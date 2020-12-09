@@ -31,6 +31,8 @@ ChopUpSingleUncompressedStrip.18:       # @ChopUpSingleUncompressedStrip.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_ChopUpSingleUncompressedStrip+48, %rax
 	addq	$1, %rax
@@ -57,7 +59,8 @@ ChopUpSingleUncompressedStrip.18:       # @ChopUpSingleUncompressedStrip.18
 	movq	(%r14), %rax
 	movq	(%rbx), %rcx
 	movq	%rax, 248(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ChopUpSingleUncompressedStrip.18, .Lfunc_end0-ChopUpSingleUncompressedStrip.18
 	.cfi_endproc

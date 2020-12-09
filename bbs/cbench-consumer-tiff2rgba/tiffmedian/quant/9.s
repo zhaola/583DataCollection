@@ -17,11 +17,14 @@ quant.9:                                # @quant.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiffmedian.c_quant+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tiffmedian.c_quant+32
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	quant.9, .Lfunc_end0-quant.9
 	.cfi_endproc

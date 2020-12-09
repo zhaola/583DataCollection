@@ -24,14 +24,16 @@ mmed3.3:                                # @mmed3.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movb	(%rdi), %al
 	movb	%al, (%rsi)
 	movzbl	(%rdx), %eax
 	movzbl	(%rsi), %ecx
 	cmpl	%ecx, %eax
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	mmed3.3, .Lfunc_end0-mmed3.3
 	.cfi_endproc

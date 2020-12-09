@@ -25,6 +25,8 @@ writePartMainData.8:                    # @writePartMainData.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movl	(%rax), %edi
@@ -37,7 +39,8 @@ writePartMainData.8:                    # @writePartMainData.8
 	movzwl	4(%rax), %eax
 	addl	(%r14), %eax
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	writePartMainData.8, .Lfunc_end0-writePartMainData.8
 	.cfi_endproc

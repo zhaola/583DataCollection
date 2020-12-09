@@ -41,6 +41,8 @@ compute_scalefacs_long.14:              # @compute_scalefacs_long.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm1   # xmm1 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm2   # xmm2 = mem[0],zero
@@ -60,8 +62,8 @@ compute_scalefacs_long.14:              # @compute_scalefacs_long.14
 	movslq	(%rbx), %rdx
 	movl	%eax, (%rcx,%rdx,4)
 	cmpl	$11, (%rbx)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_scalefacs_long.14, .Lfunc_end0-compute_scalefacs_long.14
 	.cfi_endproc

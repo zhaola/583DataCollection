@@ -24,13 +24,15 @@ getint.6:                               # @getint.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_getint+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_getint+16
 	cmpl	$57, (%rdi)
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	getint.6, .Lfunc_end0-getint.6
 	.cfi_endproc

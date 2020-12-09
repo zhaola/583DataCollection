@@ -17,6 +17,8 @@ TIFFFlushData1.9:                       # @TIFFFlushData1.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$0, 744(%rax)
@@ -24,7 +26,8 @@ TIFFFlushData1.9:                       # @TIFFFlushData1.9
 	movq	720(%rax), %rax
 	movq	(%rdi), %rcx
 	movq	%rax, 736(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFlushData1.9, .Lfunc_end0-TIFFFlushData1.9
 	.cfi_endproc

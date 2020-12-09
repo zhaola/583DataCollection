@@ -17,6 +17,8 @@ forward_DCT_float.4:                    # @forward_DCT_float.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -120,7 +122,8 @@ forward_DCT_float.4:                    # @forward_DCT_float.4
 	addq	$4, %rcx
 	movq	%rcx, (%r8)
 	movss	%xmm0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	forward_DCT_float.4, .Lfunc_end0-forward_DCT_float.4
 	.cfi_endproc

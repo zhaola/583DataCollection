@@ -24,6 +24,8 @@ read_restart_marker.4:                  # @read_restart_marker.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	524(%rax), %eax
@@ -32,8 +34,8 @@ read_restart_marker.4:                  # @read_restart_marker.4
 	movl	168(%rcx), %ecx
 	addl	$208, %ecx
 	cmpl	%ecx, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_restart_marker.4, .Lfunc_end0-read_restart_marker.4
 	.cfi_endproc

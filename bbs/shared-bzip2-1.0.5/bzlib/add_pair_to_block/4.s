@@ -36,6 +36,8 @@ add_pair_to_block.4:                    # @add_pair_to_block.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_5:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	92(%rax), %ecx
@@ -44,17 +46,13 @@ add_pair_to_block.4:                    # @add_pair_to_block.4
 	movl	96(%rax), %eax
 	movl	%eax, %ecx
 	subl	$1, %ecx
-	je	.LBB0_2
-	jmp	.LBB0_6
 .LBB0_6:                                # %"4"
 	movl	%eax, %ecx
 	subl	$2, %ecx
-	je	.LBB0_3
-	jmp	.LBB0_7
 .LBB0_7:                                # %"4"
 	subl	$3, %eax
-	je	.LBB0_4
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	add_pair_to_block.4, .Lfunc_end0-add_pair_to_block.4
 	.cfi_endproc

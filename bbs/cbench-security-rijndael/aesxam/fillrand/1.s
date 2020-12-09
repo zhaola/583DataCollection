@@ -17,6 +17,8 @@ fillrand.1:                             # @fillrand.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_fillrand+24, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ fillrand.1:                             # @fillrand.1
 	movq	$0, fillrand.mt
 	movq	$60147, fillrand.a      # imm = 0xEAF3
 	movq	$13822, fillrand.a+8    # imm = 0x35FE
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fillrand.1, .Lfunc_end0-fillrand.1
 	.cfi_endproc

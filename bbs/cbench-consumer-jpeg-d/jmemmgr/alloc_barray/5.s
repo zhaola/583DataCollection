@@ -25,6 +25,8 @@ alloc_barray.5:                         # @alloc_barray.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rsi
@@ -36,7 +38,8 @@ alloc_barray.5:                         # @alloc_barray.5
 	callq	alloc_small
 	movq	%rax, (%rbx)
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	alloc_barray.5, .Lfunc_end0-alloc_barray.5
 	.cfi_endproc

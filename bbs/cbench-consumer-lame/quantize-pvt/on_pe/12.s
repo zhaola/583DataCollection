@@ -17,6 +17,8 @@ on_pe.12:                               # @on_pe.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r8
 	movslq	(%rsi), %rax
@@ -31,7 +33,8 @@ on_pe.12:                               # @on_pe.12
 	movl	(%rcx), %edx
 	subl	%eax, %edx
 	movl	%edx, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	on_pe.12, .Lfunc_end0-on_pe.12
 	.cfi_endproc

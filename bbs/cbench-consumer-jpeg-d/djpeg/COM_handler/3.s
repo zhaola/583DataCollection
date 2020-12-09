@@ -24,13 +24,15 @@ COM_handler.3:                          # @COM_handler.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	addq	$-1, %rax
 	movq	%rax, (%rdi)
 	cmpq	$0, %rax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	COM_handler.3, .Lfunc_end0-COM_handler.3
 	.cfi_endproc

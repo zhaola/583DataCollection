@@ -24,12 +24,14 @@ gsm_norm.8:                             # @gsm_norm.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	$4278190080, %eax       # imm = 0xFF000000
 	andq	(%rdi), %rax
 	cmpq	$0, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_norm.8, .Lfunc_end0-gsm_norm.8
 	.cfi_endproc

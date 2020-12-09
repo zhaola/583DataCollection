@@ -24,6 +24,8 @@ tiffcvt.13:                             # @tiffcvt.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2rgba.c_tiffcvt+48, %rax
 	addq	$1, %rax
@@ -31,8 +33,8 @@ tiffcvt.13:                             # @tiffcvt.13
 	movq	(%rdi), %rdi
 	callq	TIFFIsTiled
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	tiffcvt.13, .Lfunc_end0-tiffcvt.13
 	.cfi_endproc

@@ -32,6 +32,8 @@ process_decode.3:                       # @process_decode.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	in, %rcx
 	movl	$1, %esi
@@ -39,8 +41,8 @@ process_decode.3:                       # @process_decode.3
 	callq	fread
 	movl	%eax, (%rbx)
 	cmpl	$0, %eax
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_decode.3, .Lfunc_end0-process_decode.3
 	.cfi_endproc

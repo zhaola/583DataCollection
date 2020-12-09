@@ -17,6 +17,8 @@ iteration_loop.13:                      # @iteration_loop.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_iteration_loop+40, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ iteration_loop.13:                      # @iteration_loop.13
 	movl	%eax, %edi
 	movl	%r8d, %esi
 	callq	best_huffman_divide
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	iteration_loop.13, .Lfunc_end0-iteration_loop.13
 	.cfi_endproc

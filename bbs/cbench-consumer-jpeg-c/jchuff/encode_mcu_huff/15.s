@@ -17,15 +17,16 @@ encode_mcu_huff.15:                     # @encode_mcu_huff.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_encode_mcu_huff+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_encode_mcu_huff+32
 	movq	(%rdi), %rax
 	movl	56(%rax), %ecx
 	addl	$-1, %ecx
 	movl	%ecx, 56(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_huff.15, .Lfunc_end0-encode_mcu_huff.15
 	.cfi_endproc

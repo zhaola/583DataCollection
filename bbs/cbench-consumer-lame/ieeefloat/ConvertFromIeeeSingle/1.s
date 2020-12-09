@@ -17,13 +17,16 @@ ConvertFromIeeeSingle.1:                # @ConvertFromIeeeSingle.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ConvertFromIeeeSingle+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_ConvertFromIeeeSingle+8
 	xorps	%xmm0, %xmm0
 	movsd	%xmm0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertFromIeeeSingle.1, .Lfunc_end0-ConvertFromIeeeSingle.1
 	.cfi_endproc

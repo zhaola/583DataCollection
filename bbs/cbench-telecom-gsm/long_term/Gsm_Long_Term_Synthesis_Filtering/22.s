@@ -17,6 +17,8 @@ Gsm_Long_Term_Synthesis_Filtering.22:   # @Gsm_Long_Term_Synthesis_Filtering.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_Gsm_Long_Term_Synthesis_Filtering, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ Gsm_Long_Term_Synthesis_Filtering.22:   # @Gsm_Long_Term_Synthesis_Filtering.22
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Long_Term_Synthesis_Filtering.22, .Lfunc_end0-Gsm_Long_Term_Synthesis_Filtering.22
 	.cfi_endproc

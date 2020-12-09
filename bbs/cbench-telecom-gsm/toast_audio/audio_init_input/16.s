@@ -17,6 +17,8 @@ audio_init_input.16:                    # @audio_init_input.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_audio_init_input+96, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ audio_init_input.16:                    # @audio_init_input.16
 	callq	fprintf
 	movabsq	$ulaw_input, %rax
 	movq	%rax, input
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	audio_init_input.16, .Lfunc_end0-audio_init_input.16
 	.cfi_endproc

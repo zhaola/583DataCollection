@@ -23,11 +23,10 @@ fill_input_buffer.2:                    # @fill_input_buffer.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdatasrc.c_fill_input_buffer, %rsi
-	movq	__profc_.._jdatasrc.c_fill_input_buffer+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdatasrc.c_fill_input_buffer+16
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$41, 40(%rax)
@@ -40,7 +39,8 @@ fill_input_buffer.2:                    # @fill_input_buffer.2
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fill_input_buffer.2, .Lfunc_end0-fill_input_buffer.2
 	.cfi_endproc

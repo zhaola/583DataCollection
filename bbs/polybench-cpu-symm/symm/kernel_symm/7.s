@@ -17,6 +17,8 @@ kernel_symm.7:                          # @kernel_symm.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._symm.c_kernel_symm, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ kernel_symm.7:                          # @kernel_symm.7
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_symm.7, .Lfunc_end0-kernel_symm.7
 	.cfi_endproc

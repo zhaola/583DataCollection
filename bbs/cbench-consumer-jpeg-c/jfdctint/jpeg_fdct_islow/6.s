@@ -36,6 +36,8 @@ jpeg_fdct_islow.6:                      # @jpeg_fdct_islow.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r14
 	movl	(%r14), %ebx
@@ -206,7 +208,8 @@ jpeg_fdct_islow.6:                      # @jpeg_fdct_islow.6
 	movq	(%rdi), %rax
 	addq	$4, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_fdct_islow.6, .Lfunc_end0-jpeg_fdct_islow.6
 	.cfi_endproc

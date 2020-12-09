@@ -17,6 +17,8 @@ LogLuvSetupEncode.24:                   # @LogLuvSetupEncode.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_LogLuvSetupEncode, %rax
 	addq	$1, %rax
@@ -29,7 +31,8 @@ LogLuvSetupEncode.24:                   # @LogLuvSetupEncode.24
 	movabsq	$.str.4, %rcx
 	movb	$0, %al
 	callq	TIFFError
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvSetupEncode.24, .Lfunc_end0-LogLuvSetupEncode.24
 	.cfi_endproc

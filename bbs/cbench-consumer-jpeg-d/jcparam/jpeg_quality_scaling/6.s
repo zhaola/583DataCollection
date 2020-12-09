@@ -17,16 +17,17 @@ jpeg_quality_scaling.6:                 # @jpeg_quality_scaling.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_quality_scaling+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_quality_scaling+24
 	movl	(%rdi), %eax
 	shll	$1, %eax
 	movl	$200, %ecx
 	subl	%eax, %ecx
 	movl	%ecx, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_quality_scaling.6, .Lfunc_end0-jpeg_quality_scaling.6
 	.cfi_endproc

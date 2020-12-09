@@ -17,10 +17,10 @@ get_soi.6:                              # @get_soi.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmarker.c_get_soi+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmarker.c_get_soi+8
 	movq	(%rdi), %rax
 	movl	$0, 360(%rax)
 	movq	(%rdi), %rax
@@ -42,7 +42,8 @@ get_soi.6:                              # @get_soi.6
 	movq	(%rdi), %rax
 	movq	568(%rax), %rax
 	movl	$1, 160(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_soi.6, .Lfunc_end0-get_soi.6
 	.cfi_endproc

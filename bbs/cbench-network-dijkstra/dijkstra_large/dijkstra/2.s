@@ -17,6 +17,8 @@ dijkstra.2:                             # @dijkstra.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	rgnNodes, %rax
 	movslq	ch, %rcx
@@ -24,7 +26,8 @@ dijkstra.2:                             # @dijkstra.2
 	movq	rgnNodes, %rax
 	movslq	ch, %rcx
 	movl	$9999, 4(%rax,%rcx,8)   # imm = 0x270F
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	dijkstra.2, .Lfunc_end0-dijkstra.2
 	.cfi_endproc

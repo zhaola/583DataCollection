@@ -42,16 +42,18 @@ TIFFFetchByteArray.2:                   # @TIFFFetchByteArray.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_6:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	4(%rax), %eax
 	addl	$-1, %eax
 	movl	%eax, %ecx
 	subl	$3, %ecx
-	ja	.LBB0_1
 # %bb.7:                                # %"2"
 	movq	.LJTI0_0(,%rax,8), %rax
-	jmpq	*%rax
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchByteArray.2, .Lfunc_end0-TIFFFetchByteArray.2
 	.cfi_endproc

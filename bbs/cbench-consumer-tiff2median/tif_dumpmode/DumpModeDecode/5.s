@@ -17,10 +17,13 @@ DumpModeDecode.5:                       # @DumpModeDecode.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	DumpModeDecode.5, .Lfunc_end0-DumpModeDecode.5
 	.cfi_endproc

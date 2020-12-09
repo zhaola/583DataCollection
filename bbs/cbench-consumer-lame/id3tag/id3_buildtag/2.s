@@ -17,10 +17,13 @@ id3_buildtag.2:                         # @id3_buildtag.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$1, 4(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	id3_buildtag.2, .Lfunc_end0-id3_buildtag.2
 	.cfi_endproc

@@ -40,6 +40,8 @@ TIFFLinkDirectory.15:                   # @TIFFLinkDirectory.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_dirwrite.c_TIFFLinkDirectory, %rsi
 	movq	__profc_.._tif_dirwrite.c_TIFFLinkDirectory, %rax
@@ -57,8 +59,8 @@ TIFFLinkDirectory.15:                   # @TIFFLinkDirectory.15
 	movl	$2, %edx
 	callq	*%rbx
 	cmpl	$2, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFLinkDirectory.15, .Lfunc_end0-TIFFLinkDirectory.15
 	.cfi_endproc

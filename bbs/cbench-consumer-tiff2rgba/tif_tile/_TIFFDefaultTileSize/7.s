@@ -17,6 +17,8 @@ _TIFFDefaultTileSize.7:                 # @_TIFFDefaultTileSize.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc__TIFFDefaultTileSize+16, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ _TIFFDefaultTileSize.7:                 # @_TIFFDefaultTileSize.7
 	shll	$4, %eax
 	movq	(%rdi), %rcx
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFDefaultTileSize.7, .Lfunc_end0-_TIFFDefaultTileSize.7
 	.cfi_endproc

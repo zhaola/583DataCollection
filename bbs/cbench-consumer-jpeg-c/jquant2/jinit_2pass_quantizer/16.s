@@ -36,11 +36,10 @@ jinit_2pass_quantizer.16:               # @jinit_2pass_quantizer.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_2pass_quantizer, %rsi
-	movq	__profc_jinit_2pass_quantizer+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_2pass_quantizer+32
 	movq	(%rbx), %rax
 	movq	8(%rax), %rax
 	movq	8(%rax), %r15
@@ -61,7 +60,8 @@ jinit_2pass_quantizer.16:               # @jinit_2pass_quantizer.16
 	movq	%rax, 64(%rcx)
 	movq	(%rbx), %rdi
 	callq	init_error_limit
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_2pass_quantizer.16, .Lfunc_end0-jinit_2pass_quantizer.16
 	.cfi_endproc

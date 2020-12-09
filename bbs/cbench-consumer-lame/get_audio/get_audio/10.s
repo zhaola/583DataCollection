@@ -24,6 +24,8 @@ get_audio.10:                           # @get_audio.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_get_audio+16, %rax
 	addq	$1, %rax
@@ -36,7 +38,8 @@ get_audio.10:                           # @get_audio.10
 	movq	%rbx, %rdx
 	callq	read_samples_mp3
 	movl	%eax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_audio.10, .Lfunc_end0-get_audio.10
 	.cfi_endproc

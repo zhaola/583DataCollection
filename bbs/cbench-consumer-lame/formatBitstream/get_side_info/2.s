@@ -13,6 +13,8 @@ get_side_info.2:                        # @get_side_info.2
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._formatBitstream.c_get_side_info+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._formatBitstream.c_get_side_info+8
@@ -21,6 +23,8 @@ get_side_info.2:                        # @get_side_info.2
 	movl	$384, %edx              # imm = 0x180
 	movabsq	$__PRETTY_FUNCTION__.get_side_info, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_side_info.2, .Lfunc_end0-get_side_info.2
 	.cfi_endproc

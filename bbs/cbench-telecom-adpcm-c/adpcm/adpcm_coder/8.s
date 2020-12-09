@@ -24,14 +24,16 @@ adpcm_coder.8:                          # @adpcm_coder.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	sarl	$1, %eax
 	movl	%eax, (%rdi)
 	movl	(%rsi), %eax
 	cmpl	(%rdi), %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_coder.8, .Lfunc_end0-adpcm_coder.8
 	.cfi_endproc

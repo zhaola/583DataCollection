@@ -23,6 +23,8 @@ _TIFFMergeFieldInfo.1:                  # @_TIFFMergeFieldInfo.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movq	840(%rax), %rdi
@@ -35,7 +37,8 @@ _TIFFMergeFieldInfo.1:                  # @_TIFFMergeFieldInfo.1
 	callq	_TIFFrealloc
 	movq	(%rbx), %rcx
 	movq	%rax, 840(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFMergeFieldInfo.1, .Lfunc_end0-_TIFFMergeFieldInfo.1
 	.cfi_endproc

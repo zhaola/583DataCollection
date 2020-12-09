@@ -17,6 +17,8 @@ jinit_memory_mgr.4:                     # @jinit_memory_mgr.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movabsq	$alloc_small, %rcx
@@ -55,7 +57,8 @@ jinit_memory_mgr.4:                     # @jinit_memory_mgr.4
 	movq	(%rdi), %rcx
 	movq	%rax, 88(%rcx)
 	movl	$1, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_memory_mgr.4, .Lfunc_end0-jinit_memory_mgr.4
 	.cfi_endproc

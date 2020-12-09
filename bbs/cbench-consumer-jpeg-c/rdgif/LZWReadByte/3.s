@@ -17,6 +17,8 @@ LZWReadByte.3:                          # @LZWReadByte.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdgif.c_LZWReadByte+48, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ LZWReadByte.3:                          # @LZWReadByte.3
 	movq	%rdx, 400(%rax)
 	movzbl	-1(%rcx), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWReadByte.3, .Lfunc_end0-LZWReadByte.3
 	.cfi_endproc

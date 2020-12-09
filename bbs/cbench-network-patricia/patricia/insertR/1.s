@@ -24,6 +24,8 @@ insertR.1:                              # @insertR.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._patricia.c_insertR, %rax
 	addq	$1, %rax
@@ -33,8 +35,8 @@ insertR.1:                              # @insertR.1
 	movq	(%rsi), %rcx
 	movsbl	17(%rcx), %ecx
 	cmpl	%ecx, %eax
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	insertR.1, .Lfunc_end0-insertR.1
 	.cfi_endproc

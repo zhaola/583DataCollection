@@ -17,13 +17,16 @@ TIFFComputeStrip.4:                     # @TIFFComputeStrip.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFComputeStrip, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_TIFFComputeStrip
 	movl	(%rdi), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFComputeStrip.4, .Lfunc_end0-TIFFComputeStrip.4
 	.cfi_endproc

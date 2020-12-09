@@ -35,6 +35,8 @@ PredictorEncodeTile.15:                 # @PredictorEncodeTile.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_predict.c_PredictorEncodeTile, %rax
 	movq	(%rdi), %rdi
@@ -54,7 +56,8 @@ PredictorEncodeTile.15:                 # @PredictorEncodeTile.15
 	callq	*%rbx
 	movq	-48(%rbp), %rcx         # 8-byte Reload
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PredictorEncodeTile.15, .Lfunc_end0-PredictorEncodeTile.15
 	.cfi_endproc

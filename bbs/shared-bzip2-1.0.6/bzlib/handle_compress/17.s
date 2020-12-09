@@ -24,13 +24,15 @@ handle_compress.17:                     # @handle_compress.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	108(%rax), %eax
 	movq	(%rdi), %rcx
 	cmpl	112(%rcx), %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	handle_compress.17, .Lfunc_end0-handle_compress.17
 	.cfi_endproc

@@ -18,15 +18,16 @@ make_odither_array.6:                   # @make_odither_array.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant1.c_make_odither_array, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant1.c_make_odither_array
 	movq	(%rdi), %rax
 	cqto
 	idivq	(%rsi)
 	movq	%rax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	make_odither_array.6, .Lfunc_end0-make_odither_array.6
 	.cfi_endproc

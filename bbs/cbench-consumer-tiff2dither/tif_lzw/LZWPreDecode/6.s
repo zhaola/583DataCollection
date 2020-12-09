@@ -30,6 +30,8 @@ LZWPreDecode.6:                         # @LZWPreDecode.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_lzw.c_LZWPreDecode+24, %rax
 	addq	$1, %rax
@@ -58,7 +60,8 @@ LZWPreDecode.6:                         # @LZWPreDecode.6
 	movq	(%r14), %rax
 	movabsq	$LZWDecodeCompat, %rcx
 	movq	%rcx, 136(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWPreDecode.6, .Lfunc_end0-LZWPreDecode.6
 	.cfi_endproc

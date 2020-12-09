@@ -24,17 +24,17 @@ jinit_d_coef_controller.3:              # @jinit_d_coef_controller.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jinit_d_coef_controller, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jinit_d_coef_controller
 	movq	(%rdi), %rax
 	movl	12(%rax), %eax
 	movl	%eax, (%rsi)
 	movq	(%rdx), %rax
 	cmpl	$0, 304(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_d_coef_controller.3, .Lfunc_end0-jinit_d_coef_controller.3
 	.cfi_endproc

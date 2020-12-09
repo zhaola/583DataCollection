@@ -31,10 +31,10 @@ start_pass_huff.21:                     # @start_pass_huff.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_start_pass_huff+40, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_start_pass_huff+40
 	movq	(%rbx), %rdi
 	movq	(%rbx), %rax
 	movslq	(%rsi), %rcx
@@ -45,7 +45,6 @@ start_pass_huff.21:                     # @start_pass_huff.21
 	shlq	$3, %rcx
 	addq	%rcx, %rdx
 	movq	%rax, %rsi
-	callq	jpeg_make_c_derived_tbl
 	movq	(%rbx), %rdi
 	movq	(%rbx), %rax
 	movslq	(%r14), %rcx
@@ -55,8 +54,8 @@ start_pass_huff.21:                     # @start_pass_huff.21
 	movslq	(%r14), %rax
 	shlq	$3, %rax
 	addq	%rax, %rdx
-	callq	jpeg_make_c_derived_tbl
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_huff.21, .Lfunc_end0-start_pass_huff.21
 	.cfi_endproc

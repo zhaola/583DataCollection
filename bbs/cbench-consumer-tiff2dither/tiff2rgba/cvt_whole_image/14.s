@@ -17,13 +17,16 @@ cvt_whole_image.14:                     # @cvt_whole_image.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2rgba.c_cvt_whole_image+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tiff2rgba.c_cvt_whole_image+16
 	movl	rowsperstrip, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	cvt_whole_image.14, .Lfunc_end0-cvt_whole_image.14
 	.cfi_endproc

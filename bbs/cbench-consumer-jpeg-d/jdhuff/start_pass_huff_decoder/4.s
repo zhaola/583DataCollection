@@ -23,11 +23,10 @@ start_pass_huff_decoder.4:              # @start_pass_huff_decoder.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdhuff.c_start_pass_huff_decoder, %rsi
-	movq	__profc_.._jdhuff.c_start_pass_huff_decoder+64, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdhuff.c_start_pass_huff_decoder+64
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$118, 40(%rax)
@@ -41,7 +40,8 @@ start_pass_huff_decoder.4:              # @start_pass_huff_decoder.4
 	movq	%r14, %rdi
 	movl	$4294967295, %esi       # imm = 0xFFFFFFFF
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_huff_decoder.4, .Lfunc_end0-start_pass_huff_decoder.4
 	.cfi_endproc

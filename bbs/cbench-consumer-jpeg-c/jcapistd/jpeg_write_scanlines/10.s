@@ -37,8 +37,9 @@ jpeg_write_scanlines.10:                # @jpeg_write_scanlines.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_write_scanlines, %rsi
 	movl	$0, (%rbx)
 	movq	(%r15), %rax
 	movq	432(%rax), %rax
@@ -62,7 +63,8 @@ jpeg_write_scanlines.10:                # @jpeg_write_scanlines.10
 	movl	(%rbx), %eax
 	movq	-56(%rbp), %rcx         # 8-byte Reload
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_write_scanlines.10, .Lfunc_end0-jpeg_write_scanlines.10
 	.cfi_endproc

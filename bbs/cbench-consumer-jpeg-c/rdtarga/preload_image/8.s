@@ -23,6 +23,8 @@ preload_image.8:                        # @preload_image.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movabsq	$get_memory_row, %rcx
@@ -33,7 +35,8 @@ preload_image.8:                        # @preload_image.8
 	movq	(%rdx), %rsi
 	callq	get_memory_row
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	preload_image.8, .Lfunc_end0-preload_image.8
 	.cfi_endproc

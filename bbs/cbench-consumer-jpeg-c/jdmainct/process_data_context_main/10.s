@@ -24,6 +24,8 @@ process_data_context_main.10:           # @process_data_context_main.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	$0, 100(%rax)
@@ -36,8 +38,8 @@ process_data_context_main.10:           # @process_data_context_main.10
 	movl	132(%rax), %eax
 	movq	(%rsi), %rcx
 	cmpl	400(%rcx), %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_data_context_main.10, .Lfunc_end0-process_data_context_main.10
 	.cfi_endproc

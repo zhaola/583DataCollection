@@ -17,6 +17,8 @@ isCCITTCompression.3:                   # @isCCITTCompression.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_isCCITTCompression+24, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ isCCITTCompression.3:                   # @isCCITTCompression.3
 	sete	%al
 	andb	$1, %al
 	movb	%al, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	isCCITTCompression.3, .Lfunc_end0-isCCITTCompression.3
 	.cfi_endproc

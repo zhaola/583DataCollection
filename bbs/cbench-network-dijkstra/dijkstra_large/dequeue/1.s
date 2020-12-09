@@ -17,6 +17,8 @@ dequeue.1:                              # @dequeue.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_dequeue+8, %rax
 	addq	$1, %rax
@@ -41,7 +43,8 @@ dequeue.1:                              # @dequeue.1
 	movl	g_qCount, %eax
 	addl	$-1, %eax
 	movl	%eax, g_qCount
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	dequeue.1, .Lfunc_end0-dequeue.1
 	.cfi_endproc

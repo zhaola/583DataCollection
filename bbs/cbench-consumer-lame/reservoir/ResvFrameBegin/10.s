@@ -17,6 +17,8 @@ ResvFrameBegin.10:                      # @ResvFrameBegin.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ResvFrameBegin+24, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ ResvFrameBegin.10:                      # @ResvFrameBegin.10
 	movl	$7680, %eax             # imm = 0x1E00
 	subl	(%rdi), %eax
 	movl	%eax, ResvMax
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ResvFrameBegin.10, .Lfunc_end0-ResvFrameBegin.10
 	.cfi_endproc

@@ -13,6 +13,8 @@ TIFFInitSGILog.3:                       # @TIFFInitSGILog.3
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_TIFFInitSGILog+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_TIFFInitSGILog+24
@@ -21,6 +23,8 @@ TIFFInitSGILog.3:                       # @TIFFInitSGILog.3
 	movl	$1386, %edx             # imm = 0x56A
 	movabsq	$__PRETTY_FUNCTION__.TIFFInitSGILog, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFInitSGILog.3, .Lfunc_end0-TIFFInitSGILog.3
 	.cfi_endproc

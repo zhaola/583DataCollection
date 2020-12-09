@@ -29,6 +29,8 @@ reduce_side.3:                          # @reduce_side.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movq	(%rdi), %rax
@@ -38,8 +40,8 @@ reduce_side.3:                          # @reduce_side.3
 	mulss	(%rsi), %xmm2
 	subss	%xmm2, %xmm1
 	ucomiss	%xmm0, %xmm1
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	reduce_side.3, .Lfunc_end0-reduce_side.3
 	.cfi_endproc

@@ -17,9 +17,12 @@ free_side_queues.8:                     # @free_side_queues.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	$0, side_queue_free
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	free_side_queues.8, .Lfunc_end0-free_side_queues.8
 	.cfi_endproc

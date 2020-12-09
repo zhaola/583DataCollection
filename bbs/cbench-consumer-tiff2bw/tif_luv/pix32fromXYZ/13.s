@@ -17,6 +17,8 @@ pix32fromXYZ.13:                        # @pix32fromXYZ.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	shll	$16, %eax
@@ -25,7 +27,8 @@ pix32fromXYZ.13:                        # @pix32fromXYZ.13
 	orl	%esi, %eax
 	orl	(%rdx), %eax
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix32fromXYZ.13, .Lfunc_end0-pix32fromXYZ.13
 	.cfi_endproc

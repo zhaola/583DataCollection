@@ -17,6 +17,8 @@ get_interlaced_row.8:                   # @get_interlaced_row.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r8
 	movq	%r8, %rax
@@ -51,7 +53,8 @@ get_interlaced_row.8:                   # @get_interlaced_row.8
 	addq	$1, %rsi
 	movq	%rsi, (%rcx)
 	movb	%al, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_interlaced_row.8, .Lfunc_end0-get_interlaced_row.8
 	.cfi_endproc

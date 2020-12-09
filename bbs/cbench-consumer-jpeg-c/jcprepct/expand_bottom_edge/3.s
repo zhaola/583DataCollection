@@ -17,14 +17,15 @@ expand_bottom_edge.3:                   # @expand_bottom_edge.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcprepct.c_expand_bottom_edge, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcprepct.c_expand_bottom_edge
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	expand_bottom_edge.3, .Lfunc_end0-expand_bottom_edge.3
 	.cfi_endproc

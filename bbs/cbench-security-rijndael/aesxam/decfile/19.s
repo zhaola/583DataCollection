@@ -24,6 +24,8 @@ decfile.19:                             # @decfile.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
 	movl	(%rdi), %ecx
@@ -41,8 +43,8 @@ decfile.19:                             # @decfile.19
 	addl	(%rsi), %ecx
 	movl	%ecx, (%rsi)
 	cmpl	$0, (%rsi)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decfile.19, .Lfunc_end0-decfile.19
 	.cfi_endproc

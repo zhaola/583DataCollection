@@ -18,6 +18,8 @@ compresssep.2:                          # @compresssep.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2bw.c_compresssep, %rax
 	addq	$1, %rax
@@ -51,7 +53,8 @@ compresssep.2:                          # @compresssep.2
 	addq	$1, %rcx
 	movq	%rcx, (%r10)
 	movb	%dil, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compresssep.2, .Lfunc_end0-compresssep.2
 	.cfi_endproc

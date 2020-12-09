@@ -17,11 +17,11 @@ init_error_limit.7:                     # @init_error_limit.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
-	movq	__profc_.._jquant2.c_init_error_limit+8, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_.._jquant2.c_init_error_limit+8
 	movl	(%rdi), %ecx
 	addl	$1, %ecx
 	movl	%ecx, (%rdi)
@@ -31,14 +31,13 @@ init_error_limit.7:                     # @init_error_limit.7
 	setne	%dl
 	andb	$1, %dl
 	movzbl	%dl, %edx
-	addq	__profc_.._jquant2.c_init_error_limit+32, %rdx
-	movq	%rdx, __profc_.._jquant2.c_init_error_limit+32
 	cmpl	$0, %ecx
 	movl	$1, %ecx
 	cmovnel	%eax, %ecx
 	addl	(%rsi), %ecx
 	movl	%ecx, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	init_error_limit.7, .Lfunc_end0-init_error_limit.7
 	.cfi_endproc

@@ -31,6 +31,8 @@ emit_sof.3:                             # @emit_sof.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movq	(%rbx), %rax
@@ -52,7 +54,8 @@ emit_sof.3:                             # @emit_sof.3
 	movq	(%rbx), %rax
 	movq	80(%rax), %rax
 	movq	%rax, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_sof.3, .Lfunc_end0-emit_sof.3
 	.cfi_endproc

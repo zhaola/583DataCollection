@@ -17,6 +17,8 @@ TIFFReadRGBATile.11:                    # @TIFFReadRGBATile.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFReadRGBATile+56, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ TIFFReadRGBATile.11:                    # @TIFFReadRGBATile.11
 	movl	20(%rdi), %eax
 	subl	(%rsi), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadRGBATile.11, .Lfunc_end0-TIFFReadRGBATile.11
 	.cfi_endproc

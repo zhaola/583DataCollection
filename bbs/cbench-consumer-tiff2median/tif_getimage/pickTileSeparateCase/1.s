@@ -24,6 +24,8 @@ pickTileSeparateCase.1:                 # @pickTileSeparateCase.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_pickTileSeparateCase+8(%rip), %rax
 	addq	$1, %rax
@@ -31,8 +33,8 @@ pickTileSeparateCase.1:                 # @pickTileSeparateCase.1
 	movq	(%rdi), %rax
 	movw	34(%rax), %ax
 	subw	$2, %ax
-	je	.LBB0_2
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pickTileSeparateCase.1, .Lfunc_end0-pickTileSeparateCase.1
 	.cfi_endproc

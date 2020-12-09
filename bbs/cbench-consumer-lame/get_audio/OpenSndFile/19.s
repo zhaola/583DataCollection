@@ -34,6 +34,8 @@ OpenSndFile.19:                         # @OpenSndFile.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_OpenSndFile+64(%rip), %rax
 	addq	$1, %rax
@@ -68,7 +70,8 @@ OpenSndFile.19:                         # @OpenSndFile.19
 	ucomiss	%xmm0, %xmm2
 	cmovbq	%rcx, %rax
 	movq	%rax, num_samples
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	OpenSndFile.19, .Lfunc_end0-OpenSndFile.19
 	.cfi_endproc

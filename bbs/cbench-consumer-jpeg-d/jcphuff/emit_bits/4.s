@@ -18,10 +18,10 @@ emit_bits.4:                            # @emit_bits.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_emit_bits+48, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_.._jcphuff.c_emit_bits+48
 	movl	(%rdi), %ecx
                                         # kill: def $cl killed $rcx
 	movl	$1, %eax
@@ -43,7 +43,8 @@ emit_bits.4:                            # @emit_bits.4
 	movq	48(%rax), %rax
 	orq	(%rsi), %rax
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_bits.4, .Lfunc_end0-emit_bits.4
 	.cfi_endproc

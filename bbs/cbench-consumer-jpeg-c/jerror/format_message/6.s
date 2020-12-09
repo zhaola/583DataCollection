@@ -17,10 +17,10 @@ format_message.6:                       # @format_message.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jerror.c_format_message+80, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jerror.c_format_message+80
 	movq	(%rdi), %rax
 	movq	152(%rax), %rax
 	movl	(%rsi), %ecx
@@ -29,7 +29,8 @@ format_message.6:                       # @format_message.6
 	movslq	%ecx, %rcx
 	movq	(%rax,%rcx,8), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	format_message.6, .Lfunc_end0-format_message.6
 	.cfi_endproc

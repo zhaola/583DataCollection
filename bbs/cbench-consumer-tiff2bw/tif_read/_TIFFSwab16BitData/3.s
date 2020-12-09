@@ -17,6 +17,8 @@ _TIFFSwab16BitData.3:                   # @_TIFFSwab16BitData.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	(%rsi), %eax
@@ -25,7 +27,8 @@ _TIFFSwab16BitData.3:                   # @_TIFFSwab16BitData.3
 	idivl	%ecx
 	movslq	%eax, %rsi
 	callq	TIFFSwabArrayOfShort
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFSwab16BitData.3, .Lfunc_end0-_TIFFSwab16BitData.3
 	.cfi_endproc

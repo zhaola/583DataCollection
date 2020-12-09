@@ -48,6 +48,8 @@ on_pe.2:                                # @on_pe.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero
@@ -81,8 +83,8 @@ on_pe.2:                                # @on_pe.2
 	movl	%eax, (%r11,%rdx,4)
 	movq	(%rcx), %rax
 	cmpl	$2, 24(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	on_pe.2, .Lfunc_end0-on_pe.2
 	.cfi_endproc

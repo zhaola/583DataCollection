@@ -40,6 +40,8 @@ TIFFClose.2:                            # @TIFFClose.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFClose, %rsi
 	movq	(%rbx), %rax
@@ -54,8 +56,8 @@ TIFFClose.2:                            # @TIFFClose.2
 	callq	TIFFFreeDirectory
 	movq	(%rbx), %rax
 	cmpq	$0, 720(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFClose.2, .Lfunc_end0-TIFFClose.2
 	.cfi_endproc

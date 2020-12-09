@@ -17,6 +17,8 @@ LogLuvEncode24.18:                      # @LogLuvEncode24.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_LogLuvEncode24, %rax
 	addq	$1, %rax
@@ -52,7 +54,8 @@ LogLuvEncode24.18:                      # @LogLuvEncode24.18
 	movl	(%rdx), %eax
 	subl	$3, %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvEncode24.18, .Lfunc_end0-LogLuvEncode24.18
 	.cfi_endproc

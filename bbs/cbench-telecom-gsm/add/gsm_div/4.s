@@ -13,6 +13,8 @@ gsm_div.4:                              # @gsm_div.4
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_gsm_div+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_gsm_div+40
@@ -21,6 +23,8 @@ gsm_div.4:                              # @gsm_div.4
 	movl	$220, %edx
 	movabsq	$__PRETTY_FUNCTION__.gsm_div, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_div.4, .Lfunc_end0-gsm_div.4
 	.cfi_endproc

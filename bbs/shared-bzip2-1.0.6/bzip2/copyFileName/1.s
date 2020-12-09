@@ -13,6 +13,8 @@ copyFileName.1:                         # @copyFileName.1
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._bzip2.c_copyFileName+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzip2.c_copyFileName+8
@@ -27,6 +29,8 @@ copyFileName.1:                         # @copyFileName.1
 	callq	setExit
 	movl	exitValue, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	copyFileName.1, .Lfunc_end0-copyFileName.1
 	.cfi_endproc

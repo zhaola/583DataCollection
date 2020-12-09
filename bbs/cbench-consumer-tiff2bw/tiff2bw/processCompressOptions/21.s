@@ -17,11 +17,14 @@ processCompressOptions.21:              # @processCompressOptions.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2bw.c_processCompressOptions+72, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tiff2bw.c_processCompressOptions+72
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	processCompressOptions.21, .Lfunc_end0-processCompressOptions.21
 	.cfi_endproc

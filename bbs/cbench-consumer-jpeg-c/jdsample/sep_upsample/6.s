@@ -24,6 +24,8 @@ sep_upsample.6:                         # @sep_upsample.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	392(%rax), %eax
@@ -33,8 +35,8 @@ sep_upsample.6:                         # @sep_upsample.6
 	movl	(%rdx), %eax
 	movq	(%rsi), %rcx
 	cmpl	188(%rcx), %eax
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	sep_upsample.6, .Lfunc_end0-sep_upsample.6
 	.cfi_endproc

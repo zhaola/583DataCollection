@@ -13,6 +13,8 @@ main1.17:                               # @main1.17
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_main1+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_main1+48
@@ -20,6 +22,8 @@ main1.17:                               # @main1.17
 	callq	perror
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.17, .Lfunc_end0-main1.17
 	.cfi_endproc

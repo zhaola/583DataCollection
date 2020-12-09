@@ -52,21 +52,19 @@ main1.3:                                # @main1.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	%rbx, %rdi
-	callq	jpeg_std_error
 	movq	%rax, (%r13)
 	movq	%r13, %rdi
 	movl	$61, %esi
 	movl	$496, %edx              # imm = 0x1F0
-	callq	jpeg_CreateCompress
-	movabsq	$cdjpeg_message_table, %rax
 	movq	%rax, 152(%rbx)
 	movl	$1000, 160(%rbx)        # imm = 0x3E8
 	movl	$1043, 164(%rbx)        # imm = 0x413
 	movl	$2, 52(%r13)
 	movq	%r13, %rdi
-	callq	jpeg_set_defaults
 	movl	(%r15), %esi
 	movq	(%r12), %rdx
 	movq	%r13, %rdi
@@ -78,8 +76,8 @@ main1.3:                                # @main1.3
 	movl	(%r15), %ecx
 	subl	$1, %ecx
 	cmpl	%ecx, %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.3, .Lfunc_end0-main1.3
 	.cfi_endproc

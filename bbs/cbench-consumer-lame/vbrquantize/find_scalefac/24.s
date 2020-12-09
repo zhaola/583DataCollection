@@ -24,12 +24,14 @@ find_scalefac.24:                       # @find_scalefac.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movsd	(%rsi), %xmm1           # xmm1 = mem[0],zero
 	ucomisd	%xmm0, %xmm1
-	jae	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_scalefac.24, .Lfunc_end0-find_scalefac.24
 	.cfi_endproc

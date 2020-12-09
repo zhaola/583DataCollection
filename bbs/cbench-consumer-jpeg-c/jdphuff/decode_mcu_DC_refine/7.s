@@ -24,12 +24,14 @@ decode_mcu_DC_refine.7:                 # @decode_mcu_DC_refine.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
 	cmpl	464(%rcx), %eax
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decode_mcu_DC_refine.7, .Lfunc_end0-decode_mcu_DC_refine.7
 	.cfi_endproc

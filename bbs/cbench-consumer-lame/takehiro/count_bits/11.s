@@ -25,6 +25,8 @@ count_bits.11:                          # @count_bits.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_count_bits+24, %rax
 	addq	$1, %rax
@@ -44,7 +46,8 @@ count_bits.11:                          # @count_bits.11
 	movl	4(%rax), %ecx
 	shrl	$1, %ecx
 	movl	%ecx, 4(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	count_bits.11, .Lfunc_end0-count_bits.11
 	.cfi_endproc

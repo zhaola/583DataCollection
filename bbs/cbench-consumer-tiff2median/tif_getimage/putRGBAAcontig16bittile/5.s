@@ -17,6 +17,8 @@ putRGBAAcontig16bittile.5:              # @putRGBAAcontig16bittile.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_putRGBAAcontig16bittile+8, %rax
 	addq	$1, %rax
@@ -33,7 +35,8 @@ putRGBAAcontig16bittile.5:              # @putRGBAAcontig16bittile.5
 	shlq	$1, %rax
 	addq	%rax, %rdx
 	movq	%rdx, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	putRGBAAcontig16bittile.5, .Lfunc_end0-putRGBAAcontig16bittile.5
 	.cfi_endproc

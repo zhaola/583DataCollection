@@ -13,6 +13,8 @@ wave_check.1:                           # @wave_check.1
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._get_audio.c_wave_check+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._get_audio.c_wave_check+8
@@ -25,6 +27,8 @@ wave_check.1:                           # @wave_check.1
 	callq	fprintf
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	wave_check.1, .Lfunc_end0-wave_check.1
 	.cfi_endproc

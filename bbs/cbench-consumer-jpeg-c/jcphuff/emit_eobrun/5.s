@@ -17,10 +17,10 @@ emit_eobrun.5:                          # @emit_eobrun.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcphuff.c_emit_eobrun+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcphuff.c_emit_eobrun+24
 	movq	(%rdi), %rax
 	movq	(%rdi), %rcx
 	movl	92(%rcx), %ecx
@@ -28,7 +28,8 @@ emit_eobrun.5:                          # @emit_eobrun.5
 	movq	%rax, %rdi
 	movl	%ecx, %esi
 	callq	emit_bits
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_eobrun.5, .Lfunc_end0-emit_eobrun.5
 	.cfi_endproc

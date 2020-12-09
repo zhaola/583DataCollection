@@ -24,6 +24,8 @@ prepare_for_output_pass.20:             # @prepare_for_output_pass.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	24(%rax), %eax
@@ -38,8 +40,6 @@ prepare_for_output_pass.20:             # @prepare_for_output_pass.20
 	setne	%dl
 	andb	$1, %dl
 	movzbl	%dl, %edx
-	addq	__profc_.._jdmaster.c_prepare_for_output_pass+112, %rdx
-	movq	%rdx, __profc_.._jdmaster.c_prepare_for_output_pass+112
 	cmpl	$0, %ecx
 	movl	$2, %ecx
 	movl	$1, %edx
@@ -50,8 +50,8 @@ prepare_for_output_pass.20:             # @prepare_for_output_pass.20
 	movl	%eax, 28(%rcx)
 	movq	(%rsi), %rax
 	cmpl	$0, 80(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_output_pass.20, .Lfunc_end0-prepare_for_output_pass.20
 	.cfi_endproc

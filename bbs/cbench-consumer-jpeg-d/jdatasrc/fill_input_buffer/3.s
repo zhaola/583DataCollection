@@ -31,11 +31,10 @@ fill_input_buffer.3:                    # @fill_input_buffer.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdatasrc.c_fill_input_buffer, %rsi
-	movq	__profc_.._jdatasrc.c_fill_input_buffer+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdatasrc.c_fill_input_buffer+8
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$116, 40(%rax)
@@ -56,7 +55,8 @@ fill_input_buffer.3:                    # @fill_input_buffer.3
 	movq	64(%rax), %rax
 	movb	$-39, 1(%rax)
 	movq	$2, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fill_input_buffer.3, .Lfunc_end0-fill_input_buffer.3
 	.cfi_endproc

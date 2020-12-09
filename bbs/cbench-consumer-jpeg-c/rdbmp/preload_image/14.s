@@ -30,17 +30,17 @@ preload_image.14:                       # @preload_image.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_4:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	80(%rax), %eax
 	movl	%eax, %ecx
 	subl	$8, %ecx
-	je	.LBB0_2
-	jmp	.LBB0_5
 .LBB0_5:                                # %"14"
 	subl	$24, %eax
-	je	.LBB0_3
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	preload_image.14, .Lfunc_end0-preload_image.14
 	.cfi_endproc

@@ -17,13 +17,16 @@ compress_byte.21:                       # @compress_byte.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_compress_byte+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._wrgif.c_compress_byte+48
 	movq	(%rdi), %rdi
 	callq	clear_block
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compress_byte.21, .Lfunc_end0-compress_byte.21
 	.cfi_endproc

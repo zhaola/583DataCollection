@@ -24,15 +24,15 @@ start_pass_huff.7:                      # @start_pass_huff.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_start_pass_huff+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_start_pass_huff+48
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	cmpq	$0, 120(%rax,%rcx,8)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_huff.7, .Lfunc_end0-start_pass_huff.7
 	.cfi_endproc

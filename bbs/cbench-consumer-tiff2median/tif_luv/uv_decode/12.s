@@ -27,6 +27,8 @@ uv_decode.12:                           # @uv_decode.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero
@@ -57,7 +59,8 @@ uv_decode.12:                           # @uv_decode.12
 	movq	(%r9), %rax
 	movsd	%xmm0, (%rax)
 	movl	$0, (%r10)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	uv_decode.12, .Lfunc_end0-uv_decode.12
 	.cfi_endproc

@@ -17,6 +17,8 @@ iteration_loop.17:                      # @iteration_loop.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_iteration_loop+8, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ iteration_loop.17:                      # @iteration_loop.17
 	movslq	(%rcx), %rcx
 	imull	$-1, (%rax,%rcx,4), %edx
 	movl	%edx, (%rax,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	iteration_loop.17, .Lfunc_end0-iteration_loop.17
 	.cfi_endproc

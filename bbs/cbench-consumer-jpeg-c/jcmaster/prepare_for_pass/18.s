@@ -24,6 +24,8 @@ prepare_for_pass.18:                    # @prepare_for_pass.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	36(%rax), %eax
@@ -38,8 +40,8 @@ prepare_for_pass.18:                    # @prepare_for_pass.18
 	movl	%eax, 28(%rcx)
 	movq	(%rsi), %rax
 	cmpq	$0, 16(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_pass.18, .Lfunc_end0-prepare_for_pass.18
 	.cfi_endproc

@@ -39,6 +39,8 @@ Gsm_Decoder.2:                          # @Gsm_Decoder.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movq	(%rsi), %rax
@@ -62,7 +64,8 @@ Gsm_Decoder.2:                          # @Gsm_Decoder.2
 	callq	Gsm_Long_Term_Synthesis_Filtering
 	movq	32(%rbp), %rax
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Decoder.2, .Lfunc_end0-Gsm_Decoder.2
 	.cfi_endproc

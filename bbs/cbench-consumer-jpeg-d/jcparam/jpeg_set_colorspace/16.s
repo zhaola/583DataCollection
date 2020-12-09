@@ -23,11 +23,10 @@ jpeg_set_colorspace.16:                 # @jpeg_set_colorspace.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_set_colorspace, %rsi
-	movq	__profc_jpeg_set_colorspace+64, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_set_colorspace+64
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
 	movl	$8, 40(%rax)
@@ -40,7 +39,8 @@ jpeg_set_colorspace.16:                 # @jpeg_set_colorspace.16
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_set_colorspace.16, .Lfunc_end0-jpeg_set_colorspace.16
 	.cfi_endproc

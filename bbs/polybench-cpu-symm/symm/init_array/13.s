@@ -17,6 +17,8 @@ init_array.13:                          # @init_array.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._symm.c_init_array+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ init_array.13:                          # @init_array.13
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	init_array.13, .Lfunc_end0-init_array.13
 	.cfi_endproc

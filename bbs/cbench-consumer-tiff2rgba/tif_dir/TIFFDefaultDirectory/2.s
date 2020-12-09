@@ -23,6 +23,8 @@ TIFFDefaultDirectory.2:                 # @TIFFDefaultDirectory.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movl	$259, %esi              # imm = 0x103
@@ -33,7 +35,8 @@ TIFFDefaultDirectory.2:                 # @TIFFDefaultDirectory.2
 	movl	16(%rax), %ecx
 	andl	$-9, %ecx
 	movl	%ecx, 16(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFDefaultDirectory.2, .Lfunc_end0-TIFFDefaultDirectory.2
 	.cfi_endproc

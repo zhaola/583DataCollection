@@ -24,6 +24,8 @@ aiff_check2.5:                          # @aiff_check2.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._get_audio.c_aiff_check2+8, %rax
 	addq	$1, %rax
@@ -31,8 +33,8 @@ aiff_check2.5:                          # @aiff_check2.5
 	movq	(%rdi), %rax
 	movswl	(%rax), %eax
 	cmpl	$2, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	aiff_check2.5, .Lfunc_end0-aiff_check2.5
 	.cfi_endproc

@@ -23,6 +23,8 @@ PackBitsPreEncode.2:                    # @PackBitsPreEncode.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_packbits.c_PackBitsPreEncode+8, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ PackBitsPreEncode.2:                    # @PackBitsPreEncode.2
 	cltq
 	movq	(%rbx), %rcx
 	movq	%rax, 704(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PackBitsPreEncode.2, .Lfunc_end0-PackBitsPreEncode.2
 	.cfi_endproc

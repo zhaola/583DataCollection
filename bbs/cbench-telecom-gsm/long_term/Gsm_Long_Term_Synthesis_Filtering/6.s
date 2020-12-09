@@ -17,11 +17,14 @@ Gsm_Long_Term_Synthesis_Filtering.6:    # @Gsm_Long_Term_Synthesis_Filtering.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_Gsm_Long_Term_Synthesis_Filtering+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_Gsm_Long_Term_Synthesis_Filtering+48
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Long_Term_Synthesis_Filtering.6, .Lfunc_end0-Gsm_Long_Term_Synthesis_Filtering.6
 	.cfi_endproc

@@ -17,6 +17,8 @@ APCM_inverse_quantization.18:           # @APCM_inverse_quantization.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rpe.c_APCM_inverse_quantization, %rax
 	addq	$1, %rax
@@ -34,7 +36,8 @@ APCM_inverse_quantization.18:           # @APCM_inverse_quantization.18
 	cmovgl	%eax, %ecx
 	movslq	%ecx, %rax
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	APCM_inverse_quantization.18, .Lfunc_end0-APCM_inverse_quantization.18
 	.cfi_endproc

@@ -17,6 +17,8 @@ int_upsample.4:                         # @int_upsample.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r8
 	movq	%r8, %rax
@@ -26,7 +28,8 @@ int_upsample.4:                         # @int_upsample.4
 	movb	%al, (%rsi)
 	movl	(%rdx), %eax
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	int_upsample.4, .Lfunc_end0-int_upsample.4
 	.cfi_endproc

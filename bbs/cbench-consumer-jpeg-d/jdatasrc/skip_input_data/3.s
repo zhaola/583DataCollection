@@ -17,10 +17,10 @@ skip_input_data.3:                      # @skip_input_data.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdatasrc.c_skip_input_data, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdatasrc.c_skip_input_data
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
 	movq	(%rsi), %rcx
@@ -28,7 +28,8 @@ skip_input_data.3:                      # @skip_input_data.3
 	movq	%rcx, (%rsi)
 	movq	(%rdx), %rdi
 	callq	fill_input_buffer
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	skip_input_data.3, .Lfunc_end0-skip_input_data.3
 	.cfi_endproc

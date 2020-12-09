@@ -17,6 +17,8 @@ decrypt.3:                              # @decrypt.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_decrypt+32, %rax
 	addq	$1, %rax
@@ -184,7 +186,8 @@ decrypt.3:                              # @decrypt.3
 	movq	(%rdi), %rax
 	addq	$64, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decrypt.3, .Lfunc_end0-decrypt.3
 	.cfi_endproc

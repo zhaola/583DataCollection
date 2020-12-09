@@ -40,6 +40,8 @@ TIFFUnlinkDirectory.16:                 # @TIFFUnlinkDirectory.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_TIFFUnlinkDirectory, %rsi
 	movq	(%rbx), %rax
@@ -54,8 +56,8 @@ TIFFUnlinkDirectory.16:                 # @TIFFUnlinkDirectory.16
 	movl	16(%rax), %eax
 	andl	$512, %eax              # imm = 0x200
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFUnlinkDirectory.16, .Lfunc_end0-TIFFUnlinkDirectory.16
 	.cfi_endproc

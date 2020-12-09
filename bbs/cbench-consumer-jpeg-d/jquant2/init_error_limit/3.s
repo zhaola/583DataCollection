@@ -17,17 +17,18 @@ init_error_limit.3:                     # @init_error_limit.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jquant2.c_init_error_limit, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jquant2.c_init_error_limit
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
 	movl	(%rsi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	init_error_limit.3, .Lfunc_end0-init_error_limit.3
 	.cfi_endproc

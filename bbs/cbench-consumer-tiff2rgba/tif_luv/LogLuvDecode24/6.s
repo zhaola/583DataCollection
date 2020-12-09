@@ -25,6 +25,8 @@ LogLuvDecode24.6:                       # @LogLuvDecode24.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rdi
@@ -33,8 +35,8 @@ LogLuvDecode24.6:                       # @LogLuvDecode24.6
 	movl	%eax, (%rcx)
 	movq	(%rsi), %rax
 	cmpl	$2, (%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogLuvDecode24.6, .Lfunc_end0-LogLuvDecode24.6
 	.cfi_endproc

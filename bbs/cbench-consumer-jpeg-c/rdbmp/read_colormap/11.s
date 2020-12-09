@@ -23,6 +23,8 @@ read_colormap.11:                       # @read_colormap.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._rdbmp.c_read_colormap, %rsi
 	movq	__profc_.._rdbmp.c_read_colormap+32, %rax
@@ -43,7 +45,8 @@ read_colormap.11:                       # @read_colormap.11
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_colormap.11, .Lfunc_end0-read_colormap.11
 	.cfi_endproc

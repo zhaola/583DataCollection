@@ -17,6 +17,8 @@ gsm_L_sub.8:                            # @gsm_L_sub.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_gsm_L_sub+8, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ gsm_L_sub.8:                            # @gsm_L_sub.8
 	movq	(%rdi), %rax
 	subq	(%rsi), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_L_sub.8, .Lfunc_end0-gsm_L_sub.8
 	.cfi_endproc

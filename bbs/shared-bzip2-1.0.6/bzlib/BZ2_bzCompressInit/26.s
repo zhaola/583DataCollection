@@ -28,6 +28,8 @@ BZ2_bzCompressInit.26:                  # @BZ2_bzCompressInit.26
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"26"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_BZ2_bzCompressInit, %rax
 	movq	__profc_BZ2_bzCompressInit+120, %rcx
@@ -45,7 +47,8 @@ BZ2_bzCompressInit.26:                  # @BZ2_bzCompressInit.26
 	movq	%r14, %rdi
 	movq	%r15, %rsi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzCompressInit.26, .Lfunc_end0-BZ2_bzCompressInit.26
 	.cfi_endproc

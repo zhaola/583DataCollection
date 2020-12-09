@@ -31,6 +31,8 @@ start_output_tga.11:                    # @start_output_tga.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movq	152(%rax), %rax
@@ -53,7 +55,8 @@ start_output_tga.11:                    # @start_output_tga.11
 	movzbl	(%rax,%rcx), %edi
 	movq	(%r14), %rsi
 	callq	_IO_putc
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_output_tga.11, .Lfunc_end0-start_output_tga.11
 	.cfi_endproc

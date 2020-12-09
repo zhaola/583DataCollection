@@ -32,14 +32,16 @@ pix24fromXYZ.9:                         # @pix24fromXYZ.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movsd	(%rsi), %xmm1           # xmm1 = mem[0],zero
 	callq	uv_encode
 	movl	%eax, (%rbx)
 	cmpl	$0, (%rbx)
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix24fromXYZ.9, .Lfunc_end0-pix24fromXYZ.9
 	.cfi_endproc

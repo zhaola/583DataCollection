@@ -18,6 +18,8 @@ consume_data.12:                        # @consume_data.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rdi
 	movq	(%rsi,%rdi,8), %rsi
@@ -30,7 +32,8 @@ consume_data.12:                        # @consume_data.12
 	addq	%rdx, %rcx
 	movq	%rcx, (%r9)
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_data.12, .Lfunc_end0-consume_data.12
 	.cfi_endproc

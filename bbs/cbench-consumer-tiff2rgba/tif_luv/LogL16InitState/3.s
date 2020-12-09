@@ -24,12 +24,14 @@ LogL16InitState.3:                      # @LogL16InitState.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movzwl	58(%rax), %eax
 	cmpl	$32844, %eax            # imm = 0x804C
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogL16InitState.3, .Lfunc_end0-LogL16InitState.3
 	.cfi_endproc

@@ -33,6 +33,8 @@ start_pass_huff_decoder.15:             # @start_pass_huff_decoder.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movq	(%rbx), %rax
@@ -44,7 +46,6 @@ start_pass_huff_decoder.15:             # @start_pass_huff_decoder.15
 	shlq	$3, %rcx
 	addq	%rcx, %rdx
 	movq	%rax, %rsi
-	callq	jpeg_make_d_derived_tbl
 	movq	(%rbx), %rdi
 	movq	(%rbx), %rax
 	movslq	(%r15), %rcx
@@ -54,11 +55,11 @@ start_pass_huff_decoder.15:             # @start_pass_huff_decoder.15
 	movslq	(%r15), %rax
 	shlq	$3, %rax
 	addq	%rax, %rdx
-	callq	jpeg_make_d_derived_tbl
 	movq	(%r12), %rax
 	movslq	(%r14), %rcx
 	movl	$0, 32(%rax,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_huff_decoder.15, .Lfunc_end0-start_pass_huff_decoder.15
 	.cfi_endproc

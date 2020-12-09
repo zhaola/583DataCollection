@@ -17,6 +17,8 @@ Luv24fromLuv48.6:                       # @Luv24fromLuv48.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_Luv24fromLuv48+24, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ Luv24fromLuv48.6:                       # @Luv24fromLuv48.6
 	subl	$3314, %eax             # imm = 0xCF2
 	sarl	$2, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Luv24fromLuv48.6, .Lfunc_end0-Luv24fromLuv48.6
 	.cfi_endproc

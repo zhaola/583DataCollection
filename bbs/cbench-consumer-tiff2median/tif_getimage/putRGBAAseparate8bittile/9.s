@@ -17,6 +17,8 @@ putRGBAAseparate8bittile.9:             # @putRGBAAseparate8bittile.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_getimage.c_putRGBAAseparate8bittile+64, %rax
 	addq	$1, %rax
@@ -52,7 +54,8 @@ putRGBAAseparate8bittile.9:             # @putRGBAAseparate8bittile.9
 	addq	$4, %rdx
 	movq	%rdx, (%r8)
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	putRGBAAseparate8bittile.9, .Lfunc_end0-putRGBAAseparate8bittile.9
 	.cfi_endproc

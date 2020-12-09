@@ -13,6 +13,8 @@ LogL16InitState.5:                      # @LogL16InitState.5
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._tif_luv.c_LogL16InitState+56, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_luv.c_LogL16InitState+56
@@ -21,6 +23,8 @@ LogL16InitState.5:                      # @LogL16InitState.5
 	movl	$1026, %edx             # imm = 0x402
 	movabsq	$__PRETTY_FUNCTION__.LogL16InitState, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogL16InitState.5, .Lfunc_end0-LogL16InitState.5
 	.cfi_endproc

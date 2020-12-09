@@ -24,13 +24,15 @@ BZ2_bzCompressInit.2:                   # @BZ2_bzCompressInit.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_bzCompressInit, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_BZ2_bzCompressInit
 	cmpq	$0, (%rdi)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzCompressInit.2, .Lfunc_end0-BZ2_bzCompressInit.2
 	.cfi_endproc

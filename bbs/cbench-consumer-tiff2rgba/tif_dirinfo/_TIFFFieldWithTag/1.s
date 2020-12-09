@@ -32,6 +32,8 @@ _TIFFFieldWithTag.1:                    # @_TIFFFieldWithTag.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %edx
 	movabsq	$.str.4, %rdi
@@ -39,8 +41,8 @@ _TIFFFieldWithTag.1:                    # @_TIFFFieldWithTag.1
 	movb	$0, %al
 	callq	TIFFError
 	cmpq	$0, (%rbx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFFieldWithTag.1, .Lfunc_end0-_TIFFFieldWithTag.1
 	.cfi_endproc

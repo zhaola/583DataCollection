@@ -74,6 +74,8 @@ initYCbCrConversion.7:                  # @initYCbCrConversion.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_8:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rax), %rdi
@@ -89,10 +91,10 @@ initYCbCrConversion.7:                  # @initYCbCrConversion.7
 	addl	$-17, %eax
 	movl	%eax, %ecx
 	subl	$51, %ecx
-	ja	.LBB0_1
 # %bb.9:                                # %"7"
 	movq	.LJTI0_0(,%rax,8), %rax
-	jmpq	*%rax
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	initYCbCrConversion.7, .Lfunc_end0-initYCbCrConversion.7
 	.cfi_endproc

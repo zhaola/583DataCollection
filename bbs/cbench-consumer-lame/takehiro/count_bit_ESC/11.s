@@ -24,14 +24,16 @@ count_bit_ESC.11:                       # @count_bit_ESC.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._takehiro.c_count_bit_ESC+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._takehiro.c_count_bit_ESC+40
 	movl	(%rdi), %eax
 	cmpl	(%rsi), %eax
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	count_bit_ESC.11, .Lfunc_end0-count_bit_ESC.11
 	.cfi_endproc

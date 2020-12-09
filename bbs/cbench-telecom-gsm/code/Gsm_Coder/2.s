@@ -39,6 +39,8 @@ Gsm_Coder.2:                            # @Gsm_Coder.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$Gsm_Coder.e, %rax
 	addq	$10, %rax
@@ -76,7 +78,8 @@ Gsm_Coder.2:                            # @Gsm_Coder.2
 	callq	Gsm_RPE_Encoding
 	movq	48(%rbp), %rax
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Gsm_Coder.2, .Lfunc_end0-Gsm_Coder.2
 	.cfi_endproc

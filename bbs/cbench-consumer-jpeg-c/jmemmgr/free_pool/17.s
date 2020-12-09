@@ -17,6 +17,8 @@ free_pool.17:                           # @free_pool.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
@@ -25,7 +27,8 @@ free_pool.17:                           # @free_pool.17
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	movq	$0, 112(%rax,%rcx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	free_pool.17, .Lfunc_end0-free_pool.17
 	.cfi_endproc

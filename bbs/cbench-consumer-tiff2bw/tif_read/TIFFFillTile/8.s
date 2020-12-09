@@ -24,6 +24,8 @@ TIFFFillTile.8:                         # @TIFFFillTile.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r8
 	movl	16(%r8), %eax
@@ -36,8 +38,8 @@ TIFFFillTile.8:                         # @TIFFFillTile.8
 	addl	(%rcx), %eax
 	movq	(%rdi), %rcx
 	cmpl	760(%rcx), %eax
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFillTile.8, .Lfunc_end0-TIFFFillTile.8
 	.cfi_endproc

@@ -17,12 +17,15 @@ ResvFrameBegin.4:                       # @ResvFrameBegin.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_ResvFrameBegin+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_ResvFrameBegin+8
 	movl	$2040, (%rdi)           # imm = 0x7F8
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ResvFrameBegin.4, .Lfunc_end0-ResvFrameBegin.4
 	.cfi_endproc

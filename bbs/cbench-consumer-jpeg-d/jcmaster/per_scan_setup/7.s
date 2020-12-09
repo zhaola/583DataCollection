@@ -25,6 +25,8 @@ per_scan_setup.7:                       # @per_scan_setup.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rax
 	movl	40(%rax), %edi
@@ -32,7 +34,6 @@ per_scan_setup.7:                       # @per_scan_setup.7
 	movl	304(%rax), %eax
 	shll	$3, %eax
 	movslq	%eax, %rsi
-	callq	jdiv_round_up
 	movq	(%rbx), %rcx
 	movl	%eax, 352(%rcx)
 	movq	(%rbx), %rax
@@ -41,13 +42,13 @@ per_scan_setup.7:                       # @per_scan_setup.7
 	movl	308(%rax), %eax
 	shll	$3, %eax
 	movslq	%eax, %rsi
-	callq	jdiv_round_up
 	movq	(%rbx), %rcx
 	movl	%eax, 356(%rcx)
 	movq	(%rbx), %rax
 	movl	$0, 360(%rax)
 	movl	$0, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	per_scan_setup.7, .Lfunc_end0-per_scan_setup.7
 	.cfi_endproc

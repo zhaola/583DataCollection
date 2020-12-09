@@ -38,6 +38,8 @@ main_data.4:                            # @main_data.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._formatBitstream.c_main_data, %rsi
 	movq	(%r14), %r15
@@ -105,7 +107,8 @@ main_data.4:                            # @main_data.4
 	callq	*%rbx
 	addl	(%r13), %eax
 	movl	%eax, (%r13)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main_data.4, .Lfunc_end0-main_data.4
 	.cfi_endproc

@@ -17,6 +17,8 @@ PutVbrTag.9:                            # @PutVbrTag.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movb	$-13, pbtStreamBuffer+1
 	movzbl	pbtStreamBuffer+2, %eax
@@ -25,7 +27,8 @@ PutVbrTag.9:                            # @PutVbrTag.9
 	movsbl	(%rdi), %eax
 	orl	$4294967168, %eax       # imm = 0xFFFFFF80
 	movb	%al, pbtStreamBuffer+2
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PutVbrTag.9, .Lfunc_end0-PutVbrTag.9
 	.cfi_endproc

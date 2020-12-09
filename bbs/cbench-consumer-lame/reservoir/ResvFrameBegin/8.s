@@ -24,6 +24,8 @@ ResvFrameBegin.8:                       # @ResvFrameBegin.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rsi
@@ -31,8 +33,8 @@ ResvFrameBegin.8:                       # @ResvFrameBegin.8
 	addl	ResvSize, %eax
 	movl	%eax, (%rdx)
 	cmpl	$7680, (%rcx)           # imm = 0x1E00
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ResvFrameBegin.8, .Lfunc_end0-ResvFrameBegin.8
 	.cfi_endproc

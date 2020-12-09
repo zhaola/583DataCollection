@@ -17,6 +17,8 @@ EstimateStripByteCounts.20:             # @EstimateStripByteCounts.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	imull	(%rsi), %eax
@@ -24,7 +26,8 @@ EstimateStripByteCounts.20:             # @EstimateStripByteCounts.20
 	movq	256(%rdx), %rdx
 	movzwl	(%rcx), %ecx
 	movl	%eax, (%rdx,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	EstimateStripByteCounts.20, .Lfunc_end0-EstimateStripByteCounts.20
 	.cfi_endproc

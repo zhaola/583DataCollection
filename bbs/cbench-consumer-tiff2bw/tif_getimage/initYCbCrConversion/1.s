@@ -32,6 +32,8 @@ initYCbCrConversion.1:                  # @initYCbCrConversion.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	$5176, %edi             # imm = 0x1438
 	callq	_TIFFmalloc
@@ -39,8 +41,8 @@ initYCbCrConversion.1:                  # @initYCbCrConversion.1
 	movq	%rax, 104(%rcx)
 	movq	(%rbx), %rax
 	cmpq	$0, 104(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	initYCbCrConversion.1, .Lfunc_end0-initYCbCrConversion.1
 	.cfi_endproc

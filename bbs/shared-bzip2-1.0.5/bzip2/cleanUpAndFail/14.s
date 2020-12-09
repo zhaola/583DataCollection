@@ -24,13 +24,15 @@ cleanUpAndFail.14:                      # @cleanUpAndFail.14
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"14"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_cleanUpAndFail+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzip2.c_cleanUpAndFail+16
 	cmpl	$0, numFileNames
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	cleanUpAndFail.14, .Lfunc_end0-cleanUpAndFail.14
 	.cfi_endproc

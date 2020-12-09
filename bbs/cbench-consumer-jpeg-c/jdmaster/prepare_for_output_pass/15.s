@@ -40,8 +40,9 @@ prepare_for_output_pass.15:             # @prepare_for_output_pass.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdmaster.c_prepare_for_output_pass, %rsi
 	movq	(%rbx), %rax
 	movq	592(%rax), %rax
 	movq	(%rax), %r14
@@ -53,8 +54,8 @@ prepare_for_output_pass.15:             # @prepare_for_output_pass.15
 	callq	*%r14
 	movq	(%rbx), %rax
 	cmpl	$0, 100(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	prepare_for_output_pass.15, .Lfunc_end0-prepare_for_output_pass.15
 	.cfi_endproc

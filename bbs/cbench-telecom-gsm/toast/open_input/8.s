@@ -24,14 +24,16 @@ open_input.8:                           # @open_input.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	inname, %rdi
 	movabsq	$.str.43, %rsi
 	callq	fopen
 	movq	%rax, in
 	cmpq	$0, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	open_input.8, .Lfunc_end0-open_input.8
 	.cfi_endproc

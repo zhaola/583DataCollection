@@ -24,14 +24,14 @@ per_scan_setup.5:                       # @per_scan_setup.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdinput.c_per_scan_setup+64, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdinput.c_per_scan_setup+64
 	movq	(%rdi), %rax
 	cmpl	$4, 416(%rax)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	per_scan_setup.5, .Lfunc_end0-per_scan_setup.5
 	.cfi_endproc

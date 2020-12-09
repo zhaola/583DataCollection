@@ -17,6 +17,8 @@ main.20:                                # @main.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main+32, %rax
 	addq	$1, %rax
@@ -25,11 +27,11 @@ main.20:                                # @main.20
 	callq	xopenme_clock_end
 	callq	xopenme_dump_state
 	callq	xopenme_finish
-	movq	AdjMatrix, %rdi
 	callq	free
 	movq	rgnNodes, %rdi
 	callq	free
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main.20, .Lfunc_end0-main.20
 	.cfi_endproc

@@ -23,13 +23,15 @@ main1.19:                               # @main1.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_main1+96, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_main1+96
-	callq	jinit_write_ppm
 	movq	%rax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.19, .Lfunc_end0-main1.19
 	.cfi_endproc

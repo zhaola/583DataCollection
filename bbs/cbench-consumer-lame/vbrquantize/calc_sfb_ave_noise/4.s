@@ -30,6 +30,8 @@ calc_sfb_ave_noise.4:                   # @calc_sfb_ave_noise.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -42,8 +44,8 @@ calc_sfb_ave_noise.4:                   # @calc_sfb_ave_noise.4
 	subsd	%xmm1, %xmm0
 	movsd	%xmm0, (%r8)
 	cmpl	$8206, (%rdx)           # imm = 0x200E
-	jl	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	calc_sfb_ave_noise.4, .Lfunc_end0-calc_sfb_ave_noise.4
 	.cfi_endproc

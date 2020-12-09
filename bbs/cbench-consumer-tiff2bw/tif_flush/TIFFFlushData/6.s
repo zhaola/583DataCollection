@@ -23,6 +23,8 @@ TIFFFlushData.6:                        # @TIFFFlushData.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFFlushData+8, %rax
 	addq	$1, %rax
@@ -30,7 +32,8 @@ TIFFFlushData.6:                        # @TIFFFlushData.6
 	movq	(%rdi), %rdi
 	callq	TIFFFlushData1
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFlushData.6, .Lfunc_end0-TIFFFlushData.6
 	.cfi_endproc

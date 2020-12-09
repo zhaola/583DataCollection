@@ -17,6 +17,8 @@ TIFFNumberOfTiles.1:                    # @TIFFNumberOfTiles.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFNumberOfTiles+24, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ TIFFNumberOfTiles.1:                    # @TIFFNumberOfTiles.1
 	movq	(%rdi), %rax
 	movl	24(%rax), %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFNumberOfTiles.1, .Lfunc_end0-TIFFNumberOfTiles.1
 	.cfi_endproc

@@ -17,6 +17,8 @@ get_histogram.4:                        # @get_histogram.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiffmedian.c_get_histogram+56, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ get_histogram.4:                        # @get_histogram.4
 	addq	$4, %rcx
 	movq	%rcx, (%rdi)
 	movl	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_histogram.4, .Lfunc_end0-get_histogram.4
 	.cfi_endproc

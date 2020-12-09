@@ -17,6 +17,8 @@ decode_mcu_DC_refine.6:                 # @decode_mcu_DC_refine.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	%rax, 40(%rsi)
@@ -42,7 +44,8 @@ decode_mcu_DC_refine.6:                 # @decode_mcu_DC_refine.6
 	addq	$12, %rax
 	movq	%rax, 48(%rsi)
 	movl	$0, (%r9)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	decode_mcu_DC_refine.6, .Lfunc_end0-decode_mcu_DC_refine.6
 	.cfi_endproc

@@ -24,6 +24,8 @@ output.2:                               # @output.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	72(%rax), %rax
@@ -37,8 +39,8 @@ output.2:                               # @output.2
 	movb	%al, 124(%rcx,%rdx)
 	movq	(%rdi), %rax
 	cmpl	$255, 120(%rax)
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	output.2, .Lfunc_end0-output.2
 	.cfi_endproc

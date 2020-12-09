@@ -17,6 +17,8 @@ h2v2_downsample.4:                      # @h2v2_downsample.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movzbl	(%rax), %r8d
@@ -45,7 +47,8 @@ h2v2_downsample.4:                      # @h2v2_downsample.4
 	movq	(%rsi), %rax
 	addq	$2, %rax
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	h2v2_downsample.4, .Lfunc_end0-h2v2_downsample.4
 	.cfi_endproc

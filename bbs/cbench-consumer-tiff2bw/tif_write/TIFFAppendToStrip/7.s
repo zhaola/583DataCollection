@@ -17,6 +17,8 @@ TIFFAppendToStrip.7:                    # @TIFFAppendToStrip.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	248(%rax), %rax
@@ -24,7 +26,8 @@ TIFFAppendToStrip.7:                    # @TIFFAppendToStrip.7
 	movl	(%rax,%rcx,4), %eax
 	movq	(%rdx), %rcx
 	movl	%eax, 548(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFAppendToStrip.7, .Lfunc_end0-TIFFAppendToStrip.7
 	.cfi_endproc

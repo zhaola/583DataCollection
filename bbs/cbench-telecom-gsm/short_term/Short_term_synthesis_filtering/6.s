@@ -17,11 +17,14 @@ Short_term_synthesis_filtering.6:       # @Short_term_synthesis_filtering.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._short_term.c_Short_term_synthesis_filtering+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._short_term.c_Short_term_synthesis_filtering+32
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Short_term_synthesis_filtering.6, .Lfunc_end0-Short_term_synthesis_filtering.6
 	.cfi_endproc

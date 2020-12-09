@@ -29,11 +29,10 @@ jpeg_fill_bit_buffer.22:                # @jpeg_fill_bit_buffer.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_fill_bit_buffer, %rsi
-	movq	__profc_jpeg_fill_bit_buffer+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_fill_bit_buffer+32
 	movq	(%rbx), %rax
 	movq	40(%rax), %rax
 	movq	(%rax), %rax
@@ -53,7 +52,8 @@ jpeg_fill_bit_buffer.22:                # @jpeg_fill_bit_buffer.22
 	movq	(%rbx), %rax
 	movq	48(%rax), %rax
 	movl	$1, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_fill_bit_buffer.22, .Lfunc_end0-jpeg_fill_bit_buffer.22
 	.cfi_endproc

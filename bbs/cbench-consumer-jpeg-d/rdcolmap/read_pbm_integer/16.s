@@ -17,6 +17,8 @@ read_pbm_integer.16:                    # @read_pbm_integer.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdcolmap.c_read_pbm_integer+8, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ read_pbm_integer.16:                    # @read_pbm_integer.16
 	subl	$48, %eax
 	addl	(%rdi), %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_pbm_integer.16, .Lfunc_end0-read_pbm_integer.16
 	.cfi_endproc

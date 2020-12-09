@@ -17,10 +17,10 @@ emit_dht.1:                             # @emit_dht.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmarker.c_emit_dht+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmarker.c_emit_dht+24
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	movq	152(%rax,%rcx,8), %rax
@@ -28,7 +28,8 @@ emit_dht.1:                             # @emit_dht.1
 	movl	(%rsi), %eax
 	addl	$16, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_dht.1, .Lfunc_end0-emit_dht.1
 	.cfi_endproc

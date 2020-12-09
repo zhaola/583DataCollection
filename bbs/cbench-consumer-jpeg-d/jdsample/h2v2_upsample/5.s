@@ -25,10 +25,10 @@ h2v2_upsample.5:                        # @h2v2_upsample.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdsample.c_h2v2_upsample+8, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdsample.c_h2v2_upsample+8
 	movq	(%rdi), %rax
 	movl	(%rbx), %esi
 	movq	(%rdi), %r8
@@ -39,14 +39,14 @@ h2v2_upsample.5:                        # @h2v2_upsample.5
 	movq	%rax, %rdi
 	movq	%r8, %rdx
 	movl	$1, %r8d
-	callq	jcopy_sample_rows
 	movl	(%r14), %eax
 	addl	$1, %eax
 	movl	%eax, (%r14)
 	movl	(%rbx), %eax
 	addl	$2, %eax
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	h2v2_upsample.5, .Lfunc_end0-h2v2_upsample.5
 	.cfi_endproc

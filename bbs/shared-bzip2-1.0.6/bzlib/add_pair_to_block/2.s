@@ -17,6 +17,8 @@ add_pair_to_block.2:                    # @add_pair_to_block.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	648(%rax), %eax
@@ -30,7 +32,8 @@ add_pair_to_block.2:                    # @add_pair_to_block.2
 	xorl	BZ2_crc32Table(,%rcx,4), %eax
 	movq	(%rdi), %rcx
 	movl	%eax, 648(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	add_pair_to_block.2, .Lfunc_end0-add_pair_to_block.2
 	.cfi_endproc

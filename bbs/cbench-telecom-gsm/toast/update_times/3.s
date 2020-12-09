@@ -18,6 +18,8 @@ update_times.3:                         # @update_times.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_update_times+8, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ update_times.3:                         # @update_times.3
 	movq	%rax, 8(%rsi)
 	movq	outname, %rdi
 	callq	utime
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	update_times.3, .Lfunc_end0-update_times.3
 	.cfi_endproc

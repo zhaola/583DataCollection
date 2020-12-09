@@ -84,13 +84,13 @@ main1.15:                               # @main1.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_7:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rsi
 	movq	%rbx, %rdi
-	callq	jpeg_stdio_src
 	movq	%rbx, %rdi
 	movl	$1, %esi
-	callq	jpeg_read_header
 	movl	(%r12), %esi
 	movq	(%r15), %rdx
 	movq	%rbx, %rdi
@@ -101,10 +101,10 @@ main1.15:                               # @main1.15
 	movl	requested_fmt(%rip), %eax
 	movq	%rax, %rcx
 	subq	$5, %rcx
-	ja	.LBB0_1
 # %bb.8:                                # %"15"
 	movq	.LJTI0_0(,%rax,8), %rax
-	jmpq	*%rax
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.15, .Lfunc_end0-main1.15
 	.cfi_endproc

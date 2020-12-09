@@ -24,15 +24,15 @@ emit_sof.1:                             # @emit_sof.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmarker.c_emit_sof+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmarker.c_emit_sof+24
 	movq	(%rdi), %rax
 	movl	40(%rax), %eax
 	cmpq	$65535, %rax            # imm = 0xFFFF
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_sof.1, .Lfunc_end0-emit_sof.1
 	.cfi_endproc

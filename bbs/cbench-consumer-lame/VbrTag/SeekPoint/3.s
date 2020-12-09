@@ -22,13 +22,16 @@ SeekPoint.3:                            # @SeekPoint.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movss	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero,zero,zero
 	movq	__profc_SeekPoint+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_SeekPoint+8
 	movss	%xmm0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	SeekPoint.3, .Lfunc_end0-SeekPoint.3
 	.cfi_endproc

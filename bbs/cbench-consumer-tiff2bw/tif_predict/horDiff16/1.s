@@ -17,6 +17,8 @@ horDiff16.1:                            # @horDiff16.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movl	(%rsi), %ecx
@@ -29,7 +31,8 @@ horDiff16.1:                            # @horDiff16.1
 	shlq	$1, %rax
 	addq	%rax, %rcx
 	movq	%rcx, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	horDiff16.1, .Lfunc_end0-horDiff16.1
 	.cfi_endproc

@@ -32,8 +32,9 @@ jpeg_finish_output.12:                  # @jpeg_finish_output.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_finish_output, %rsi
 	movq	(%rdi), %rax
 	movq	560(%rax), %rax
 	movq	(%rax), %rbx
@@ -44,8 +45,8 @@ jpeg_finish_output.12:                  # @jpeg_finish_output.12
 	movq	%r14, %rdi
 	callq	*%rbx
 	cmpl	$0, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_finish_output.12, .Lfunc_end0-jpeg_finish_output.12
 	.cfi_endproc

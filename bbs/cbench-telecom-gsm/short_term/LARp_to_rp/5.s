@@ -17,6 +17,8 @@ LARp_to_rp.5:                           # @LARp_to_rp.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
 	movq	__profc_.._short_term.c_LARp_to_rp+8, %rcx
@@ -26,7 +28,8 @@ LARp_to_rp.5:                           # @LARp_to_rp.5
 	movswl	(%rcx), %ecx
 	subl	%ecx, %eax
 	movl	%eax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LARp_to_rp.5, .Lfunc_end0-LARp_to_rp.5
 	.cfi_endproc

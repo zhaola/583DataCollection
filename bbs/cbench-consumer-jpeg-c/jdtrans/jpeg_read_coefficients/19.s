@@ -17,17 +17,18 @@ jpeg_read_coefficients.19:              # @jpeg_read_coefficients.19
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"19"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_read_coefficients+64, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_read_coefficients+64
 	movq	(%rdi), %rax
 	movl	$210, 28(%rax)
 	movq	(%rdi), %rax
 	movq	544(%rax), %rax
 	movq	32(%rax), %rax
 	movq	%rax, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_coefficients.19, .Lfunc_end0-jpeg_read_coefficients.19
 	.cfi_endproc

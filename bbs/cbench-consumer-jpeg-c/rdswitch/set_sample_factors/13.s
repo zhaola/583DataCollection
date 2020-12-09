@@ -24,13 +24,15 @@ set_sample_factors.13:                  # @set_sample_factors.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_set_sample_factors+40, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_set_sample_factors+40
 	cmpl	$4, (%rdi)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_sample_factors.13, .Lfunc_end0-set_sample_factors.13
 	.cfi_endproc

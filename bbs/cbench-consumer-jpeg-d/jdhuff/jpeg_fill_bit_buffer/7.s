@@ -17,10 +17,10 @@ jpeg_fill_bit_buffer.7:                 # @jpeg_fill_bit_buffer.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_fill_bit_buffer+40, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_fill_bit_buffer+40
 	movq	(%rdi), %rax
 	movq	40(%rax), %rax
 	movq	32(%rax), %rax
@@ -31,7 +31,8 @@ jpeg_fill_bit_buffer.7:                 # @jpeg_fill_bit_buffer.7
 	movq	32(%rax), %rax
 	movq	8(%rax), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_fill_bit_buffer.7, .Lfunc_end0-jpeg_fill_bit_buffer.7
 	.cfi_endproc

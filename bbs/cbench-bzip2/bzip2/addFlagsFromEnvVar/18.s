@@ -17,6 +17,8 @@ addFlagsFromEnvVar.18:                  # @addFlagsFromEnvVar.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_addFlagsFromEnvVar+24, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ addFlagsFromEnvVar.18:                  # @addFlagsFromEnvVar.18
 	movl	(%rdi), %eax
 	addl	$1, %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	addFlagsFromEnvVar.18, .Lfunc_end0-addFlagsFromEnvVar.18
 	.cfi_endproc

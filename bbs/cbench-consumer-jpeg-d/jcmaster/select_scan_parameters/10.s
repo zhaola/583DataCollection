@@ -17,6 +17,8 @@ select_scan_parameters.10:              # @select_scan_parameters.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	80(%rax), %rax
@@ -26,7 +28,8 @@ select_scan_parameters.10:              # @select_scan_parameters.10
 	movq	(%rdi), %rcx
 	movslq	(%rsi), %rdx
 	movq	%rax, 320(%rcx,%rdx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	select_scan_parameters.10, .Lfunc_end0-select_scan_parameters.10
 	.cfi_endproc

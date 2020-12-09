@@ -24,12 +24,14 @@ TIFFFetchPerSampleShorts.1:             # @TIFFFetchPerSampleShorts.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	%rdi, (%rsi)
 	movslq	(%rdx), %rax
 	cmpq	$10, %rax
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchPerSampleShorts.1, .Lfunc_end0-TIFFFetchPerSampleShorts.1
 	.cfi_endproc

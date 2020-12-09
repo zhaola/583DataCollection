@@ -24,14 +24,16 @@ LZWCleanup.1:                           # @LZWCleanup.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_lzw.c_LZWCleanup+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_lzw.c_LZWCleanup+8
 	movq	(%rdi), %rax
 	cmpl	$0, 12(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWCleanup.1, .Lfunc_end0-LZWCleanup.1
 	.cfi_endproc

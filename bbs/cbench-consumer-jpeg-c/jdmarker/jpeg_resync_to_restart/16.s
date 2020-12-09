@@ -60,6 +60,8 @@ jpeg_resync_to_restart.16:              # @jpeg_resync_to_restart.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_5:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rax), %rax
@@ -76,7 +78,6 @@ jpeg_resync_to_restart.16:              # @jpeg_resync_to_restart.16
 	movq	(%rbx), %rax
 	movq	8(%rax), %r15
 	movq	%r15, %rdi
-	movl	$__profd_jpeg_resync_to_restart, %esi
 	movl	$1, %edx
 	callq	__llvm_profile_instrument_target
 	movq	%rbx, %rdi
@@ -85,17 +86,13 @@ jpeg_resync_to_restart.16:              # @jpeg_resync_to_restart.16
 	movl	(%r14), %eax
 	movl	%eax, %ecx
 	subl	$1, %ecx
-	je	.LBB0_2
-	jmp	.LBB0_6
 .LBB0_6:                                # %"16"
 	movl	%eax, %ecx
 	subl	$2, %ecx
-	je	.LBB0_3
-	jmp	.LBB0_7
 .LBB0_7:                                # %"16"
 	subl	$3, %eax
-	je	.LBB0_4
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_resync_to_restart.16, .Lfunc_end0-jpeg_resync_to_restart.16
 	.cfi_endproc

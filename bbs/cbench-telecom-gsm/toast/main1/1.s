@@ -32,6 +32,8 @@ main1.1:                                # @main1.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %edi
 	movq	(%rsi), %rsi
@@ -39,8 +41,8 @@ main1.1:                                # @main1.1
 	callq	getopt
 	movl	%eax, (%rbx)
 	cmpl	$-1, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.1, .Lfunc_end0-main1.1
 	.cfi_endproc

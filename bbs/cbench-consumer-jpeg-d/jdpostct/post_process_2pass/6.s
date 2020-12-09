@@ -50,8 +50,9 @@ post_process_2pass.6:                   # @post_process_2pass.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdpostct.c_post_process_2pass, %rsi
 	movq	(%rdi), %rax
 	movq	608(%rax), %rax
 	movq	8(%rax), %r9
@@ -91,8 +92,8 @@ post_process_2pass.6:                   # @post_process_2pass.6
 	movl	40(%rax), %eax
 	movq	(%rbx), %rcx
 	cmpl	32(%rcx), %eax
-	jae	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	post_process_2pass.6, .Lfunc_end0-post_process_2pass.6
 	.cfi_endproc

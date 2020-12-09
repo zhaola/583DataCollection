@@ -22,16 +22,17 @@ jpeg_CreateCompress.12:                 # @jpeg_CreateCompress.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
-	movq	__profc_jpeg_CreateCompress+16, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_CreateCompress+16
 	movq	(%rdi), %rax
 	movsd	%xmm0, 56(%rax)
 	movq	(%rdi), %rax
 	movl	$100, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_CreateCompress.12, .Lfunc_end0-jpeg_CreateCompress.12
 	.cfi_endproc

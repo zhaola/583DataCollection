@@ -17,12 +17,15 @@ astex_codelet__1.22:                    # @astex_codelet__1.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_astex_codelet__1+72, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_astex_codelet__1+72
 	movl	$-32768, (%rdi)         # imm = 0x8000
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	astex_codelet__1.22, .Lfunc_end0-astex_codelet__1.22
 	.cfi_endproc

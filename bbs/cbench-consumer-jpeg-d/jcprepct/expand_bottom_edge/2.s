@@ -17,6 +17,8 @@ expand_bottom_edge.2:                   # @expand_bottom_edge.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r8
 	movl	(%rsi), %esi
@@ -28,8 +30,8 @@ expand_bottom_edge.2:                   # @expand_bottom_edge.2
 	movq	%rax, %rdx
 	movl	%r10d, %ecx
 	movl	$1, %r8d
-	callq	jcopy_sample_rows
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	expand_bottom_edge.2, .Lfunc_end0-expand_bottom_edge.2
 	.cfi_endproc

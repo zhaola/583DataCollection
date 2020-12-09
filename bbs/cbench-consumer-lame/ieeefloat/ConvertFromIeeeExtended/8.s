@@ -24,13 +24,15 @@ ConvertFromIeeeExtended.8:              # @ConvertFromIeeeExtended.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movsbl	(%rax), %eax
 	andl	$128, %eax
 	cmpl	$0, %eax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertFromIeeeExtended.8, .Lfunc_end0-ConvertFromIeeeExtended.8
 	.cfi_endproc

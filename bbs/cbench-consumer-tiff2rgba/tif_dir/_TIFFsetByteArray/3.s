@@ -32,6 +32,8 @@ _TIFFsetByteArray.3:                    # @_TIFFsetByteArray.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc__TIFFsetByteArray+16, %rax
 	addq	$1, %rax
@@ -42,8 +44,8 @@ _TIFFsetByteArray.3:                    # @_TIFFsetByteArray.3
 	movq	(%rbx), %rcx
 	movq	%rax, (%rcx)
 	cmpq	$0, %rax
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFsetByteArray.3, .Lfunc_end0-_TIFFsetByteArray.3
 	.cfi_endproc

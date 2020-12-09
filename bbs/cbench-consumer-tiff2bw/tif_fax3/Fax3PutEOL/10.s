@@ -24,6 +24,8 @@ Fax3PutEOL.10:                          # @Fax3PutEOL.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movl	_msbmask(,%rax,4), %eax
@@ -39,8 +41,8 @@ Fax3PutEOL.10:                          # @Fax3PutEOL.10
 	subl	%eax, %ecx
 	movl	%ecx, (%rsi)
 	cmpl	$0, (%rsi)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3PutEOL.10, .Lfunc_end0-Fax3PutEOL.10
 	.cfi_endproc

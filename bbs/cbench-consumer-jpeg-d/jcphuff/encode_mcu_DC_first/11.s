@@ -32,6 +32,8 @@ encode_mcu_DC_first.11:                 # @encode_mcu_DC_first.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rax
@@ -39,8 +41,8 @@ encode_mcu_DC_first.11:                 # @encode_mcu_DC_first.11
 	movl	(%rbx), %edx
 	callq	emit_symbol
 	cmpl	$0, (%rbx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_DC_first.11, .Lfunc_end0-encode_mcu_DC_first.11
 	.cfi_endproc

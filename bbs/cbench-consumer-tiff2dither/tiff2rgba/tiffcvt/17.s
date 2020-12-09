@@ -23,6 +23,8 @@ tiffcvt.17:                             # @tiffcvt.17
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"17"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiff2rgba.c_tiffcvt+72, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ tiffcvt.17:                             # @tiffcvt.17
 	movq	(%rsi), %rsi
 	callq	cvt_whole_image
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	tiffcvt.17, .Lfunc_end0-tiffcvt.17
 	.cfi_endproc

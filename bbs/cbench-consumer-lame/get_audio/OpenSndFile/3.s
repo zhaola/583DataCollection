@@ -13,6 +13,8 @@ OpenSndFile.3:                          # @OpenSndFile.3
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_OpenSndFile+80, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_OpenSndFile+80
@@ -24,6 +26,8 @@ OpenSndFile.3:                          # @OpenSndFile.3
 	callq	fprintf
 	movl	$1, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	OpenSndFile.3, .Lfunc_end0-OpenSndFile.3
 	.cfi_endproc

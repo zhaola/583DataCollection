@@ -37,8 +37,9 @@ jinit_inverse_dct.2:                    # @jinit_inverse_dct.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jinit_inverse_dct, %rsi
 	movq	(%rdi), %rax
 	movq	8(%rax), %rax
 	movq	(%rax), %rbx
@@ -60,7 +61,8 @@ jinit_inverse_dct.2:                    # @jinit_inverse_dct.2
 	movq	(%r15), %rax
 	movslq	(%r14), %rcx
 	movl	$-1, 88(%rax,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jinit_inverse_dct.2, .Lfunc_end0-jinit_inverse_dct.2
 	.cfi_endproc

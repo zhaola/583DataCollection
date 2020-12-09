@@ -24,12 +24,14 @@ consume_markers.10:                     # @consume_markers.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	568(%rax), %rax
 	cmpl	$0, 164(%rax)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_markers.10, .Lfunc_end0-consume_markers.10
 	.cfi_endproc

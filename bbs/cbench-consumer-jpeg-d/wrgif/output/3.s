@@ -17,13 +17,16 @@ output.3:                               # @output.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrgif.c_output+8, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._wrgif.c_output+8
 	movq	(%rdi), %rdi
 	callq	flush_packet
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	output.3, .Lfunc_end0-output.3
 	.cfi_endproc

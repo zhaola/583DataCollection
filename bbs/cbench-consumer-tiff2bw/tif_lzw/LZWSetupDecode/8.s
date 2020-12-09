@@ -17,6 +17,8 @@ LZWSetupDecode.8:                       # @LZWSetupDecode.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
@@ -44,7 +46,8 @@ LZWSetupDecode.8:                       # @LZWSetupDecode.8
 	shlq	$4, %rcx
 	addq	%rcx, %rax
 	movq	$0, (%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWSetupDecode.8, .Lfunc_end0-LZWSetupDecode.8
 	.cfi_endproc

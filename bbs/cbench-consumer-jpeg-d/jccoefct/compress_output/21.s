@@ -17,10 +17,10 @@ compress_output.21:                     # @compress_output.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jccoefct.c_compress_output+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jccoefct.c_compress_output+48
 	movl	(%rdi), %eax
 	movq	(%rsi), %rdi
 	movl	%eax, 24(%rdi)
@@ -28,7 +28,8 @@ compress_output.21:                     # @compress_output.21
 	movq	(%rsi), %rdx
 	movl	%eax, 20(%rdx)
 	movl	$0, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compress_output.21, .Lfunc_end0-compress_output.21
 	.cfi_endproc

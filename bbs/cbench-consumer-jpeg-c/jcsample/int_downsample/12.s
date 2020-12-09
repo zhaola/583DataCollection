@@ -17,6 +17,8 @@ int_downsample.12:                      # @int_downsample.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
@@ -29,7 +31,8 @@ int_downsample.12:                      # @int_downsample.12
 	addq	$1, %rsi
 	movq	%rsi, (%rcx)
 	movb	%al, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	int_downsample.12, .Lfunc_end0-int_downsample.12
 	.cfi_endproc

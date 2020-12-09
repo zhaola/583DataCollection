@@ -24,6 +24,8 @@ jpeg_huff_decode.11:                    # @jpeg_huff_decode.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rsi), %rdi
@@ -32,8 +34,8 @@ jpeg_huff_decode.11:                    # @jpeg_huff_decode.11
 	movq	(%rsi), %rdx
 	movl	%eax, 32(%rdx)
 	cmpl	$16, (%rcx)
-	jg	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_huff_decode.11, .Lfunc_end0-jpeg_huff_decode.11
 	.cfi_endproc

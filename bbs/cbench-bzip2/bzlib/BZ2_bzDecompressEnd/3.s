@@ -17,12 +17,15 @@ BZ2_bzDecompressEnd.3:                  # @BZ2_bzDecompressEnd.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_BZ2_bzDecompressEnd+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_BZ2_bzDecompressEnd+16
 	movl	$-2, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzDecompressEnd.3, .Lfunc_end0-BZ2_bzDecompressEnd.3
 	.cfi_endproc

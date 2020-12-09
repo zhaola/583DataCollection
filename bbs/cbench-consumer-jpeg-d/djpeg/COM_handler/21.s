@@ -24,13 +24,13 @@ COM_handler.21:                         # @COM_handler.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._djpeg.c_COM_handler+56, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._djpeg.c_COM_handler+56
 	cmpl	$0, (%rdi)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	COM_handler.21, .Lfunc_end0-COM_handler.21
 	.cfi_endproc

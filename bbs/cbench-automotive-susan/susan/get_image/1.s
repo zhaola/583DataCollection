@@ -13,6 +13,8 @@ get_image.1:                            # @get_image.1
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_get_image+24, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_get_image+24
@@ -24,6 +26,8 @@ get_image.1:                            # @get_image.1
 	callq	fprintf
 	xorl	%edi, %edi
 	callq	exit
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_image.1, .Lfunc_end0-get_image.1
 	.cfi_endproc

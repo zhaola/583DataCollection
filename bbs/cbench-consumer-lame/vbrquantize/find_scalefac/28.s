@@ -17,13 +17,16 @@ find_scalefac.28:                       # @find_scalefac.28
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"28"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_find_scalefac+72, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_find_scalefac+72
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movsd	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	find_scalefac.28, .Lfunc_end0-find_scalefac.28
 	.cfi_endproc

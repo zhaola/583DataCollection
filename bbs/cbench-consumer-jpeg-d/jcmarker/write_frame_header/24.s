@@ -17,14 +17,15 @@ write_frame_header.24:                  # @write_frame_header.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jcmarker.c_write_frame_header+64, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jcmarker.c_write_frame_header+64
 	movq	(%rdi), %rdi
 	movl	$192, %esi
 	callq	emit_sof
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	write_frame_header.24, .Lfunc_end0-write_frame_header.24
 	.cfi_endproc

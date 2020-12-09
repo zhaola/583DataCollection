@@ -32,14 +32,16 @@ processCompressOptions.13:              # @processCompressOptions.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	$58, %esi
 	callq	strchr
 	movq	%rax, (%rbx)
 	cmpq	$0, (%rbx)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	processCompressOptions.13, .Lfunc_end0-processCompressOptions.13
 	.cfi_endproc

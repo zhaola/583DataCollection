@@ -31,6 +31,8 @@ parse_wave_header.13:                   # @parse_wave_header.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._get_audio.c_parse_wave_header+56, %rax
 	addq	$1, %rax
@@ -42,7 +44,8 @@ parse_wave_header.13:                   # @parse_wave_header.13
 	movq	(%rbx), %rax
 	movq	%rax, (%r15)
 	movl	$1, (%r14)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	parse_wave_header.13, .Lfunc_end0-parse_wave_header.13
 	.cfi_endproc

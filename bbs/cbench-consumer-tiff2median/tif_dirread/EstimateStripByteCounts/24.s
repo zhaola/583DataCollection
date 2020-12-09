@@ -17,6 +17,8 @@ EstimateStripByteCounts.24:             # @EstimateStripByteCounts.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_EstimateStripByteCounts+56, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ EstimateStripByteCounts.24:             # @EstimateStripByteCounts.24
 	movl	28(%rax), %eax
 	movq	(%rdi), %rcx
 	movl	%eax, 68(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	EstimateStripByteCounts.24, .Lfunc_end0-EstimateStripByteCounts.24
 	.cfi_endproc

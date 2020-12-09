@@ -18,6 +18,8 @@ compute_scalefacs_long.9:               # @compute_scalefacs_long.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movslq	(%rdi), %rax
 	movl	pretab(,%rax,4), %eax
@@ -27,7 +29,8 @@ compute_scalefacs_long.9:               # @compute_scalefacs_long.9
 	movslq	(%rdi), %rax
 	addsd	(%rcx,%rax,8), %xmm0
 	movsd	%xmm0, (%rcx,%rax,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_scalefacs_long.9, .Lfunc_end0-compute_scalefacs_long.9
 	.cfi_endproc

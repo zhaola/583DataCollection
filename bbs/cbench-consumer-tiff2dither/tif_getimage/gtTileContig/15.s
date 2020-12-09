@@ -24,12 +24,14 @@ gtTileContig.15:                        # @gtTileContig.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	addl	(%rsi), %eax
 	cmpl	(%rdx), %eax
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gtTileContig.15, .Lfunc_end0-gtTileContig.15
 	.cfi_endproc

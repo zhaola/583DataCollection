@@ -32,6 +32,8 @@ main1.6:                                # @main1.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	%rax, %rcx
@@ -42,8 +44,8 @@ main1.6:                                # @main1.6
 	callq	fopen
 	movq	%rax, (%rbx)
 	cmpq	$0, (%rbx)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.6, .Lfunc_end0-main1.6
 	.cfi_endproc

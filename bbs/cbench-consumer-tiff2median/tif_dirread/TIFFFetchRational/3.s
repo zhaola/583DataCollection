@@ -17,13 +17,16 @@ TIFFFetchRational.3:                    # @TIFFFetchRational.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchRational+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_dirread.c_TIFFFetchRational+16
 	movss	(%rdi), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	movss	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchRational.3, .Lfunc_end0-TIFFFetchRational.3
 	.cfi_endproc

@@ -23,6 +23,8 @@ TIFFInitCCITTRLEW.1:                    # @TIFFInitCCITTRLEW.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFInitCCITTRLEW, %rax
 	addq	$1, %rax
@@ -40,7 +42,8 @@ TIFFInitCCITTRLEW.1:                    # @TIFFInitCCITTRLEW.1
 	movb	$0, %al
 	callq	TIFFSetField
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFInitCCITTRLEW.1, .Lfunc_end0-TIFFInitCCITTRLEW.1
 	.cfi_endproc

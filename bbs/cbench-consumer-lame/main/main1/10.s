@@ -52,6 +52,8 @@ main1.10:                               # @main1.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	%r12, %rdi
 	movq	%rbx, %rsi
@@ -67,8 +69,8 @@ main1.10:                               # @main1.10
 	callq	lame_encode_buffer
 	movl	%eax, (%r15)
 	cmpl	$-1, (%r15)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.10, .Lfunc_end0-main1.10
 	.cfi_endproc

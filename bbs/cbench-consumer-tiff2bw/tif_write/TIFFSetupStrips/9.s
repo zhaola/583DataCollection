@@ -23,6 +23,8 @@ TIFFSetupStrips.9:                      # @TIFFSetupStrips.9
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"9"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_write.c_TIFFSetupStrips+24, %rax
 	addq	$1, %rax
@@ -30,7 +32,8 @@ TIFFSetupStrips.9:                      # @TIFFSetupStrips.9
 	movq	(%rdi), %rdi
 	callq	TIFFNumberOfStrips
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFSetupStrips.9, .Lfunc_end0-TIFFSetupStrips.9
 	.cfi_endproc

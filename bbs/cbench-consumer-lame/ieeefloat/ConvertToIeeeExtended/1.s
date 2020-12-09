@@ -22,6 +22,8 @@ ConvertToIeeeExtended.1:                # @ConvertToIeeeExtended.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movq	__profc_ConvertToIeeeExtended, %rax
@@ -30,7 +32,8 @@ ConvertToIeeeExtended.1:                # @ConvertToIeeeExtended.1
 	movl	$32768, (%rdi)          # imm = 0x8000
 	mulsd	(%rsi), %xmm0
 	movsd	%xmm0, (%rsi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeExtended.1, .Lfunc_end0-ConvertToIeeeExtended.1
 	.cfi_endproc

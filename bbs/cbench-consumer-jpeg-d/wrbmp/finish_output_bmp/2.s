@@ -17,6 +17,8 @@ finish_output_bmp.2:                    # @finish_output_bmp.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._wrbmp.c_finish_output_bmp+48, %rax
 	addq	$1, %rax
@@ -24,7 +26,8 @@ finish_output_bmp.2:                    # @finish_output_bmp.2
 	movq	(%rdi), %rdi
 	movq	(%rsi), %rsi
 	callq	write_bmp_header
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	finish_output_bmp.2, .Lfunc_end0-finish_output_bmp.2
 	.cfi_endproc

@@ -23,13 +23,16 @@ ts_real_time.2:                         # @ts_real_time.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movq	ts_real_time.initial_time, %rsi
 	callq	difftime
 	cvtsd2ss	%xmm0, %xmm0
 	movss	%xmm0, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ts_real_time.2, .Lfunc_end0-ts_real_time.2
 	.cfi_endproc

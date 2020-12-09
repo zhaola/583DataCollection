@@ -13,6 +13,8 @@ APCM_inverse_quantization.16:           # @APCM_inverse_quantization.16
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._rpe.c_APCM_inverse_quantization+56, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._rpe.c_APCM_inverse_quantization+56
@@ -21,6 +23,8 @@ APCM_inverse_quantization.16:           # @APCM_inverse_quantization.16
 	movl	$376, %edx              # imm = 0x178
 	movabsq	$__PRETTY_FUNCTION__.APCM_inverse_quantization, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	APCM_inverse_quantization.16, .Lfunc_end0-APCM_inverse_quantization.16
 	.cfi_endproc

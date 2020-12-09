@@ -17,6 +17,8 @@ adpcm_coder.3:                          # @adpcm_coder.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	xorl	%eax, %eax
 	movq	__profc_adpcm_coder, %rcx
@@ -24,7 +26,8 @@ adpcm_coder.3:                          # @adpcm_coder.3
 	movq	%rcx, __profc_adpcm_coder
 	subl	(%rdi), %eax
 	movl	%eax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	adpcm_coder.3, .Lfunc_end0-adpcm_coder.3
 	.cfi_endproc

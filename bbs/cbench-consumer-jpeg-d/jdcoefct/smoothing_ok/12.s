@@ -24,15 +24,15 @@ smoothing_ok.12:                        # @smoothing_ok.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdcoefct.c_smoothing_ok+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdcoefct.c_smoothing_ok+32
 	movq	(%rdi), %rax
 	movzwl	32(%rax), %eax
 	cmpl	$0, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	smoothing_ok.12, .Lfunc_end0-smoothing_ok.12
 	.cfi_endproc

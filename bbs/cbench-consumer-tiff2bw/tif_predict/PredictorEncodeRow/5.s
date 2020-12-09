@@ -13,6 +13,8 @@ PredictorEncodeRow.5:                   # @PredictorEncodeRow.5
 	.cfi_def_cfa_register %rbp
 	jmp	.LBB0_1
 .LBB0_1:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	movq	__profc_.._tif_predict.c_PredictorEncodeRow+16, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_predict.c_PredictorEncodeRow+16
@@ -21,6 +23,8 @@ PredictorEncodeRow.5:                   # @PredictorEncodeRow.5
 	movl	$351, %edx              # imm = 0x15F
 	movabsq	$__PRETTY_FUNCTION__.PredictorEncodeRow, %rcx
 	callq	__assert_fail
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	PredictorEncodeRow.5, .Lfunc_end0-PredictorEncodeRow.5
 	.cfi_endproc

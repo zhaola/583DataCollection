@@ -24,6 +24,8 @@ consume_data.26:                        # @consume_data.26
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"26"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	168(%rax), %ecx
@@ -31,8 +33,8 @@ consume_data.26:                        # @consume_data.26
 	movl	%ecx, 168(%rax)
 	movq	(%rdi), %rax
 	cmpl	400(%rax), %ecx
-	jb	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_data.26, .Lfunc_end0-consume_data.26
 	.cfi_endproc

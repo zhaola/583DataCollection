@@ -24,14 +24,16 @@ TIFFSetupShortLong.2:                   # @TIFFSetupShortLong.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movw	$3, 2(%rax)
 	movq	(%rsi), %rax
 	movzwl	504(%rax), %eax
 	cmpl	$19789, %eax            # imm = 0x4D4D
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFSetupShortLong.2, .Lfunc_end0-TIFFSetupShortLong.2
 	.cfi_endproc

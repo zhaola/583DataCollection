@@ -24,6 +24,8 @@ kernel_floyd_warshall.6:                # @kernel_floyd_warshall.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r8
 	movslq	(%rsi), %rax
@@ -44,8 +46,8 @@ kernel_floyd_warshall.6:                # @kernel_floyd_warshall.6
 	movslq	(%rdx), %rcx
 	addsd	(%rax,%rcx,8), %xmm1
 	ucomisd	%xmm0, %xmm1
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_floyd_warshall.6, .Lfunc_end0-kernel_floyd_warshall.6
 	.cfi_endproc

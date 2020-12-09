@@ -22,10 +22,10 @@ int_upsample.10:                        # @int_upsample.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdsample.c_int_upsample+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdsample.c_int_upsample+24
 	movq	(%rdi), %r10
 	movl	(%rsi), %r11d
 	movq	(%rdi), %rbx
@@ -39,8 +39,8 @@ int_upsample.10:                        # @int_upsample.10
 	movl	%r11d, %esi
 	movq	%rbx, %rdx
 	movl	%eax, %ecx
-	callq	jcopy_sample_rows
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	int_upsample.10, .Lfunc_end0-int_upsample.10
 	.cfi_endproc

@@ -33,6 +33,8 @@ pix24toXYZ.4:                           # @pix24toXYZ.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	.LCPI0_1(%rip), %xmm1   # xmm1 = mem[0],zero
@@ -70,7 +72,8 @@ pix24toXYZ.4:                           # @pix24toXYZ.4
 	cvtsd2ss	%xmm0, %xmm0
 	movq	(%rax), %rax
 	movss	%xmm0, 8(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	pix24toXYZ.4, .Lfunc_end0-pix24toXYZ.4
 	.cfi_endproc

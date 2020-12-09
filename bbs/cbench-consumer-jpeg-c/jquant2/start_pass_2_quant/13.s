@@ -30,11 +30,10 @@ start_pass_2_quant.13:                  # @start_pass_2_quant.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jquant2.c_start_pass_2_quant, %rax
-	movq	__profc_.._jquant2.c_start_pass_2_quant+72, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_.._jquant2.c_start_pass_2_quant+72
 	movq	(%rdi), %rcx
 	movq	8(%rcx), %rcx
 	movq	8(%rcx), %rbx
@@ -50,7 +49,8 @@ start_pass_2_quant.13:                  # @start_pass_2_quant.13
 	callq	*%rbx
 	movq	(%r14), %rcx
 	movq	%rax, 64(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_2_quant.13, .Lfunc_end0-start_pass_2_quant.13
 	.cfi_endproc

@@ -17,6 +17,8 @@ read_samples_pcm.20:                    # @read_samples_pcm.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_read_samples_pcm, %rax
 	addq	$1, %rax
@@ -28,7 +30,8 @@ read_samples_pcm.20:                    # @read_samples_pcm.20
 	movl	%edx, (%rsi)
 	movslq	%ecx, %rcx
 	movw	$0, (%rax,%rcx,2)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_samples_pcm.20, .Lfunc_end0-read_samples_pcm.20
 	.cfi_endproc

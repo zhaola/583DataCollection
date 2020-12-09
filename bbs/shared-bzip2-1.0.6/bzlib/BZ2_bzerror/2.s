@@ -17,6 +17,8 @@ BZ2_bzerror.2:                          # @BZ2_bzerror.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
@@ -25,7 +27,8 @@ BZ2_bzerror.2:                          # @BZ2_bzerror.2
 	cltq
 	movq	bzerrorstrings(,%rax,8), %rax
 	movq	%rax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	BZ2_bzerror.2, .Lfunc_end0-BZ2_bzerror.2
 	.cfi_endproc

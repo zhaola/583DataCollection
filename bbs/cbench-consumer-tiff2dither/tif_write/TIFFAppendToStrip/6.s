@@ -31,6 +31,8 @@ TIFFAppendToStrip.6:                    # @TIFFAppendToStrip.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_write.c_TIFFAppendToStrip, %rsi
 	movq	__profc_.._tif_write.c_TIFFAppendToStrip+24, %rax
@@ -51,7 +53,8 @@ TIFFAppendToStrip.6:                    # @TIFFAppendToStrip.6
 	movq	248(%rcx), %rcx
 	movl	(%r14), %edx
 	movl	%eax, (%rcx,%rdx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFAppendToStrip.6, .Lfunc_end0-TIFFAppendToStrip.6
 	.cfi_endproc

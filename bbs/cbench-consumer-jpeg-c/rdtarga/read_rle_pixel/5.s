@@ -17,6 +17,8 @@ read_rle_pixel.5:                       # @read_rle_pixel.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._rdtarga.c_read_rle_pixel+32, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ read_rle_pixel.5:                       # @read_rle_pixel.5
 	andl	$127, %eax
 	movq	(%rsi), %rcx
 	movl	%eax, 96(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_rle_pixel.5, .Lfunc_end0-read_rle_pixel.5
 	.cfi_endproc

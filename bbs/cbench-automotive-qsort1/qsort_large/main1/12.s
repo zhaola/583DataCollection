@@ -32,6 +32,8 @@ main1.12:                               # @main1.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$array, %rax
 	movl	(%rdi), %esi
@@ -40,8 +42,8 @@ main1.12:                               # @main1.12
 	movabsq	$compare, %rcx
 	callq	qsortx
 	cmpl	$1, (%rbx)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	main1.12, .Lfunc_end0-main1.12
 	.cfi_endproc

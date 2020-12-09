@@ -17,6 +17,8 @@ get_dri.21:                             # @get_dri.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	addq	$-1, %rax
@@ -28,7 +30,8 @@ get_dri.21:                             # @get_dri.21
 	movzbl	(%rax), %eax
 	addl	(%rdx), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_dri.21, .Lfunc_end0-get_dri.21
 	.cfi_endproc

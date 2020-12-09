@@ -23,6 +23,8 @@ LogL16InitState.7:                      # @LogL16InitState.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_luv.c_LogL16InitState, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ LogL16InitState.7:                      # @LogL16InitState.7
 	callq	LogL16GuessDataFmt
 	movq	(%rbx), %rcx
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LogL16InitState.7, .Lfunc_end0-LogL16InitState.7
 	.cfi_endproc

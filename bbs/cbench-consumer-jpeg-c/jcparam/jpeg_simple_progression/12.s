@@ -25,6 +25,8 @@ jpeg_simple_progression.12:             # @jpeg_simple_progression.12
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"12"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rbx), %rdi
 	movl	(%r14), %esi
@@ -70,7 +72,8 @@ jpeg_simple_progression.12:             # @jpeg_simple_progression.12
 	xorl	%r9d, %r9d
 	callq	fill_scans
 	movq	%rax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_simple_progression.12, .Lfunc_end0-jpeg_simple_progression.12
 	.cfi_endproc

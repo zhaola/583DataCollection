@@ -24,13 +24,14 @@ ConvertToIeeeDouble.3:                  # @ConvertToIeeeDouble.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	xorps	%xmm1, %xmm1
 	ucomisd	%xmm1, %xmm0
-	jne	.LBB0_2
-	jp	.LBB0_2
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	ConvertToIeeeDouble.3, .Lfunc_end0-ConvertToIeeeDouble.3
 	.cfi_endproc

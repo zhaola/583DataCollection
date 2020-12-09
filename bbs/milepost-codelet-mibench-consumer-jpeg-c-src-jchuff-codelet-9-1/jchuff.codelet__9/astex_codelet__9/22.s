@@ -17,6 +17,8 @@ astex_codelet__9.22:                    # @astex_codelet__9.22
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"22"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %eax
 	movq	(%rsi), %rsi
@@ -27,7 +29,8 @@ astex_codelet__9.22:                    # @astex_codelet__9.22
 	movl	(%rax,%rcx,4), %edx
 	addl	$1, %edx
 	movl	%edx, (%rax,%rcx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	astex_codelet__9.22, .Lfunc_end0-astex_codelet__9.22
 	.cfi_endproc

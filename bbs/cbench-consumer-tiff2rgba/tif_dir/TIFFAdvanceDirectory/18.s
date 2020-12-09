@@ -30,6 +30,8 @@ TIFFAdvanceDirectory.18:                # @TIFFAdvanceDirectory.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._tif_dir.c_TIFFAdvanceDirectory, %rax
 	movq	(%rdi), %rcx
@@ -48,7 +50,8 @@ TIFFAdvanceDirectory.18:                # @TIFFAdvanceDirectory.18
 	callq	*%rbx
 	movq	(%r14), %rcx
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFAdvanceDirectory.18, .Lfunc_end0-TIFFAdvanceDirectory.18
 	.cfi_endproc

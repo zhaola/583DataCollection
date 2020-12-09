@@ -17,12 +17,15 @@ kernel_atax.4:                          # @kernel_atax.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._atax.c_kernel_atax+32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._atax.c_kernel_atax+32
 	movl	$0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_atax.4, .Lfunc_end0-kernel_atax.4
 	.cfi_endproc

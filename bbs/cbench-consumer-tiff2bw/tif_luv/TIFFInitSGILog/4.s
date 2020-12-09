@@ -32,6 +32,8 @@ TIFFInitSGILog.4:                       # @TIFFInitSGILog.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	$48, %edi
 	callq	_TIFFmalloc
@@ -39,8 +41,8 @@ TIFFInitSGILog.4:                       # @TIFFInitSGILog.4
 	movq	%rax, 704(%rcx)
 	movq	(%rbx), %rax
 	cmpq	$0, 704(%rax)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFInitSGILog.4, .Lfunc_end0-TIFFInitSGILog.4
 	.cfi_endproc

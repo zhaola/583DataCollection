@@ -24,6 +24,8 @@ TIFFWriteEncodedStrip.23:               # @TIFFWriteEncodedStrip.23
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"23"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFWriteEncodedStrip+112, %rax
 	addq	$1, %rax
@@ -32,8 +34,8 @@ TIFFWriteEncodedStrip.23:               # @TIFFWriteEncodedStrip.23
 	movl	16(%rax), %eax
 	andl	$256, %eax              # imm = 0x100
 	cmpl	$0, %eax
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFWriteEncodedStrip.23, .Lfunc_end0-TIFFWriteEncodedStrip.23
 	.cfi_endproc

@@ -22,6 +22,8 @@ uInt64_to_double.2:                     # @uInt64_to_double.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
 	movsd	(%rdi), %xmm1           # xmm1 = mem[0],zero
@@ -34,7 +36,8 @@ uInt64_to_double.2:                     # @uInt64_to_double.2
 	movsd	%xmm1, (%rcx)
 	mulsd	(%rdi), %xmm0
 	movsd	%xmm0, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	uInt64_to_double.2, .Lfunc_end0-uInt64_to_double.2
 	.cfi_endproc

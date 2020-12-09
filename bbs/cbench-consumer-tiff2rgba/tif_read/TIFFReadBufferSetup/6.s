@@ -23,6 +23,8 @@ TIFFReadBufferSetup.6:                  # @TIFFReadBufferSetup.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFReadBufferSetup+16, %rax
 	addq	$1, %rax
@@ -42,7 +44,8 @@ TIFFReadBufferSetup.6:                  # @TIFFReadBufferSetup.6
 	movl	16(%rax), %ecx
 	orl	$512, %ecx              # imm = 0x200
 	movl	%ecx, 16(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFReadBufferSetup.6, .Lfunc_end0-TIFFReadBufferSetup.6
 	.cfi_endproc

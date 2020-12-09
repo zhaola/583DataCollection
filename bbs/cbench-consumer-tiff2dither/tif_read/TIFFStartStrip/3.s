@@ -17,6 +17,8 @@ TIFFStartStrip.3:                       # @TIFFStartStrip.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_read.c_TIFFStartStrip+8, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ TIFFStartStrip.3:                       # @TIFFStartStrip.3
 	movl	16(%rax), %ecx
 	orl	$32, %ecx
 	movl	%ecx, 16(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFStartStrip.3, .Lfunc_end0-TIFFStartStrip.3
 	.cfi_endproc

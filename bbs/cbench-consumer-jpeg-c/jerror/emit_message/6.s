@@ -23,11 +23,10 @@ emit_message.6:                         # @emit_message.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jerror.c_emit_message, %rax
-	movq	__profc_.._jerror.c_emit_message+16, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_.._jerror.c_emit_message+16
 	movq	(%rdi), %rcx
 	movq	16(%rcx), %rbx
 	movq	(%rsi), %r14
@@ -37,7 +36,8 @@ emit_message.6:                         # @emit_message.6
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	emit_message.6, .Lfunc_end0-emit_message.6
 	.cfi_endproc

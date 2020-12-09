@@ -24,14 +24,16 @@ Fax3SetupState.13:                      # @Fax3SetupState.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	96(%rax), %rax
 	movq	(%rdi), %rcx
 	movq	%rax, 112(%rcx)
 	cmpl	$0, (%rsi)
-	jne	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	Fax3SetupState.13, .Lfunc_end0-Fax3SetupState.13
 	.cfi_endproc

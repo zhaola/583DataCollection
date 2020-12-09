@@ -25,10 +25,10 @@ merged_2v_upsample.1:                   # @merged_2v_upsample.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdmerge.c_merged_2v_upsample, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdmerge.c_merged_2v_upsample
 	movq	(%rbx), %rdi
 	addq	$64, %rdi
 	movq	(%rsi), %rax
@@ -42,11 +42,11 @@ merged_2v_upsample.1:                   # @merged_2v_upsample.1
 	movq	%rax, %rdx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
-	callq	jcopy_sample_rows
 	movl	$1, (%r14)
 	movq	(%rbx), %rax
 	movl	$0, 72(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	merged_2v_upsample.1, .Lfunc_end0-merged_2v_upsample.1
 	.cfi_endproc

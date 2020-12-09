@@ -17,11 +17,14 @@ fft_short.18:                           # @fft_short.18
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movw	(%rdi), %ax
 	addw	$1, %ax
 	movw	%ax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	fft_short.18, .Lfunc_end0-fft_short.18
 	.cfi_endproc

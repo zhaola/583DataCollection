@@ -17,13 +17,16 @@ dijkstra.8:                             # @dijkstra.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$iNode, %rdi
 	movabsq	$iDist, %rsi
 	movabsq	$iPrev, %rdx
 	callq	dequeue
 	movl	$0, i
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	dijkstra.8, .Lfunc_end0-dijkstra.8
 	.cfi_endproc

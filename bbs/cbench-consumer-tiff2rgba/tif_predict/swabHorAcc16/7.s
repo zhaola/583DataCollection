@@ -17,11 +17,14 @@ swabHorAcc16.7:                         # @swabHorAcc16.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_predict.c_swabHorAcc16+48, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._tif_predict.c_swabHorAcc16+48
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	swabHorAcc16.7, .Lfunc_end0-swabHorAcc16.7
 	.cfi_endproc

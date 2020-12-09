@@ -32,6 +32,8 @@ getint.10:                              # @getint.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	imull	$10, (%rdi), %eax
 	movl	(%rbx), %ecx
@@ -42,8 +44,8 @@ getint.10:                              # @getint.10
 	callq	_IO_getc
 	movl	%eax, (%rbx)
 	cmpl	$-1, (%rbx)
-	je	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	getint.10, .Lfunc_end0-getint.10
 	.cfi_endproc

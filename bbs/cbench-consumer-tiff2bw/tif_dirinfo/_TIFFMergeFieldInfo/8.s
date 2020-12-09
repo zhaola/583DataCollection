@@ -17,6 +17,8 @@ _TIFFMergeFieldInfo.8:                  # @_TIFFMergeFieldInfo.8
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"8"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc__TIFFMergeFieldInfo+8, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ _TIFFMergeFieldInfo.8:                  # @_TIFFMergeFieldInfo.8
 	movl	$8, %edx
 	movabsq	$tagCompare, %rcx
 	callq	qsort
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	_TIFFMergeFieldInfo.8, .Lfunc_end0-_TIFFMergeFieldInfo.8
 	.cfi_endproc

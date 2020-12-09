@@ -17,6 +17,8 @@ uInt64_toAscii.3:                       # @uInt64_toAscii.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzip2.c_uInt64_toAscii+16, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ uInt64_toAscii.3:                       # @uInt64_toAscii.3
 	movslq	(%rsi), %rcx
 	movb	$0, (%rax,%rcx)
 	movl	$0, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	uInt64_toAscii.3, .Lfunc_end0-uInt64_toAscii.3
 	.cfi_endproc

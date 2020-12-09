@@ -17,6 +17,8 @@ putRGBseparate8bitMaptile.4:            # @putRGBseparate8bitMaptile.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %r9
 	movq	(%rsi), %r10
@@ -49,7 +51,8 @@ putRGBseparate8bitMaptile.4:            # @putRGBseparate8bitMaptile.4
 	addq	$4, %rdx
 	movq	%rdx, (%r8)
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	putRGBseparate8bitMaptile.4, .Lfunc_end0-putRGBseparate8bitMaptile.4
 	.cfi_endproc

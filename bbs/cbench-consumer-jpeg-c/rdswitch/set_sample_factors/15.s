@@ -17,6 +17,8 @@ set_sample_factors.15:                  # @set_sample_factors.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movl	(%rdi), %r8d
 	movq	(%rsi), %rdi
@@ -32,7 +34,8 @@ set_sample_factors.15:                  # @set_sample_factors.15
 	imulq	$96, %rdx, %rdx
 	addq	%rdx, %rcx
 	movl	%eax, 12(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	set_sample_factors.15, .Lfunc_end0-set_sample_factors.15
 	.cfi_endproc

@@ -36,6 +36,8 @@ TIFFDefaultTransferFunction.2:          # @TIFFDefaultTransferFunction.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cvtsi2sdq	(%rbx), %xmm0
 	cvtsi2sdq	(%rsi), %xmm1
@@ -56,7 +58,8 @@ TIFFDefaultTransferFunction.2:          # @TIFFDefaultTransferFunction.2
 	movq	(%rcx), %rcx
 	movq	(%rbx), %rdx
 	movw	%ax, (%rcx,%rdx,2)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFDefaultTransferFunction.2, .Lfunc_end0-TIFFDefaultTransferFunction.2
 	.cfi_endproc

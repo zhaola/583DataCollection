@@ -37,8 +37,9 @@ post_process_1pass.2:                   # @post_process_1pass.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_.._jdpostct.c_post_process_1pass, %rsi
 	movl	$0, (%r15)
 	movq	(%rbx), %rdi
 	movq	592(%rdi), %rdi
@@ -67,7 +68,6 @@ post_process_1pass.2:                   # @post_process_1pass.2
 	movl	-48(%rbp), %eax         # 4-byte Reload
 	movl	%eax, (%rsp)
 	callq	*%r12
-	movabsq	$__profd_.._jdpostct.c_post_process_1pass, %rsi
 	movq	(%rbx), %rax
 	movq	608(%rax), %rax
 	movq	8(%rax), %r14
@@ -97,7 +97,8 @@ post_process_1pass.2:                   # @post_process_1pass.2
 	movq	(%rcx), %rcx
 	addl	(%rcx), %eax
 	movl	%eax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	post_process_1pass.2, .Lfunc_end0-post_process_1pass.2
 	.cfi_endproc

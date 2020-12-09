@@ -23,6 +23,8 @@ TIFFFetchShortPair.4:                   # @TIFFFetchShortPair.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchShortPair+40, %rax
 	addq	$1, %rax
@@ -31,7 +33,8 @@ TIFFFetchShortPair.4:                   # @TIFFFetchShortPair.4
 	movq	(%rsi), %rsi
 	callq	TIFFFetchByteArray
 	movl	%eax, (%rbx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchShortPair.4, .Lfunc_end0-TIFFFetchShortPair.4
 	.cfi_endproc

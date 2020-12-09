@@ -17,6 +17,8 @@ largest_box.7:                          # @largest_box.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tiffmedian.c_largest_box+24, %rax
 	addq	$1, %rax
@@ -25,7 +27,8 @@ largest_box.7:                          # @largest_box.7
 	movq	%rax, (%rsi)
 	movl	40(%rax), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	largest_box.7, .Lfunc_end0-largest_box.7
 	.cfi_endproc

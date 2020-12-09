@@ -31,6 +31,8 @@ get_audio.11:                           # @get_audio.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movl	(%rbx), %edx
@@ -45,7 +47,8 @@ get_audio.11:                           # @get_audio.11
 	idivl	%ecx
 	movl	%eax, (%r14)
 	movl	$0, (%r15)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_audio.11, .Lfunc_end0-get_audio.11
 	.cfi_endproc

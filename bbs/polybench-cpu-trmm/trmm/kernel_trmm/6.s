@@ -17,6 +17,8 @@ kernel_trmm.6:                          # @kernel_trmm.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	(%rdi), %xmm0           # xmm0 = mem[0],zero
 	movq	(%rsi), %rax
@@ -38,7 +40,8 @@ kernel_trmm.6:                          # @kernel_trmm.6
 	movslq	(%r9), %rcx
 	addsd	(%rax,%rcx,8), %xmm0
 	movsd	%xmm0, (%rax,%rcx,8)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	kernel_trmm.6, .Lfunc_end0-kernel_trmm.6
 	.cfi_endproc

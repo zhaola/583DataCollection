@@ -18,6 +18,8 @@ TIFFVStripSize.5:                       # @TIFFVStripSize.5
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"5"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFVStripSize+32, %rax
 	addq	$1, %rax
@@ -71,7 +73,8 @@ TIFFVStripSize.5:                       # @TIFFVStripSize.5
 	shll	$1, %eax
 	addl	%eax, %esi
 	movl	%esi, (%r9)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFVStripSize.5, .Lfunc_end0-TIFFVStripSize.5
 	.cfi_endproc

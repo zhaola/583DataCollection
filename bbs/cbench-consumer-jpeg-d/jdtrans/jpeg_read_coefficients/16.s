@@ -17,17 +17,18 @@ jpeg_read_coefficients.16:              # @jpeg_read_coefficients.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_read_coefficients+40, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_read_coefficients+40
 	movq	(%rdi), %rax
 	movl	400(%rax), %eax
 	movq	(%rdi), %rcx
 	movq	16(%rcx), %rcx
 	addq	16(%rcx), %rax
 	movq	%rax, 16(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_coefficients.16, .Lfunc_end0-jpeg_read_coefficients.16
 	.cfi_endproc

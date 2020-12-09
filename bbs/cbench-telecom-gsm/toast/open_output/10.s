@@ -17,12 +17,15 @@ open_output.10:                         # @open_output.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rdi
 	movabsq	$.str.51, %rsi
 	callq	fopen
 	movq	%rax, out
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	open_output.10, .Lfunc_end0-open_output.10
 	.cfi_endproc

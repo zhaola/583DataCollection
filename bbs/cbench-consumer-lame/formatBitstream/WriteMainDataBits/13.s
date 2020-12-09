@@ -24,10 +24,12 @@ WriteMainDataBits.13:                   # @WriteMainDataBits.13
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"13"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	cmpl	$0, BitsRemaining
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	WriteMainDataBits.13, .Lfunc_end0-WriteMainDataBits.13
 	.cfi_endproc

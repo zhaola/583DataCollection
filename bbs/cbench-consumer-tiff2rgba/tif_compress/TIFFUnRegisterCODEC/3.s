@@ -17,6 +17,8 @@ TIFFUnRegisterCODEC.3:                  # @TIFFUnRegisterCODEC.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_TIFFUnRegisterCODEC+16, %rax
 	addq	$1, %rax
@@ -27,7 +29,8 @@ TIFFUnRegisterCODEC.3:                  # @TIFFUnRegisterCODEC.3
 	movq	%rax, (%rcx)
 	movq	(%rdi), %rdi
 	callq	_TIFFfree
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFUnRegisterCODEC.3, .Lfunc_end0-TIFFUnRegisterCODEC.3
 	.cfi_endproc

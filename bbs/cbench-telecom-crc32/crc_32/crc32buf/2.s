@@ -17,6 +17,8 @@ crc32buf.2:                             # @crc32buf.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movq	(%rsi), %rcx
@@ -28,7 +30,8 @@ crc32buf.2:                             # @crc32buf.2
 	shrq	$8, %rcx
 	xorq	%rcx, %rax
 	movq	%rax, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	crc32buf.2, .Lfunc_end0-crc32buf.2
 	.cfi_endproc

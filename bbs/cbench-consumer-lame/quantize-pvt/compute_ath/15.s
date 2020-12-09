@@ -47,6 +47,8 @@ compute_ath.15:                         # @compute_ath.15
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"15"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movsd	.LCPI0_0(%rip), %xmm1   # xmm1 = mem[0],zero
 	movq	(%rdi), %rdi
@@ -61,8 +63,8 @@ compute_ath.15:                         # @compute_ath.15
 	movsd	(%rax,%rcx,8), %xmm0    # xmm0 = mem[0],zero
 	movsd	(%rbx), %xmm1           # xmm1 = mem[0],zero
 	ucomisd	%xmm0, %xmm1
-	ja	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	compute_ath.15, .Lfunc_end0-compute_ath.15
 	.cfi_endproc

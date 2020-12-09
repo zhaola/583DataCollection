@@ -24,10 +24,10 @@ jpeg_add_quant_table.6:                 # @jpeg_add_quant_table.6
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"6"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_add_quant_table, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_add_quant_table
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rsi
 	movl	(%rax,%rsi,4), %eax
@@ -39,8 +39,8 @@ jpeg_add_quant_table.6:                 # @jpeg_add_quant_table.6
 	idivq	%rsi
 	movq	%rax, (%rcx)
 	cmpq	$0, (%rcx)
-	jle	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_add_quant_table.6, .Lfunc_end0-jpeg_add_quant_table.6
 	.cfi_endproc

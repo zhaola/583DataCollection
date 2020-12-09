@@ -17,11 +17,14 @@ process_encode.21:                      # @process_encode.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast.c_process_encode+72, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._toast.c_process_encode+72
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	process_encode.21, .Lfunc_end0-process_encode.21
 	.cfi_endproc

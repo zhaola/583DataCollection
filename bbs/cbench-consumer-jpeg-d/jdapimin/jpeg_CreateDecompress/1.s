@@ -23,11 +23,10 @@ jpeg_CreateDecompress.1:                # @jpeg_CreateDecompress.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"1"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_CreateDecompress, %rax
-	movq	__profc_jpeg_CreateDecompress+24, %rcx
 	addq	$1, %rcx
-	movq	%rcx, __profc_jpeg_CreateDecompress+24
 	movq	(%rdi), %rcx
 	movq	(%rcx), %rcx
 	movl	$10, 40(%rcx)
@@ -48,7 +47,8 @@ jpeg_CreateDecompress.1:                # @jpeg_CreateDecompress.1
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_CreateDecompress.1, .Lfunc_end0-jpeg_CreateDecompress.1
 	.cfi_endproc

@@ -17,6 +17,8 @@ APCM_quantization_xmaxc_to_exp_mant.18: # @APCM_quantization_xmaxc_to_exp_mant.1
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"18"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movw	(%rdi), %ax
 	movq	(%rsi), %rsi
@@ -24,7 +26,8 @@ APCM_quantization_xmaxc_to_exp_mant.18: # @APCM_quantization_xmaxc_to_exp_mant.1
 	movw	(%rdx), %ax
 	movq	(%rcx), %rcx
 	movw	%ax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	APCM_quantization_xmaxc_to_exp_mant.18, .Lfunc_end0-APCM_quantization_xmaxc_to_exp_mant.18
 	.cfi_endproc

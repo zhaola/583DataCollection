@@ -29,8 +29,9 @@ jpeg_start_compress.4:                  # @jpeg_start_compress.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movabsq	$__profd_jpeg_start_compress, %rsi
 	movq	(%rbx), %rax
 	movq	(%rax), %rax
 	movq	32(%rax), %r14
@@ -40,7 +41,6 @@ jpeg_start_compress.4:                  # @jpeg_start_compress.4
 	callq	__llvm_profile_instrument_target
 	movq	%r15, %rdi
 	callq	*%r14
-	movabsq	$__profd_jpeg_start_compress, %rsi
 	movq	(%rbx), %rax
 	movq	32(%rax), %rax
 	movq	16(%rax), %r14
@@ -51,8 +51,6 @@ jpeg_start_compress.4:                  # @jpeg_start_compress.4
 	movq	%r15, %rdi
 	callq	*%r14
 	movq	(%rbx), %rdi
-	callq	jinit_compress_master
-	movabsq	$__profd_jpeg_start_compress, %rsi
 	movq	(%rbx), %rax
 	movq	424(%rax), %rax
 	movq	(%rax), %r14
@@ -70,15 +68,14 @@ jpeg_start_compress.4:                  # @jpeg_start_compress.4
 	setne	%cl
 	andb	$1, %cl
 	movzbl	%cl, %ecx
-	addq	__profc_jpeg_start_compress+24, %rcx
-	movq	%rcx, __profc_jpeg_start_compress+24
 	cmpl	$0, %eax
 	movl	$102, %eax
 	movl	$101, %ecx
 	cmovnel	%eax, %ecx
 	movq	(%rbx), %rax
 	movl	%ecx, 28(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_start_compress.4, .Lfunc_end0-jpeg_start_compress.4
 	.cfi_endproc

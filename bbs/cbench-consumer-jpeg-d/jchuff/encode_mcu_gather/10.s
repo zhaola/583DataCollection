@@ -33,10 +33,10 @@ encode_mcu_gather.10:                   # @encode_mcu_gather.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_encode_mcu_gather, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_encode_mcu_gather
 	movq	(%rdi), %rax
 	movslq	(%r12), %rdx
 	movl	364(%rax,%rdx,4), %eax
@@ -67,7 +67,8 @@ encode_mcu_gather.10:                   # @encode_mcu_gather.10
 	movq	(%r14), %rcx
 	movslq	(%rbx), %rdx
 	movl	%eax, 36(%rcx,%rdx,4)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	encode_mcu_gather.10, .Lfunc_end0-encode_mcu_gather.10
 	.cfi_endproc

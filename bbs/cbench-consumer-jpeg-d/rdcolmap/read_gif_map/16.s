@@ -23,6 +23,8 @@ read_gif_map.16:                        # @read_gif_map.16
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"16"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movabsq	$__profd_.._rdcolmap.c_read_gif_map, %rsi
 	movq	__profc_.._rdcolmap.c_read_gif_map+16, %rax
@@ -40,7 +42,8 @@ read_gif_map.16:                        # @read_gif_map.16
 	callq	__llvm_profile_instrument_target
 	movq	%r14, %rdi
 	callq	*%rbx
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	read_gif_map.16, .Lfunc_end0-read_gif_map.16
 	.cfi_endproc

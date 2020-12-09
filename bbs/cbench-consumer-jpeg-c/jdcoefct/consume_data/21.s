@@ -17,10 +17,10 @@ consume_data.21:                        # @consume_data.21
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"21"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jdcoefct.c_consume_data+48, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jdcoefct.c_consume_data+48
 	movl	(%rdi), %eax
 	movq	(%rsi), %rdi
 	movl	%eax, 44(%rdi)
@@ -28,7 +28,8 @@ consume_data.21:                        # @consume_data.21
 	movq	(%rsi), %rdx
 	movl	%eax, 40(%rdx)
 	movl	$0, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	consume_data.21, .Lfunc_end0-consume_data.21
 	.cfi_endproc

@@ -17,17 +17,18 @@ start_pass_huff.20:                     # @start_pass_huff.20
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"20"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_.._jchuff.c_start_pass_huff+32, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_.._jchuff.c_start_pass_huff+32
 	movq	(%rdi), %rax
 	movslq	(%rsi), %rcx
 	movq	160(%rax,%rcx,8), %rdi
 	xorl	%esi, %esi
 	movl	$2056, %edx             # imm = 0x808
 	callq	memset
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	start_pass_huff.20, .Lfunc_end0-start_pass_huff.20
 	.cfi_endproc

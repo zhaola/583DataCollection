@@ -23,6 +23,8 @@ mdct_long.3:                            # @mdct_long.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rbx
 	movsd	(%rbx), %xmm0           # xmm0 = mem[0],zero
@@ -204,7 +206,8 @@ mdct_long.3:                            # @mdct_long.3
 	addsd	%xmm1, %xmm0
 	movq	(%r10), %rax
 	movsd	%xmm0, 32(%rax)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	mdct_long.3, .Lfunc_end0-mdct_long.3
 	.cfi_endproc

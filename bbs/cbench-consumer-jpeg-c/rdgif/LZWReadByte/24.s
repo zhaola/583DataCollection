@@ -24,6 +24,8 @@ LZWReadByte.24:                         # @LZWReadByte.24
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_3:                                # %"24"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	(%rdi), %rax
 	movl	368(%rax), %eax
@@ -45,8 +47,8 @@ LZWReadByte.24:                         # @LZWReadByte.24
 	movl	360(%rax), %eax
 	movq	(%rdi), %rcx
 	cmpl	356(%rcx), %eax
-	jge	.LBB0_1
-	jmp	.LBB0_2
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	LZWReadByte.24, .Lfunc_end0-LZWReadByte.24
 	.cfi_endproc

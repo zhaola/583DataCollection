@@ -17,12 +17,15 @@ get_u32.4:                              # @get_u32.4
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"4"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._toast_audio.c_get_u32, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._toast_audio.c_get_u32
 	movl	$-1, (%rdi)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	get_u32.4, .Lfunc_end0-get_u32.4
 	.cfi_endproc

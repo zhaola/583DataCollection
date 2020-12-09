@@ -17,6 +17,8 @@ TIFFFetchShortArray.7:                  # @TIFFFetchShortArray.7
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"7"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._tif_dirread.c_TIFFFetchShortArray+48, %rax
 	addq	$1, %rax
@@ -26,7 +28,8 @@ TIFFFetchShortArray.7:                  # @TIFFFetchShortArray.7
 	shrl	$16, %eax
 	movq	(%rsi), %rcx
 	movw	%ax, 2(%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	TIFFFetchShortArray.7, .Lfunc_end0-TIFFFetchShortArray.7
 	.cfi_endproc

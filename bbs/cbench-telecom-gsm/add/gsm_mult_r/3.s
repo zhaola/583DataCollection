@@ -17,6 +17,8 @@ gsm_mult_r.3:                           # @gsm_mult_r.3
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"3"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_gsm_mult_r, %rax
 	addq	$1, %rax
@@ -32,7 +34,8 @@ gsm_mult_r.3:                           # @gsm_mult_r.3
 	movq	(%rdx), %rax
 	andq	$65535, %rax            # imm = 0xFFFF
 	movw	%ax, (%rcx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_mult_r.3, .Lfunc_end0-gsm_mult_r.3
 	.cfi_endproc

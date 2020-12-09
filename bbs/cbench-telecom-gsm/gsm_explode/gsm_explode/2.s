@@ -17,6 +17,8 @@ gsm_explode.2:                          # @gsm_explode.2
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"2"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_gsm_explode+8, %rax
 	addq	$1, %rax
@@ -748,7 +750,8 @@ gsm_explode.2:                          # @gsm_explode.2
 	movq	(%rsi), %rcx
 	movw	%ax, 150(%rcx)
 	movl	$0, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	gsm_explode.2, .Lfunc_end0-gsm_explode.2
 	.cfi_endproc

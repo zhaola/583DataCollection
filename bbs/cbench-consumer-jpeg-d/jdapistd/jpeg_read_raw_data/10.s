@@ -17,17 +17,18 @@ jpeg_read_raw_data.10:                  # @jpeg_read_raw_data.10
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"10"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
-	movq	__profc_jpeg_read_raw_data+24, %rax
 	addq	$1, %rax
-	movq	%rax, __profc_jpeg_read_raw_data+24
 	movl	(%rdi), %eax
 	movq	(%rsi), %rcx
 	addl	160(%rcx), %eax
 	movl	%eax, 160(%rcx)
 	movl	(%rdi), %eax
 	movl	%eax, (%rdx)
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	jpeg_read_raw_data.10, .Lfunc_end0-jpeg_read_raw_data.10
 	.cfi_endproc

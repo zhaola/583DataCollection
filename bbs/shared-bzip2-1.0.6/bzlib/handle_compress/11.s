@@ -17,11 +17,14 @@ handle_compress.11:                     # @handle_compress.11
 	.cfi_def_cfa %rsp, 8
 	retq
 .LBB0_2:                                # %"11"
+		movl $111, %ebx
+		.byte 0x64, 0x67, 0x90
 	.cfi_def_cfa %rbp, 16
 	movq	__profc_.._bzlib.c_handle_compress+112, %rax
 	addq	$1, %rax
 	movq	%rax, __profc_.._bzlib.c_handle_compress+112
-	jmp	.LBB0_1
+		movl $222, %ebx
+		.byte 0x64, 0x67, 0x90
 .Lfunc_end0:
 	.size	handle_compress.11, .Lfunc_end0-handle_compress.11
 	.cfi_endproc
