@@ -48,5 +48,3 @@ so that Ithemal can create embeddings for the basic blocks.
 uses the measurements from `parse_ck_timestamps.py`
 to generate a csv of throughput labels for the basic blocks
 extracted by `extract_all_assembly.py`.
-
-## Passes
