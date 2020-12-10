@@ -12,8 +12,8 @@
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/LegacyPassManager.h"
 #include "llvm/IR/CFG.h"
+#include "llvm/IR/Dominators.h"
 #include "llvm/Transforms/IPO/PassManagerBuilder.h"
-#include "llvm/Analysis/BlockFrequencyInfo.h"
 #include "llvm/Analysis/BranchProbabilityInfo.h"
 
 using namespace llvm;
@@ -27,6 +27,7 @@ struct ExtractionPass : public FunctionPass {
 
   void getAnalysisUsage(AnalysisUsage &AU) const {
     AU.addRequired<BranchProbabilityInfoWrapperPass>(); // Analysis pass to load branch probability
+    AU.addPreserved<DominatorTreeWrapperPass>(); // Analysis pass used to identify backedges
   }
 
   bool runOnFunction(Function &F) override {
@@ -45,15 +46,19 @@ struct ExtractionPass : public FunctionPass {
     first = true;
     // Second pass of basic blocks generates profile information
     BranchProbabilityInfo &bpi = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI();
+    DominatorTree &DT = getAnalysis<DominatorTreeWrapperPass>().getDomTree();
     for (auto BB = F.begin(), E = F.end(); BB != E; ++BB) {
       BasicBlock* currentBB = dyn_cast<BasicBlock>(BB);
       auto bbSuccessors = successors(currentBB);
       if (bbSuccessors.begin() != bbSuccessors.end()) {
         for (BasicBlock *succ : successors(currentBB)) {
-          BranchProbability bp = bpi.getEdgeProbability(currentBB, succ);
-          float probEdge = float(bp.getNumerator()) / float(bp.getDenominator());
-          if (!first) {errs() << ", ";} else {first = false;}
-          errs() << "\"" << F.getName() << "," << currentBB->getName() << "," << succ->getName() << "\": " << format("%.3f", probEdge); 
+          // This check filters out backedges
+          if (!DT.dominates(succ, currentBB)) {
+            BranchProbability bp = bpi.getEdgeProbability(currentBB, succ);
+            float probEdge = float(bp.getNumerator()) / float(bp.getDenominator());
+            if (!first) {errs() << ", ";} else {first = false;}
+            errs() << "\"" << F.getName() << "," << currentBB->getName() << "," << succ->getName() << "\": " << format("%.3f", probEdge); 
+          }
         }
       }
     }
