@@ -19,10 +19,13 @@ def build_cfgs(data_file, bb_dir):
                 continue
 
             adjacency_list = {}
+            seen_bbs = set()
             for edge, prob in dicti['edgeToProb'].items():
                 edge_split = edge.split(',')
                 function = edge_split[0]
                 source, dest = int(edge_split[1]), int(edge_split[2])
+                seen_bbs.add(source)
+                seen_bbs.add(dest)
 
                 try:
                     adj_list = adjacency_list[source]
@@ -30,13 +33,15 @@ def build_cfgs(data_file, bb_dir):
                     adjacency_list[source] = []
                     adj_list = adjacency_list[source]
                 adj_list.append((dest, prob))
-
+            
+            unseen_sources = seen_bbs - set(adjacency_list.keys())
+            for source in unseen_sources:
+                adjacency_list[source] = []
                 
-            if len(adjacency_list) > 0:
-                local_bb_dir = bb_dir + '/' + function
-                try_mkdir(local_bb_dir)
-                with open(local_bb_dir + '/CFG.json', 'w') as outfile:
-                    json.dump(adjacency_list, outfile)
+            local_bb_dir = bb_dir + '/' + function
+            try_mkdir(local_bb_dir)
+            with open(local_bb_dir + '/CFG.json', 'w') as outfile:
+                json.dump(adjacency_list, outfile)
 
 def main():
     data_file, bb_dir = parse_args()
