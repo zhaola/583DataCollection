@@ -7,7 +7,7 @@ a machine learning model based on Ithemal that predicts function throughput.
 
 ## Scripts
 
-`run_ck_scripts/time_ck_prorgrams.py`
+`run_ck_scripts/time_ck_programs.py`
 runs timepass on the cBench dataset
 so that while the benchmarks are running,
 they produce files containing timestamps of the start and end of every function.
@@ -48,3 +48,8 @@ so that Ithemal can create embeddings for the basic blocks.
 uses the measurements from `parse_ck_timestamps.py`
 to generate a csv of throughput labels for the basic blocks
 extracted by `extract_all_assembly.py`.
+
+`run_ck_scripts/build_collapsed_CFG.py`
+collapses all `CFG.json` files found as leaf nodes of `bbs`, removing basic blocks
+for which we could not generate embeddings, and creating sibling
+`CFG_collapsed.json` files in each of these directories
