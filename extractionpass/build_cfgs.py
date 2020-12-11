@@ -38,10 +38,11 @@ def build_cfgs(data_file, bb_dir):
             for source in unseen_sources:
                 adjacency_list[source] = []
                 
-            local_bb_dir = bb_dir + '/' + function
-            try_mkdir(local_bb_dir)
-            with open(local_bb_dir + '/CFG.json', 'w') as outfile:
-                json.dump(adjacency_list, outfile)
+            if len(adjacency_list) > 0:
+                local_bb_dir = bb_dir + '/' + function
+                try_mkdir(local_bb_dir)
+                with open(local_bb_dir + '/CFG.json', 'w') as outfile:
+                    json.dump(adjacency_list, outfile)
 
 def main():
     data_file, bb_dir = parse_args()
