@@ -53,3 +53,12 @@ extracted by `extract_all_assembly.py`.
 collapses all `CFG.json` files found as leaf nodes of `bbs`, removing basic blocks
 for which we could not generate embeddings, and creating sibling
 `CFG_collapsed.json` files in each of these directories
+
+`eval_scripts/run_llvm_mca.py`
+gets the cycles predicted by `llvm-mca` for the functions
+extracted by `extract_all_assembly.py`
+and stores the results in `llvm_mca_output.csv`.
+
+`eval_scripts/calc_predict_corr.py`
+calculates the Spearman rank correlation between
+the ground truth cycles and predicted cycles.
