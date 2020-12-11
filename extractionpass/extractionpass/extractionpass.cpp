@@ -27,42 +27,45 @@ struct ExtractionPass : public FunctionPass {
 
   void getAnalysisUsage(AnalysisUsage &AU) const {
     AU.addRequired<BranchProbabilityInfoWrapperPass>(); // Analysis pass to load branch probability
-    AU.addPreserved<DominatorTreeWrapperPass>(); // Analysis pass used to identify backedges
+    AU.addRequired<DominatorTreeWrapperPass>(); // Analysis pass used to identify backedges
   }
 
   bool runOnFunction(Function &F) override {
-    // First pass of basic blocks sets names (so profile information is consistent)
-    errs() << "{\"functionToBlock\": {";
-    u_int bbID = 0;
-    bool first = true;
-    for (BasicBlock &BB : F) {
-      const Twine name(std::to_string(bbID));
-      BB.setName(name);
-      if (!first) {errs() << ", ";} else {first = false;}
-      errs() << "\"" << F.getName() << "\": " << bbID;
-      ++bbID;
-    }
-    errs() << "}, \"edgeToProb\": {";
-    first = true;
-    // Second pass of basic blocks generates profile information
-    BranchProbabilityInfo &bpi = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI();
-    DominatorTree &DT = getAnalysis<DominatorTreeWrapperPass>().getDomTree();
-    for (auto BB = F.begin(), E = F.end(); BB != E; ++BB) {
-      BasicBlock* currentBB = dyn_cast<BasicBlock>(BB);
-      auto bbSuccessors = successors(currentBB);
-      if (bbSuccessors.begin() != bbSuccessors.end()) {
-        for (BasicBlock *succ : successors(currentBB)) {
-          // This check filters out backedges
-          if (!DT.dominates(succ, currentBB)) {
-            BranchProbability bp = bpi.getEdgeProbability(currentBB, succ);
-            float probEdge = float(bp.getNumerator()) / float(bp.getDenominator());
-            if (!first) {errs() << ", ";} else {first = false;}
-            errs() << "\"" << F.getName() << "," << currentBB->getName() << "," << succ->getName() << "\": " << format("%.3f", probEdge); 
+    // if (!F.isDeclaration()) {
+      // First pass of basic blocks sets names (so profile information is consistent)
+      errs() << "{\"functionToBlock\": {";
+      u_int bbID = 0;
+      bool first = true;
+      for (BasicBlock &BB : F) {
+        const Twine name(std::to_string(bbID));
+        BB.setName(name);
+        if (!first) {errs() << ", ";} else {first = false;}
+        errs() << "\"" << F.getName() << "\": " << bbID;
+        ++bbID;
+      }
+      errs() << "}, \"edgeToProb\": {";
+      first = true;
+      // Second pass of basic blocks generates profile information
+      BranchProbabilityInfo &bpi = getAnalysis<BranchProbabilityInfoWrapperPass>().getBPI();
+      DominatorTree &DT = getAnalysis<DominatorTreeWrapperPass>().getDomTree();
+
+      for (auto BB = F.begin(), E = F.end(); BB != E; ++BB) {
+        BasicBlock* currentBB = dyn_cast<BasicBlock>(BB);
+        auto bbSuccessors = successors(currentBB);
+        if (bbSuccessors.begin() != bbSuccessors.end()) {
+          for (BasicBlock *succ : successors(currentBB)) {
+            // This check filters out backedges
+            if (!DT.dominates(succ, currentBB)) {
+              BranchProbability bp = bpi.getEdgeProbability(currentBB, succ);
+              float probEdge = float(bp.getNumerator()) / float(bp.getDenominator());
+              if (!first) {errs() << ", ";} else {first = false;}
+              errs() << "\"" << F.getName() << "," << currentBB->getName() << "," << succ->getName() << "\": " << format("%.3f", probEdge); 
+            }
           }
         }
       }
-    }
-    errs() << "}}\n";
+      errs() << "}}\n";
+    // }
   }
 }; // end of struct ExtractionPass
 }  // end of anonymous namespace
