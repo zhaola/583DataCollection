@@ -59,6 +59,6 @@ gets the cycles predicted by `llvm-mca` for the functions
 extracted by `extract_all_assembly.py`
 and stores the results in `llvm_mca_output.csv`.
 
-`eval_scripts/calc_predict_corr.py <path_to_ground_truth_csv> <path_to_prediction_csv>`
+`eval_scripts/calc_predict_corr.py <path_to_ground_truth_csv> <path_to_prediction_csv> [path_to_csv_of_which_paths_to_use]`
 calculates the Spearman rank correlation between
 the ground truth cycles and predicted cycles.
