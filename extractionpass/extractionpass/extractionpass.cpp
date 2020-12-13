@@ -15,6 +15,7 @@
 #include "llvm/IR/Dominators.h"
 #include "llvm/Transforms/IPO/PassManagerBuilder.h"
 #include "llvm/Analysis/BranchProbabilityInfo.h"
+#include "llvm/Analysis/BlockFrequencyInfo.h"
 
 using namespace llvm;
 
@@ -27,6 +28,7 @@ struct ExtractionPass : public FunctionPass {
 
   void getAnalysisUsage(AnalysisUsage &AU) const {
     AU.addRequired<BranchProbabilityInfoWrapperPass>(); // Analysis pass to load branch probability
+    AU.addRequired<BlockFrequencyInfoWrapperPass>();
     AU.addRequired<DominatorTreeWrapperPass>(); // Analysis pass used to identify backedges
   }
 
@@ -64,6 +66,17 @@ struct ExtractionPass : public FunctionPass {
           }
         }
       }
+      errs() << "}, \"blockToExecutionCount\": {";
+      BlockFrequencyInfo &bfi = getAnalysis<BlockFrequencyInfoWrapperPass>().getBFI();
+      first = true;
+    
+      for (auto BB = F.begin(), E = F.end(); BB != E; ++BB) {
+        BasicBlock* currentBB = dyn_cast<BasicBlock>(BB);
+        if (!first) {errs() << ", ";} else {first = false;}
+        auto count = bfi.getBlockFreq(currentBB).getFrequency() / bfi.getEntryFreq();
+        errs() << "\"" << F.getName() << "," << currentBB->getName() << ": " << count; 
+      }
+      
       errs() << "}}\n";
     // }
   }

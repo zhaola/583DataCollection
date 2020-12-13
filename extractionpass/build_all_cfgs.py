@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from build_cfgs import build_cfgs
+from build_block_execution_counts import build_block_execution_counts
 
 ckProfDir = Path('../ck_prof')
 bbDir = Path('../bbs')
@@ -26,6 +27,7 @@ def buildBenchCFGs(benchName):
         cfgDir = bbDir.joinpath(benchName).joinpath(analysisFpath.stem)
         cfgDir.mkdir(parents=True, exist_ok=True)
         build_cfgs(str(analysisFpath), str(cfgDir))
+        build_block_execution_counts(str(analysisFpath), str(cfgDir))
 
 if __name__ == '__main__':
     main()
