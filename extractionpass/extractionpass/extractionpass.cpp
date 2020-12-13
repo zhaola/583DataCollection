@@ -74,7 +74,7 @@ struct ExtractionPass : public FunctionPass {
         BasicBlock* currentBB = dyn_cast<BasicBlock>(BB);
         if (!first) {errs() << ", ";} else {first = false;}
         auto count = bfi.getBlockFreq(currentBB).getFrequency() / bfi.getEntryFreq();
-        errs() << "\"" << F.getName() << "," << currentBB->getName() << ": " << count; 
+        errs() << "\"" << F.getName() << "," << currentBB->getName() << "\": " << count; 
       }
       
       errs() << "}}\n";

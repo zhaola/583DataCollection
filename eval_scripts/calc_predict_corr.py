@@ -16,6 +16,8 @@ def main():
         pathsMap = buildPathToCyclesMap(whichPathsCsv)
         truthCycles, predCycles = filterTruthAndPreds(truthMap, predMap, pathsMap.keys())
     
+    print(f'Number of points: {len(truthCycles)}')
+
     spearCorr, _ = stats.spearmanr(truthCycles, predCycles)
     print(f'Spearman correlation: {spearCorr}')
 

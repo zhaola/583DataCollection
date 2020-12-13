@@ -1,4 +1,13 @@
 import json
+import os
+import errno
+
+def try_mkdir(dirname):
+    try:
+        os.mkdir(dirname)
+    except OSError as exc:
+        if exc.errno != errno.EEXIST:
+            raise
 
 def build_block_execution_counts(data_file, bb_dir):
     with open(data_file, 'r') as infile:
@@ -15,5 +24,6 @@ def build_block_execution_counts(data_file, bb_dir):
                 block_to_count[bb] = ex_count
                 
             local_bb_dir = bb_dir + '/' + function
+            try_mkdir(local_bb_dir)
             with open(local_bb_dir + '/block_execution_counts.json', 'w') as outfile:
                 json.dump(block_to_count, outfile)
