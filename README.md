@@ -2,10 +2,33 @@
 
 **EECS 583 Group 29**
 
-This repository contains code used to gather data from the cBench dataset for
-a machine learning model based on Ithemal that predicts function throughput.
+This repository contains code used to gather data from the ctuning dataset for
+Fithemal, a machine learning model based on Ithemal that predicts function throughput.
+The Fithemal Github can be found here: https://github.com/thomasehuang/Ithemal-Extension
+
+## Dependencies
+
+This repo uses the benchmarks from the ctuning Github:
+https://github.com/ctuning/ctuning-programs
+
+The ctuning repo should download using the Collective Knowledge (CK) tool,
+which will also download other ctuning repo dependencies:
+https://github.com/ctuning/ck
+
+The CK tool is used to compile and run all the benchmarks.
+The CK Python installation needs to be modified to work with our use case.
+The necessary modification can be found in `timepass/ck_instructions.md`.
+
+All Python scripts were created using Python 3.6.9.
+Everything was run on the EECS 583 class servers, which uses LLVM 10.0.0.
 
 ## Scripts
+
+Below are brief explanations of the purpose of each script.
+
+`demo_fithemal.py <path_to_Ithemal-Extension_repo> <path_to_example_c>`
+runs a trained Fithemal model on the `loop` function in `example.c`.
+Requires the Ithemal-Extension repo.
 
 `run_ck_scripts/time_ck_programs.py`
 runs timepass on the cBench dataset
