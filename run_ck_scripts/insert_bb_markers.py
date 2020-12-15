@@ -18,7 +18,7 @@ def walkAllAsms(asmRootDir, suffix, spathFunc):
         fpaths = [Path(dirpath).joinpath(f) for f in files]
         spaths = [fpath for fpath in fpaths if fpath.suffix == suffix]
         for i, spath in enumerate(spaths):
-            print(f'{i}/{len(spaths)}', end=' ')
+            # print(f'{i}/{len(spaths)}', end=' ')
             spathFunc(spath)
 
 def backUpAsms(spath):
@@ -26,9 +26,10 @@ def backUpAsms(spath):
         backupPath = spath.parent.joinpath(f'{spath.name}_bak')
         if not backupPath.exists():
             spath.rename(backupPath)
-            print(f'backed up {spath}')
+            # print(f'backed up {spath}')
         else:
-            print(f'{spath} back up exists')
+            # print(f'{spath} back up exists')
+            pass
 
 def markAsmsFromBak(spath):
     with open(spath, 'r') as fin:
@@ -38,9 +39,10 @@ def markAsmsFromBak(spath):
         bbAsm = asm[bbStartPos:bbEndPos]
         noJumpsBb = filterJumps(bbAsm)
         asm = asm[:bbStartPos] + startMark + noJumpsBb + endMark + asm[bbEndPos:]
-        print(f'added markers to {spath}')
+        # print(f'added markers to {spath}')
     except ValueError:
-        print(f'failed to add markers to {spath}')
+        # print(f'failed to add markers to {spath}')
+        pass
     with open(changePathExt(spath, 's'), 'w') as fout:
         fout.write(asm)
 
@@ -63,7 +65,7 @@ def changePathExt(fpath, newExt):
 def assembleAsms(sPath):
     oPath = changePathExt(sPath, 'o')
     compileCmd = f'gcc -o {oPath} -c {sPath}'.split()
-    print(f'assembling {sPath}')
+    # print(f'assembling {sPath}')
     subprocess.run(compileCmd)
 
 def investigateAsmFiles(asmRootDir):

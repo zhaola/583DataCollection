@@ -11,5 +11,6 @@
 
 *.tmp
 *bak
+fithemal_tmp*
 
 *__pycache__*
